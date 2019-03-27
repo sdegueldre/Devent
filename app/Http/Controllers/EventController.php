@@ -14,7 +14,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+      $events = Event::all();
+      return response()->json($events);
     }
 
     /**
@@ -33,10 +34,20 @@ class EventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+     public function store(Request $request)
+     {
+         $request->validate([
+             'title' => 'required',
+             'description' => 'required'
+         ]);
+
+         $event = Event::create($request->all());
+
+         return response()->json([
+             'message' => 'Great success! New event created',
+             'event' => $event
+         ]);
+     }
 
     /**
      * Display the specified resource.
@@ -46,7 +57,7 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        //
+      return $event;
     }
 
     /**
@@ -67,10 +78,20 @@ class EventController extends Controller
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Event $event)
-    {
-        //
-    }
+     public function update(Request $request, Event $event)
+     {
+         $request->validate([
+            'title'       => 'nullable',
+            'description' => 'nullable'
+         ]);
+
+         $event->update($request->all());
+
+         return response()->json([
+             'message' => 'Great success! Event updated',
+             'event' => $event
+         ]);
+     }
 
     /**
      * Remove the specified resource from storage.
@@ -78,8 +99,12 @@ class EventController extends Controller
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Event $event)
-    {
-        //
-    }
+     public function destroy(Event $event)
+       {
+           $event->delete();
+
+           return response()->json([
+               'message' => 'Successfully deleted event!'
+           ]);
+       }
 }
