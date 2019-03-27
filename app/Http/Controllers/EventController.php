@@ -19,16 +19,6 @@ class EventController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -37,8 +27,12 @@ class EventController extends Controller
      public function store(Request $request)
      {
          $request->validate([
-             'title' => 'required',
-             'description' => 'required'
+             'event_title'        => 'required',
+             'event_time'         => 'required',
+             'event_description'  => 'required',
+             'event_location'     => 'required',
+             'event_image'        => 'required',
+             'event_author'       => 'required'
          ]);
 
          $event = Event::create($request->all());
@@ -60,18 +54,7 @@ class EventController extends Controller
       return $event;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Event  $event
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Event $event)
-    {
-        //
-    }
-
-    /**
+      /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -81,8 +64,12 @@ class EventController extends Controller
      public function update(Request $request, Event $event)
      {
          $request->validate([
-            'title'       => 'nullable',
-            'description' => 'nullable'
+             'event_title'        => 'nullable',
+             'event_time'         => 'nullable',
+             'event_description'  => 'nullable',
+             'event_location'     => 'nullable',
+             'event_image'        => 'nullable',
+             'event_author'       => 'nullable'
          ]);
 
          $event->update($request->all());

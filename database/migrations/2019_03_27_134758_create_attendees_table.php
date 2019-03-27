@@ -16,11 +16,11 @@ class CreateAttendeesTable extends Migration
         Schema::create('attendees', function (Blueprint $table) {
 
             $table->unsignedInteger('event_id');
-            $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
+            $table->foreign('event_id')->references('event_id')->on('events')->onDelete('cascade');
 
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            
+
             $table->timestamps();
         });
     }
