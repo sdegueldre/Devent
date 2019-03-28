@@ -13,3 +13,5 @@
   * `php artisan jwt:secret`
 
   **Simon was here**
+
+  *And Nadine too*
