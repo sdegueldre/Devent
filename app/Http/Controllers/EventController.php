@@ -27,13 +27,13 @@ class EventController extends Controller
      public function store(Request $request)
      {
          $request->validate([
-             'event_title' => 'required',
-             'event_time' => 'required',
-             'event_description' => 'required',
-             'event_city' => 'required',
-             'event_location' => 'required',
-             'event_image' => 'required',
-             'event_author' => 'required'
+             'event_title'      => 'required',
+             'event_time'       => 'required',
+             'event_description'=> 'required',
+             'event_city'       => 'required',
+             'event_location'   => 'required',
+             'event_image'      => 'required',
+             'event_author'     => 'required'
          ]);
 
          $event = Event::create($request->all());
