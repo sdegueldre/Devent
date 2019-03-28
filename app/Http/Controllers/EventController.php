@@ -27,12 +27,13 @@ class EventController extends Controller
      public function store(Request $request)
      {
          $request->validate([
-             'event_title'        => 'required',
-             'event_time'         => 'required',
-             'event_description'  => 'required',
-             'event_location'     => 'required',
-             'event_image'        => 'required',
-             'event_author'       => 'required'
+             'event_title' => 'required',
+             'event_time' => 'required',
+             'event_description' => 'required',
+             'event_city' => 'required',
+             'event_location' => 'required',
+             'event_image' => 'required',
+             'event_author' => 'required'
          ]);
 
          $event = Event::create($request->all());
@@ -64,12 +65,13 @@ class EventController extends Controller
      public function update(Request $request, Event $event)
      {
          $request->validate([
-             'event_title'        => 'nullable',
-             'event_time'         => 'nullable',
-             'event_description'  => 'nullable',
-             'event_location'     => 'nullable',
-             'event_image'        => 'nullable',
-             'event_author'       => 'nullable'
+             'event_title' => 'nullable',
+             'event_time' => 'nullable',
+             'event_description' => 'nullable',
+             'event_city' => 'nullable',
+             'event_location' => 'nullable',
+             'event_image' => 'nullable',
+             'event_author' => 'nullable'
          ]);
 
          $event->update($request->all());
