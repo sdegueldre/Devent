@@ -44,7 +44,7 @@ class RegisteredUsers extends Notification
             ->subject('inscription sur notre site')
                     ->line('Votre compte a bien été créé mais il doit être confirmé,
                     merci de cliquer sur le lien suivant: ')
-                    ->action('confirmer mon compte', url("/confirm/{$notifiable->id}/{$notifiable->confirmation_token}"))
+                    ->action('confirmer mon compte', url("/confirm/{$notifiable->id}/" . ($notifiable->confirmation_token)))
                     ->line('Si vous n\'avez pas effectué d\'inscription, ignorez ce message !!!');
     }
 

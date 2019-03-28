@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
 use App\Notifications\RegisteredUsers;
 
+
 class RegisterController extends Controller
 {
     /*
@@ -41,6 +42,18 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    public function confirm($id, $token)
+    {
+        $user = User::where('id', $id)->where('confirmation_token', $token)->first();
+        if ($user) {
+            $user->update(['confirmation_token' => null ]);
+            $this->guard()->login($user);
+            return redirect($this->redirectPath())->with('success', 'votre compte à bien ètè confirmé');
+        }else {
+            return redirect('/login')->with('error', 'Ce lien ne semble plus valide');
+        }
     }
 
     public function register(Request $request)
@@ -82,7 +95,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'confirmation_token' => bcrypt(str_random(20))
+            'confirmation_token' => str_replace('/', '', bcrypt(str_random(20)))
         ]);
     }
 }
