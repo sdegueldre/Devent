@@ -72,25 +72,30 @@ class EventController extends Controller
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-     public function update(Request $request, Event $event)
-     {
-         $request->validate([
-             'event_title' => 'nullable',
-             'event_time' => 'nullable',
-             'event_description' => 'nullable',
-             'event_city' => 'nullable',
-             'event_location' => 'nullable',
-             'event_image' => 'nullable',
-             'event_author' => 'nullable'
-         ]);
+    public function update(Request $request, Event $event)
+    {
+        if ($event['event_author'] == auth()->user()->id) {
 
-         $event->update($request->all());
+            $request->validate([
+                'event_title' => 'nullable',
+                'event_time' => 'nullable',
+                'event_description' => 'nullable',
+                'event_city' => 'nullable',
+                'event_location' => 'nullable',
+                'event_image' => 'nullable',
+                'event_author' => 'nullable'
+            ]);
+            
+            $event->update($request->all());
 
-         return response()->json([
-             'message' => 'Great success! Event updated',
-             'event' => $event
-         ]);
-     }
+            return response()->json([
+                'message' => 'Great success! Event updated',
+                'event' => $event
+            ]);
+        } else {
+            return response()->json(["message" => "Unauthorized"], 401);
+        }
+    }
 
     /**
      * Remove the specified resource from storage.
