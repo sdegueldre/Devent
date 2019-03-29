@@ -18,9 +18,9 @@ class CreateEventsTable extends Migration
             $table->string('event_title');
             $table->dateTime('event_time');
             $table->text('event_description');
-            $table->string('event_location');
+            $table->string('event_city');
+            $table->text('event_location');
             $table->text('event_image');
-
             $table->unsignedInteger('event_author');
             $table->foreign('event_author')->references('id')->on('users');
             $table->timestamps();
