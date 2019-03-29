@@ -18,6 +18,11 @@ class EventController extends Controller
       $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->paginate(4);
       return response()->json($events);
     }
+    public function past()
+    {
+      $events = Event::where('event_time', '<', NOW())->orderBy('event_time', 'desc')->paginate(4);
+      return response()->json($events);
+    }
 
     /**
      * Store a newly created resource in storage.
