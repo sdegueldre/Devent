@@ -33,4 +33,8 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/events/{event}', 'EventController@show')->name('events.show');
     Route::put('/events/{event}', 'EventController@update')->name('events.update');
     Route::delete('/events/{event}', 'EventController@destroy')->name('events.destroy');
+
+    Route::post('/attend/{event}', 'AttendeesController@store')->name('attendees.store');
+    Route::delete('/attend/{event}', 'AttendeesController@destroy')->name('attendees.destroy');
+
 });

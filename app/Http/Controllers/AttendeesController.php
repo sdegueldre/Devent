@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Attendees;
+use App\Event;
+use Auth;
 use Illuminate\Http\Request;
 
 class AttendeesController extends Controller
@@ -33,9 +35,15 @@ class AttendeesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Event $event)
     {
-        //
+      $user_id = Auth::user()->id;
+      Attendees::create(['event_id' => $event->id, 'user_id' => $user_id]);
+
+      return response()->json([
+          'message' => 'Great success! You are registered on this event',
+          'event' => $event
+      ]);
     }
 
     /**
@@ -78,8 +86,15 @@ class AttendeesController extends Controller
      * @param  \App\Attendees  $attendees
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Attendees $attendees)
+    public function destroy(Event $event)
     {
-        //
+      $user_id = Auth::user()->id;
+      $attendees = Attendees::where([['event_id', '=', $event->id],
+                                     ['user_id', '=', $user_id]]);
+      $attendees->delete();
+
+      return response()->json([
+          'message' => 'Successfully deregistered!'
+      ]);
     }
 }
