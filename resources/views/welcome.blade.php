@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Dev'ent</title>
 
 
         <!-- Fonts -->
@@ -14,15 +14,8 @@
 
     </head>
     <body>
-      <div class="header">
 
-      </div>
-      <div class="homepage container-fluid">
-
-      </div>
-      <div class="container-fluid">
-
-      </div>
+      <div id="root"></div>
         <script src="/js/app.js"></script>
     </body>
 </html>
