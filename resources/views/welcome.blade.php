@@ -17,6 +17,12 @@
       <div class="header">
 
       </div>
+      <div class="homepage container-fluid">
+
+      </div>
+      <div class="container-fluid">
+
+      </div>
         <script src="/js/app.js"></script>
     </body>
 </html>

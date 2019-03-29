@@ -61280,16 +61280,29 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./components/header */ "./resources/js/components/header.js");
 
+__webpack_require__(/*! ./components/homepage */ "./resources/js/components/homepage.js");
+
 /***/ }),
 
-/***/ "./resources/js/assets/logo.svg":
-/*!**************************************!*\
-  !*** ./resources/js/assets/logo.svg ***!
-  \**************************************/
+/***/ "./resources/js/assets/logo2.svg":
+/*!***************************************!*\
+  !*** ./resources/js/assets/logo2.svg ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/logo.svg?df74b226d2b5bedeed1d04533418ae4b";
+module.exports = "/images/logo2.svg?9399cadf42a1cb70fd051b00ff1a13c7";
+
+/***/ }),
+
+/***/ "./resources/js/assets/profile.png":
+/*!*****************************************!*\
+  !*** ./resources/js/assets/profile.png ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/profile.png?517037464f4f45c0dcd038d00b38bcec";
 
 /***/ }),
 
@@ -61365,8 +61378,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _assets_logo_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/logo.svg */ "./resources/js/assets/logo.svg");
-/* harmony import */ var _assets_logo_svg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_assets_logo_svg__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _assets_logo2_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/logo2.svg */ "./resources/js/assets/logo2.svg");
+/* harmony import */ var _assets_logo2_svg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_assets_logo2_svg__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _assets_profile_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/profile.png */ "./resources/js/assets/profile.png");
+/* harmony import */ var _assets_profile_png__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_assets_profile_png__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -61388,6 +61403,19 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+/* Demo */
+
+
+/* Function for generating a random color for the background of the cards */
+
+/* Testing purpose - will be deleted */
+
+function random_bg_color() {
+  var colors_bright = ["#CC276A", "#C72FA8", "#01CCBC", "#F7BC0B", "#E85E40"];
+  var colors = colors_bright;
+  var bgColor = colors[Math.floor(Math.random() * colors.length)];
+  return bgColor;
+}
 
 var Header =
 /*#__PURE__*/
@@ -61403,7 +61431,67 @@ function (_Component) {
   _createClass(Header, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "coucou ");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+        style: {
+          background: random_bg_color()
+        },
+        className: "navbar navbar-expand-lg navbar-dark"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "navbar-brand",
+        href: "#"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        width: "30",
+        height: "30",
+        className: "d-inline-block align-top mx-2",
+        src: _assets_logo2_svg__WEBPACK_IMPORTED_MODULE_2___default.a
+      }), "Dev'ent"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "navbar-toggler",
+        type: "button",
+        "data-toggle": "collapse",
+        "data-target": "#navbarColor01",
+        "aria-controls": "navbarColor01",
+        "aria-expanded": "false",
+        "aria-label": "Toggle navigation"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "navbar-toggler-icon"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "collapse navbar-collapse",
+        id: "navbarColor01"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "navbar-nav ml-auto"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "nav-item active"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-link",
+        href: "#"
+      }, "Homepage")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "nav-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-link",
+        href: "#"
+      }, "Events")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "nav-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-link",
+        href: "#"
+      }, "Team")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "nav-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-link",
+        href: "#"
+      }, "Contact"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "navbar-nav ml-auto"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: _assets_profile_png__WEBPACK_IMPORTED_MODULE_3___default.a,
+        width: "30",
+        height: "30",
+        className: "d-inline-block align-top"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mx-2"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "profile",
+        href: "#"
+      }, "Hello James")))));
     }
   }]);
 
@@ -61418,6 +61506,126 @@ if (document.querySelector('.header')) {
 
 /***/ }),
 
+/***/ "./resources/js/components/homepage.js":
+/*!*********************************************!*\
+  !*** ./resources/js/components/homepage.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Homepage; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var Homepage =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Homepage, _Component);
+
+  function Homepage() {
+    _classCallCheck(this, Homepage);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Homepage).apply(this, arguments));
+  }
+
+  _createClass(Homepage, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "carouselExampleIndicators",
+        class: "carousel slide",
+        "data-ride": "carousel"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", {
+        class: "carousel-indicators"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        "data-target": "#carouselExampleIndicators",
+        "data-slide-to": "0",
+        class: "active"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        "data-target": "#carouselExampleIndicators",
+        "data-slide-to": "1"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        "data-target": "#carouselExampleIndicators",
+        "data-slide-to": "2"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        class: "carousel-inner"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        class: "carousel-item active"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        class: "d-block w-100",
+        src: "https://via.placeholder.com/1920x450/EB6864/000000",
+        alt: "First slide"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        class: "carousel-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        class: "d-block w-100",
+        src: "https://via.placeholder.com/1920x450/aaaaaa/000000",
+        alt: "Second slide"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        class: "carousel-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        class: "d-block w-100",
+        src: "https://via.placeholder.com/1920x450/22B24C/000000",
+        alt: "Third slide"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        class: "carousel-control-prev",
+        href: "#carouselExampleIndicators",
+        role: "button",
+        "data-slide": "prev"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        class: "carousel-control-prev-icon",
+        "aria-hidden": "true"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        class: "sr-only"
+      }, "Previous")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        class: "carousel-control-next",
+        href: "#carouselExampleIndicators",
+        role: "button",
+        "data-slide": "next"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        class: "carousel-control-next-icon",
+        "aria-hidden": "true"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        class: "sr-only"
+      }, "Next")));
+    }
+  }]);
+
+  return Homepage;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
+
+if (document.querySelector('.homepage')) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Homepage, null), document.querySelector('.homepage'));
+}
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -61425,7 +61633,7 @@ if (document.querySelector('.header')) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleNotFoundError: Module not found: Error: Can't resolve '../../assets/img/dots.png' in '/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/resources/sass'\n    at factory.create (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/webpack/lib/Compilation.js:823:10)\n    at factory (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/webpack/lib/NormalModuleFactory.js:397:22)\n    at resolver (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/webpack/lib/NormalModuleFactory.js:130:21)\n    at asyncLib.parallel (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/webpack/lib/NormalModuleFactory.js:224:22)\n    at /home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/neo-async/async.js:2825:7\n    at /home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/neo-async/async.js:6886:13\n    at normalResolver.resolve (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/webpack/lib/NormalModuleFactory.js:214:25)\n    at doResolve (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/enhanced-resolve/lib/Resolver.js:184:12)\n    at hook.callAsync (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/enhanced-resolve/lib/Resolver.js:238:5)\n    at _fn0 (eval at create (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:15:1)\n    at resolver.doResolve (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/enhanced-resolve/lib/UnsafeCachePlugin.js:37:5)\n    at hook.callAsync (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/enhanced-resolve/lib/Resolver.js:238:5)\n    at _fn0 (eval at create (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:15:1)\n    at hook.callAsync (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/enhanced-resolve/lib/Resolver.js:238:5)\n    at _fn0 (eval at create (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:12:1)\n    at resolver.doResolve (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:42:38)\n    at hook.callAsync (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/enhanced-resolve/lib/Resolver.js:238:5)\n    at _fn43 (eval at create (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:402:1)\n    at hook.callAsync (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/enhanced-resolve/lib/Resolver.js:238:5)\n    at _fn0 (eval at create (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:12:1)\n    at resolver.doResolve (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:42:38)\n    at hook.callAsync (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/enhanced-resolve/lib/Resolver.js:238:5)\n    at _fn1 (eval at create (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:24:1)\n    at hook.callAsync (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/enhanced-resolve/lib/Resolver.js:238:5)\n    at _fn0 (eval at create (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/tapable/lib/HookCodeFactory.js:32:10), <anonymous>:15:1)\n    at fs.stat (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/enhanced-resolve/lib/DirectoryExistsPlugin.js:22:13)\n    at process.nextTick (/home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js:73:15)\n    at _combinedTickCallback (internal/process/next_tick.js:131:7)\n    at process._tickCallback (internal/process/next_tick.js:180:9)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
