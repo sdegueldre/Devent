@@ -60,8 +60,9 @@ class EventController extends Controller
     {
 
         $event['event_author'] = $event->author()->get()[0];
+
+        $event['attendees'] = $event->attendees()->get();
         return $event;
-        // return $event;
     }
 
       /**
