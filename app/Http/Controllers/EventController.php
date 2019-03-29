@@ -59,8 +59,8 @@ class EventController extends Controller
     public function show(Event $event)
     {
 
-        $author = Event::find(1)->author;
-        return [$author, $event];
+        $event['event_author'] = $event->author()->get()[0];
+        return $event;
         // return $event;
     }
 

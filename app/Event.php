@@ -19,6 +19,6 @@ class Event extends Model
 
   public function author()
     {
-        return $this->hasOne('App\User', 'id', 'event_author');
+        return $this->belongsTo('App\User', 'event_author');
     }
 }
