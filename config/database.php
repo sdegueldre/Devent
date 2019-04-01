@@ -1,5 +1,18 @@
 <?php
-
+$host = '127.0.0.1';
+$port = '3306';
+$database = 'forge';
+$username = 'forge';
+$password = '';
+$db;
+if(env('APP_ENV', 'production')!='local'){
+  $db = parse_url(getenv("DATABASE_URL"));
+  $path = ltrim($db["path"], "/");
+  $port = $db["port"];
+  $host = $db["host"];
+  $username = $db["user"];
+  $password = $db["pass"];
+}
 return [
 
     /*
@@ -61,11 +74,11 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => env('DB_HOST', $host),
+            'port' => env('DB_PORT', $port),
+            'database' => env('DB_DATABASE', $path),
+            'username' => env('DB_USERNAME', $username),
+            'password' => env('DB_PASSWORD', $password),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
