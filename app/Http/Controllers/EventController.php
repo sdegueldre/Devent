@@ -32,6 +32,8 @@ class EventController extends Controller
      */
      public function store(Request $request)
      {
+        $request['event_author'] = auth()->user()->id;
+
          $request->validate([
              'event_title'      => 'required',
              'event_time'       => 'required',
@@ -85,7 +87,7 @@ class EventController extends Controller
                 'event_image' => 'nullable',
                 'event_author' => 'nullable'
             ]);
-            
+
             $event->update($request->all());
 
             return response()->json([
