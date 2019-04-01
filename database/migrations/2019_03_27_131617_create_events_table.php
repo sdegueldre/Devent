@@ -22,7 +22,7 @@ class CreateEventsTable extends Migration
             $table->text('event_location');
             $table->text('event_image');
             $table->unsignedInteger('event_author');
-            $table->foreign('event_author')->references('id')->on('users');
+            $table->foreign('event_author')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
