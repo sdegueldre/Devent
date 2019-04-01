@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
-Auth::routes();
-Route::get('confirm/{id}/{token}','Auth\RegisterController@confirm');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+//
+// Auth::routes();
+// Route::get('confirm/{id}/{token}','Auth\RegisterController@confirm');
 
 Route::get('{any?}', 'HomeController@index')->name('home');
