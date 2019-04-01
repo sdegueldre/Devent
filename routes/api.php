@@ -16,6 +16,9 @@ use Illuminate\Http\Request;
 Route::post('/register', 'AuthController@register');
 Route::post('/login', 'AuthController@login');
 
+Route::get('/events', 'EventController@index')->name('events.index');
+Route::get('/pastevents', 'EventController@past')->name('events.past');
+Route::get('/events/{event}', 'EventController@show')->name('events.show');
 
 //if authenticated
 Route::middleware('auth:api')->group(function () {
@@ -26,11 +29,8 @@ Route::middleware('auth:api')->group(function () {
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
     Route::post('me', 'AuthController@me');
-    // routes related to events
-    Route::get('/events', 'EventController@index')->name('events.index');
-    Route::get('/pastevents', 'EventController@past')->name('events.past');
+    // routes related to events    
     Route::post('/events', 'EventController@store')->name('events.store');
-    Route::get('/events/{event}', 'EventController@show')->name('events.show');
     Route::put('/events/{event}', 'EventController@update')->name('events.update');
     Route::delete('/events/{event}', 'EventController@destroy')->name('events.destroy');
     // route that deal with attending or not
