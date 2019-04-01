@@ -78,6 +78,7 @@ class EventController extends Controller
     {
         if ($event['event_author'] == auth()->user()->id) {
 
+            $request['event_author'] = auth()->user()->id;
             $request->validate([
                 'event_title' => 'nullable',
                 'event_time' => 'nullable',
