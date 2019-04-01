@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EventController extends Controller
 {
@@ -14,7 +15,12 @@ class EventController extends Controller
      */
     public function index()
     {
-      $events = Event::all();
+      $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->paginate(4);
+      return response()->json($events);
+    }
+    public function past()
+    {
+      $events = Event::where('event_time', '<', NOW())->orderBy('event_time', 'desc')->paginate(4);
       return response()->json($events);
     }
 
@@ -27,12 +33,13 @@ class EventController extends Controller
      public function store(Request $request)
      {
          $request->validate([
-             'event_title'        => 'required',
-             'event_time'         => 'required',
-             'event_description'  => 'required',
-             'event_location'     => 'required',
-             'event_image'        => 'required',
-             'event_author'       => 'required'
+             'event_title'      => 'required',
+             'event_time'       => 'required',
+             'event_description'=> 'required',
+             'event_city'       => 'required',
+             'event_location'   => 'required',
+             'event_image'      => 'required',
+             'event_author'     => 'required'
          ]);
 
          $event = Event::create($request->all());
@@ -51,7 +58,11 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-      return $event;
+
+        $event['event_author'] = $event->author()->get()[0];
+
+        $event['attendees'] = $event->attendees()->get();
+        return $event;
     }
 
       /**
@@ -61,24 +72,30 @@ class EventController extends Controller
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-     public function update(Request $request, Event $event)
-     {
-         $request->validate([
-             'event_title'        => 'nullable',
-             'event_time'         => 'nullable',
-             'event_description'  => 'nullable',
-             'event_location'     => 'nullable',
-             'event_image'        => 'nullable',
-             'event_author'       => 'nullable'
-         ]);
+    public function update(Request $request, Event $event)
+    {
+        if ($event['event_author'] == auth()->user()->id) {
 
-         $event->update($request->all());
+            $request->validate([
+                'event_title' => 'nullable',
+                'event_time' => 'nullable',
+                'event_description' => 'nullable',
+                'event_city' => 'nullable',
+                'event_location' => 'nullable',
+                'event_image' => 'nullable',
+                'event_author' => 'nullable'
+            ]);
+            
+            $event->update($request->all());
 
-         return response()->json([
-             'message' => 'Great success! Event updated',
-             'event' => $event
-         ]);
-     }
+            return response()->json([
+                'message' => 'Great success! Event updated',
+                'event' => $event
+            ]);
+        } else {
+            return response()->json(["message" => "Unauthorized"], 401);
+        }
+    }
 
     /**
      * Remove the specified resource from storage.
