@@ -5,6 +5,7 @@ import event01 from '../assets/event01.jpg';
 import event02 from '../assets/event02.jpg';
 import event03 from '../assets/event03.jpg';
 import event05 from '../assets/event05.png';
+import test from '../assets/test.jpg';
 
 
 export default class Homepage extends Component {
@@ -48,7 +49,7 @@ export default class Homepage extends Component {
                 <div className="card-content">
                   <div className="card-img">
                       <img src={event05} alt=""/>
-                      <span><h4><i className="fas fa-map-marker-alt"></i> Liège Hannut Poucet </h4></span>
+                      <span><h4><i className="fas fa-map-marker-alt"></i> Liège Hannut PoucetLiège Hannut Poucet </h4></span>
                   </div>
                   <div className="card-desc">
                       <h3>Heading</h3>
@@ -78,7 +79,7 @@ export default class Homepage extends Component {
               <div className="col">
                 <div className="card-content">
                   <div className="card-img">
-                      <img src={event03} alt=""/>
+                      <img src={test} alt=""/>
                       <span><h4><i className="fas fa-map-marker-alt"></i> Liège   </h4></span>
                   </div>
                   <div className="card-desc">

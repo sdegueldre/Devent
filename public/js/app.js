@@ -60466,7 +60466,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65430,6 +65430,17 @@ module.exports = "/images/profile.png?517037464f4f45c0dcd038d00b38bcec";
 
 /***/ }),
 
+/***/ "./resources/js/assets/test.jpg":
+/*!**************************************!*\
+  !*** ./resources/js/assets/test.jpg ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/test.jpg?9ec92bc5e4e8e9b5c5beda3ce5ffd550";
+
+/***/ }),
+
 /***/ "./resources/js/bootstrap.js":
 /*!***********************************!*\
   !*** ./resources/js/bootstrap.js ***!
@@ -65601,13 +65612,7 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container-fluid"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "testimg"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "http://i34.tinypic.com/4tlkci.jpg"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "example"
-      }, "This is my div")));
+      }, "Un jour j'afficherai les events... peut-\xEAtre...ezfzefzefzefzefz");
     }
   }]);
 
@@ -65846,6 +65851,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_event03_jpg__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_event03_jpg__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _assets_event05_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../assets/event05.png */ "./resources/js/assets/event05.png");
 /* harmony import */ var _assets_event05_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_event05_png__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _assets_test_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/test.jpg */ "./resources/js/assets/test.jpg");
+/* harmony import */ var _assets_test_jpg__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_test_jpg__WEBPACK_IMPORTED_MODULE_6__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -65867,6 +65874,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 /* Demo */
+
 
 
 
@@ -65962,7 +65970,7 @@ function (_Component) {
         alt: ""
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-map-marker-alt"
-      }), " Li\xE8ge Hannut Poucet "))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), " Li\xE8ge Hannut PoucetLi\xE8ge Hannut Poucet "))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-desc"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Heading"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totam"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "#",
@@ -65990,7 +65998,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-img"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: _assets_event03_jpg__WEBPACK_IMPORTED_MODULE_4___default.a,
+        src: _assets_test_jpg__WEBPACK_IMPORTED_MODULE_6___default.a,
         alt: ""
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-map-marker-alt"

@@ -10913,23 +10913,18 @@ a.text-dark:focus {
   width: 100%;
   height: auto;
   display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .card-img span {
   position: absolute;
-  top: 25px;
-  left: 50px;
-  background: #E74C3C;
-  padding: 6px;
-  color: #fff;
-  font-size: 12px;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  top: 0px;
+  left: 0px;
+  color: red;
+  padding: 0px;
+  background-color: white;
+  border: 2px solid red;
 }
 
 .card-img span h4 {
@@ -10991,22 +10986,4 @@ a.btn-card {
 }
 
 /* End card section */
-
-#imgexample {
-  border: 2px solid black;
-}
-
-#testimg {
-  position: relative;
-}
-
-#example {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: red;
-  padding: 5px;
-  background-color: white;
-  border: 2px solid red;
-}
 
