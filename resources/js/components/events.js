@@ -7,7 +7,11 @@ export default class Events extends Component {
     render() {
         return (
           <div className="container-fluid">
-            Je suis la page des events
+            <div id="testimg">
+            <img src="http://i34.tinypic.com/4tlkci.jpg"/>
+            <div id="example">This is my div</div>
+            </div>
+
         </div>
 
 

@@ -65364,6 +65364,50 @@ __webpack_require__(/*! ./components/layout */ "./resources/js/components/layout
 
 /***/ }),
 
+/***/ "./resources/js/assets/event01.jpg":
+/*!*****************************************!*\
+  !*** ./resources/js/assets/event01.jpg ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/event01.jpg?5579df51856794d16eb53aa5917e5dfb";
+
+/***/ }),
+
+/***/ "./resources/js/assets/event02.jpg":
+/*!*****************************************!*\
+  !*** ./resources/js/assets/event02.jpg ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/event02.jpg?b681476ad5b3cc7093b9d00affba7824";
+
+/***/ }),
+
+/***/ "./resources/js/assets/event03.jpg":
+/*!*****************************************!*\
+  !*** ./resources/js/assets/event03.jpg ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/event03.jpg?82000089c98ff116cdb3cdeb9cb99d62";
+
+/***/ }),
+
+/***/ "./resources/js/assets/event05.png":
+/*!*****************************************!*\
+  !*** ./resources/js/assets/event05.png ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/event05.png?8276cc51003dc42999d012c23c21a65b";
+
+/***/ }),
+
 /***/ "./resources/js/assets/logo2.svg":
 /*!***************************************!*\
   !*** ./resources/js/assets/logo2.svg ***!
@@ -65557,7 +65601,13 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container-fluid"
-      }, "Je suis la page des events");
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "testimg"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "http://i34.tinypic.com/4tlkci.jpg"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "example"
+      }, "This is my div")));
     }
   }]);
 
@@ -65675,6 +65725,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 /* Demo */
 
 
@@ -65706,7 +65757,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-        class: "navbar navbar-expand-lg navbar-light bg-light"
+        className: "navbar navbar-expand-lg navbar-light bg-light sticky-top"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "/",
         className: "navbar-brand"
@@ -65739,8 +65790,7 @@ function (_Component) {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "/events",
-        className: "nav-link",
-        href: "#"
+        className: "nav-link"
       }, "Events")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
@@ -65788,6 +65838,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _assets_event01_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../assets/event01.jpg */ "./resources/js/assets/event01.jpg");
+/* harmony import */ var _assets_event01_jpg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_assets_event01_jpg__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _assets_event02_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../assets/event02.jpg */ "./resources/js/assets/event02.jpg");
+/* harmony import */ var _assets_event02_jpg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_assets_event02_jpg__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _assets_event03_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../assets/event03.jpg */ "./resources/js/assets/event03.jpg");
+/* harmony import */ var _assets_event03_jpg__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_event03_jpg__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _assets_event05_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../assets/event05.png */ "./resources/js/assets/event05.png");
+/* harmony import */ var _assets_event05_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_event05_png__WEBPACK_IMPORTED_MODULE_5__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -65805,6 +65863,12 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+/* Demo */
+
+
 
 
 
@@ -65827,14 +65891,14 @@ function (_Component) {
         className: "container-fluid"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "carouselExampleIndicators",
-        class: "carousel slide",
+        className: "carousel slide",
         "data-ride": "carousel"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", {
-        class: "carousel-indicators"
+        className: "carousel-indicators"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         "data-target": "#carouselExampleIndicators",
         "data-slide-to": "0",
-        class: "active"
+        className: "active"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         "data-target": "#carouselExampleIndicators",
         "data-slide-to": "1"
@@ -65842,48 +65906,100 @@ function (_Component) {
         "data-target": "#carouselExampleIndicators",
         "data-slide-to": "2"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        class: "carousel-inner"
+        className: "carousel-inner"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        class: "carousel-item active"
+        className: "carousel-item active"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        class: "d-block w-100",
+        className: "d-block w-100",
         src: "https://via.placeholder.com/1920x450/6f42c1/000000",
         alt: "First slide"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        class: "carousel-item"
+        className: "carousel-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        class: "d-block w-100",
+        className: "d-block w-100",
         src: "https://via.placeholder.com/1920x450/aaaaaa/000000",
         alt: "Second slide"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        class: "carousel-item"
+        className: "carousel-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        class: "d-block w-100",
+        className: "d-block w-100",
         src: "https://via.placeholder.com/1920x450/22B24C/000000",
         alt: "Third slide"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        class: "carousel-control-prev",
+        className: "carousel-control-prev",
         href: "#carouselExampleIndicators",
         role: "button",
         "data-slide": "prev"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        class: "carousel-control-prev-icon",
+        className: "carousel-control-prev-icon",
         "aria-hidden": "true"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        class: "sr-only"
+        className: "sr-only"
       }, "Previous")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        class: "carousel-control-next",
+        className: "carousel-control-next",
         href: "#carouselExampleIndicators",
         role: "button",
         "data-slide": "next"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        class: "carousel-control-next-icon",
+        className: "carousel-control-next-icon",
         "aria-hidden": "true"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        class: "sr-only"
+        className: "sr-only"
       }, "Next"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
-      }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget enim sed lacus posuere sagittis at vitae risus. Nam sodales ipsum ac mauris fermentum ultricies. Donec dui arcu, iaculis et arcu quis, blandit cursus dui. Nam vitae iaculis sapien. Nullam ac semper lacus. Nullam dignissim turpis neque, vel viverra nulla sagittis ut. Cras auctor odio et felis dictum, quis mattis lacus imperdiet. In convallis massa nec pretium gravida. Vivamus tempor ornare justo, non luctus sem ornare hendrerit. Praesent ornare erat sed mauris lacinia rhoncus. Praesent sagittis viverra dignissim. Phasellus fermentum tellus nisi, nec molestie erat laoreet non. Phasellus lacinia nibh libero. Donec euismod varius tristique. Curabitur accumsan imperdiet elementum. Proin fermentum non ante id elementum. Integer id bibendum urna, in sagittis ipsum. Curabitur non arcu id eros gravida semper. Sed ullamcorper nisl dolor, nec dapibus urna egestas in. Nunc eget scelerisque metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec sit amet fringilla massa. Nam varius neque sed velit pharetra faucibus. Nam sapien libero, euismod at magna sit amet, tempus lacinia eros. Nullam in volutpat risus, vitae venenatis mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam ante sapien, sollicitudin eget tortor id, lacinia posuere augue. Maecenas pellentesque dolor non dui maximus interdum. Sed elementum ligula et tempus sollicitudin. Nullam dapibus mauris eu scelerisque aliquam. Donec ultricies ante nibh, et tincidunt dolor dapibus quis. Mauris massa sapien, egestas vitae semper non, posuere eu lectus. Proin ut ligula at nunc porta feugiat ut in massa. Sed lectus dui, ultrices vitae ante a, pulvinar accumsan dui. Suspendisse potenti. Duis vel magna lectus. Pellentesque in lobortis tortor. In vel lorem eu est efficitur tincidunt sed hendrerit felis. Phasellus venenatis rhoncus hendrerit. Donec sed laoreet nulla. Sed euismod a neque vel vestibulum. Aliquam in nisl vestibulum, vestibulum nibh ac, egestas leo. Sed eu facilisis diam, a hendrerit dolor. Aliquam erat volutpat. Sed luctus vel nisi eget hendrerit. Aliquam leo massa, commodo at dui vel, tempor aliquam libero. Aliquam imperdiet urna ac quam hendrerit, eget rhoncus erat maximus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc pellentesque elit a tincidunt facilisis. Nunc odio massa, bibendum id mattis vitae, gravida mollis magna. Maecenas suscipit id lectus pharetra congue. In risus orci, faucibus at purus at, gravida ornare nunc. Quisque vitae dolor sapien. Donec volutpat orci vel diam commodo pulvinar. Etiam eu ligula posuere, posuere mauris at, feugiat ante. Praesent fermentum neque enim, at venenatis eros ornare ut. Phasellus commodo malesuada purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consectetur congue ligula, vel egestas nunc vestibulum sed. Mauris non est vitae orci pulvinar dapibus. Nunc dapibus dui ut risus gravida, a posuere lorem luctus. Mauris ut vestibulum ante, id pulvinar quam. Ut fermentum lacus nulla, non dapibus dolor euismod sed. Cras scelerisque pharetra tempus. Ut ante nulla, convallis vitae laoreet quis, euismod vitae nunc. Curabitur ut dapibus nibh. Quisque commodo eget enim a elementum. Ut consectetur est non turpis varius, ac mattis diam feugiat."));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-calendar"
+      }), " Next events"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row text-center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-img"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: _assets_event05_png__WEBPACK_IMPORTED_MODULE_5___default.a,
+        alt: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-map-marker-alt"
+      }), " Li\xE8ge Hannut Poucet "))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-desc"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Heading"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totam"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#",
+        className: "btn-card"
+      }, "More info")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-img"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: _assets_event02_jpg__WEBPACK_IMPORTED_MODULE_3___default.a,
+        alt: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-map-marker-alt"
+      }), " Li\xE8ge Hannut  "))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-desc"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Heading"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totamLorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totamLorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totamLorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totam"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#",
+        className: "btn-card"
+      }, "More info")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-img"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: _assets_event03_jpg__WEBPACK_IMPORTED_MODULE_4___default.a,
+        alt: ""
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-map-marker-alt"
+      }), " Li\xE8ge   "))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "card-desc"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Heading"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totamLorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totamLorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totam"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#",
+        className: "btn-card"
+      }, "More info")))))));
     }
   }]);
 
@@ -65917,7 +66033,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["HashRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footer__WEBPACK_IMPORTED_MODULE_5__["default"], null)), document.getElementById('root'));
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_footer__WEBPACK_IMPORTED_MODULE_5__["default"], null)), document.getElementById('root'));
 
 /***/ }),
 

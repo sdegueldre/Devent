@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {Link} from 'react-router-dom';
 import logo from '../assets/logo2.svg';
+import { Route, Switch } from 'react-router-dom';
+
 /* Demo */
 import profile from '../assets/profile.png';
 
@@ -20,7 +22,7 @@ export default class Header extends Component {
 
     render() {
         return (
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
             <Link to="/" className="navbar-brand"><img width="30" height="30" className="d-inline-block align-top mx-2" src={ logo }/>Dev'ent</Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
@@ -32,7 +34,7 @@ export default class Header extends Component {
                   <Link to="/" className="nav-link">Homepage</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/events" className="nav-link" href="#">Events</Link>
+                  <Link to="/events" className="nav-link">Events</Link>
                 </li>
                 <li className="nav-item">
                   <Link to ="/team" className="nav-link">Team</Link>

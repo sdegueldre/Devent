@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter} from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom'
 import Header from './header';
 import Routes from './routes';
 import Footer from './footer';
 
 ReactDOM.render(
 
-<HashRouter>
+<BrowserRouter>
   <Header />
   <Routes />
   <Footer />
-</HashRouter>, document.getElementById('root'));
+</BrowserRouter>
+,document.getElementById('root'));
