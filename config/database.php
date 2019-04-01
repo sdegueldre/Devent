@@ -5,7 +5,7 @@ $database = 'forge';
 $username = 'forge';
 $password = '';
 $db;
-if(env('APP_ENV')!='local'){
+if(env('APP_ENV', 'production')!='local'){
   $db = parse_url(getenv("DATABASE_URL"));
   $path = ltrim($db["path"], "/");
   $port = $db["port"];
