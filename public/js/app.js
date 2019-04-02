@@ -65612,7 +65612,7 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container-fluid"
-      }, "Un jour j'afficherai les events... peut-\xEAtre...ezfzefzefzefzefz");
+      }, "Un jour j'afficherai les events... peut-\xEAtre...coucoucoucouocuocuoucoucoucoucoucoucouocuocuoc");
     }
   }]);
 
