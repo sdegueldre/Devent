@@ -22,7 +22,7 @@ export default class Homepage extends Component {
   }
 
   async componentDidMount() {
-    this.setState(await api.fetchEvents());
+    this.setState(await api.fetchHome());
   }
   componentDidUpdate(){
 
@@ -31,6 +31,7 @@ export default class Homepage extends Component {
 
     render() {
       const { events } = this.state;
+      console.log("events1" + events);
 
         return (
           <div className="container-fluid">
@@ -66,93 +67,30 @@ export default class Homepage extends Component {
           <div className="container">
             <h1><i className="fas fa-calendar my-3 pr-3"></i> Next events</h1>
             <div className="row text-center">
-              <div className="col">
-                <div className="card-content">
-                  <div className="card-img">
-                      <img src={event05} alt=""/>
-                      <span className="date"><h4><i className="fas fa-calendar"></i> 29 Mai </h4></span>
-                      <span className="city"><h4><i className="fas fa-map-marker-alt"></i> Liège</h4></span>
-                  </div>
-                  <div className="card-desc">
-                      <h3>Heading</h3>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis
-                          voluptas totam</p>
-                        <a href="#" className="btn-card">More info</a>
-                  </div>
-                </div>
-              </div>
-              <div className="col">
-                <div className="card-content">
-                  <div className="card-img">
-                      <img src={event02} alt=""/>
-                        <span className="date"><h4><i className="fas fa-calendar"></i> 29 Mai </h4></span>
-                        <span className="city"><h4><i className="fas fa-map-marker-alt"></i> Liège</h4></span>
-                  </div>
-                  <div className="card-desc">
-                      <h3>Heading</h3>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis
-                          voluptas totamLorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis
-                              voluptas totamLorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis
-                                  voluptas totamLorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis
-                                      voluptas totam</p>
-                        <a href="#" className="btn-card">More info</a>
+
+              {events.map(events =>
+                  <div key={events.id} className="col mb-2">
+                    <div className="card-content">
+                      <div className="card-img">
+                        <img src={events.event_image} alt=""/>
+                        <span className="date"><h4><i className="fas fa-calendar"></i> {events.event_time} </h4></span>
+                        <span className="city"><h4><i className="fas fa-map-marker-alt"></i> {events.event_city}</h4></span>
+                    </div>
+                    <div className="card-desc">
+                        <h3>{events.event_title}</h3>
+                        <p>{events.event_description}</p>
+                          <a href="#" className="btn-card">More info</a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="col">
-                <div className="card-content">
-                  <div className="card-img">
-                      <img src={event03} alt=""/>
-                        <span className="date"><h4><i className="fas fa-calendar"></i> 29th Mai </h4></span>
-                        <span className="city"><h4><i className="fas fa-map-marker-alt"></i> Liège</h4></span>
-                  </div>
-                  <div className="card-desc">
-                      <h3>Heading</h3>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis
-                          voluptas totamLorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis
-                              voluptas totamLorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis
-                                  voluptas totam</p>
-                        <a href="#" className="btn-card">More info</a>
-                  </div>
-                </div>
-              </div>
+              )}
             </div>
           </div>
+
+
           {/* End show next events */}
-          {/* Start pagination */}
-          <div className="container">
-            <nav aria-label="Page navigation example">
-              <ul className="pagination d-flex justify-content-end">
-                <li className="page-item">
-                  <a className="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span className="sr-only">Previous</span>
-                  </a>
-                </li>
-                <li className="page-item"><a className="page-link" href="#">1</a></li>
-                <li className="page-item"><a className="page-link" href="#">2</a></li>
-                <li className="page-item"><a className="page-link" href="#">3</a></li>
-                <li className="page-item">
-                  <a className="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span className="sr-only">Next</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          {/* End pagination */}
 
 
-          {events.map(events =>
-            <div key={events.id} className="container">
-              {events.event_title}
-              {events.event_time}
-              {events.event_description}
-              {events.event_city}
-            </div>
-          )}
-{this.state.nextpage}
         </div>
 
 

@@ -13,11 +13,16 @@ class EventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-      $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->paginate(4);
-      return response()->json($events);
-    }
+     public function homepage()
+     {
+       $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->offset(0)->limit(3)->get();
+       return response()->json($events);
+     }
+     public function index()
+       {
+         $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->paginate(4);
+         return response()->json($events);
+       }
     public function past()
     {
       $events = Event::where('event_time', '<', NOW())->orderBy('event_time', 'desc')->paginate(4);

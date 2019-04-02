@@ -38891,7 +38891,7 @@ module.exports = ReactPropTypesSecret;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.8.6
+/** @license React v16.8.5
  * react-dom.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -44225,29 +44225,15 @@ function isInDocument(node) {
   return node && node.ownerDocument && containsNode(node.ownerDocument.documentElement, node);
 }
 
-function isSameOriginFrame(iframe) {
-  try {
-    // Accessing the contentDocument of a HTMLIframeElement can cause the browser
-    // to throw, e.g. if it has a cross-origin src attribute.
-    // Safari will show an error in the console when the access results in "Blocked a frame with origin". e.g:
-    // iframe.contentDocument.defaultView;
-    // A safety way is to access one of the cross origin properties: Window or Location
-    // Which might result in "SecurityError" DOM Exception and it is compatible to Safari.
-    // https://html.spec.whatwg.org/multipage/browsers.html#integration-with-idl
-
-    return typeof iframe.contentWindow.location.href === 'string';
-  } catch (err) {
-    return false;
-  }
-}
-
 function getActiveElementDeep() {
   var win = window;
   var element = getActiveElement();
   while (element instanceof win.HTMLIFrameElement) {
-    if (isSameOriginFrame(element)) {
-      win = element.contentWindow;
-    } else {
+    // Accessing the contentDocument of a HTMLIframeElement can cause the browser
+    // to throw, e.g. if it has a cross-origin src attribute
+    try {
+      win = element.contentDocument.defaultView;
+    } catch (e) {
       return element;
     }
     element = getActiveElement(win.document);
@@ -50207,35 +50193,14 @@ function constructClassInstance(workInProgress, ctor, props, renderExpirationTim
   var unmaskedContext = emptyContextObject;
   var context = null;
   var contextType = ctor.contextType;
-
-  {
-    if ('contextType' in ctor) {
-      var isValid =
-      // Allow null for conditional declaration
-      contextType === null || contextType !== undefined && contextType.$$typeof === REACT_CONTEXT_TYPE && contextType._context === undefined; // Not a <Context.Consumer>
-
-      if (!isValid && !didWarnAboutInvalidateContextType.has(ctor)) {
+  if (typeof contextType === 'object' && contextType !== null) {
+    {
+      if (contextType.$$typeof !== REACT_CONTEXT_TYPE && !didWarnAboutInvalidateContextType.has(ctor)) {
         didWarnAboutInvalidateContextType.add(ctor);
-
-        var addendum = '';
-        if (contextType === undefined) {
-          addendum = ' However, it is set to undefined. ' + 'This can be caused by a typo or by mixing up named and default imports. ' + 'This can also happen due to a circular dependency, so ' + 'try moving the createContext() call to a separate file.';
-        } else if (typeof contextType !== 'object') {
-          addendum = ' However, it is set to a ' + typeof contextType + '.';
-        } else if (contextType.$$typeof === REACT_PROVIDER_TYPE) {
-          addendum = ' Did you accidentally pass the Context.Provider instead?';
-        } else if (contextType._context !== undefined) {
-          // <Context.Consumer>
-          addendum = ' Did you accidentally pass the Context.Consumer instead?';
-        } else {
-          addendum = ' However, it is set to an object with keys {' + Object.keys(contextType).join(', ') + '}.';
-        }
-        warningWithoutStack$1(false, '%s defines an invalid contextType. ' + 'contextType should point to the Context object returned by React.createContext().%s', getComponentName(ctor) || 'Component', addendum);
+        warningWithoutStack$1(false, '%s defines an invalid contextType. ' + 'contextType should point to the Context object returned by React.createContext(). ' + 'Did you accidentally pass the Context.Provider instead?', getComponentName(ctor) || 'Component');
       }
     }
-  }
 
-  if (typeof contextType === 'object' && contextType !== null) {
     context = readContext(contextType);
   } else {
     unmaskedContext = getUnmaskedContext(workInProgress, ctor, true);
@@ -52029,8 +51994,8 @@ function mountReducer(reducer, initialArg, init) {
   var queue = hook.queue = {
     last: null,
     dispatch: null,
-    lastRenderedReducer: reducer,
-    lastRenderedState: initialState
+    eagerReducer: reducer,
+    eagerState: initialState
   };
   var dispatch = queue.dispatch = dispatchAction.bind(null,
   // Flow doesn't know this is non-null, but we do.
@@ -52042,8 +52007,6 @@ function updateReducer(reducer, initialArg, init) {
   var hook = updateWorkInProgressHook();
   var queue = hook.queue;
   !(queue !== null) ? invariant(false, 'Should have a queue. This is likely a bug in React. Please file an issue.') : void 0;
-
-  queue.lastRenderedReducer = reducer;
 
   if (numberOfReRenders > 0) {
     // This is a re-render. Apply the new render phase updates to the previous
@@ -52079,7 +52042,8 @@ function updateReducer(reducer, initialArg, init) {
           hook.baseState = newState;
         }
 
-        queue.lastRenderedState = newState;
+        queue.eagerReducer = reducer;
+        queue.eagerState = newState;
 
         return [newState, _dispatch];
       }
@@ -52158,7 +52122,8 @@ function updateReducer(reducer, initialArg, init) {
     hook.baseUpdate = newBaseUpdate;
     hook.baseState = newBaseState;
 
-    queue.lastRenderedState = _newState;
+    queue.eagerReducer = reducer;
+    queue.eagerState = _newState;
   }
 
   var dispatch = queue.dispatch;
@@ -52174,8 +52139,8 @@ function mountState(initialState) {
   var queue = hook.queue = {
     last: null,
     dispatch: null,
-    lastRenderedReducer: basicStateReducer,
-    lastRenderedState: initialState
+    eagerReducer: basicStateReducer,
+    eagerState: initialState
   };
   var dispatch = queue.dispatch = dispatchAction.bind(null,
   // Flow doesn't know this is non-null, but we do.
@@ -52452,21 +52417,21 @@ function dispatchAction(fiber, queue, action) {
       // The queue is currently empty, which means we can eagerly compute the
       // next state before entering the render phase. If the new state is the
       // same as the current state, we may be able to bail out entirely.
-      var _lastRenderedReducer = queue.lastRenderedReducer;
-      if (_lastRenderedReducer !== null) {
+      var _eagerReducer = queue.eagerReducer;
+      if (_eagerReducer !== null) {
         var prevDispatcher = void 0;
         {
           prevDispatcher = ReactCurrentDispatcher$1.current;
           ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnUpdateInDEV;
         }
         try {
-          var currentState = queue.lastRenderedState;
-          var _eagerState = _lastRenderedReducer(currentState, action);
+          var currentState = queue.eagerState;
+          var _eagerState = _eagerReducer(currentState, action);
           // Stash the eagerly computed state, and the reducer used to compute
           // it, on the update object. If the reducer hasn't changed by the
           // time we enter the render phase, then the eager state can be used
           // without calling the reducer again.
-          _update2.eagerReducer = _lastRenderedReducer;
+          _update2.eagerReducer = _eagerReducer;
           _update2.eagerState = _eagerState;
           if (is(_eagerState, currentState)) {
             // Fast path. We can bail out without scheduling React to re-render.
@@ -59645,7 +59610,7 @@ implementation) {
 
 // TODO: this is special because it gets imported during build.
 
-var ReactVersion = '16.8.6';
+var ReactVersion = '16.8.5';
 
 // TODO: This type is shared between the reconciler and ReactDOM, but will
 // eventually be lifted out to the renderer.
@@ -60226,7 +60191,7 @@ if (false) {} else {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.8.6
+/** @license React v16.8.5
  * react-is.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -61992,7 +61957,7 @@ function pathToRegexp (path, keys, options) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.8.6
+/** @license React v16.8.5
  * react.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -62014,7 +61979,7 @@ var checkPropTypes = __webpack_require__(/*! prop-types/checkPropTypes */ "./nod
 
 // TODO: this is special because it gets imported during build.
 
-var ReactVersion = '16.8.6';
+var ReactVersion = '16.8.5';
 
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
@@ -64741,7 +64706,7 @@ function resolvePathname(to) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v0.13.6
+/** @license React v0.13.5
  * scheduler-tracing.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -65176,7 +65141,7 @@ exports.unstable_unsubscribe = unstable_unsubscribe;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(global) {/** @license React v0.13.6
+/* WEBPACK VAR INJECTION */(function(global) {/** @license React v0.13.5
  * scheduler.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -66165,20 +66130,61 @@ function () {
       return fetchEvents;
     }()
   }, {
-    key: "editEvents",
+    key: "fetchHome",
     value: function () {
-      var _editEvents = _asyncToGenerator(
+      var _fetchHome = _asyncToGenerator(
       /*#__PURE__*/
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var response, datahome;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
+                _context2.next = 2;
+                return fetch(APIurl + 'homepage');
+
+              case 2:
+                response = _context2.sent;
+                _context2.next = 5;
+                return response.json();
+
+              case 5:
+                datahome = _context2.sent;
+                console.log(datahome); // console.log("data", data);
+
+                return _context2.abrupt("return", {
+                  events: datahome
+                });
+
+              case 8:
               case "end":
                 return _context2.stop();
             }
           }
         }, _callee2);
+      }));
+
+      function fetchHome() {
+        return _fetchHome.apply(this, arguments);
+      }
+
+      return fetchHome;
+    }()
+  }, {
+    key: "editEvents",
+    value: function () {
+      var _editEvents = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
       }));
 
       function editEvents() {
@@ -66834,7 +66840,7 @@ function (_Component) {
               case 0:
                 _context.t0 = this;
                 _context.next = 3;
-                return _api__WEBPACK_IMPORTED_MODULE_4__["default"].fetchEvents();
+                return _api__WEBPACK_IMPORTED_MODULE_4__["default"].fetchHome();
 
               case 3:
                 _context.t1 = _context.sent;
@@ -66862,6 +66868,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       var events = this.state.events;
+      console.log("events1" + events);
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container-fluid"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -66926,119 +66933,32 @@ function (_Component) {
         className: "fas fa-calendar my-3 pr-3"
       }), " Next events"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row text-center"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-content"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-img"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-        src: _assets_event05_png__WEBPACK_IMPORTED_MODULE_8___default.a,
-        alt: ""
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: "date"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-        className: "fas fa-calendar"
-      }), " 29 Mai ")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: "city"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-        className: "fas fa-map-marker-alt"
-      }), " Li\xE8ge"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-desc"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Heading"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totam"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        href: "#",
-        className: "btn-card"
-      }, "More info")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-content"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-img"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-        src: _assets_event02_jpg__WEBPACK_IMPORTED_MODULE_6___default.a,
-        alt: ""
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: "date"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-        className: "fas fa-calendar"
-      }), " 29 Mai ")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: "city"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-        className: "fas fa-map-marker-alt"
-      }), " Li\xE8ge"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-desc"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Heading"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totamLorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totamLorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totamLorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totam"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        href: "#",
-        className: "btn-card"
-      }, "More info")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-content"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-img"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-        src: _assets_event03_jpg__WEBPACK_IMPORTED_MODULE_7___default.a,
-        alt: ""
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: "date"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-        className: "fas fa-calendar"
-      }), " 29th Mai ")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: "city"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-        className: "fas fa-map-marker-alt"
-      }), " Li\xE8ge"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-desc"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Heading"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totamLorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totamLorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totam"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        href: "#",
-        className: "btn-card"
-      }, "More info")))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "container"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
-        "aria-label": "Page navigation example"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
-        className: "pagination d-flex justify-content-end"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-        className: "page-item"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "page-link",
-        href: "#",
-        "aria-label": "Previous"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        "aria-hidden": "true"
-      }, "\xAB"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: "sr-only"
-      }, "Previous"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-        className: "page-item"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "page-link",
-        href: "#"
-      }, "1")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-        className: "page-item"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "page-link",
-        href: "#"
-      }, "2")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-        className: "page-item"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "page-link",
-        href: "#"
-      }, "3")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-        className: "page-item"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "page-link",
-        href: "#",
-        "aria-label": "Next"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        "aria-hidden": "true"
-      }, "\xBB"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: "sr-only"
-      }, "Next")))))), events.map(function (events) {
+      }, events.map(function (events) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           key: events.id,
-          className: "container"
-        }, events.event_title, events.event_time, events.event_description, events.event_city);
-      }), this.state.nextpage);
+          className: "col mb-2"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "card-content"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "card-img"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+          src: events.event_image,
+          alt: ""
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+          className: "date"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+          className: "fas fa-calendar"
+        }), " ", events.event_time, " ")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+          className: "city"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+          className: "fas fa-map-marker-alt"
+        }), " ", events.event_city))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "card-desc"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, events.event_title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, events.event_description), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+          href: "#",
+          className: "btn-card"
+        }, "More info"))));
+      }))));
     }
   }]);
 
@@ -67203,8 +67123,8 @@ function (_Component) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/nadine/Bureau/BeCode/02-Colline/Jepsen-Brite/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/nadine/Bureau/BeCode/02-Colline/Jepsen-Brite/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
