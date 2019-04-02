@@ -30,7 +30,7 @@ export default class Events extends Component {
                     <div key={events.id} className="col-lg-4 col-md-6 col-xs-12">
                       <div className="card-content">
                         <div className="card-img">
-                            <img src={event05} alt=""/>
+                            <img src={events.event_image} alt=""/>
                             <span className="date"><h4><i className="fas fa-calendar"></i> {events.event_time}</h4></span>
                             <span className="city"><h4><i className="fas fa-map-marker-alt"></i> {events.event_city}</h4></span>
                         </div>
