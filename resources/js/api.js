@@ -20,6 +20,15 @@ export default class API {
   }
 
 
+  static async fetchHome() {
+    const response = await fetch(APIurl + 'homepage');
+    //console.log(await response.json());
+    const json = await response.json();
+    console.log(json);
+    // console.log("data", data);
+    return({ events: json });
+  }
+
   static async editEvents() {
 
   }
