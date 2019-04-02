@@ -67,7 +67,7 @@ export default class Homepage extends Component {
           <div className="container">
             <h1><i className="fas fa-calendar my-3 pr-3"></i> Next events</h1>
             <div className="row text-center">
-
+              <div class="card-deck">
               {events.map(events =>
                   <div key={events.id} className="col mb-2">
                     <div className="card-content">
@@ -84,6 +84,7 @@ export default class Homepage extends Component {
                   </div>
                 </div>
               )}
+            </div>
             </div>
           </div>
 
