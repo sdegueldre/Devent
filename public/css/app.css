@@ -170,13 +170,13 @@ sup {
 }
 
 a {
-  color: #00bc8c;
+  color: #E74C3C;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #007053;
+  color: #bf2718;
   text-decoration: underline;
 }
 
@@ -3149,12 +3149,12 @@ fieldset:disabled a.btn {
 
 .btn-link {
   font-weight: 400;
-  color: #00bc8c;
+  color: #E74C3C;
   text-decoration: none;
 }
 
 .btn-link:hover {
-  color: #007053;
+  color: #bf2718;
   text-decoration: underline;
 }
 
@@ -4302,7 +4302,7 @@ input[type=button].btn-block {
 
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #fff;
+  color: #E74C3C;
   background-color: #222;
   border-color: #444 #444 transparent;
 }
@@ -10890,6 +10890,34 @@ a.text-dark:focus {
   margin-left: 0px;
 }
 
+.imageSlider {
+  width: 1920px;
+  max-height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* Do not scale the image */
+  -o-object-position: center;
+     object-position: center;
+  /* Center the image within the element */
+}
+
+.page-link {
+  background-color: #E74C3C;
+}
+
+.page-link:hover {
+  background-color: #fd7e14;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #fd7e14;
+}
+
+a:hover {
+  color: #fd7e14;
+  text-decoration: none;
+}
+
 /* card details start  */
 
 .details-card {
@@ -10907,20 +10935,36 @@ a.text-dark:focus {
   overflow: hidden;
   border-radius: 0;
   z-index: 1;
+  height: 250px;
 }
 
 .card-img img {
   width: 100%;
   height: auto;
   display: block;
+  min-height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
+  /* Do not scale the image */
+  -o-object-position: center;
+     object-position: center;
+  /* Center the image within the element */
 }
 
-.card-img span {
+span.date {
   position: absolute;
   top: 0px;
   left: 0px;
+  color: red;
+  padding: 0px;
+  background-color: white;
+  border: 2px solid red;
+}
+
+span.city {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
   color: red;
   padding: 0px;
   background-color: white;
@@ -10977,7 +11021,7 @@ a.text-dark:focus {
 }
 
 .btn-card:hover {
-  background: orange;
+  background: #fd7e14;
 }
 
 a.btn-card {
