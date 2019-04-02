@@ -66434,6 +66434,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../api */ "./resources/js/api.js");
+/* harmony import */ var _assets_event05_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../assets/event05.png */ "./resources/js/assets/event05.png");
+/* harmony import */ var _assets_event05_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_event05_png__WEBPACK_IMPORTED_MODULE_4__);
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -66459,6 +66461,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
+
+
+/* Demo */
 
 
 
@@ -66518,12 +66523,77 @@ function (_Component) {
       var events = this.state.events;
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container-fluid"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "container"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "row text-center"
       }, events.map(function (events) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           key: events.id,
-          className: "container"
-        }, events.event_title, events.event_time, events.event_description, events.event_city);
-      }), this.state.nextpage);
+          className: "col-lg-4 col-md-6 col-xs-12"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "card-content"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "card-img"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+          src: _assets_event05_png__WEBPACK_IMPORTED_MODULE_4___default.a,
+          alt: ""
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+          className: "date"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+          className: "fas fa-calendar"
+        }), " ", events.event_time)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+          className: "city"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+          className: "fas fa-map-marker-alt"
+        }), " ", events.event_city))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "card-desc"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, events.event_title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, events.event_description), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+          href: "#",
+          className: "btn-card"
+        }, "More info"))));
+      }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "container"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
+        "aria-label": "Page navigation example"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+        className: "pagination d-flex justify-content-end"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        className: "page-item"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+        className: "page-link",
+        href: "#",
+        "aria-label": "Previous"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+        "aria-hidden": "true"
+      }, "\xAB"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+        className: "sr-only"
+      }, "Previous"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        className: "page-item"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+        className: "page-link",
+        href: "#"
+      }, "1")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        className: "page-item"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+        className: "page-link",
+        href: "#"
+      }, "2")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        className: "page-item"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+        className: "page-link",
+        href: "#"
+      }, "3")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        className: "page-item"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+        className: "page-link",
+        href: "#",
+        "aria-label": "Next"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+        "aria-hidden": "true"
+      }, "\xBB"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+        className: "sr-only"
+      }, "Next")))))));
     }
   }]);
 
@@ -66992,48 +67062,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Heading"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totamLorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totamLorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, voluptatum! Dolor quo, perspiciatis voluptas totam"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         href: "#",
         className: "btn-card"
-      }, "More info")))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "container"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
-        "aria-label": "Page navigation example"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
-        className: "pagination d-flex justify-content-end"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-        className: "page-item"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "page-link",
-        href: "#",
-        "aria-label": "Previous"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        "aria-hidden": "true"
-      }, "\xAB"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: "sr-only"
-      }, "Previous"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-        className: "page-item"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "page-link",
-        href: "#"
-      }, "1")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-        className: "page-item"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "page-link",
-        href: "#"
-      }, "2")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-        className: "page-item"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "page-link",
-        href: "#"
-      }, "3")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-        className: "page-item"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "page-link",
-        href: "#",
-        "aria-label": "Next"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        "aria-hidden": "true"
-      }, "\xBB"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-        className: "sr-only"
-      }, "Next")))))), events.map(function (events) {
+      }, "More info")))))), events.map(function (events) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           key: events.id,
           className: "container"
