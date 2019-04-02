@@ -27,7 +27,7 @@ export default class Events extends Component {
             <div className="container">
               <div className="row text-center">
                 {events.map(events =>
-                    <div key={events.id} className="col-lg-4 col-md-6 col-xs-12">
+                    <div key={events.id} className="col-lg-4 col-md-6 col-xs-12 mb-2">
                       <div className="card-content">
                         <div className="card-img">
                             <img src={events.event_image} alt=""/>
