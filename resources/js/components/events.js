@@ -37,7 +37,7 @@ export default class Events extends Component {
                         <div className="card-desc">
                             <h3>{events.event_title}</h3>
                             <p>{events.event_description}</p>
-                              <a href="#" className="btn-card">More infos</a>
+                              <a href="#" className="btn-card">More info</a>
                         </div>
                       </div>
                     </div>
