@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import api from '../api';
+import {Link} from 'react-router-dom';
 /* Demo */
 import event01 from '../assets/event01.jpg';
 import event02 from '../assets/event02.jpg';
@@ -65,33 +66,34 @@ export default class Homepage extends Component {
           {/* End Slider */
           /* Start show next events */}
           <div className="container">
-            <h1><i className="fas fa-calendar my-3 pr-3"></i> Next events</h1>
+            <h1><i className="far fa-calendar-alt my-3 pr-3"></i> Next events</h1>
             <div className="row text-center">
-              <div class="card-deck">
+              <div className="card-deck">
               {events.map(events =>
-                  <div key={events.id} className="col mb-2">
+                  <div key={events.id} className="card">
                     <div className="card-content">
                       <div className="card-img">
                         <img src={events.event_image} alt=""/>
                         <span className="date"><h4><i className="fas fa-calendar"></i> {events.event_time} </h4></span>
                         <span className="city"><h4><i className="fas fa-map-marker-alt"></i> {events.event_city}</h4></span>
-                    </div>
-                    <div className="card-desc">
+                      </div>
+                      <div className="card-desc">
                         <h3>{events.event_title}</h3>
                         <p>{events.event_description}</p>
-                          <a href="#" className="btn-card">More info</a>
+                      </div>
                     </div>
-                  </div>
+                    <button type="button" className="btn-card btn-primary btn-lg btn-block">Show more cool events</button>
                 </div>
               )}
-            </div>
+              </div>
             </div>
           </div>
-
-
           {/* End show next events */}
-
-
+          <div className="container my-4">
+            <Link to="/events">
+              <button type="button" className="btn-card btn-primary btn-lg btn-block">Show more cool events</button>
+            </Link>
+          </div>
         </div>
 
 
