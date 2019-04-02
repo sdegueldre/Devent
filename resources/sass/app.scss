@@ -26,6 +26,29 @@
 }
 
 
+.imageSlider{
+  width: 1920px;
+  max-height: 350px;
+  object-fit: cover; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+}
+
+.page-link {
+  background-color: $red;
+}
+
+.page-link:hover {
+  background-color: $orange;
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+  color: $orange;
+}
+
+a:hover{
+  color: $orange;
+  text-decoration: none;
+}
 /* card details start  */
 
 .details-card {
@@ -43,19 +66,33 @@
 	overflow: hidden;
 	border-radius: 0;
 	z-index: 1;
+  height: 250px;
+
 }
 
 .card-img img {
 	width: 100%;
 	height: auto;
 	display: block;
-  object-fit: cover;
+  min-height: 250px;
+  object-fit: cover; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
 }
 
-.card-img span {
+span.date {
   position: absolute;
   top: 0px;
   left: 0px;
+  color: red;
+  padding: 0px;
+  background-color: white;
+  border: 2px solid red;
+}
+
+span.city {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
   color: red;
   padding: 0px;
   background-color: white;
@@ -114,7 +151,7 @@
     color: #fff;
 }
 .btn-card:hover {
-    background: orange;
+    background: $orange;
 }
 a.btn-card {
     text-decoration: none;
