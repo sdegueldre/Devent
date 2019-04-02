@@ -11,15 +11,6 @@ export default class API {
     return({ events: json.data, nextpage: json.next_page_url });
   }
 
-  static async fetchHome() {
-    const response = await fetch(APIurl + 'homepage');
-    //console.log(await response.json());
-    const datahome = await response.json();
-    console.log(datahome);
-    // console.log("data", data);
-    return({events: datahome});
-  }
-
   static async editEvents() {
 
   }
