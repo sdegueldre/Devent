@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { Redirect } from 'react-router-dom'
 import api from '../api';
 
 export default class Logout extends Component {
@@ -10,6 +11,6 @@ export default class Logout extends Component {
     api.logout();
   }
   render(){
-    return 'hello';
+    return <Redirect to='/' />
   }
 }

@@ -25,7 +25,6 @@ export default class Login extends Component {
     log.preventDefault();
     const data = JSON.stringify(this.state);
     api.login(data);
-    console.log(data);
 
   }
 

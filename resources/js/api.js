@@ -1,23 +1,41 @@
-const APIurl = 'http://localhost:8000/api/';
-
-
 class API {
 
+  constructor(){
+    this.token = localStorage.getItem('token');
+  }
+
+  async callAPI(method, route, data = null){
+    try {
+      let config = {
+          method: method,
+          headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer '+ this.token
+          },
+      }
+      if(data != null){
+        config.body = data;
+      }
+      const response = await fetch('/api/' + route, config);
+      if (response.ok) {
+          return response
+      }
+    }
+    catch (error) {
+            console.log(error);
+    }
+  }
+
    async fetchEvents() {
-    const response = await fetch(APIurl + 'events');
-    //console.log(await response.json());
+     const response = await this.callAPI('GET', 'events');
     const json = await response.json();
-    console.log(json);
-    // console.log("data", data);
     return({ events: json.data, nextpage: json.next_page_url });
   }
 
    async fetchHome() {
-    const response = await fetch(APIurl + 'homepage');
-    //console.log(await response.json());
+     const response = await this.callAPI('GET', 'homepage');
     const json = await response.json();
-    console.log(json);
-    // console.log("data", data);
     return({ events: json});
   }
 
@@ -26,83 +44,41 @@ class API {
 
 
    async AddEvent(data) {
-        try {
-        const config = {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: data
-        }
-        const response = await fetch(APIurl + 'homepage', config)
-        //const json = await response.json()
-        if (response.ok) {
-            //return json
-            return response
-        } else {
-            //
-        }
-    } catch (error) {
-            //
-    }
-
+     const response = await this.callAPI( 'POST', 'events', data);
+     const json = await response.json();
+     return({ message: json });
   }
 
    async editEvents() {
+     const response = await this.callAPI( 'PUT', 'events', data);
 
   }
 
    async deleteEvents() {
+     const response = await this.callAPI( 'DELETE', 'events');
 
   }
 
-
-
-
-
-   async register(data) {
-    const config = {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: data
-    }
-    const response = await fetch(APIurl + 'register', config);
+  async register(data) {
+    const response = await this.callAPI( 'POST', 'register', data);
     const json = await response.json();
-    console.log(json);
     return({ message: 'success' });
   }
 
-   async login(data) {
-    const config = {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: data
-    }
-    const response = await fetch(APIurl + 'login', config);
+  async login(data) {
+    console.log(this.token);
+    const response = await this.callAPI( 'POST', 'login', data);
     const json = await response.json();
-    console.log(json.access_token);
+    this.token = json.access_token;
+    console.log(this.token);
+    localStorage.setItem('token', this.token);
+
     return({ message: 'success' });
   }
 
    async logout() {
-    const config = {
-        method: 'POST',
-        headers: {
-            'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU1NDI4NjYwMywiZXhwIjoxNTU0MjkwMjAzLCJuYmYiOjE1NTQyODY2MDMsImp0aSI6Ik1MRVZYTTBLZ2JUakozVXgiLCJzdWIiOjE0LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.uCtPwIhRtx6ESLWj20MaQmwRqbpi5NR9R05wo1cxAG4',
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }
-      }
-    const response = await fetch(APIurl + 'logout', config);
-    const json = await response.json();
-    console.log(json);
+     const response = await this.callAPI( 'POST', 'logout');
+    //const json = await response.json();
     return({ message: 'success' });
   }
 }

@@ -37,6 +37,7 @@ export default class AddNewEvent extends Component {
     delete this.state.date;
     delete this.state.time;
     const data = JSON.stringify(this.state);
+    api.AddEvent(data);
     console.log(data);
   }
 

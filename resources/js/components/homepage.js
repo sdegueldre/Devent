@@ -32,7 +32,6 @@ export default class Homepage extends Component {
 
     render() {
       const { events } = this.state;
-      console.log("events1" + events);
 
         return (
           <div className="container-fluid">
