@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import Header from './header';
 import Routes from './routes';
 import Footer from './footer';
+import api from  '../api';
 
 ReactDOM.render(
 
