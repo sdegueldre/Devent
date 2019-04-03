@@ -94,7 +94,12 @@ export default class Homepage extends Component {
               <button type="button" className="btn-card btn-primary btn-lg btn-block">Show more cool events</button>
             </Link>
           </div>
+        <div className="container my-4">
+          <Link to="/addnewevent">
+            <button type="button" className="btn-card btn-light btn-lg btn-block">Add a new event</button>
+          </Link>
         </div>
+      </div>
 
 
         );
