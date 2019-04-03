@@ -10,8 +10,6 @@ import event03 from '../assets/event03.jpg';
 import event05 from '../assets/event05.png';
 import test from '../assets/test.png';
 
-
-
 export default class Homepage extends Component {
 
   constructor(props) {
@@ -66,7 +64,7 @@ export default class Homepage extends Component {
           {/* End Slider */
           /* Start show next events */}
           <div className="container">
-            <h1><i className="far fa-calendar-alt my-3 pr-3"></i> Next events</h1>
+            <h1 className="mt-3 mb-2"><i className="far fa-calendar-alt pr-3"></i> Next events</h1>
             <div className="row text-center">
               <div className="card-deck">
               {events.map(events =>
@@ -80,11 +78,13 @@ export default class Homepage extends Component {
                       <div className="card-desc">
                         <h3>{events.event_title}</h3>
                         <p>{events.event_description}</p>
+                        </div>
                       </div>
-                    </div>
-                    <button type="button" className="btn-card btn-primary btn-lg btn-block">Show more cool events</button>
-                </div>
-              )}
+                        <Link to="/event">
+                          <button type="button" className="btn-card btn-primary btn-lg btn-block"> <span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Show more cool events <span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span></button>
+                        </Link>
+                  </div>
+                )}
               </div>
             </div>
           </div>

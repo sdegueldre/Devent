@@ -24,11 +24,11 @@ export default class Events extends Component {
       const { events } = this.state;
         return (
           <div className="container">
-            <div className="container">
+            <h1 className="mt-3 mb-2"><i className="far fa-calendar-alt pr-3"></i> Events</h1>
               <div className="row text-center">
                 <div className="card-deck">
                 {events.map(events =>
-                    <div key={events.id} className="card">
+                    <div key={events.id} className="col-lg-4 col-md-6 col-xs-12 mb-5 mt-2">
                       <div className="card-content">
                         <div className="card-img">
                           <img src={events.event_image} alt=""/>
@@ -45,7 +45,6 @@ export default class Events extends Component {
                 )}
                 </div>
               </div>
-            </div>
 
             {/* Start pagination */}
             <div className="container">
