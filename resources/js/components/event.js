@@ -7,7 +7,7 @@ import eventimg from '../assets/event05.png';
 
 
 
-export default class Event extends Component {
+export default class Eventsolo extends Component {
 
   constructor(props) {
     super(props);
