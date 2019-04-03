@@ -23,26 +23,27 @@ export default class Events extends Component {
 
       const { events } = this.state;
         return (
-          <div className="container-fluid">
+          <div className="container">
             <div className="container">
               <div className="row text-center">
+                <div className="card-deck">
                 {events.map(events =>
-                    <div key={events.id} className="col-lg-4 col-md-6 col-xs-12 mb-2">
+                    <div key={events.id} className="card">
                       <div className="card-content">
                         <div className="card-img">
-                            <img src={events.event_image} alt=""/>
-                            <span className="date"><h4><i className="fas fa-calendar"></i> {events.event_time}</h4></span>
-                            <span className="city"><h4><i className="fas fa-map-marker-alt"></i> {events.event_city}</h4></span>
+                          <img src={events.event_image} alt=""/>
+                          <span className="date"><h4><i className="fas fa-calendar"></i> {events.event_time} </h4></span>
+                          <span className="city"><h4><i className="fas fa-map-marker-alt"></i> {events.event_city}</h4></span>
                         </div>
                         <div className="card-desc">
-                            <h3>{events.event_title}</h3>
-                            <p>{events.event_description}</p>
-                              <a href="#" className="btn-card">More info</a>
+                          <h3>{events.event_title}</h3>
+                          <p>{events.event_description}</p>
                         </div>
                       </div>
-                    </div>
-
+                      <button type="button" className="btn-card btn-primary btn-lg btn-block">Show more cool events</button>
+                  </div>
                 )}
+                </div>
               </div>
             </div>
 
