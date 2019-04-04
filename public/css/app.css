@@ -10952,6 +10952,27 @@ a:hover {
   /* Center the image within the element */
 }
 
+.card-img-feed {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  z-index: 1;
+  height: 150px;
+}
+
+.card-img-feed img {
+  width: 100%;
+  height: auto;
+  display: block;
+  min-height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* Do not scale the image */
+  -o-object-position: center;
+     object-position: center;
+  /* Center the image within the element */
+}
+
 /* styling box city and date */
 
 span.date,

@@ -41,9 +41,8 @@ class API {
 
   async fetchEventSolo(id) {
     const response = await this.callAPI('GET', 'events/' + id);
-    console.log(response);
     const json = await response.json();
-    return({ events: json});
+    return({ eventSolo: json});
   }
 
 

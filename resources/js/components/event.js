@@ -11,34 +11,57 @@ export default class Eventsolo extends Component {
     super(props);
 
     this.state = {
+      eventSolo: [],
       events: [],
     };
   }
 
   async componentDidMount() {
     window.scrollTo(0, 0)
-    console.log(this.props.match.params.id)
     this.setState(await api.fetchEventSolo(this.props.match.params.id));
+    let {events} = (await api.fetchEvents());
+    for(let i = 0; i < 3; i++){
+      events.splice(Math.random*events.length, 1);
+    }
+    this.setState({events: events});
   }
 
     render() {
-      const { events } = this.state;
+      const { eventSolo, events } = this.state;
 
       return (
         <div className="container">
         <h1 className="mt-3 mb-2"><i className="far fa-calendar-alt pr-3"></i> Event</h1>
           <div className="row">
-            <div className="eventCard col-lg-10">
-              <div className="eventHeader" style={{ backgroundImage: 'url('+eventimg+')' }}>
-                <div className="eventTitle"><p>{events.event_title}</p></div>
+            <div className="eventCard col-lg-8">
+              <div className="eventHeaderImg" style={{ backgroundImage: 'url('+eventSolo.event_image+')' }}>
+                <div className="eventTitle"><p>{eventSolo.event_title}</p></div>
               </div>
               <div className="eventBody">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis ipsum nec ligula ullamcorper lobortis. Donec in orci eget tellus tempus blandit eget et leo. Suspendisse vestibulum venenatis dui, eget varius libero pellentesque ut. Cras eget erat sed nisi ultrices condimentum. Nulla id vestibulum quam. Sed tristique pulvinar odio ut rhoncus. Sed eleifend vulputate metus sit amet blandit. Curabitur at bibendum purus. Aenean ultrices dui sit amet pulvinar semper.</p>
-                <p>Curabitur libero urna, molestie ut libero ac, condimentum rutrum nibh. Nunc auctor massa vel rutrum varius. Duis id tincidunt lorem, vitae mollis nunc. Nam iaculis diam sit amet turpis rutrum tempus. Quisque tempor vel urna eu lobortis. Donec arcu magna, hendrerit et turpis in, tincidunt ultricies ante. Nunc consequat nisi vel lectus facilisis, vel lobortis risus facilisis. Vestibulum finibus ligula odio, blandit condimentum magna vulputate quis. Nulla facilisi. Aliquam erat volutpat. Fusce suscipit turpis eros, eu consectetur quam dapibus sit amet. Curabitur ultricies rutrum mauris eget sagittis. Donec nunc sapien, cursus a nisl et, mattis viverra arcu. Pellentesque sed eleifend nisl.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis ipsum nec ligula ullamcorper lobortis. Donec in orci eget tellus tempus blandit eget et leo. Suspendisse vestibulum venenatis dui, eget varius libero pellentesque ut. Cras eget erat sed nisi ultrices condimentum. Nulla id vestibulum quam. Sed tristique pulvinar odio ut rhoncus. Sed eleifend vulputate metus sit amet blandit. Curabitur at bibendum purus. Aenean ultrices dui sit amet pulvinar semper.</p>
-                <p>Curabitur libero urna, molestie ut libero ac, condimentum rutrum nibh. Nunc auctor massa vel rutrum varius. Duis id tincidunt lorem, vitae mollis nunc. Nam iaculis diam sit amet turpis rutrum tempus. Quisque tempor vel urna eu lobortis. Donec arcu magna, hendrerit et turpis in, tincidunt ultricies ante. Nunc consequat nisi vel lectus facilisis, vel lobortis risus facilisis. Vestibulum finibus ligula odio, blandit condimentum magna vulputate quis. Nulla facilisi. Aliquam erat volutpat. Fusce suscipit turpis eros, eu consectetur quam dapibus sit amet. Curabitur ultricies rutrum mauris eget sagittis. Donec nunc sapien, cursus a nisl et, mattis viverra arcu. Pellentesque sed eleifend nisl.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis ipsum nec ligula ullamcorper lobortis. Donec in orci eget tellus tempus blandit eget et leo. Suspendisse vestibulum venenatis dui, eget varius libero pellentesque ut. Cras eget erat sed nisi ultrices condimentum. Nulla id vestibulum quam. Sed tristique pulvinar odio ut rhoncus. Sed eleifend vulputate metus sit amet blandit. Curabitur at bibendum purus. Aenean ultrices dui sit amet pulvinar semper.</p>
-                <p>Curabitur libero urna, molestie ut libero ac, condimentum rutrum nibh. Nunc auctor massa vel rutrum varius. Duis id tincidunt lorem, vitae mollis nunc. Nam iaculis diam sit amet turpis rutrum tempus. Quisque tempor vel urna eu lobortis. Donec arcu magna, hendrerit et turpis in, tincidunt ultricies ante. Nunc consequat nisi vel lectus facilisis, vel lobortis risus facilisis. Vestibulum finibus ligula odio, blandit condimentum magna vulputate quis. Nulla facilisi. Aliquam erat volutpat. Fusce suscipit turpis eros, eu consectetur quam dapibus sit amet. Curabitur ultricies rutrum mauris eget sagittis. Donec nunc sapien, cursus a nisl et, mattis viverra arcu. Pellentesque sed eleifend nisl.</p>
+                <p>{eventSolo.event_description}</p>
+              </div>
+            </div>
+            <div className="col-lg-1">
+              blank
+            </div>
+            <div className="eventFeed col-lg-3">
+              <div className="card-deck">
+              {events.map(events =>
+                  <div key={events.id} className="col-lg col-md-6 col-xs-12 mb-5 mt-2">
+                    <div className="card-content">
+                      <div className="card-img-feed">
+                        <img src={events.event_image} alt=""/>
+                        <span className="date"><h4><i className="fas fa-calendar"></i> {events.event_time} </h4></span>
+                        <span className="city"><h4><i className="fas fa-map-marker-alt"></i> {events.event_city}</h4></span>
+                      </div>
+                      <div className="card-desc">
+                        <h3>{events.event_title}</h3>
+                        <p>{events.event_description}</p>
+                      </div>
+                    </div>
+                    <button type="button" className="btn-card btn-primary btn-lg btn-block">Show more cool events</button>
+                </div>
+              )}
               </div>
             </div>
           </div>
