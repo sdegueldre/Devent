@@ -12,5 +12,6 @@ class Attendees extends Model
     protected $fillable = [
       'event_id',
       'user_id',
+      'reminder'
     ];
 }

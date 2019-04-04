@@ -38,7 +38,11 @@ class AttendeesController extends Controller
     public function store(Event $event)
     {
       $user_id = Auth::user()->id;
-      Attendees::create(['event_id' => $event->id, 'user_id' => $user_id]);
+      Attendees::create([
+          'event_id' => $event->id,
+          'user_id' => $user_id,
+          'reminder' => $event->reminder
+      ]);
 
       return response()->json([
           'message' => 'Great success! You are registered on this event',

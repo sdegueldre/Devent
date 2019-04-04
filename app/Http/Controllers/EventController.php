@@ -46,7 +46,8 @@ class EventController extends Controller
              'event_city'       => 'required',
              'event_location'   => 'required',
              'event_image'      => 'required',
-             'event_author'     => 'required'
+             'event_author'     => 'required',
+             'reminder'         => 'nullable'
          ]);
 
          $event = Event::create($request->all());
@@ -85,13 +86,14 @@ class EventController extends Controller
 
             $request['event_author'] = auth()->user()->id;
             $request->validate([
-                'event_title' => 'nullable',
-                'event_time' => 'nullable',
+                'event_title'       => 'nullable',
+                'event_time'        => 'nullable',
                 'event_description' => 'nullable',
-                'event_city' => 'nullable',
-                'event_location' => 'nullable',
-                'event_image' => 'nullable',
-                'event_author' => 'nullable'
+                'event_city'        => 'nullable',
+                'event_location'    => 'nullable',
+                'event_image'       => 'nullable',
+                'event_author'      => 'nullable',
+                'reminder'          => 'nullable'
             ]);
 
             $event->update($request->all());
