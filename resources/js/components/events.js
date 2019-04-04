@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import api from '../api';
+import {Link} from 'react-router-dom';
+import '../../sass/cards.scss';
 /* Demo */
 import event05 from '../assets/event05.png';
 
@@ -44,7 +46,9 @@ export default class Events extends Component {
                           <p>{events.event_description}</p>
                         </div>
                       </div>
-                      <button type="button" className="btn-card btn-primary btn-lg btn-block">Show more cool events</button>
+                      <Link to={"/event/" + events.id}>
+                        <button type="button" className="btn-card btn-primary btn-lg btn-block"><span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Show more<span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span></button>
+                      </Link>
                   </div>
                 )}
                 </div>

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import api from '../api';
 import {Link} from 'react-router-dom';
+import '../../sass/cards.scss';
 /* Demo */
 import event01 from '../assets/event01.jpg';
 import event02 from '../assets/event02.jpg';

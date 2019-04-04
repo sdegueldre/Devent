@@ -41,10 +41,8 @@ export default class Eventsolo extends Component {
                 <p>{eventSolo.event_description}</p>
               </div>
             </div>
-            <div className="col-lg-1">
-              blank
-            </div>
-            <div className="eventFeed col-lg-3">
+            
+            <div className="eventFeed col-lg-4">
               <div className="card-deck">
               {events.map(events =>
                   <div key={events.id} className="col-lg col-md-6 col-xs-12 mb-5 mt-2">
