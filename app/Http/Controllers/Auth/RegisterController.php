@@ -44,15 +44,17 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    public function confirm($id, $token)
+    public function confirm($token)
     {
-        $user = User::where('id', $id)->where('confirmation_token', $token)->first();
+        $user = User::where('confirmation_token', $token)->first();
         if ($user) {
-            $user->update(['confirmation_token' => null ]);
+            $user->update(['confirmation_token' => null, 'email_verified_at' => 'NOW' ]);
             $this->guard()->login($user);
-            return redirect($this->redirectPath())->with('success', 'votre compte à bien ètè confirmé');
+            return response()->json(
+                ['success' => 'successfull email confirmation']);
         }else {
-            return redirect('/login')->with('error', 'Ce lien ne semble plus valide');
+            return response()->json(
+                ['error' => 'invalid token']);
         }
     }
 
@@ -62,7 +64,8 @@ class RegisterController extends Controller
 
         event(new Registered($user = $this->create($request->all())));
         $user->notify(new RegisteredUsers());
-        return redirect('/login')->with('success', 'veuillez confirmer votre adresse via le mail que vous allez recevoir');
+        return response()->json(
+            ['success' => 'veuillez confirmer votre adresse via le mail que vous allez recevoir']);
         // $this->guard()->login($user);
         // return $this->registered($request, $user)
                         // ?: redirect($this->redirectPath());
@@ -94,7 +97,7 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => bcrypt($data['password']),
             'confirmation_token' => str_replace('/', '', bcrypt(str_random(20)))
         ]);
     }
