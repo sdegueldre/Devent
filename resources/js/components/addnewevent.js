@@ -67,7 +67,7 @@ export default class AddNewEvent extends Component {
             <input type="text" className="form-control" name="event_city" placeholder="City name" value={this.state.event_city} onChange={this.handleChange} />
           </div>
           <div className="form-group">
-            <label htmlFor="city">City</label>
+            <label htmlFor="city">Adress</label>
             <input type="text" className="form-control" name="event_location" placeholder="Exact adress" value={this.state.event_location} onChange={this.handleChange} />
           </div>
           <div className="form-group">
