@@ -44,12 +44,11 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    public function confirm($token)
+    public static function confirm($token)
     {
         $user = User::where('confirmation_token', $token)->first();
         if ($user) {
             $user->update(['confirmation_token' => null, 'email_verified_at' => 'NOW' ]);
-            $this->guard()->login($user);
             return response()->json(
                 ['success' => 'successfull email confirmation']);
         }else {
@@ -66,9 +65,6 @@ class RegisterController extends Controller
         $user->notify(new RegisteredUsers());
         return response()->json(
             ['success' => 'veuillez confirmer votre adresse via le mail que vous allez recevoir']);
-        // $this->guard()->login($user);
-        // return $this->registered($request, $user)
-                        // ?: redirect($this->redirectPath());
     }
 
     /**
@@ -97,7 +93,7 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'password' => $data['password'],
             'confirmation_token' => str_replace('/', '', bcrypt(str_random(20)))
         ]);
     }

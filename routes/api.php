@@ -20,7 +20,7 @@ Route::get('/homepage', 'EventController@homepage')->name('events.homepage');
 Route::get('/events', 'EventController@index')->name('events.index');
 Route::get('/pastevents', 'EventController@past')->name('events.past');
 Route::get('/events/{event}', 'EventController@show')->name('events.show');
-Route::get('/confirmation/{token}', 'Auth\RegisterController@confirm');
+Route::get('/confirm/{token}', 'AuthController@confirm');
 //if authenticated
 Route::middleware('auth:api')->group(function () {
     Route::get('/user', function (Request $request) {
