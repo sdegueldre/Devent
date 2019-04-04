@@ -13,7 +13,7 @@ import test from '../assets/test.png';
 export default class Homepage extends Component {
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0) // Go to the top of the page
   }
 
   constructor(props) {
@@ -83,8 +83,8 @@ export default class Homepage extends Component {
                         <p>{events.event_description}</p>
                         </div>
                       </div>
-                        <Link to="/event">
-                          <button type="button" className="btn-card btn-primary btn-lg btn-block"> <span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Show more cool events <span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span></button>
+                        <Link to={"/event/" + events.id}>
+                          <button type="button" className="btn-card btn-primary btn-lg btn-block"> <span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Show more<span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span></button>
                         </Link>
                   </div>
                 )}

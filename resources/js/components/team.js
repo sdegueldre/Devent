@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 export default class Team extends Component {
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0) // Go to the top of the page
   }
 
     render() {

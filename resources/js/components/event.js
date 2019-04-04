@@ -5,8 +5,6 @@ import '../../sass/event.scss';
 /* Demo */
 import eventimg from '../assets/event05.png';
 
-
-
 export default class Eventsolo extends Component {
 
   constructor(props) {
@@ -17,18 +15,22 @@ export default class Eventsolo extends Component {
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     window.scrollTo(0, 0)
+    console.log(this.props.match.params.id)
+    this.setState(await api.fetchEventSolo(this.props.match.params.id));
   }
 
     render() {
+      const { events } = this.state;
+
       return (
         <div className="container">
         <h1 className="mt-3 mb-2"><i className="far fa-calendar-alt pr-3"></i> Event</h1>
           <div className="row">
             <div className="eventCard col-lg-10">
               <div className="eventHeader" style={{ backgroundImage: 'url('+eventimg+')' }}>
-                <div className="eventTitle"><p>Title of the event super long for testing purpose</p></div>
+                <div className="eventTitle"><p>{events.event_title}</p></div>
               </div>
               <div className="eventBody">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis ipsum nec ligula ullamcorper lobortis. Donec in orci eget tellus tempus blandit eget et leo. Suspendisse vestibulum venenatis dui, eget varius libero pellentesque ut. Cras eget erat sed nisi ultrices condimentum. Nulla id vestibulum quam. Sed tristique pulvinar odio ut rhoncus. Sed eleifend vulputate metus sit amet blandit. Curabitur at bibendum purus. Aenean ultrices dui sit amet pulvinar semper.</p>

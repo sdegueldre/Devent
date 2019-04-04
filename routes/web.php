@@ -18,4 +18,4 @@
 // Auth::routes();
 // Route::get('confirm/{id}/{token}','Auth\RegisterController@confirm');
 
-Route::get('{any?}', 'HomeController@index')->name('home');
+Route::get('{any?}', 'HomeController@index')->where('any', '.*')->name('home');

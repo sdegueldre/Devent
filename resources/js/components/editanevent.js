@@ -8,7 +8,7 @@ import event05 from '../assets/event05.png';
 export default class EditAnEvent extends Component {
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0) // Go to the top of the page
   }
 
   constructor(props) {
