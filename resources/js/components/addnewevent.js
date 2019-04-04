@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import api from '../api';
+
 /* Demo */
 import event05 from '../assets/event05.png';
 
@@ -34,19 +35,21 @@ export default class AddNewEvent extends Component {
     //return this.setState({event_title: event.target.value, event_time: event.target.value, event_description: event.target.value, event_city: event.target.value, event_location: event.target.value, event_image: event.target.value});
   }
 
-  handleSubmit(event) {
-    alert('An event was created: ' + this.state.event_title);
+  async handleSubmit(event) {
+  //  alert('An event was created: ' + this.state.event_title);
     event.preventDefault();
     this.state.event_time = this.state.date + ' '+ this.state.time;
     delete this.state.date;
     delete this.state.time;
     const data = JSON.stringify(this.state);
-    api.AddEvent(data);
-    console.log(data);
+    const response = await (api.AddEvent(data));
+
+    console.log(response.message);
   }
 
   render() {
     return (
+
       <div className="container">
         <h1>Add a new event</h1>
         <form onSubmit={this.handleSubmit}>

@@ -15,7 +15,7 @@ class EventController extends Controller
      */
      public function homepage()
      {
-       $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->offset(0)->limit(3)->get();
+       $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->limit(3)->get();
        return response()->json($events);
      }
      public function index()
@@ -119,7 +119,7 @@ class EventController extends Controller
                'message' => 'Successfully deleted event!'
             ]);
           } else {
-             return response()->json(["message" => "Unauthorized"], 401);
+             return response()->json(["message" => "You're not the author of this event"], 401);
           }
         }
 }

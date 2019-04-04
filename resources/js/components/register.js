@@ -25,12 +25,12 @@ export default class Login extends Component {
     return this.setState(obj);
   }
 
-  handleSubmit(log) {
+  async handleSubmit(log) {
     alert('You\'re registered');
     log.preventDefault();
     const data = JSON.stringify(this.state);
-    api.register(data);
-    console.log(data);
+    const response = await (api.register(data));
+    console.log(response.message);
 
   }
 

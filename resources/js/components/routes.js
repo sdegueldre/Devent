@@ -19,8 +19,8 @@ const Routes = () => (
     <Route exact path="/events" component={Events} />
     <Route exact path="/event/:id" component={Eventsolo} />
     <Route exact path="/addnewevent" component={AddNewEvent} />
-    <Route exact path="/editanevent" component={EditAnEvent} />
-    <Route exact path="/deleteanevent" component={DeleteAnEvent} />
+    <Route exact path="/editanevent/:id" component={EditAnEvent} />
+    <Route exact path="/deleteanevent/:id" component={DeleteAnEvent} />
 
     <Route exact path="/register" component={Register} />
     <Route exact path="/login" component={Login} />

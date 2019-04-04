@@ -8,7 +8,12 @@ export default class Logout extends Component {
   constructor(props) {
     super(props);
     this.state = { };
-    api.logout();
+  }
+
+  async componentDidMount() {
+    const response = await (api.logout());
+    console.log(response.message);
+
   }
   render(){
     return <Redirect to='/' />

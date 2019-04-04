@@ -7,10 +7,6 @@ import event05 from '../assets/event05.png';
 
 export default class Events extends Component {
 
-  componentDidMount() {
-    window.scrollTo(0, 0) // Go to the top of the page
-  }
-
   constructor(props) {
     super(props);
 
@@ -43,7 +39,8 @@ export default class Events extends Component {
                           <h3>{events.event_title}</h3>
                           <p>{events.event_description}</p>
                         </div>
-                        <div className="btn btn-dark"><a className="Delete" href="/deleteanevent{{event.id}}">Delete</a></div>
+                        <div className="btn btn-dark"><a className="Delete" href={"/deleteanevent/"+events.id}>Delete</a></div>
+                        <div className="btn btn-light"><a className="Edit" href={"/editanevent/"+events.id}>Edit</a></div>
                       </div>
                       <button type="button" className="btn-card btn-primary btn-lg btn-block">Show more cool events</button>
                   </div>

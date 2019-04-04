@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { Redirect } from 'react-router-dom'
 import api from '../api';
 
 export default class Login extends Component {
@@ -24,11 +25,12 @@ export default class Login extends Component {
     return this.setState(obj);
   }
 
-  handleSubmit(log) {
-    alert('You\'re logged in');
+  async  handleSubmit(log) {
     log.preventDefault();
     const data = JSON.stringify(this.state);
-    api.login(data);
+    const response = await (api.login(data));
+    alert('You\'re logged in');
+
 
   }
 
