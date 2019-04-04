@@ -12,6 +12,10 @@ import test from '../assets/test.png';
 
 export default class Homepage extends Component {
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   constructor(props) {
     super(props);
 

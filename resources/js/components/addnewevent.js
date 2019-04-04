@@ -7,6 +7,10 @@ import event05 from '../assets/event05.png';
 
 export default class AddNewEvent extends Component {
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   constructor(props) {
     super(props);
     this.state = {  event_title:'',

@@ -4,6 +4,10 @@ import api from '../api';
 
 export default class Login extends Component {
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   constructor(props) {
     super(props);
     this.state = {  email:'',
