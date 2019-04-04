@@ -49,13 +49,14 @@ class API {
      return({ message: json });
   }
 
-   async editEvents() {
-     const response = await this.callAPI( 'PUT', 'events', data);
-
+   async editEvents(id) {
+     const response = await this.callAPI( 'PUT', 'events/'+id, data);
+     const json = await response.json();
+     return({ message: json });
   }
 
-   async deleteEvents() {
-     const response = await this.callAPI( 'DELETE', 'events');
+   async deleteEvents(id) {
+     const response = await this.callAPI( 'DELETE', 'events/'+id);
 
   }
 

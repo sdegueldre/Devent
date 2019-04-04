@@ -39,6 +39,7 @@ export default class Events extends Component {
                           <h3>{events.event_title}</h3>
                           <p>{events.event_description}</p>
                         </div>
+                        <div className="btn btn-dark"><a className="Delete" href="/deleteanevent{{event.id}}">Delete</a></div>
                       </div>
                       <button type="button" className="btn-card btn-primary btn-lg btn-block">Show more cool events</button>
                   </div>

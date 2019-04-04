@@ -113,10 +113,13 @@ class EventController extends Controller
      */
      public function destroy(Event $event)
        {
-           $event->delete();
-
-           return response()->json([
+          if ($event['event_author'] == auth()->user()->id) {
+            $event->delete();
+            return response()->json([
                'message' => 'Successfully deleted event!'
-           ]);
-       }
+            ]);
+          } else {
+             return response()->json(["message" => "Unauthorized"], 401);
+          }
+        }
 }
