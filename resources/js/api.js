@@ -28,18 +28,23 @@ class API {
   }
 
    async fetchEvents() {
-     const response = await this.callAPI('GET', 'events');
+    const response = await this.callAPI('GET', 'events');
     const json = await response.json();
     return({ events: json.data, nextpage: json.next_page_url });
   }
 
    async fetchHome() {
-     const response = await this.callAPI('GET', 'homepage');
+    const response = await this.callAPI('GET', 'homepage');
     const json = await response.json();
     return({ events: json});
   }
 
-
+  async fetchEventSolo(id) {
+    const response = await this.callAPI('GET', 'events/' + id);
+    console.log(response);
+    const json = await response.json();
+    return({ events: json});
+  }
 
 
 
