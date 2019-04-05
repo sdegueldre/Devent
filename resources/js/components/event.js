@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import api from '../api';
 import {Link} from 'react-router-dom';
+import Card from './card';
 import '../../sass/event.scss';
 /* Demo */
 import attendee01 from '../assets/avatar07.png';
@@ -68,7 +69,6 @@ export default class Eventsolo extends Component {
                     <p></p>
                   </div>
                 </div>
-
               </div>
             </div>
 
@@ -76,24 +76,7 @@ export default class Eventsolo extends Component {
             <div className="col-lg-4 col-xs-12">
               <h3 className="mb-2"><i className="far fa-calendar-alt pr-3"></i> Others cool events</h3>
               {events.map(events =>
-                <div key={events.id} className="mb-3">
-                  <div className="card-content">
-                    <div className="card-img">
-                      <img src={events.event_image} alt=""/>
-                      <span className="date"><h4><i className="fas fa-calendar"></i> {events.event_time} </h4></span>
-                      <span className="city"><h4><i className="fas fa-map-marker-alt"></i> {events.event_city}</h4></span>
-                    </div>
-                    <div className="card-desc">
-                      <h3>{events.event_title}</h3>
-                      <p>{events.event_description}</p>
-                    </div>
-                  </div>
-                  <div>
-                  <Link to={"/event/" + events.id} onClick={() => this.reload(events.id)}>
-                    <button type="button" className="btn-card btn-primary btn-lg btn-block"> <span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Show more<span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span></button>
-                  </Link>
-                 </div>
-               </div>
+                <Card key={events.id} events={events} classes="mb-3"/>
               )}
             </div>
 
@@ -101,3 +84,4 @@ export default class Eventsolo extends Component {
         </div>
     )};
   }
+{/* <Link to={"/event/" + events.id} onClick={() => this.reload(events.id)}> */}
