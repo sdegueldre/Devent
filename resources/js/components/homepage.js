@@ -5,11 +5,9 @@ import api from '../api';
 import {Link} from 'react-router-dom';
 import '../../sass/cards.scss';
 /* Demo */
-import event01 from '../assets/event01.jpg';
 import event02 from '../assets/event02.jpg';
 import event03 from '../assets/event03.jpg';
 import event05 from '../assets/event05.png';
-import test from '../assets/test.png';
 
 export default class Homepage extends Component {
 

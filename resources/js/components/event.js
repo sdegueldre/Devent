@@ -3,6 +3,15 @@ import ReactDOM from 'react-dom';
 import api from '../api';
 import {Link} from 'react-router-dom';
 import '../../sass/event.scss';
+/* Demo */
+import attendee01 from '../assets/avatar07.png';
+import attendee02 from '../assets/avatar08.png';
+import attendee03 from '../assets/avatar09.png';
+import attendee04 from '../assets/avatar10.png';
+import attendee05 from '../assets/avatar11.png';
+import attendee06 from '../assets/avatar12.png';
+import attendee07 from '../assets/avatar13.png';
+
 
 export default class Eventsolo extends Component {
 
@@ -51,11 +60,19 @@ export default class Eventsolo extends Component {
                 <label htmlFor="toggle-7" data-on="Going" data-off="Not going"></label>
               </div>
               <div className="eventBody mt-3">
-                <p>{eventSolo.event_description}</p>
+                <div className="row">
+                  <div className="col-6">
+                    <p>{eventSolo.event_description}</p>
+                  </div>
+                  <div className="col-6">
+                    <p></p>
+                  </div>
+                </div>
+
               </div>
             </div>
 
-
+            {/* Events feed */}
             <div className="col-lg-4 col-xs-12">
               <h3 className="mb-2"><i className="far fa-calendar-alt pr-3"></i> Others cool events</h3>
               {events.map(events =>

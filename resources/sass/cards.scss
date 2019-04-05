@@ -35,10 +35,10 @@
 /* styling box city and date */
 span.date, span.city {
   position: absolute;
-  color: red;
+  color: white;
   padding: 0px;
-  background-color: white;
-  border: 2px solid red;
+  background-color: red;
+  // border: 2px solid red;
 }
 
 /* positionning box date */
@@ -54,9 +54,10 @@ span.city {
 }
 
 .card-img span h4{
-  font-size: 12px;
+  font-size: 14px;
   margin:0;
   padding:10px 5px;
+	font-weight: bold;
   // line-height: 0;
 }
 

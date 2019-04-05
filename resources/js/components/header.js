@@ -5,7 +5,7 @@ import logo from '../assets/logo2.svg';
 import { Route, Switch } from 'react-router-dom';
 
 /* Demo */
-import profile from '../assets/profile.png';
+import profile from '../assets/avatar12.png';
 
 /* Function for generating a random color for the background of the cards */
 /* Testing purpose - will be deleted */
