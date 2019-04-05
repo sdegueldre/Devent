@@ -55,8 +55,70 @@
     background-color: white;
     color: black;
     padding: 20px;
+    margin-top: 0;
   }
 
 .eventFeed {
+  width: 100%;
+}
 
+/* Attending full width */
+
+.eventAttending{
+  width: 100%;
+  margin: 0;
+}
+/* Flip button */
+
+.toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+.toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+input.toggle-yes-no + label {
+  padding: 2px;
+  width: 100%;
+  height: 60px;
+}
+input.toggle-yes-no + label:before,
+input.toggle-yes-no + label:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  text-align: center;
+  line-height: 60px;
+}
+input.toggle-yes-no + label:before {
+  background-color: $red;
+  content: attr(data-off);
+  transition: transform 0.5s;
+  backface-visibility: hidden;
+}
+input.toggle-yes-no + label:after {
+  background-color: #8ce196;
+  content: attr(data-on);
+  transition: transform 0.5s;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+input.toggle-yes-no:checked + label:before {
+  transform: rotateY(180deg);
+}
+input.toggle-yes-no:checked + label:after {
+  transform: rotateY(0);
 }
