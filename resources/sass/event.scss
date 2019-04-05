@@ -2,6 +2,30 @@
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins";
 
+/* DEMO PURPOSE */
+
+.map-placeholder{
+  max-width: 100%;
+}
+
+/* End Demo */
+
+h3{
+  text-align: center;
+}
+.attendee{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.attendee img{
+  max-width: 65px;
+  max-height: 65px;
+  object-fit: cover;
+  object-position: center;
+}
+
 // .eventCard{
 //   border: 5px;
 //   border-style: solid;
@@ -110,7 +134,7 @@ input.toggle-yes-no + label:before {
   backface-visibility: hidden;
 }
 input.toggle-yes-no + label:after {
-  background-color: #8ce196;
+  background-color: #61d56f;
   content: attr(data-on);
   transition: transform 0.5s;
   transform: rotateY(180deg);

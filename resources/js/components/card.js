@@ -10,7 +10,9 @@ export default class Card extends Component {
         <div className={classes}>
           <div className="card-content">
             <div className="card-img">
+            <Link to={"/event/" + this.props.events.id} onClick={() => this.reload(this.props.events.id)}>
               <img src={this.props.events.event_image} alt=""/>
+            </Link>
               <span className="date"><h4><i className="fas fa-calendar"></i> {this.props.events.event_time} </h4></span>
               <span className="city"><h4><i className="fas fa-map-marker-alt"></i> {this.props.events.event_city}</h4></span>
             </div>
@@ -28,4 +30,3 @@ export default class Card extends Component {
       )
     }
 }
-{/* <Link to={"/event/" + events.id} onClick={() => this.reload(events.id)}> */}

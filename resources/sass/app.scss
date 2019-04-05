@@ -1,6 +1,7 @@
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 
 // Variables
 @import 'variables';
@@ -14,6 +15,11 @@
 // p {
 //   margin-bottom: 0;
 // }
+.navbar-brand{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 25px;
+}
+
 .container-fluid{
   padding-right: 0px;
   padding-left: 0px;
