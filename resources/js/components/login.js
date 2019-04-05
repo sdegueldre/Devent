@@ -29,7 +29,7 @@ export default class Login extends Component {
     log.preventDefault();
     const data = JSON.stringify(this.state);
     const response = await (api.login(data));
-    alert('You\'re logged in');
+    alert(response.message);
 
 
   }

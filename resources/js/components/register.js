@@ -26,18 +26,17 @@ export default class Login extends Component {
   }
 
   async handleSubmit(log) {
-    alert('You\'re registered');
     log.preventDefault();
     const data = JSON.stringify(this.state);
     const response = await (api.register(data));
-    console.log(response.message);
+    alert(response.message);
 
   }
 
   render() {
     return (
       <div className="container">
-        <h1>Log in</h1>
+        <h1>Register</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name</label>

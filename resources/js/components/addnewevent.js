@@ -36,15 +36,13 @@ export default class AddNewEvent extends Component {
   }
 
   async handleSubmit(event) {
-  //  alert('An event was created: ' + this.state.event_title);
     event.preventDefault();
     this.state.event_time = this.state.date + ' '+ this.state.time;
     delete this.state.date;
     delete this.state.time;
     const data = JSON.stringify(this.state);
     const response = await (api.AddEvent(data));
-
-    console.log(response.message);
+    alert(response.message + ' : ' + this.state.event_title);
   }
 
   render() {

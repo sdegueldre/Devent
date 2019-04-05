@@ -44,9 +44,7 @@ export default class EditAnEvent extends Component {
     delete this.state.time;
     const data = JSON.stringify(this.state);
     const response = await (api.editEvents(data, this.props.match.params.id));
-    console.log('test')
-    console.log(response.message);
-
+    alert(response.message + ' : ' + this.state.event_title);
   }
 
   render() {

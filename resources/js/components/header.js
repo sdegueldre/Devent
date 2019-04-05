@@ -44,17 +44,14 @@ export default class Header extends Component {
                 </li>
               </ul>
               <div className="navbar-nav ml-auto">
-                <div className="btn btn-primary"><a className="logout" href="/logout">Logout</a></div>
-              </div>
-              <div className="navbar-nav ml-auto">
                 <div className="btn btn-primary"><a className="login" href="/login">Login</a></div>
+                <div className="btn btn-secondary ml-2"><a className="register" href="/register">Register</a></div>
               </div>
-              <div className="navbar-nav ml-auto">
-                <div className="btn btn-primary"><a className="register" href="/register">Register</a></div>
-              </div>
+
               <div className="navbar-nav ml-auto">
                 <img src={profile} width="30" height="30" className="d-inline-block align-top" />
                 <div className="mx-2"><a className="profile" href="#">Hello James</a></div>
+                <div className="btn btn-primary ml-2"><a className="logout" href="/logout">Logout</a></div>
               </div>
             </div>
           </nav>
