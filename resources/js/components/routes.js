@@ -16,7 +16,7 @@ import Contact from './contact';
 const Routes = () => (
   <Switch>
     <Route exact path="/" component={Homepage} />
-    <Route exact path="/events" component={Events} />
+    <Route exact path="/events/page=:page" component={Events} />
     <Route exact path="/event/:id" component={Eventsolo} />
     <Route exact path="/addnewevent" component={AddNewEvent} />
     <Route exact path="/editanevent/:id" component={EditAnEvent} />

@@ -12,7 +12,7 @@ export default class Logout extends Component {
 
   async componentDidMount() {
     const response = await (api.logout());
-    //alert(response.message);
+    alert(response.message);
 
   }
   render(){

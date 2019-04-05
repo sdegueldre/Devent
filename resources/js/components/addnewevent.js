@@ -43,6 +43,8 @@ export default class AddNewEvent extends Component {
     const data = JSON.stringify(this.state);
     const response = await (api.AddEvent(data));
     alert(response.message + ' : ' + this.state.event_title);
+     this.props.history.push("/event/"+ response.id);
+
   }
 
   render() {

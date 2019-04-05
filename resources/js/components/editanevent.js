@@ -45,6 +45,8 @@ export default class EditAnEvent extends Component {
     const data = JSON.stringify(this.state);
     const response = await (api.editEvents(data, this.props.match.params.id));
     alert(response.message + ' : ' + this.state.event_title);
+    this.props.history.push("/event/"+ this.props.match.params.id);
+
   }
 
   render() {

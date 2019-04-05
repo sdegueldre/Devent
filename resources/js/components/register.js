@@ -12,7 +12,8 @@ export default class Login extends Component {
     super(props);
     this.state = {  name:'',
                     email:'',
-                    password:''
+                    password:'',
+                    password_confirmation:''
                   };
 
     this.handleChange = this.handleChange.bind(this);
@@ -30,7 +31,9 @@ export default class Login extends Component {
     const data = JSON.stringify(this.state);
     const response = await (api.register(data));
     alert(response.message);
-
+    if (response.redirect){
+      this.props.history.push("/");
+    }
   }
 
   render() {
@@ -49,6 +52,10 @@ export default class Login extends Component {
           <div className="form-group">
             <label htmlFor="password">Password</label>
             <input type="password" className="form-control" id="password" placeholder="Enter password" value={this.state.password} onChange={this.handleChange} />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password_confirmation">Confirm password</label>
+            <input type="password" className="form-control" id="password_confirmation" placeholder="Confirm password" value={this.state.password_confirmation} onChange={this.handleChange} />
           </div>
           <input type="submit" className="btn btn-primary ml-3 mb-5" value="Submit" />
         </form>

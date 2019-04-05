@@ -20,7 +20,7 @@ class API {
       const response = await fetch('/api/' + route, config);
       if (response.ok) {
         const json = await response.json();
-        return json
+        return json;
       }
     }
     catch (error) {
@@ -29,9 +29,16 @@ class API {
   }
 
 // get events
-   async fetchEvents() {
-    const json = await this.callAPI('GET', 'events');
-    return({ events: json.data, nextpage: json.next_page_url });
+   async fetchEvents(page) {
+     if(page == 1){
+       const json = await this.callAPI('GET', 'events');
+       return({ events: json.data, nextpage: json.next_page_url });
+     }
+     else {
+       const json = await this.callAPI('GET', 'events/?page='+page);
+       return({ events: json.data, nextpage: json.next_page_url });
+     }
+
   }
 
    async fetchHome() {
@@ -47,7 +54,7 @@ class API {
 //add, update and delete event
    async AddEvent(data) {
      const json = await this.callAPI( 'POST', 'events', data);
-     return({ message: json.message });
+     return({ message: json.message, id: json.event.id});
   }
    async editEvents(data, id) {
      const json = await this.callAPI( 'PUT', 'events/'+id, data);
@@ -70,11 +77,12 @@ class API {
 //routes users
   async register(data) {
     const json = await this.callAPI( 'POST', 'register', data);
+    console.log(json);
     if (json != undefined){
-      return({ message: 'Successfully Registered!' });
+      return({ message: 'Successfully Registered!', redirect: 'true'});
     }
     else {
-      return({ message: 'Something went wrong, try again' });
+      return({ message: 'Something went wrong, try again', redirect: 'false' });
     }
   }
   async login(data) {
@@ -82,10 +90,10 @@ class API {
     this.token = json.access_token;
     localStorage.setItem('token', this.token);
     if (json != undefined){
-      return({ message: 'Successfully logged in!', token: this.token});
+      return({ message: 'Successfully logged in!', redirect: 'true'});
     }
     else {
-      return({ message: 'Something went wrong, try again' });
+      return({ message: 'Something went wrong, try again' , redirect: 'false'});
     }
   }
    async logout() {

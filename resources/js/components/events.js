@@ -12,11 +12,13 @@ export default class Events extends Component {
 
     this.state = {
       events: [],
+      current_page: '',
+      last_page: ''
     };
   }
 
   async componentDidMount() {
-    this.setState(await api.fetchEvents());
+    this.setState(await api.fetchEvents(this.props.match.params.page));
   }
 
     render() {
@@ -39,8 +41,6 @@ export default class Events extends Component {
                           <h3>{events.event_title}</h3>
                           <p>{events.event_description}</p>
                         </div>
-                        <div className="btn btn-dark"><a className="Delete" href={"/deleteanevent/"+events.id}>Delete</a></div>
-                        <div className="btn btn-light"><a className="Edit" href={"/editanevent/"+events.id}>Edit</a></div>
                       </div>
                       <button type="button" className="btn-card btn-primary btn-lg btn-block">Show more cool events</button>
                   </div>
@@ -58,9 +58,9 @@ export default class Events extends Component {
                       <span className="sr-only">Previous</span>
                     </a>
                   </li>
-                  <li className="page-item"><a className="page-link" href="#">1</a></li>
-                  <li className="page-item"><a className="page-link" href="#">2</a></li>
-                  <li className="page-item"><a className="page-link" href="#">3</a></li>
+                  <li className="page-item"><a className="page-link" href="/events/page=1">1</a></li>
+                  <li className="page-item"><a className="page-link" href="/events/page=2">2</a></li>
+                  <li className="page-item"><a className="page-link" href="/events/page=3">3</a></li>
                   <li className="page-item">
                     <a className="page-link" href="#" aria-label="Next">
                       <span aria-hidden="true">&raquo;</span>

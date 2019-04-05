@@ -14,7 +14,7 @@ export default class DeleteAnEvent extends Component {
   }
   async componentDidMount() {
     const response = await (api.deleteEvents(this.props.match.params.id));
-    console.log(response.message);
+    alert(response.message);
   }
   render(){
     return <Redirect to='/' />

@@ -11,8 +11,8 @@ export default class Login extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {  email:'',
-                    password:''
+    this.state = {  email: '',
+                    password: ''
                   };
 
     this.handleChange = this.handleChange.bind(this);
@@ -29,14 +29,17 @@ export default class Login extends Component {
     log.preventDefault();
     const data = JSON.stringify(this.state);
     const response = await (api.login(data));
+    console.log(response.redirect);
     alert(response.message);
-
-
+    if (response.redirect){
+      this.props.history.push("/");
+    }
   }
 
   render() {
     return (
       <div className="container">
+
         <h1>Log in</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
