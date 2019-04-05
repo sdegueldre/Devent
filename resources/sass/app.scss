@@ -38,6 +38,10 @@
   background-color: $red;
 }
 
+.page-link-active {
+  background-color: darken($red, 10);
+}
+
 .page-link:hover {
   background-color: $orange;
 }

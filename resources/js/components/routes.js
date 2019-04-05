@@ -7,6 +7,7 @@ import Eventsolo from './event';
 import AddNewEvent from './addnewevent';
 import EditAnEvent from './editanevent';
 import DeleteAnEvent from './deleteanevent';
+import PastEvents from './pastevents';
 import Register from './register';
 import Login from './login';
 import Logout from './logout';
@@ -21,6 +22,9 @@ const Routes = () => (
     <Route exact path="/addnewevent" component={AddNewEvent} />
     <Route exact path="/editanevent/:id" component={EditAnEvent} />
     <Route exact path="/deleteanevent/:id" component={DeleteAnEvent} />
+
+    <Route exact path="/pastevents/page=:page" component={PastEvents} />
+
 
     <Route exact path="/register" component={Register} />
     <Route exact path="/login" component={Login} />

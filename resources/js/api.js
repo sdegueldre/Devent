@@ -29,17 +29,10 @@ class API {
   }
 
 // get events
-   async fetchEvents(page) {
-     if(page == 1){
-       const json = await this.callAPI('GET', 'events');
-       return({ events: json.data, nextpage: json.next_page_url });
-     }
-     else {
-       const json = await this.callAPI('GET', 'events/?page='+page);
-       return({ events: json.data, nextpage: json.next_page_url });
-     }
-
-  }
+   async fetchEvents(page = 1) {
+     const json = await this.callAPI('GET', 'events/?page='+page);
+     return({current_page: json.current_page, events: json.data, last_page: json.last_page });
+   }
 
    async fetchHome() {
     const json = await this.callAPI('GET', 'homepage');
@@ -51,6 +44,10 @@ class API {
     return({ events: json});
   }
 
+  async fetchPastEvents(page = 1) {
+    const json = await this.callAPI('GET', 'pastevents/?page='+page);
+    return({current_page: json.current_page, events: json.data, last_page: json.last_page });
+  }
 //add, update and delete event
    async AddEvent(data) {
      const json = await this.callAPI( 'POST', 'events', data);
@@ -75,6 +72,15 @@ class API {
   }
 
 //routes users
+  islogged(){
+    console.log(this.token);
+    this.token = localStorage.getItem('token');
+    if (this.token != 'null') {
+      return({ loggedIn: true});
+    } else {
+      return({ loggedIn: false });
+    }
+  }
   async register(data) {
     const json = await this.callAPI( 'POST', 'register', data);
     console.log(json);
@@ -100,6 +106,8 @@ class API {
      const json = await this.callAPI( 'POST', 'logout');
      console.log(json);
      if (json != undefined){
+       this.token = 'null';
+       localStorage.setItem('token', this.token);
        return({ message: 'Successfully logged out!' });
      }
      else {

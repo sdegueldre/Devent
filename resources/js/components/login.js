@@ -30,9 +30,12 @@ export default class Login extends Component {
     const data = JSON.stringify(this.state);
     const response = await (api.login(data));
     console.log(response.redirect);
-    alert(response.message);
     if (response.redirect){
       this.props.history.push("/");
+      window.location.reload();
+    }
+    else {
+      alert(response.message);
     }
   }
 

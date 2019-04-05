@@ -25,7 +25,7 @@ class EventController extends Controller
        }
     public function past()
     {
-      $events = Event::where('event_time', '<', NOW())->orderBy('event_time', 'desc')->paginate(4);
+      $events = Event::where('event_time', '<', NOW())->orderBy('event_time', 'desc')->paginate(6);
       return response()->json($events);
     }
 

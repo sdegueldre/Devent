@@ -12,10 +12,10 @@ export default class Logout extends Component {
 
   async componentDidMount() {
     const response = await (api.logout());
-    alert(response.message);
-
+    this.props.history.push("/");
+    window.location.reload();
   }
   render(){
-    return <Redirect to='/' />
+    return <p>Logging out</p>
   }
 }
