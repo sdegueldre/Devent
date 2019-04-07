@@ -2,12 +2,12 @@
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import api from '../api';
+import api from '../../api';
 import {Link} from 'react-router-dom';
-import Card from './card';
-import '../../sass/cards.scss';
+import Card from '../layout/card';
+import '../../../sass/cards.scss';
 /* Demo */
-import event05 from '../assets/event05.png';
+import event05 from '../../assets/event05.png';
 
 
 export default class Events extends Component {

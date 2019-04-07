@@ -1,16 +1,16 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import Homepage from './homepage';
-import Events from './events';
-import Eventsolo from './event';
-import AddNewEvent from './addnewevent';
-import EditAnEvent from './editanevent';
-import Register from './register';
-import Login from './login';
-import Logout from './logout';
-import Team from './team';
-import Contact from './contact';
+import Homepage from './components/homepage';
+import Events from './components/events/events';
+import Eventsolo from './components/events/event';
+import AddNewEvent from './components/events/addnewevent';
+import EditAnEvent from './components/events/editanevent';
+import Register from './components/register';
+import Login from './components/login';
+import Logout from './components/logout';
+import Team from './components/team';
+import Contact from './components/contact';
 
 const Routes = () => (
   <Switch>
