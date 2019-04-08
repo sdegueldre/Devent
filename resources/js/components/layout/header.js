@@ -32,12 +32,12 @@ export default class Header extends Component {
     async componentDidMount() {
       let logged = api.islogged();
       if (logged.loggedIn){
-      let response = await api.me();
-      this.setState({loggedIn: logged.loggedIn, profile: response.profile});
+        let response = await api.me();
+        let refresh = await api.refresh();
+        this.setState({loggedIn: logged.loggedIn, profile: response.profile});
       }
     }
     render() {
-      console.log(this.state.loggedIn);
         return (
           <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
             <Link to="/" className="navbar-brand"><img width="30" height="30" className="d-inline-block align-top mx-2" src={ logo }/>Dev'ent</Link>

@@ -24,7 +24,6 @@ export default class Events extends Component {
 
   async componentDidMount() {
     this.setState(await api.fetchEvents(this.props.match.params.page));
-    console.log(this.state);
   }
 
     render() {

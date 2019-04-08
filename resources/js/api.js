@@ -25,6 +25,10 @@ class API {
     }
     catch (error) {
       console.log(error);
+      if (error.response.message == 'Unauthenticated'){
+        this.token = null ;
+        localStorage.removeItem('token');
+      }
     }
   }
 
@@ -111,6 +115,11 @@ class API {
      else {
        return({ message: 'Something went wrong, try again' });
      }
+  }
+  async refresh() {
+    const json = await this.callAPI( 'POST', 'refresh');
+    this.token = json.access_token;
+    localStorage.setItem('token', this.token);
   }
   async me() {
     const json = await this.callAPI( 'POST', 'me');
