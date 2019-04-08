@@ -64,7 +64,7 @@ export default class PastEvents extends Component {
                   {this.state.current_page > 1 &&
                     <li className="page-item"><a className="page-link" href={"/pastevents/page="+(this.state.current_page-1)}>{this.state.current_page-1}</a></li>
                   }
-                  <li className="page-item"><a className="page-link" href={"/pastevents/page="+(this.state.current_page)}>{this.state.current_page}</a></li>
+                  <li className="page-item"><a className="page-link page-link-active" href={"/pastevents/page="+(this.state.current_page)}>{this.state.current_page}</a></li>
                   {this.state.current_page < this.state.last_page &&
                     <li className="page-item"><a className="page-link"href={"/pastevents/page="+(this.state.current_page+1)}>{this.state.current_page+1}</a></li>
                   }
