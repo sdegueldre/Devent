@@ -78,7 +78,7 @@ export default class Homepage extends Component {
           </div>
           {/* End show next events */}
           <div className="container my-4">
-            <Link to="/events">
+            <Link to="/events/page=1">
               <button type="button" className="btn-card btn-primary btn-lg btn-block">Show more cool events</button>
             </Link>
           </div>

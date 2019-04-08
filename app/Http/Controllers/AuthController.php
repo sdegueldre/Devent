@@ -83,4 +83,17 @@ class AuthController extends Controller
             'expires_in' => auth('api')->factory()->getTTL() * 60
         ]);
     }
+
+
+    /**
+     * Confirm email
+     *
+     * @param  string $token
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function confirm(Request $request, string $token)
+    {
+        return \App\Http\Controllers\Auth\RegisterController::confirm($token);
+    }
 }

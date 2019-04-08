@@ -15,7 +15,7 @@ class EventController extends Controller
      */
      public function homepage()
      {
-       $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->offset(0)->limit(3)->get();
+       $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->limit(3)->get();
        return response()->json($events);
      }
      public function index()
@@ -25,7 +25,7 @@ class EventController extends Controller
        }
     public function past()
     {
-      $events = Event::where('event_time', '<', NOW())->orderBy('event_time', 'desc')->paginate(4);
+      $events = Event::where('event_time', '<', NOW())->orderBy('event_time', 'desc')->paginate(6);
       return response()->json($events);
     }
 
@@ -113,10 +113,13 @@ class EventController extends Controller
      */
      public function destroy(Event $event)
        {
-           $event->delete();
-
-           return response()->json([
+          if ($event['event_author'] == auth()->user()->id) {
+            $event->delete();
+            return response()->json([
                'message' => 'Successfully deleted event!'
-           ]);
-       }
+            ]);
+          } else {
+             return response()->json(["message" => "You're not the author of this event"], 401);
+          }
+        }
 }

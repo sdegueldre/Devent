@@ -10910,6 +10910,10 @@ a.text-dark:focus {
   background-color: #E74C3C;
 }
 
+.page-link-active {
+  background-color: #d62c1a;
+}
+
 .page-link:hover {
   background-color: #fd7e14;
 }

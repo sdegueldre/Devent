@@ -12,7 +12,8 @@ export default class Login extends Component {
     super(props);
     this.state = {  name:'',
                     email:'',
-                    password:''
+                    password:'',
+                    password_confirmation:''
                   };
 
     this.handleChange = this.handleChange.bind(this);
@@ -25,19 +26,20 @@ export default class Login extends Component {
     return this.setState(obj);
   }
 
-  handleSubmit(log) {
-    alert('You\'re registered');
+  async handleSubmit(log) {
     log.preventDefault();
     const data = JSON.stringify(this.state);
-    api.register(data);
-    console.log(data);
-
+    const response = await (api.register(data));
+    alert(response.message);
+    if (response.redirect){
+      this.props.history.push("/");
+    }
   }
 
   render() {
     return (
       <div className="container">
-        <h1>Log in</h1>
+        <h1>Register</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
@@ -50,6 +52,10 @@ export default class Login extends Component {
           <div className="form-group">
             <label htmlFor="password">Password</label>
             <input type="password" className="form-control" id="password" placeholder="Enter password" value={this.state.password} onChange={this.handleChange} />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password_confirmation">Confirm password</label>
+            <input type="password" className="form-control" id="password_confirmation" placeholder="Confirm password" value={this.state.password_confirmation} onChange={this.handleChange} />
           </div>
           <input type="submit" className="btn btn-primary ml-3 mb-5" value="Submit" />
         </form>
