@@ -55,7 +55,7 @@ export default class Header extends Component {
                   <Link to ="/team" className="nav-link">Team</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="#" className="nav-link">Contact</Link>
+                  <Link to="contact" className="nav-link">Contact</Link>
                 </li>
               </ul>
               {(this.state.loggedIn== false) &&
