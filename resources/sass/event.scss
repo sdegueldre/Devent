@@ -88,6 +88,26 @@ h3{
   width: 100%;
 }
 
+/* Author */
+.author {
+  // position:absolute;
+  background-color: $red;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.author>img {
+  max-height: 200px;
+  margin: -50px;
+}
+
+.author>p {
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
 /* Attending full width */
 
 .eventAttending{

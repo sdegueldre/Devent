@@ -12,6 +12,7 @@ import attendee04 from '../../assets/avatar10.png';
 import attendee05 from '../../assets/avatar11.png';
 import attendee06 from '../../assets/avatar12.png';
 import attendee07 from '../../assets/avatar13.png';
+import author from '../../assets/avatar03.png';
 import map from '../../assets/map.png';
 
 
@@ -75,6 +76,10 @@ export default class Eventsolo extends Component {
                 <div className="row attendee">
                   <img src={attendee01}/><img src={attendee02}/><img src={attendee03}/><img src={attendee04}/><img src={attendee05}/><img src={attendee06}/><img src={attendee07}/>
                 </div>
+              </div>
+              <div className="author">
+                <img src={author}/>
+                <p>This event was created by "user" on the "date"</p>
               </div>
             </div>
 
