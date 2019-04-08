@@ -31,8 +31,10 @@ export default class Header extends Component {
 
     async componentDidMount() {
       let logged = api.islogged();
-      console.log(logged);
-      this.setState(logged);
+      if (logged.loggedIn){
+      let response = await api.me();
+      this.setState({loggedIn: logged.loggedIn, profile: response.profile});
+      }
     }
     render() {
       console.log(this.state.loggedIn);
@@ -67,7 +69,7 @@ export default class Header extends Component {
               {this.state.loggedIn &&
               <div className="navbar-nav ml-auto">
                   <img src={profile} width="30" height="30" className="d-inline-block align-top" />
-                  <div className="mx-2"><a className="profile" href="#">Hello James</a></div>
+                  <div className="mx-2"><a className="profile" href="#">Hello {this.state.profile.name}</a></div>
                   <div className="btn btn-primary ml-2"><a className="logout" href="/logout">Logout</a></div>
                 </div>
               }

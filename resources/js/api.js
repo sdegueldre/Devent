@@ -41,6 +41,7 @@ class API {
 
   async fetchEventSolo(id) {
     const json = await this.callAPI('GET', 'events/' + id);
+
     return({ eventSolo: json});
   }
 
@@ -73,7 +74,6 @@ class API {
 
 //routes users
   islogged(){
-    console.log(this.token);
     this.token = localStorage.getItem('token');
     if (this.token != 'null') {
       return({ loggedIn: true});
@@ -83,7 +83,6 @@ class API {
   }
   async register(data) {
     const json = await this.callAPI( 'POST', 'register', data);
-    console.log(json);
     if (json != undefined){
       return({ message: 'Successfully Registered!', redirect: 'true'});
     }
@@ -93,9 +92,9 @@ class API {
   }
   async login(data) {
     const json = await this.callAPI( 'POST', 'login', data);
-    this.token = json.access_token;
-    localStorage.setItem('token', this.token);
     if (json != undefined){
+      this.token = json.access_token;
+      localStorage.setItem('token', this.token);
       return({ message: 'Successfully logged in!', redirect: 'true'});
     }
     else {
@@ -112,6 +111,12 @@ class API {
      else {
        return({ message: 'Something went wrong, try again' });
      }
+  }
+  async me() {
+    const json = await this.callAPI( 'POST', 'me');
+    if (json != undefined){
+      return({ profile: json});
+    }
   }
 }
 export default (new API());
