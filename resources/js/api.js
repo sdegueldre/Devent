@@ -104,7 +104,6 @@ class API {
   }
    async logout() {
      const json = await this.callAPI( 'POST', 'logout');
-     console.log(json);
      if (json != undefined){
        this.token = 'null';
        localStorage.setItem('token', this.token);
