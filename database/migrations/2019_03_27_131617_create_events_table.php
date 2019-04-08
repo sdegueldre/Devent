@@ -24,6 +24,7 @@ class CreateEventsTable extends Migration
             $table->unsignedInteger('event_author');
             $table->foreign('event_author')->references('id')->on('users')->onDelete('cascade');
             $table->timestamp('reminder')->nullable();
+            $table->boolean('reminder_sent')->nullable();
             $table->timestamps();
         });
     }
