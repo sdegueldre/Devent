@@ -9,17 +9,6 @@ import api from '../../api';
 /* Demo */
 import profile from '../../assets/avatar12.png';
 
-/* Function for generating a random color for the background of the cards */
-/* Testing purpose - will be deleted */
-/* style={{background: random_bg_color()}}  */
-function random_bg_color() {
-    let colors_bright = ["#CC276A", "#C72FA8", "#01CCBC", "#F7BC0B", "#E85E40"];
-    let colors = colors_bright;
-    let bgColor = colors[Math.floor(Math.random()*colors.length)];
-
-     return bgColor;
-    }
-
 export default class Header extends Component {
     constructor(props) {
       super(props);

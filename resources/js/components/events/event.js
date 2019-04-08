@@ -57,7 +57,7 @@ export default class Eventsolo extends Component {
               <div className="eventHeaderImg" style={{ backgroundImage: 'url('+eventSolo.event_image+')', marginBottom: '-72px'}}>
                 <div className="eventTitle"><p>{eventSolo.event_title}</p></div>
               </div>
-              <div className="eventAttending sticky-top">
+              <div className="eventAttending sticky-top" style={{ zIndex: '2' }}>
                 <div  style={{height: '72px'}}></div>
                 <input id="toggle-7" className="toggle toggle-yes-no" type="checkbox" />
                 <label htmlFor="toggle-7" data-on="Going" data-off="Not going"></label>
@@ -79,7 +79,7 @@ export default class Eventsolo extends Component {
             </div>
 
             {/* Events feed */}
-            <div className="col-lg-4 col-xs-12">
+            <div className="col-lg-4 col-xs-12 sticky-top" style={{ zIndex: '2' }}>
               <h3 className="mb-2"><i className="fas fa-list"></i> Others cool events</h3>
               {events.map(events =>
                 <Card key={events.id} events={events} classes="mb-3"/>
