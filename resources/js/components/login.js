@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { Redirect } from 'react-router-dom'
 import api from '../api';
 
 export default class Login extends Component {
@@ -10,8 +11,8 @@ export default class Login extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {  email:'',
-                    password:''
+    this.state = {  email: '',
+                    password: ''
                   };
 
     this.handleChange = this.handleChange.bind(this);
@@ -24,17 +25,24 @@ export default class Login extends Component {
     return this.setState(obj);
   }
 
-  handleSubmit(log) {
-    alert('You\'re logged in');
+  async  handleSubmit(log) {
     log.preventDefault();
     const data = JSON.stringify(this.state);
-    api.login(data);
-
+    const response = await (api.login(data));
+    console.log(response.redirect);
+    if (response.redirect){
+      this.props.history.push("/");
+      window.location.reload();
+    }
+    else {
+      alert(response.message);
+    }
   }
 
   render() {
     return (
       <div className="container">
+
         <h1>Log in</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">

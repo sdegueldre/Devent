@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {Link} from 'react-router-dom';
-import logo from '../assets/logo2.svg';
+import logo from '../../assets/logo2.svg';
 import { Route, Switch } from 'react-router-dom';
+import api from '../../api';
+
 
 /* Demo */
-import profile from '../assets/profile.png';
+import profile from '../../assets/avatar12.png';
 
 /* Function for generating a random color for the background of the cards */
 /* Testing purpose - will be deleted */
@@ -19,8 +21,21 @@ function random_bg_color() {
     }
 
 export default class Header extends Component {
+    constructor(props) {
+      super(props);
 
+      this.state = {
+        loggedIn: false,
+      };
+    }
+
+    async componentDidMount() {
+      let logged = api.islogged();
+      console.log(logged);
+      this.setState(logged);
+    }
     render() {
+      console.log(this.state.loggedIn);
         return (
           <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
             <Link to="/" className="navbar-brand"><img width="30" height="30" className="d-inline-block align-top mx-2" src={ logo }/>Dev'ent</Link>
@@ -34,28 +49,28 @@ export default class Header extends Component {
                   <Link to="/" className="nav-link">Homepage</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/events" className="nav-link">Events</Link>
+                  <Link to="/events/page=1" className="nav-link">Events</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to ="/team" className="nav-link">Team</Link>
+                  <Link to ="#" className="nav-link">Team</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/contact" className="nav-link">Contact</Link>
+                  <Link to="#" className="nav-link">Contact</Link>
                 </li>
               </ul>
+              {(this.state.loggedIn== false) &&
+                <div className="navbar-nav ml-auto">
+                  <div className="btn btn-primary"><a className="login" href="/login">Login</a></div>
+                  <div className="btn btn-secondary ml-2"><a className="register" href="/register">Register</a></div>
+                </div>
+              }
+              {this.state.loggedIn &&
               <div className="navbar-nav ml-auto">
-                <div className="btn btn-primary"><a className="profile" href="/logout">Logout</a></div>
-              </div>
-              <div className="navbar-nav ml-auto">
-                <div className="btn btn-primary"><a className="profile" href="/login">Login</a></div>
-              </div>
-              <div className="navbar-nav ml-auto">
-                <div className="btn btn-primary"><a className="profile" href="/register">Register</a></div>
-              </div>
-              <div className="navbar-nav ml-auto">
-                <img src={profile} width="30" height="30" className="d-inline-block align-top" />
-                <div className="mx-2"><a className="profile" href="#">Hello James</a></div>
-              </div>
+                  <img src={profile} width="30" height="30" className="d-inline-block align-top" />
+                  <div className="mx-2"><a className="profile" href="#">Hello James</a></div>
+                  <div className="btn btn-primary ml-2"><a className="logout" href="/logout">Logout</a></div>
+                </div>
+              }
             </div>
           </nav>
 

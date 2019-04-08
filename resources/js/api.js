@@ -3,7 +3,7 @@ class API {
   constructor(){
     this.token = localStorage.getItem('token');
   }
-
+//contact the API
   async callAPI(method, route, data = null){
     try {
       let config = {
@@ -19,72 +19,99 @@ class API {
       }
       const response = await fetch('/api/' + route, config);
       if (response.ok) {
-          return response
+        const json = await response.json();
+        return json;
       }
     }
     catch (error) {
-            console.log(error);
+      console.log(error);
     }
   }
 
-   async fetchEvents() {
-    const response = await this.callAPI('GET', 'events');
-    const json = await response.json();
-    return({ events: json.data, nextpage: json.next_page_url });
-  }
+// get events
+   async fetchEvents(page = 1) {
+     const json = await this.callAPI('GET', 'events/?page='+page);
+     return({current_page: json.current_page, events: json.data, last_page: json.last_page });
+   }
 
    async fetchHome() {
-    const response = await this.callAPI('GET', 'homepage');
-    const json = await response.json();
+    const json = await this.callAPI('GET', 'homepage');
     return({ events: json});
   }
 
   async fetchEventSolo(id) {
-    const response = await this.callAPI('GET', 'events/' + id);
-    console.log(response);
-    const json = await response.json();
-    return({ events: json});
+    const json = await this.callAPI('GET', 'events/' + id);
+    return({ eventSolo: json});
   }
 
-
-
+  async fetchPastEvents(page = 1) {
+    const json = await this.callAPI('GET', 'pastevents/?page='+page);
+    return({current_page: json.current_page, events: json.data, last_page: json.last_page });
+  }
+//add, update and delete event
    async AddEvent(data) {
-     const response = await this.callAPI( 'POST', 'events', data);
-     const json = await response.json();
-     return({ message: json });
+     const json = await this.callAPI( 'POST', 'events', data);
+     return({ message: json.message, id: json.event.id});
+  }
+   async editEvents(data, id) {
+     const json = await this.callAPI( 'PUT', 'events/'+id, data);
+     return({ message: json.message });
+  }
+   async deleteEvents(id) {
+     const json = await this.callAPI( 'DELETE', 'events/'+id);
+     return({ message: json.message });
+  }
+// participation to an event
+  async participate(id) {
+    const json = await this.callAPI( 'POST', 'attend/'+id);
+    return({ message: json.message });
+  }
+  async unparticipate(id) {
+    const json = await this.callAPI( 'DELETE', 'attend/'+id);
+    return({ message: json.message });
   }
 
-   async editEvents() {
-     const response = await this.callAPI( 'PUT', 'events', data);
-
+//routes users
+  islogged(){
+    console.log(this.token);
+    this.token = localStorage.getItem('token');
+    if (this.token != 'null') {
+      return({ loggedIn: true});
+    } else {
+      return({ loggedIn: false });
+    }
   }
-
-   async deleteEvents() {
-     const response = await this.callAPI( 'DELETE', 'events');
-
-  }
-
   async register(data) {
-    const response = await this.callAPI( 'POST', 'register', data);
-    const json = await response.json();
-    return({ message: 'success' });
+    const json = await this.callAPI( 'POST', 'register', data);
+    console.log(json);
+    if (json != undefined){
+      return({ message: 'Successfully Registered!', redirect: 'true'});
+    }
+    else {
+      return({ message: 'Something went wrong, try again', redirect: 'false' });
+    }
   }
-
   async login(data) {
-    console.log(this.token);
-    const response = await this.callAPI( 'POST', 'login', data);
-    const json = await response.json();
+    const json = await this.callAPI( 'POST', 'login', data);
     this.token = json.access_token;
-    console.log(this.token);
     localStorage.setItem('token', this.token);
-
-    return({ message: 'success' });
+    if (json != undefined){
+      return({ message: 'Successfully logged in!', redirect: 'true'});
+    }
+    else {
+      return({ message: 'Something went wrong, try again' , redirect: 'false'});
+    }
   }
-
    async logout() {
-     const response = await this.callAPI( 'POST', 'logout');
-    //const json = await response.json();
-    return({ message: 'success' });
+     const json = await this.callAPI( 'POST', 'logout');
+     if (json != undefined){
+       this.token = 'null';
+       localStorage.setItem('token', this.token);
+       return({ message: 'Successfully logged out!' });
+     }
+     else {
+       return({ message: 'Something went wrong, try again' });
+     }
   }
 }
 export default (new API());

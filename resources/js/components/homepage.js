@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import api from '../api';
 import {Link} from 'react-router-dom';
+import Card from './layout/card';
+import '../../sass/cards.scss';
 /* Demo */
-import event01 from '../assets/event01.jpg';
 import event02 from '../assets/event02.jpg';
 import event03 from '../assets/event03.jpg';
 import event05 from '../assets/event05.png';
-import test from '../assets/test.png';
 
 export default class Homepage extends Component {
 
@@ -71,29 +71,14 @@ export default class Homepage extends Component {
             <div className="row text-center">
               <div className="card-deck">
               {events.map(events =>
-                  <div key={events.id} className="card">
-                    <div className="card-content">
-                      <div className="card-img">
-                        <img src={events.event_image} alt=""/>
-                        <span className="date"><h4><i className="fas fa-calendar"></i> {events.event_time} </h4></span>
-                        <span className="city"><h4><i className="fas fa-map-marker-alt"></i> {events.event_city}</h4></span>
-                      </div>
-                      <div className="card-desc">
-                        <h3>{events.event_title}</h3>
-                        <p>{events.event_description}</p>
-                        </div>
-                      </div>
-                        <Link to={"/event/" + events.id}>
-                          <button type="button" className="btn-card btn-primary btn-lg btn-block"> <span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Show more<span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span></button>
-                        </Link>
-                  </div>
+                  <Card key={events.id} events={events} />
                 )}
               </div>
             </div>
           </div>
           {/* End show next events */}
           <div className="container my-4">
-            <Link to="/events">
+            <Link to="/events/page=1">
               <button type="button" className="btn-card btn-primary btn-lg btn-block">Show more cool events</button>
             </Link>
           </div>
