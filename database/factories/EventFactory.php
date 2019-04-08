@@ -10,12 +10,12 @@ $factory->define(App\Event::class, function (Faker $faker) {
 
     return [
         'event_title' => $faker->sentence($nbWords = 3, $variableNbWords = true),
-        'event_time' => $faker->dateTime($min = 'now'),
+        'event_time' => $faker->dateTimeBetween('now', '+5 years'),
         'event_description' => $faker->sentence($nbWords = 6, $variableNbWords = true),
         'event_city' => $faker->city(),
         'event_location' => $faker->address(),
         'event_image' => $faker->imageUrl($width = 600, $height = 250, 'nature'),
         'event_author' => $faker->randomElement($authors),
-        'reminder' => $faker->dateTimeBetween('+0 days', '+5 month')
+        'reminder' => $faker->dateTimeBetween('now', '+3 months'),
     ];
 });
