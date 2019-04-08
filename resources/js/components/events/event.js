@@ -48,6 +48,7 @@ export default class Eventsolo extends Component {
   }
 
     render() {
+      console.log(this.state.eventSolo.attendees);
       const { eventSolo, events } = this.state;
 
       return (
@@ -74,6 +75,7 @@ export default class Eventsolo extends Component {
                 </div>
                 <h3 className="mt-3">7 attendees</h3>
                 <div className="row attendee">
+                
                   <img src={attendee01}/><img src={attendee02}/><img src={attendee03}/><img src={attendee04}/><img src={attendee05}/><img src={attendee06}/><img src={attendee07}/>
                 </div>
               </div>
