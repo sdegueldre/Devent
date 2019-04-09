@@ -32,7 +32,7 @@ class Reminder extends Mailable
     public function build()
     {
         return $this->from('Hello@Devent.com')
-                    ->subject('Event reminder' . $this->event->name)
+                    ->subject('Event reminder' . $this->event['event_title'])
                     ->markdown('emails.reminder');
     }
 }

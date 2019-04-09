@@ -16,7 +16,7 @@ $factory->define(App\Event::class, function (Faker $faker) {
         'event_location'    => $faker->address(),
         'event_image'       => $faker->imageUrl($width = 600, $height = 250, 'nature'),
         'event_author'      => $faker->randomElement($authors),
-        'reminder'          => $faker->dateTimeBetween('now', '+3 months'),
+        'reminder'          => $faker->date(),
         'reminder_sent'     => $faker->boolean($chanceOfGettingTrue = 50)
     ];
 });
