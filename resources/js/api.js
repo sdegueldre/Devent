@@ -46,7 +46,7 @@ class API {
   async fetchEventSolo(id) {
     const json = await this.callAPI('GET', 'events/' + id);
 
-    return({ eventSolo: json});
+    return({ eventSolo: json, eventSoloAuthor: json.event_author});
   }
 
   async fetchPastEvents(page = 1) {
@@ -79,7 +79,7 @@ class API {
 //routes users
   islogged(){
     this.token = localStorage.getItem('token');
-    if (this.token != 'null') {
+    if (this.token != null) {
       return({ loggedIn: true});
     } else {
       return({ loggedIn: false });
@@ -108,8 +108,8 @@ class API {
    async logout() {
      const json = await this.callAPI( 'POST', 'logout');
      if (json != undefined){
-       this.token = 'null';
-       localStorage.setItem('token', this.token);
+       this.token = null;
+       localStorage.removeItem('token');
        return({ message: 'Successfully logged out!' });
      }
      else {

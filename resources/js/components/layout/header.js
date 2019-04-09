@@ -9,17 +9,6 @@ import api from '../../api';
 /* Demo */
 import profile from '../../assets/avatar12.png';
 
-/* Function for generating a random color for the background of the cards */
-/* Testing purpose - will be deleted */
-/* style={{background: random_bg_color()}}  */
-function random_bg_color() {
-    let colors_bright = ["#CC276A", "#C72FA8", "#01CCBC", "#F7BC0B", "#E85E40"];
-    let colors = colors_bright;
-    let bgColor = colors[Math.floor(Math.random()*colors.length)];
-
-     return bgColor;
-    }
-
 export default class Header extends Component {
     constructor(props) {
       super(props);
@@ -48,16 +37,21 @@ export default class Header extends Component {
             <div className="collapse navbar-collapse" id="navbarColor01">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <Link to="/" className="nav-link">Homepage</Link>
+                  <Link to="/" className="nav-link mx-4 h5">Homepage</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/events/page=1" className="nav-link">Events</Link>
+                  <Link to="/events/page=1" className="nav-link mx-4 h5">Events</Link>
+                </li>
+                {this.state.loggedIn &&
+                  <li className="nav-item">
+                    <Link to="/addnewevent" className="nav-link mx-4 h5">Add Event</Link>
+                  </li>
+                }
+                <li className="nav-item">
+                  <Link to ="/team" className="nav-link mx-4 h5">Team</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to ="#" className="nav-link">Team</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="#" className="nav-link">Contact</Link>
+                  <Link to="contact" className="nav-link mx-4 h5">Contact</Link>
                 </li>
               </ul>
               {(this.state.loggedIn== false) &&
