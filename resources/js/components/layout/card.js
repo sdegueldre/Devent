@@ -6,12 +6,13 @@ export default class Card extends Component {
 
   render() {
       let classes = this.props.classes ? this.props.classes : 'card';
+      let reload = this.props.reload ? this.props.reload : (() => 0);
       return (
 
         <div className={classes}>
           <div className="card-content">
             <div className="card-img">
-            <Link to={"/event/" + this.props.events.id} onClick={() => this.reload(this.props.events.id)}>
+            <Link to={"/event/" + this.props.events.id} onClick={() => reload(this.props.events.id)}>
               <img src={this.props.events.event_image} alt=""/>
             </Link>
               <span className="date"><h4><i className="fas fa-calendar"></i> {this.props.events.event_time} </h4></span>
@@ -23,11 +24,11 @@ export default class Card extends Component {
                     line={2}
                     truncateText="…"
                     text={this.props.events.event_description}
-                    textTruncateChild={<Link to={"/event/" + this.props.events.id} onClick={() => this.reload(this.props.events.id)}>Read more</Link>}/>
+                    textTruncateChild={<Link to={"/event/" + this.props.events.id} onClick={() => reload(this.props.events.id)}>Read more</Link>}/>
               </div>
             </div>
               <div>
-              <Link to={"/event/" + this.props.events.id} onClick={() => this.reload(this.props.events.id)}>
+              <Link to={"/event/" + this.props.events.id} onClick={() => reload(this.props.events.id)}>
                 <button type="button" className="btn-card btn-primary btn-lg btn-block"> <span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Show more details<span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span></button>
               </Link>
               </div>
