@@ -54,40 +54,58 @@ export default class EditAnEvent extends Component {
     return (
 
       <div className="container">
-        <h1>Edit your event</h1>
-        <form onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="title">Title</label>
-            <input type="text" className="form-control" name="event_title" value={this.state.event_title} onChange={this.handleChange} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="description">Description</label>
-            <textarea className="form-control" name="event_description" rows="3" value={this.state.event_description} onChange={this.handleChange} ></textarea>
-          </div>
-          <div className="form-group">
-            <label htmlFor="date">Date</label>
-            <input type="date" className="form-control" name="date" value={this.state.date} onChange={this.handleChange} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="time">Hour</label>
-            <input type="time" className="form-control" name="time" value={this.state.time} onChange={this.handleChange} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="city">City</label>
-            <input type="text" className="form-control" name="event_city" placeholder="City name" value={this.state.event_city} onChange={this.handleChange} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="adress">Adress</label>
-            <input type="text" className="form-control" name="event_location" placeholder="Exact adress" value={this.state.event_location} onChange={this.handleChange} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="image">Image</label>
-            <input type="text" className="form-control" name="event_image" placeholder="Image URL" value={this.state.event_image} onChange={this.handleChange} />
-          </div>
 
-          <input type="submit" className="btn btn-primary ml-3 mb-5" value="Submit" />
+        <h1 className="mt-3 mb-2"><i className="far fa-calendar-alt pr-3"></i>Edit your event</h1>
+
+        <form onSubmit={this.handleSubmit}>
+
+          <div className="col-6 d-flex flex-wrap align-items-start mx-auto">
+
+              <div className="form-group form-group col-md-12 d-flex flex-wrap align-items-start pt-3">
+                <label className="text-danger h4" htmlFor="title">Title</label>
+                <input type="text" className="form-control" name="event_title" value={this.state.event_title} onChange={this.handleChange} />
+              </div>
+
+              <div className="form-group form-group col-md-12 d-flex flex-wrap align-items-start pt-3">
+                <label className="text-danger h4" htmlFor="description">Description</label>
+                <textarea className="form-control" name="event_description" rows="3" value={this.state.event_description} onChange={this.handleChange} ></textarea>
+              </div>
+
+              <div className="form-group col-md-6 d-flex flex-wrap align-items-start">
+                <label className="text-danger h4" htmlFor="date">Date</label>
+                <input type="date" className="form-control" name="date" value={this.state.date} onChange={this.handleChange} />
+              </div>
+
+              <div className="form-group col-md-6 d-flex flex-wrap align-items-start">
+                <label className="text-danger h4" htmlFor="time">Hour</label>
+                <input type="time" className="form-control" name="time" value={this.state.time} onChange={this.handleChange} />
+              </div>
+
+              <div className="form-group col-md-6 d-flex flex-wrap align-items-start">
+                <label className="text-danger h4" htmlFor="city">City</label>
+                <input type="text" className="form-control" name="event_city" placeholder="City name" value={this.state.event_city} onChange={this.handleChange} />
+              </div>
+
+              <div className="form-group col-md-6 d-flex flex-wrap align-items-start">
+                <label className="text-danger h4" htmlFor="adress">Adress</label>
+                <input type="text" className="form-control" name="event_location" placeholder="Exact adress" value={this.state.event_location} onChange={this.handleChange} />
+              </div>
+
+              <div className="form-group col-md-12 d-flex flex-wrap align-items-start">
+                <label className="text-danger h4" htmlFor="image">Image</label>
+                <input type="text" className="form-control" name="event_image" placeholder="Image URL" value={this.state.event_image} onChange={this.handleChange} />
+              </div>
+
+              <div className="col-12 d-flex flex-wrap align-items-start">
+                <input type="submit" className="btn btn-danger px-5 py-2 mb-5 mt-3" value="Submit" />
+              </div>
+
+            </div>
+
         </form>
+
       </div>
+
     );
   }
 }

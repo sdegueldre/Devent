@@ -68,7 +68,7 @@ export default class AddNewEvent extends Component {
                 <textarea className="form-control" name="event_description" rows="3" value={this.state.event_description} onChange={this.handleChange} ></textarea>
               </div>
 
-              <div className="form-group col-md-6  d-flex flex-wrap align-items-start">
+              <div className="form-group col-md-6 d-flex flex-wrap align-items-start">
                 <label className="text-danger h4" htmlFor="date">Date</label>
                 <input type="date" className="form-control" name="date" value={this.state.date} onChange={this.handleChange} />
               </div>
