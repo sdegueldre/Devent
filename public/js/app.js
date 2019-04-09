@@ -67110,7 +67110,7 @@ function () {
                 }
 
                 _context.next = 7;
-                return fetch('/api/' + route, config);
+                return fetch('https://jepsen-brite-jnsnc.herokuapp.com/api/' + route, config);
 
               case 7:
                 response = _context.sent;
