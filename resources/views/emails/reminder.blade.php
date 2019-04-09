@@ -1,13 +1,13 @@
 @component('mail::message')
-# Introduction
+# Hello {{$user->name}}, <br>
+{{$event->event_title}} is coming up soon! <br>
+It will take place in *{{$event->event_location}}* on {{substr($event->event_time, 0, -9)}} at {{substr($event->event_time,11, -3)}}.<br>
+We hope to see you there!
 
-###### Hello, {{ $event->name }} is coming up soon! <br>
-
-
-@component('mail::button', ['url' => $url, 'color' => 'success'])
+@component('mail::button', ['url' =>'http://localhost:8000/event/' . $event->id, 'color' => 'success'])
 Get back to Dev'ent!
 @endcomponent
 
 Thanks,<br>
-{{ config('app.name') }}
+Dev'ent Team
 @endcomponent

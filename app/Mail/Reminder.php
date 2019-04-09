@@ -10,6 +10,8 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class Reminder extends Mailable
 {
     use Queueable, SerializesModels;
+    public $event;
+    public $user;
 
     /**
      * Create a new message instance.
@@ -30,7 +32,7 @@ class Reminder extends Mailable
     public function build()
     {
         return $this->from('Hello@Devent.com')
-                    ->subject('Event reminder' . $this->event->name);
+                    ->subject('Event reminder' . $this->event->name)
                     ->markdown('emails.reminder');
     }
 }
