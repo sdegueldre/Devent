@@ -15,14 +15,14 @@ export default class Contact extends Component {
 
               <div className="row py-5 mx-auto">
 
-                <div className="col-4 d-flex flex-wrap align-items-start py-5 px-5 mx-auto">
-                  <h2 className = " mt-3 mb-2 text-white h3 text-danger" > < i class = "far fas fa-at" > < /i> @-Mail</h2 >
-                  <p className="h4 pl-3 pb-3">devevent@gmail.com</p>
+                <div className="col-4 col-lg-4 col-md-5 d-flex flex-wrap align-items-start py-5 px-5 mx-auto">
+                  <h2 className = " mt-3 mb-2 text-white h3 " > < i class = "far fas fa-at" > < /i> e-mail</h2 >
+                  <a href="#"><p className="h4 pl-3 pb-3">devevent@gmail.com</p></a>
                 </div>
 
-                <div className="col-4 d-flex flex-wrap align-items-start py-5 px-5 mx-auto">
-                  <h2 className = " mt-3 mb-2 text-white h3 text-danger" > < i class = "far fas fa-at" > < /i> @-Mail</h2 >
-                  <p className="h4 pl-3 pb-3">devevent@gmail.com</p>
+                <div className="col-4 col-lg-4 col-md-5 d-flex flex-wrap align-items-start py-5 px-5 mx-auto">
+                  <h2 className = " mt-3 mb-2 text-white h3" > < i class = "fas fa-phone-square" > < /i> phone number</h2 >
+                  <p className="h4 pl-3 pb-3 text-danger">+32 456/789.123</p>
                 </div>
 
               </div>
