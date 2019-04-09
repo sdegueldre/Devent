@@ -64,19 +64,22 @@ export default class Eventsolo extends Component {
                 <label htmlFor="toggle-7" data-on="Going" data-off="Not going"></label>
               </div>
               <div className="eventBody mt-3">
-                <div className="row">
-                  <div className="col-6">
+                  <div className="col">
+                    <h4>Description</h4>
+                      <img className="map-placeholder" src={map}/>
+
                     <p>{eventSolo.event_description}</p>
                   </div>
-                  <div className="col-6">
-                    <img className="map-placeholder" src={map}/>
-                  </div>
-                </div>
+
                 <h3 className="mt-3">7 attendees</h3>
                 <div className="row attendee">
-
+                  <h4>Attendees</h4>
                   <img src={attendee01}/><img src={attendee02}/><img src={attendee03}/><img src={attendee04}/><img src={attendee05}/><img src={attendee06}/><img src={attendee07}/>
                 </div>
+              </div>
+              <div className="row buttons">
+                <div className="btn btn-dark"><a className="Delete" href={"/deleteanevent/"+events.id}>Delete</a></div>
+                <div className="btn btn-light"><a className="Edit" href={"/editanevent/"+events.id}>Edit</a></div>
               </div>
               <div className="author">
                 <img src={author}/>
