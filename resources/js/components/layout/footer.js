@@ -8,7 +8,7 @@ export default class Footer extends Component {
         return (
           <div className="container-fluid bg-secondary py-5">
             <div className="row">
-              <div className="container">
+              <div className="container navbar navbar-fixed-bottom">
                 Je suis un footer
               </div>
             </div>
