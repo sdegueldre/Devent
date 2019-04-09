@@ -56,15 +56,15 @@ export default class Header extends Component {
               </ul>
               {(this.state.loggedIn== false) &&
                 <div className="navbar-nav ml-auto">
-                  <div className="btn btn-primary"><a className="login" href="/login">Login</a></div>
-                  <div className="btn btn-secondary ml-2"><a className="register" href="/register">Register</a></div>
+                  <div className="btn btn-primary px-4 py-2 mr-3"><a className="login text-white" href="/login">Login</a></div>
+                  <div className="btn btn-secondary ml-2 mr-4"><a className="register text-white" href="/register">Register</a></div>
                 </div>
               }
               {this.state.loggedIn &&
               <div className="navbar-nav ml-auto">
                   <img src={profile} width="30" height="30" className="d-inline-block align-top" />
                   <div className="mx-2"><a className="profile" href="#">Hello {this.state.profile.name}</a></div>
-                  <div className="btn btn-primary ml-2"><a className="logout" href="/logout">Logout</a></div>
+                  <div className="btn btn-primary ml-2 px-4 py-2 mr-4"><a className="logout text-white" href="/logout">Logout</a></div>
                 </div>
               }
             </div>
