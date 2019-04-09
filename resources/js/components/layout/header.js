@@ -46,16 +46,16 @@ export default class Header extends Component {
             <div className="collapse navbar-collapse" id="navbarColor01">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <Link to="/" className="nav-link">Homepage</Link>
+                  <Link to="/" className="nav-link mx-5 h5">Homepage</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/events/page=1" className="nav-link">Events</Link>
+                  <Link to="/events/page=1" className="nav-link mx-5 h5">Events</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to ="/team" className="nav-link">Team</Link>
+                  <Link to ="/team" className="nav-link mx-5 h5">Team</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="contact" className="nav-link">Contact</Link>
+                  <Link to="contact" className="nav-link mx-5 h5">Contact</Link>
                 </li>
               </ul>
               {(this.state.loggedIn== false) &&
