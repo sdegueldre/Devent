@@ -9,6 +9,11 @@ import image04 from '../../assets/avatar11.png';
 import image05 from '../../assets/avatar11.png';
 
 export default class Team extends Component{
+
+  componentDidMount() {
+    window.scrollTo(0, 0) // Go to the top of the page
+  }
+
   render() {
     return(
       <div className="container">

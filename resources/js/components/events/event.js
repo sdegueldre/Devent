@@ -23,6 +23,7 @@ export default class Eventsolo extends Component {
 
     this.state = {
       eventSolo: [],
+      eventSoloAuthor: [],
       events: [],
     };
 
@@ -48,7 +49,7 @@ export default class Eventsolo extends Component {
   }
 
     render() {
-      const { eventSolo, events } = this.state;
+      const { eventSolo, events, eventSoloAuthor } = this.state;
 
       return (
         <div className="container" key={this.key}>
@@ -84,7 +85,7 @@ export default class Eventsolo extends Component {
               </div>
               <div className="author">
                 <img src={author}/>
-                <p>This event was created by "user" on the "date"</p>
+                <p>This event was created by {eventSoloAuthor.name} on the {eventSolo.created_at}</p>
               </div>
             </div>
 
