@@ -66,8 +66,9 @@ export default class Eventsolo extends Component {
               <div className="eventBody mt-3">
                   <div className="col">
                     <h4>Description</h4>
-                      <img className="map-placeholder" src={map}/>
-
+                      <div className="map-placeholder">
+                        <img className="map-img" src={map}/>
+                      </div>
                     <p>{eventSolo.event_description}</p>
                   </div>
 
@@ -78,8 +79,8 @@ export default class Eventsolo extends Component {
                 </div>
               </div>
               <div className="row buttons">
-                <div className="btn btn-dark"><a className="Delete" href={"/deleteanevent/"+events.id}>Delete</a></div>
-                <div className="btn btn-light"><a className="Edit" href={"/editanevent/"+events.id}>Edit</a></div>
+                <div className="btn btn-dark"><a className="Delete" href={"/deleteanevent/"+eventSolo.id}>Delete</a></div>
+                <div className="btn btn-light"><a className="Edit" href={"/editanevent/"+eventSolo.id}>Edit</a></div>
               </div>
               <div className="author">
                 <img src={author}/>

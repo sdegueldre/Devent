@@ -23,7 +23,7 @@ export default class EditAnEvent extends Component {
   }
   async componentDidMount() {
     window.scrollTo(0, 0)
-    let event = (await api.fetchEventSolo(this.props.match.params.id)).events
+    let event = (await api.fetchEventSolo(this.props.match.params.id)).eventSolo
     event.date = event.event_time.substring(0,10);
     event.time = event.event_time.substring(11,21);
     delete this.state.event_time;
