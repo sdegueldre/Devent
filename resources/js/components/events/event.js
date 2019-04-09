@@ -64,22 +64,22 @@ export default class Eventsolo extends Component {
                 <input id="toggle-7" className="toggle toggle-yes-no" type="checkbox" />
                 <label htmlFor="toggle-7" data-on="Going" data-off="Not going"></label>
               </div>
-              <div className="eventBody mt-3">
-                  <div className="col">
-                    <h4>Description</h4>
-                      <div className="map-placeholder">
-                        <img className="map-img" src={map}/>
-                      </div>
-                    <p>{eventSolo.event_description}</p>
-                  </div>
-
-                <h3 className="mt-3">7 attendees</h3>
-                <div className="row attendee">
-                  <h4>Attendees</h4>
-                  <img src={attendee01}/><img src={attendee02}/><img src={attendee03}/><img src={attendee04}/><img src={attendee05}/><img src={attendee06}/><img src={attendee07}/>
+              <div className="eventBody mt-3 clearfix">
+                <div className="col">
+                  <h4>Description</h4>
+                    <div className="map-placeholder">
+                      <img className="map-img" src={map}/>
+                    </div>
+                  <p>{eventSolo.event_description}</p>
                 </div>
               </div>
-              <div className="row buttons">
+              <div className="attendee">
+                <h3 className="mt-3">7 attendees</h3>
+                  <div className="attendee-list">
+                    <img src={attendee01}/><img src={attendee02}/><img src={attendee03}/><img src={attendee04}/><img src={attendee05}/><img src={attendee06}/><img src={attendee07}/>
+                  </div>
+              </div>
+              <div className="buttons">
                 <div className="btn btn-dark"><a className="Delete" href={"/deleteanevent/"+eventSolo.id}>Delete</a></div>
                 <div className="btn btn-light"><a className="Edit" href={"/editanevent/"+eventSolo.id}>Edit</a></div>
               </div>

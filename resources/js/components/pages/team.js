@@ -41,7 +41,7 @@ export default class Team extends Component{
                  </header>
 
                  <div className="text-white mx-auto pb-4">
-                     <p class="text-center text-white px-4">Eget mattis at, laoreet vel amet sed velit aliquam diam ante,
+                     <p className="text-center text-white px-4">Eget mattis at, laoreet vel amet sed velit aliquam diam ante,
                          dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
                  </div>
                  <a href="#" className="btn btn-danger px-4 py-3 mb-5">MORE ABOUT</a>
@@ -53,7 +53,7 @@ export default class Team extends Component{
                  </header>
 
                  <div className="text-white mx-auto pb-4">
-                     <p class="text-center text-white px-4">Eget mattis at, laoreet vel amet sed velit aliquam diam ante,
+                     <p className="text-center text-white px-4">Eget mattis at, laoreet vel amet sed velit aliquam diam ante,
                          dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
                  </div>
                  <a href="#" className="btn btn-danger px-4 py-3">MORE ABOUT</a>
@@ -65,7 +65,7 @@ export default class Team extends Component{
                  </header>
 
                  <div className="text-white mx-auto pb-4">
-                     <p class="text-center px-4">Eget mattis at, laoreet vel amet sed velit aliquam diam ante,
+                     <p className="text-center px-4">Eget mattis at, laoreet vel amet sed velit aliquam diam ante,
                          dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
                  </div>
                  <a href="#" className="btn btn-danger px-4 py-3 mb-5">MORE ABOUT</a>
@@ -77,7 +77,7 @@ export default class Team extends Component{
                  </header>
 
                  <div className="text-white mx-auto pb-4">
-                     <p class="text-center text-white px-4">Eget mattis at, laoreet vel amet sed velit aliquam diam ante,
+                     <p className="text-center text-white px-4">Eget mattis at, laoreet vel amet sed velit aliquam diam ante,
                          dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
                  </div>
                  <a href="#" className="btn btn-danger px-4 py-3 mb-5">MORE ABOUT</a>

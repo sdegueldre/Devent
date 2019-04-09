@@ -42,6 +42,11 @@ export default class Header extends Component {
                 <li className="nav-item">
                   <Link to="/events/page=1" className="nav-link mx-4 h5">Events</Link>
                 </li>
+                {this.state.loggedIn &&
+                  <li className="nav-item">
+                    <Link to="/addnewevent" className="nav-link mx-4 h5">Add Event</Link>
+                  </li>
+                }
                 <li className="nav-item">
                   <Link to ="/team" className="nav-link mx-4 h5">Team</Link>
                 </li>
