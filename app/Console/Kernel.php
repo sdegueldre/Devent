@@ -4,7 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use App\Http\Controllers\AttendeesController;
+use App\Http\Controllers\AttendeesController as Attendees;
 class Kernel extends ConsoleKernel
 {
     /**
@@ -24,7 +24,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->call(AttendeesController::sendReminders())->everyMinute();	
+        $schedule->call(function(){
+             Attendees::sendReminders();
+        })->everyMinute();
     }
 
     /**

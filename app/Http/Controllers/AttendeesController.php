@@ -57,7 +57,6 @@ class AttendeesController extends Controller
     public static function sendReminders() {
         $todaysReminders = Event::where('reminder', '=', date('Y-m-d'));
         $events = $todaysReminders->with('attendees')->get()->toArray();
-        \Log::info($events);
 
         foreach($events as $event){
             if ($event['reminder_sent'] == false) {
