@@ -20,11 +20,13 @@ export default class Header extends Component {
 
     async componentDidMount() {
       let logged = api.islogged();
-      console.log(logged);
-      this.setState(logged);
+      if (logged.loggedIn){
+        let response = await api.me();
+        let refresh = await api.refresh();
+        this.setState({loggedIn: logged.loggedIn, profile: response.profile});
+      }
     }
     render() {
-      console.log(this.state.loggedIn);
         return (
           <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
             <Link to="/" className="navbar-brand"><img width="30" height="30" className="d-inline-block align-top mx-2" src={ logo }/>Dev'ent</Link>
@@ -41,10 +43,10 @@ export default class Header extends Component {
                   <Link to="/events/page=1" className="nav-link">Events</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to ="#" className="nav-link">Team</Link>
+                  <Link to ="/team" className="nav-link">Team</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="#" className="nav-link">Contact</Link>
+                  <Link to="contact" className="nav-link">Contact</Link>
                 </li>
               </ul>
               {(this.state.loggedIn== false) &&
@@ -56,7 +58,7 @@ export default class Header extends Component {
               {this.state.loggedIn &&
               <div className="navbar-nav ml-auto">
                   <img src={profile} width="30" height="30" className="d-inline-block align-top" />
-                  <div className="mx-2"><a className="profile" href="#">Hello James</a></div>
+                  <div className="mx-2"><a className="profile" href="#">Hello {this.state.profile.name}</a></div>
                   <div className="btn btn-primary ml-2"><a className="logout" href="/logout">Logout</a></div>
                 </div>
               }

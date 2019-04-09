@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+  import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import api from '../api';
@@ -21,11 +21,14 @@ export default class Homepage extends Component {
 
     this.state = {
       events: [],
+      logged: false,
     };
   }
 
   async componentDidMount() {
-    this.setState(await api.fetchHome());
+    let response = await api.islogged();
+    let data = await api.fetchHome();
+    this.setState({events: data.events, logged: response.loggedIn});
   }
   componentDidUpdate(){
 
@@ -82,11 +85,13 @@ export default class Homepage extends Component {
               <button type="button" className="btn-card btn-primary btn-lg btn-block">Show more cool events</button>
             </Link>
           </div>
-        <div className="container my-4">
-          <Link to="/addnewevent">
-            <button type="button" className="btn-card btn-light btn-lg btn-block">Add a new event</button>
-          </Link>
-        </div>
+          {this.state.logged &&
+            <div className="container my-4">
+              <Link to="/addnewevent">
+                <button type="button" className="btn-card btn-light btn-lg btn-block">Add a new event</button>
+              </Link>
+            </div>
+          }
       </div>
 
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import TextTruncate from 'react-text-truncate';
 
 export default class Card extends Component {
 
@@ -18,7 +19,11 @@ export default class Card extends Component {
             </div>
             <div className="card-desc">
               <h3>{this.props.events.event_title}</h3>
-              <p>{this.props.events.event_description}</p>
+             <TextTruncate
+                    line={2}
+                    truncateText="…"
+                    text={this.props.events.event_description}
+                    textTruncateChild={<Link to={"/event/" + this.props.events.id} onClick={() => this.reload(this.props.events.id)}>Read more</Link>}/>
               </div>
             </div>
               <div>
