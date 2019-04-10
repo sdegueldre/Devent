@@ -16,6 +16,7 @@ class API {
               'Authorization': 'Bearer '+ this.token
           },
       }
+      console.log(config);
       if(data != null){
         config.body = data;
       }

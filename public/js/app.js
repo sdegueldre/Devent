@@ -6551,7 +6551,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "/* DEMO PURPOSE */\n.map-placeholder {\n  width: 50%;\n  float: right;\n  margin-left: 20px;\n  margin-bottom: 20PX;\n}\n\n@media (max-width: 575.98px) {\n  .map-placeholder {\n    display: none;\n  }\n}\n.map-img {\n  width: 100%;\n}\n\n/* End Demo */\nh3 {\n  text-align: center;\n}\n\n.attendee {\n  background-color: white;\n  color: black;\n}\n\n.attendee-list {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n\n.attendee img {\n  max-width: 65px;\n  max-height: 65px;\n  border-radius: 200px;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n}\n\n.buttons {\n  background-color: white;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n\n.card-body {\n  padding: 0;\n  padding-left: 1rem;\n  padding-right: 1rem;\n}\n\n.eventHeaderImg {\n  height: 350px;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center top;\n}\n\n/* Position text in the middle of the page/image */\n.eventTitle {\n  background-color: black;\n  /* Fallback color */\n  background-color: rgba(0, 0, 0, 0.4);\n  /* Black w/opacity/see-through */\n  color: white;\n  font-weight: bold;\n  border: 3px solid #f1f1f1;\n  position: relative;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  z-index: 2;\n  width: 80%;\n  padding: 20px;\n  text-align: center;\n}\n\n.eventTitle > p {\n  margin: 0;\n  font-size: 20px;\n}\n\n@media (min-width: 576px) {\n  .eventTitle > p {\n    font-size: 40px;\n    text-transform: uppercase;\n  }\n}\n.eventBody {\n  background-color: white;\n  color: black;\n  padding: 20px;\n  margin-top: 0;\n}\n\n.eventFeed {\n  width: 100%;\n}\n\n/* Author */\n.author {\n  background-color: #E74C3C;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  display: flex;\n}\n\n.authorImg {\n  width: 100px;\n  height: 100px;\n}\n\n.author > img {\n  height: 100px;\n  width: 100px;\n  margin: -50px;\n  border-radius: 200px;\n  overflow: hidden;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n.author > p {\n  padding: 5px;\n  margin: auto;\n}\n\n/* Attending full width */\n.eventAttending {\n  width: 100%;\n  margin: 0;\n}\n\n/* Flip button */\n.toggle {\n  position: absolute;\n  margin-left: -9999px;\n  visibility: hidden;\n}\n\n.toggle + label {\n  display: block;\n  position: relative;\n  cursor: pointer;\n  outline: none;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n\ninput.toggle-yes-no + label {\n  padding: 2px;\n  width: 100%;\n  height: 60px;\n}\n\ninput.toggle-yes-no + label:before,\ninput.toggle-yes-no + label:after {\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  color: #fff;\n  font-family: \"Nunito\", sans-serif;\n  text-transform: uppercase;\n  font-size: 20px;\n  text-align: center;\n  line-height: 60px;\n}\n\ninput.toggle-yes-no + label:before {\n  background-color: #E74C3C;\n  content: attr(data-off);\n  transition: -webkit-transform 0.5s;\n  transition: transform 0.5s;\n  transition: transform 0.5s, -webkit-transform 0.5s;\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\ninput.toggle-yes-no + label:after {\n  background-color: #61d56f;\n  content: attr(data-on);\n  transition: -webkit-transform 0.5s;\n  transition: transform 0.5s;\n  transition: transform 0.5s, -webkit-transform 0.5s;\n  -webkit-transform: rotateY(180deg);\n          transform: rotateY(180deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\ninput.toggle-yes-no:checked + label:before {\n  -webkit-transform: rotateY(180deg);\n          transform: rotateY(180deg);\n}\n\ninput.toggle-yes-no:checked + label:after {\n  -webkit-transform: rotateY(0);\n          transform: rotateY(0);\n}", ""]);
+exports.push([module.i, "/* DEMO PURPOSE */\n.map-placeholder {\n  width: 50%;\n  float: right;\n  margin-left: 20px;\n  margin-bottom: 20PX;\n}\n\n@media (max-width: 575.98px) {\n  .map-placeholder {\n    display: none;\n  }\n}\n.map-img {\n  width: 100%;\n}\n\n/* End Demo */\nh3 {\n  text-align: center;\n}\n\n.attendee {\n  background-color: white;\n  color: black;\n}\n\n.attendee-list {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n\n.attendee img {\n  width: 65px;\n  height: 65px;\n  border-radius: 200px;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  overflow: hidden;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n.buttons {\n  background-color: white;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n\n.card-body {\n  padding: 0;\n  padding-left: 1rem;\n  padding-right: 1rem;\n}\n\n.eventHeaderImg {\n  height: 350px;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center top;\n}\n\n/* Position text in the middle of the page/image */\n.eventTitle {\n  background-color: black;\n  /* Fallback color */\n  background-color: rgba(0, 0, 0, 0.4);\n  /* Black w/opacity/see-through */\n  color: white;\n  font-weight: bold;\n  border: 3px solid #f1f1f1;\n  position: relative;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  z-index: 2;\n  width: 80%;\n  padding: 20px;\n  text-align: center;\n}\n\n.eventTitle > p {\n  margin: 0;\n  font-size: 20px;\n}\n\n@media (min-width: 576px) {\n  .eventTitle > p {\n    font-size: 40px;\n    text-transform: uppercase;\n  }\n}\n.eventBody {\n  background-color: white;\n  color: black;\n  padding: 20px;\n  margin-top: 0;\n}\n\n.eventFeed {\n  width: 100%;\n}\n\n/* Author */\n.author {\n  background-color: #E74C3C;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  display: flex;\n}\n\n.authorImg {\n  width: 100px;\n  height: 100px;\n}\n\n.author > img {\n  height: 100px;\n  width: 100px;\n  margin: -50px;\n  border-radius: 200px;\n  overflow: hidden;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n.author > p {\n  padding: 5px;\n  margin: auto;\n}\n\n/* Attending full width */\n.eventAttending {\n  width: 100%;\n  margin: 0;\n}\n\n/* Flip button */\n.toggle {\n  position: absolute;\n  margin-left: -9999px;\n  visibility: hidden;\n}\n\n.toggle + label {\n  display: block;\n  position: relative;\n  cursor: pointer;\n  outline: none;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n\ninput.toggle-yes-no + label {\n  padding: 2px;\n  width: 100%;\n  height: 60px;\n}\n\ninput.toggle-yes-no + label:before,\ninput.toggle-yes-no + label:after {\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  color: #fff;\n  font-family: \"Nunito\", sans-serif;\n  text-transform: uppercase;\n  font-size: 20px;\n  text-align: center;\n  line-height: 60px;\n}\n\ninput.toggle-yes-no + label:before {\n  background-color: #E74C3C;\n  content: attr(data-off);\n  transition: -webkit-transform 0.5s;\n  transition: transform 0.5s;\n  transition: transform 0.5s, -webkit-transform 0.5s;\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\ninput.toggle-yes-no + label:after {\n  background-color: #61d56f;\n  content: attr(data-on);\n  transition: -webkit-transform 0.5s;\n  transition: transform 0.5s;\n  transition: transform 0.5s, -webkit-transform 0.5s;\n  -webkit-transform: rotateY(180deg);\n          transform: rotateY(180deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\ninput.toggle-yes-no:checked + label:before {\n  -webkit-transform: rotateY(180deg);\n          transform: rotateY(180deg);\n}\n\ninput.toggle-yes-no:checked + label:after {\n  -webkit-transform: rotateY(0);\n          transform: rotateY(0);\n}", ""]);
 
 // exports
 
@@ -56621,7 +56621,7 @@ module.exports = ReactPropTypesSecret;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.8.5
+/** @license React v16.8.6
  * react-dom.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -61955,15 +61955,29 @@ function isInDocument(node) {
   return node && node.ownerDocument && containsNode(node.ownerDocument.documentElement, node);
 }
 
+function isSameOriginFrame(iframe) {
+  try {
+    // Accessing the contentDocument of a HTMLIframeElement can cause the browser
+    // to throw, e.g. if it has a cross-origin src attribute.
+    // Safari will show an error in the console when the access results in "Blocked a frame with origin". e.g:
+    // iframe.contentDocument.defaultView;
+    // A safety way is to access one of the cross origin properties: Window or Location
+    // Which might result in "SecurityError" DOM Exception and it is compatible to Safari.
+    // https://html.spec.whatwg.org/multipage/browsers.html#integration-with-idl
+
+    return typeof iframe.contentWindow.location.href === 'string';
+  } catch (err) {
+    return false;
+  }
+}
+
 function getActiveElementDeep() {
   var win = window;
   var element = getActiveElement();
   while (element instanceof win.HTMLIFrameElement) {
-    // Accessing the contentDocument of a HTMLIframeElement can cause the browser
-    // to throw, e.g. if it has a cross-origin src attribute
-    try {
-      win = element.contentDocument.defaultView;
-    } catch (e) {
+    if (isSameOriginFrame(element)) {
+      win = element.contentWindow;
+    } else {
       return element;
     }
     element = getActiveElement(win.document);
@@ -67923,14 +67937,35 @@ function constructClassInstance(workInProgress, ctor, props, renderExpirationTim
   var unmaskedContext = emptyContextObject;
   var context = null;
   var contextType = ctor.contextType;
-  if (typeof contextType === 'object' && contextType !== null) {
-    {
-      if (contextType.$$typeof !== REACT_CONTEXT_TYPE && !didWarnAboutInvalidateContextType.has(ctor)) {
+
+  {
+    if ('contextType' in ctor) {
+      var isValid =
+      // Allow null for conditional declaration
+      contextType === null || contextType !== undefined && contextType.$$typeof === REACT_CONTEXT_TYPE && contextType._context === undefined; // Not a <Context.Consumer>
+
+      if (!isValid && !didWarnAboutInvalidateContextType.has(ctor)) {
         didWarnAboutInvalidateContextType.add(ctor);
-        warningWithoutStack$1(false, '%s defines an invalid contextType. ' + 'contextType should point to the Context object returned by React.createContext(). ' + 'Did you accidentally pass the Context.Provider instead?', getComponentName(ctor) || 'Component');
+
+        var addendum = '';
+        if (contextType === undefined) {
+          addendum = ' However, it is set to undefined. ' + 'This can be caused by a typo or by mixing up named and default imports. ' + 'This can also happen due to a circular dependency, so ' + 'try moving the createContext() call to a separate file.';
+        } else if (typeof contextType !== 'object') {
+          addendum = ' However, it is set to a ' + typeof contextType + '.';
+        } else if (contextType.$$typeof === REACT_PROVIDER_TYPE) {
+          addendum = ' Did you accidentally pass the Context.Provider instead?';
+        } else if (contextType._context !== undefined) {
+          // <Context.Consumer>
+          addendum = ' Did you accidentally pass the Context.Consumer instead?';
+        } else {
+          addendum = ' However, it is set to an object with keys {' + Object.keys(contextType).join(', ') + '}.';
+        }
+        warningWithoutStack$1(false, '%s defines an invalid contextType. ' + 'contextType should point to the Context object returned by React.createContext().%s', getComponentName(ctor) || 'Component', addendum);
       }
     }
+  }
 
+  if (typeof contextType === 'object' && contextType !== null) {
     context = readContext(contextType);
   } else {
     unmaskedContext = getUnmaskedContext(workInProgress, ctor, true);
@@ -69724,8 +69759,8 @@ function mountReducer(reducer, initialArg, init) {
   var queue = hook.queue = {
     last: null,
     dispatch: null,
-    eagerReducer: reducer,
-    eagerState: initialState
+    lastRenderedReducer: reducer,
+    lastRenderedState: initialState
   };
   var dispatch = queue.dispatch = dispatchAction.bind(null,
   // Flow doesn't know this is non-null, but we do.
@@ -69737,6 +69772,8 @@ function updateReducer(reducer, initialArg, init) {
   var hook = updateWorkInProgressHook();
   var queue = hook.queue;
   !(queue !== null) ? invariant(false, 'Should have a queue. This is likely a bug in React. Please file an issue.') : void 0;
+
+  queue.lastRenderedReducer = reducer;
 
   if (numberOfReRenders > 0) {
     // This is a re-render. Apply the new render phase updates to the previous
@@ -69772,8 +69809,7 @@ function updateReducer(reducer, initialArg, init) {
           hook.baseState = newState;
         }
 
-        queue.eagerReducer = reducer;
-        queue.eagerState = newState;
+        queue.lastRenderedState = newState;
 
         return [newState, _dispatch];
       }
@@ -69852,8 +69888,7 @@ function updateReducer(reducer, initialArg, init) {
     hook.baseUpdate = newBaseUpdate;
     hook.baseState = newBaseState;
 
-    queue.eagerReducer = reducer;
-    queue.eagerState = _newState;
+    queue.lastRenderedState = _newState;
   }
 
   var dispatch = queue.dispatch;
@@ -69869,8 +69904,8 @@ function mountState(initialState) {
   var queue = hook.queue = {
     last: null,
     dispatch: null,
-    eagerReducer: basicStateReducer,
-    eagerState: initialState
+    lastRenderedReducer: basicStateReducer,
+    lastRenderedState: initialState
   };
   var dispatch = queue.dispatch = dispatchAction.bind(null,
   // Flow doesn't know this is non-null, but we do.
@@ -70147,21 +70182,21 @@ function dispatchAction(fiber, queue, action) {
       // The queue is currently empty, which means we can eagerly compute the
       // next state before entering the render phase. If the new state is the
       // same as the current state, we may be able to bail out entirely.
-      var _eagerReducer = queue.eagerReducer;
-      if (_eagerReducer !== null) {
+      var _lastRenderedReducer = queue.lastRenderedReducer;
+      if (_lastRenderedReducer !== null) {
         var prevDispatcher = void 0;
         {
           prevDispatcher = ReactCurrentDispatcher$1.current;
           ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnUpdateInDEV;
         }
         try {
-          var currentState = queue.eagerState;
-          var _eagerState = _eagerReducer(currentState, action);
+          var currentState = queue.lastRenderedState;
+          var _eagerState = _lastRenderedReducer(currentState, action);
           // Stash the eagerly computed state, and the reducer used to compute
           // it, on the update object. If the reducer hasn't changed by the
           // time we enter the render phase, then the eager state can be used
           // without calling the reducer again.
-          _update2.eagerReducer = _eagerReducer;
+          _update2.eagerReducer = _lastRenderedReducer;
           _update2.eagerState = _eagerState;
           if (is(_eagerState, currentState)) {
             // Fast path. We can bail out without scheduling React to re-render.
@@ -77340,7 +77375,7 @@ implementation) {
 
 // TODO: this is special because it gets imported during build.
 
-var ReactVersion = '16.8.5';
+var ReactVersion = '16.8.6';
 
 // TODO: This type is shared between the reconciler and ReactDOM, but will
 // eventually be lifted out to the renderer.
@@ -77921,7 +77956,7 @@ if (false) {} else {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.8.5
+/** @license React v16.8.6
  * react-is.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -80070,7 +80105,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.8.5
+/** @license React v16.8.6
  * react.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -80092,7 +80127,7 @@ var checkPropTypes = __webpack_require__(/*! prop-types/checkPropTypes */ "./nod
 
 // TODO: this is special because it gets imported during build.
 
-var ReactVersion = '16.8.5';
+var ReactVersion = '16.8.6';
 
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
@@ -82819,7 +82854,7 @@ function resolvePathname(to) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v0.13.5
+/** @license React v0.13.6
  * scheduler-tracing.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -83254,7 +83289,7 @@ exports.unstable_unsubscribe = unstable_unsubscribe;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(global) {/** @license React v0.13.5
+/* WEBPACK VAR INJECTION */(function(global) {/** @license React v0.13.6
  * scheduler.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -84736,35 +84771,36 @@ function () {
                     'Authorization': 'Bearer ' + this.token
                   }
                 };
+                console.log(config);
 
                 if (data != null) {
                   config.body = data;
                 }
 
-                _context.next = 8;
+                _context.next = 9;
                 return fetch('/api/' + route, config);
 
-              case 8:
+              case 9:
                 response = _context.sent;
 
                 if (!response.ok) {
-                  _context.next = 14;
+                  _context.next = 15;
                   break;
                 }
 
-                _context.next = 12;
+                _context.next = 13;
                 return response.json();
 
-              case 12:
+              case 13:
                 json = _context.sent;
                 return _context.abrupt("return", json);
 
-              case 14:
-                _context.next = 20;
+              case 15:
+                _context.next = 21;
                 break;
 
-              case 16:
-                _context.prev = 16;
+              case 17:
+                _context.prev = 17;
                 _context.t0 = _context["catch"](3);
                 console.log(_context.t0);
 
@@ -84773,12 +84809,12 @@ function () {
                   localStorage.removeItem('token');
                 }
 
-              case 20:
+              case 21:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, this, [[3, 16]]);
+        }, _callee, this, [[3, 17]]);
       }));
 
       function callAPI(_x, _x2) {
@@ -85397,17 +85433,6 @@ module.exports = "/images/avatar10.png?d560ba6ef6abba8f05dff65ae6b0485f";
 
 /***/ }),
 
-/***/ "./resources/js/assets/avatar11.png":
-/*!******************************************!*\
-  !*** ./resources/js/assets/avatar11.png ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/avatar11.png?8ceb6521f64a8a371be2bc336f883f62";
-
-/***/ }),
-
 /***/ "./resources/js/assets/avatar12.png":
 /*!******************************************!*\
   !*** ./resources/js/assets/avatar12.png ***!
@@ -85416,6 +85441,17 @@ module.exports = "/images/avatar11.png?8ceb6521f64a8a371be2bc336f883f62";
 /***/ (function(module, exports) {
 
 module.exports = "/images/avatar12.png?517037464f4f45c0dcd038d00b38bcec";
+
+/***/ }),
+
+/***/ "./resources/js/assets/chris.jpeg":
+/*!****************************************!*\
+  !*** ./resources/js/assets/chris.jpeg ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/chris.jpeg?d549587cac542a9ddbca50f057a3a908";
 
 /***/ }),
 
@@ -85452,6 +85488,17 @@ module.exports = "/images/event05.png?8276cc51003dc42999d012c23c21a65b";
 
 /***/ }),
 
+/***/ "./resources/js/assets/jerem.jpeg":
+/*!****************************************!*\
+  !*** ./resources/js/assets/jerem.jpeg ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/jerem.jpeg?9199555e99338f67f864e14a7d3e2b6f";
+
+/***/ }),
+
 /***/ "./resources/js/assets/logo2.svg":
 /*!***************************************!*\
   !*** ./resources/js/assets/logo2.svg ***!
@@ -85471,6 +85518,39 @@ module.exports = "/images/logo2.svg?9399cadf42a1cb70fd051b00ff1a13c7";
 /***/ (function(module, exports) {
 
 module.exports = "/images/map.png?0deba61cf6dfb8e95e65914f49050ecd";
+
+/***/ }),
+
+/***/ "./resources/js/assets/nabil.jpeg":
+/*!****************************************!*\
+  !*** ./resources/js/assets/nabil.jpeg ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/nabil.jpeg?c4e283b99afda60c1a6f3bd76abbf42e";
+
+/***/ }),
+
+/***/ "./resources/js/assets/nadine.jpeg":
+/*!*****************************************!*\
+  !*** ./resources/js/assets/nadine.jpeg ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/nadine.jpeg?20127352369cdee5aa9e9faeabd0e31e";
+
+/***/ }),
+
+/***/ "./resources/js/assets/simon.jpeg":
+/*!****************************************!*\
+  !*** ./resources/js/assets/simon.jpeg ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/simon.jpeg?d07829f24f329cd93ca00b6d2a7df5ce";
 
 /***/ }),
 
@@ -86177,8 +86257,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layout_card__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../layout/card */ "./resources/js/components/layout/card.js");
 /* harmony import */ var _sass_event_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../sass/event.scss */ "./resources/sass/event.scss");
 /* harmony import */ var _sass_event_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_sass_event_scss__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var react_moment__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-moment */ "./node_modules/react-moment/dist/index.js");
-/* harmony import */ var react_moment__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_moment__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var react_moment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-moment */ "./node_modules/react-moment/dist/index.js");
+/* harmony import */ var react_moment__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_moment__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _assets_avatar10_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../assets/avatar10.png */ "./resources/js/assets/avatar10.png");
 /* harmony import */ var _assets_avatar10_png__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_assets_avatar10_png__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _assets_avatar03_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../assets/avatar03.png */ "./resources/js/assets/avatar03.png");
@@ -86475,7 +86555,7 @@ function (_Component) {
         className: "eventBody mt-3 clearfix"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
         className: "far fa-clock"
-      }), " ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_moment__WEBPACK_IMPORTED_MODULE_11___default.a, {
+      }), " ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_moment__WEBPACK_IMPORTED_MODULE_7___default.a, {
         format: "DD MMMM Y - H:mm"
       }, eventSolo.event_time)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col"
@@ -86524,7 +86604,7 @@ function (_Component) {
         className: "author"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
         src: eventSoloAuthor.avatar
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "This event was created by ", eventSoloAuthor.name, " on the ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_moment__WEBPACK_IMPORTED_MODULE_11___default.a, {
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, "This event was created by ", eventSoloAuthor.name, " on the ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_moment__WEBPACK_IMPORTED_MODULE_7___default.a, {
         format: "DD MMMM Y"
       }, eventSolo.created_at)))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col-lg-4 col-xs-12 sticky-top",
@@ -86692,15 +86772,10 @@ function (_Component) {
           classes: "card"
         }) : '';
       }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "container"
+        className: "container mt-3"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
         "aria-label": "Page navigation example"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "btn btn-danger px-3 py-2"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "past text-white",
-        href: "/pastevents/page=1"
-      }, "Back to the Past")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
         className: "pagination d-flex justify-content-end"
       }, parseInt(this.state.current_page) > 1 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "page-item"
@@ -86737,7 +86812,12 @@ function (_Component) {
         "aria-hidden": "true"
       }, "\xBB"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "sr-only"
-      }, "Next")))))));
+      }, "Next"))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "btn btn-danger px-3 py-2"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+        className: "past text-white",
+        href: "/pastevents/page=1"
+      }, "Back to the Past"))));
     }
   }]);
 
@@ -87193,8 +87273,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var react_text_truncate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-text-truncate */ "./node_modules/react-text-truncate/lib/index.js");
 /* harmony import */ var react_text_truncate__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_text_truncate__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-moment */ "./node_modules/react-moment/dist/index.js");
-/* harmony import */ var react_moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_moment__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-moment */ "./node_modules/react-moment/dist/index.js");
+/* harmony import */ var react_moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_moment__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -87256,7 +87336,7 @@ function (_Component) {
         className: "date"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "far fa-clock"
-      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_moment__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_moment__WEBPACK_IMPORTED_MODULE_3___default.a, {
         format: "DD MMM - H:mm"
       }, this.props.events.event_time))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "city"
@@ -87362,7 +87442,7 @@ function (_Component) {
         className: "far fa-copyright h5 pr-3 ml-5"
       }), " 2019 - Dev'Event"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "text-danger h4 ml-5"
-      }, "Pour l'asurance d'\xE9v\xE8nements r\xE9ussis."))))));
+      }, "Pour l'assurance d'\xE9v\xE8nements r\xE9ussis."))))));
     }
   }]);
 
@@ -87994,8 +88074,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _assets_avatar11_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assets/avatar11.png */ "./resources/js/assets/avatar11.png");
-/* harmony import */ var _assets_avatar11_png__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_assets_avatar11_png__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _assets_nadine_jpeg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assets/nadine.jpeg */ "./resources/js/assets/nadine.jpeg");
+/* harmony import */ var _assets_nadine_jpeg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_assets_nadine_jpeg__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _assets_jerem_jpeg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../assets/jerem.jpeg */ "./resources/js/assets/jerem.jpeg");
+/* harmony import */ var _assets_jerem_jpeg__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_jerem_jpeg__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _assets_simon_jpeg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../assets/simon.jpeg */ "./resources/js/assets/simon.jpeg");
+/* harmony import */ var _assets_simon_jpeg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_simon_jpeg__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _assets_nabil_jpeg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../assets/nabil.jpeg */ "./resources/js/assets/nabil.jpeg");
+/* harmony import */ var _assets_nabil_jpeg__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_nabil_jpeg__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _assets_chris_jpeg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../assets/chris.jpeg */ "./resources/js/assets/chris.jpeg");
+/* harmony import */ var _assets_chris_jpeg__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_assets_chris_jpeg__WEBPACK_IMPORTED_MODULE_7__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -88053,74 +88141,84 @@ function (_Component) {
       }), " Team"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
         className: "col-12 col-md-4 text-center pt-5"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: _assets_avatar11_png__WEBPACK_IMPORTED_MODULE_3___default.a,
+        src: _assets_nadine_jpeg__WEBPACK_IMPORTED_MODULE_3___default.a,
+        className: "teamImg",
         alt: "phot team"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "h4 text-center text-danger pt-4 pb-2"
-      }, "Dev'event")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Nadine")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text-white mx-auto pb-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "text-center px-4"
       }, "Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
-        className: "btn btn-danger px-4 py-3"
-      }, "MORE ABOUT")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
+        href: "https://github.com/NadTr",
+        target: "_blank",
+        className: " btn btn-danger px-4 py-3"
+      }, "GitHub Account")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
         className: "col-12 col-md-4 text-center pt-5"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: _assets_avatar11_png__WEBPACK_IMPORTED_MODULE_3___default.a,
+        src: _assets_jerem_jpeg__WEBPACK_IMPORTED_MODULE_4___default.a,
+        className: "teamImg",
         alt: "phot team"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "h4 text-center text-danger pt-4 pb-2"
-      }, "Dev'event")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Jeremy")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text-white mx-auto pb-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "text-center text-white px-4"
       }, "Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
+        href: "https://github.com/scalajeremy",
+        target: "_blank",
         className: "btn btn-danger px-4 py-3 mb-5"
-      }, "MORE ABOUT")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
+      }, "GitHub Account")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
         className: "col-12 col-md-4 text-center pt-5"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: _assets_avatar11_png__WEBPACK_IMPORTED_MODULE_3___default.a,
+        src: _assets_simon_jpeg__WEBPACK_IMPORTED_MODULE_5___default.a,
+        className: "teamImg",
         alt: "phot team"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "h4 text-center text-danger pt-4 pb-2"
-      }, "Dev'event")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Simon")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text-white mx-auto pb-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "text-center text-white px-4"
       }, "Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
+        href: "https://github.com/Sim-frpt",
+        target: "_blank",
         className: "btn btn-danger px-4 py-3"
-      }, "MORE ABOUT")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
+      }, "GitHub Account")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
         className: "col-12 col-md-4 text-center pt-5"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: _assets_avatar11_png__WEBPACK_IMPORTED_MODULE_3___default.a,
+        src: _assets_nabil_jpeg__WEBPACK_IMPORTED_MODULE_6___default.a,
+        className: "teamImg",
         alt: "phot team"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "h4 text-center text-danger pt-4 pb-2"
-      }, "Dev'event")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Nabil")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text-white mx-auto pb-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "text-center px-4"
       }, "Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
+        href: "https://github.com/nabil-e",
+        target: "_blank",
         className: "btn btn-danger px-4 py-3 mb-5"
-      }, "MORE ABOUT")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
+      }, "GitHub Account")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
         className: "col-12 col-md-4 text-center pt-5"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: _assets_avatar11_png__WEBPACK_IMPORTED_MODULE_3___default.a,
+        src: _assets_chris_jpeg__WEBPACK_IMPORTED_MODULE_7___default.a,
+        className: "teamImg",
         alt: "phot team"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "h4 text-center text-danger pt-4 pb-2"
-      }, "Dev'event")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Christophe")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text-white mx-auto pb-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "text-center text-white px-4"
       }, "Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
+        href: "https://github.com/nabil-e",
+        target: "_blank",
         className: "btn btn-danger px-4 py-3 mb-5"
-      }, "MORE ABOUT"))));
+      }, "GitHub Account"))));
     }
   }]);
 
@@ -88546,8 +88644,8 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/becode/becode/The-hill/jepsen-brite/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/becode/becode/The-hill/jepsen-brite/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/thejameskiller/Documents/becode_projects/02-the-hill/Jepsen-Brite/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
