@@ -17,8 +17,8 @@ Route::post('/register', 'Auth\RegisterController@register');
 Route::post('/login', 'AuthController@login');
 
 Route::get('/homepage', 'EventController@homepage')->name('events.homepage');
-Route::get('/events', 'EventController@index')->name('events.index');
-Route::get('/pastevents', 'EventController@past')->name('events.past');
+Route::get('/events/page/{page}', 'EventController@index')->name('events.index');
+Route::get('/pastevents/page/{page}', 'EventController@past')->name('events.past');
 Route::get('/events/{event}', 'EventController@show')->name('events.show');
 Route::get('/confirm/{token}', 'AuthController@confirm');
 Route::get('/sendreminders', 'AttendeesController@sendReminders');

@@ -18,10 +18,8 @@ class EventController extends Controller
        $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->limit(3)->get();
        return response()->json($events);
      }
-     public function index(Request $request)
+     public function index(Page $page)
        {
-         $parameter = $request->only('page');
-         $page = intval(array_first($parameter));
          $eventsAll = Event::where('event_time', '>', NOW())->get();
          $number = count($eventsAll);
          if ($number > 0){
@@ -36,10 +34,8 @@ class EventController extends Controller
          $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->skip(($page-1)*6)->take(6)->get();
          return response()->json(['data' => $events, 'current_page' => $page,'last_page' => $last_page ]);
        }
-    public function past(Request $request)
+    public function past(Page $page)
     {
-      $parameter = $request->only('page');
-      $page = array_first($parameter);
       $eventsAll = Event::where('event_time', '<', NOW())->get();
       $number = count($eventsAll);
       if ($number > 0){
@@ -64,7 +60,6 @@ class EventController extends Controller
      public function store(Request $request)
      {
         $request['event_author'] = auth()->user()->id;
-        // $request['reminder_sent'] = false;
 
          $request->validate([
              'event_title'      => 'required',
@@ -74,15 +69,14 @@ class EventController extends Controller
              'event_location'   => 'required',
              'event_image'      => 'required',
              'event_author'     => 'required',
-             'reminder'         => 'nullable',
-             'reminder_sent'    => 'nullable'
+             'reminder'         => 'nullable'
          ]);
 
          $event = Event::create($request->all());
 
          return response()->json([
              'message' => 'Great success! New event created',
-             'event'   => $event
+             'event' => $event
          ]);
      }
 
