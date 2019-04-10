@@ -44,7 +44,7 @@ export default class Login extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="mt-3 mb-2"><i class="far fa-address-card"></i> Register</h1>
+        <h1 className="mt-3 mb-2"><i className="far fa-address-card"></i> Register</h1>
 
           <div className="row">
 
