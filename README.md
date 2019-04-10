@@ -6,11 +6,15 @@
   * `npm install`
 
 
-## settings :
+## Settings :
 
   * create .env file, copy the inside of the .env.example and change your settings.
   * `php artisan key:generate`
   * `php artisan jwt:secret`
+
+### Launch de database :
+
+  * `docker-compose up`
   * `php artisan migrate`
   * `php artisan db:seed`
 

@@ -13,8 +13,14 @@
   margin-bottom: 20PX;
 }
 
+@include media-breakpoint-down(xs) {
+  .map-placeholder {
+    display: none;
+  }
+}
+
 .map-img{
-  max-width: 335px;
+  width: 100%;
 }
 /* End Demo */
 

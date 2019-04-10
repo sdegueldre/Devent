@@ -28,13 +28,13 @@ export default class Contact extends Component {
               <div className="row col-12 py-3 mx-auto">
 
                 <div className="col-sm-12 col-md-6 col-lg-4 d-flex flex-wrap align-items-start mb-3 py-4 px-5 ">
-                  <h2 className = "mt-3 mb-2 text-white h3 " > < i className = "far fas fa-at" > < /i> e-mail</h2 >
-                  <a href="#"><p className="h4 pl-4 pb-3">devevent@gmail.com</p></a>
+                  <h2 className = "mt-3 mb-2 text-white h3 " > < i className = "fab fa-linkedin-in" > < /i> linkedIn</h2 >
+                  <a href="#"><p className="h4 pl-4 pb-3">linkedIn Div'Event</p></a>
                 </div>
 
                 <div className="col-sm-12 col-md-6 col-lg-4 d-flex flex-wrap align-items-start mb-3 py-4 px-5 mx-auto">
-                  <h2 className = "mt-3 mb-2 text-white h3" > < i className = "fas fa-phone-square" > < /i> phone number</h2 >
-                  <p className="h4 pl-4 pb-3 text-danger">+32 456/789.123</p>
+                  <h2 className = "mt-3 mb-2 text-white h3" > < i className = "fab fa-facebook-messenger" > < /i> Messenger</h2 >
+                  <a href="#"><p className="h4 pl-4 pb-3">Messenger Div'Event</p></a>
                 </div>
 
               </div>
