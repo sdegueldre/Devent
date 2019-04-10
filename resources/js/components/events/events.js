@@ -50,7 +50,7 @@ export default class Events extends Component {
             {/* Start pagination */}
             <div className="container">
               <nav aria-label="Page navigation example">
-              <div className="btn btn-primary"><a className="past" href={"/pastevents/page=1"}>Back to the Past</a></div>
+              <div className="btn btn-danger px-3 py-2"><a className="past text-white" href={"/pastevents/page=1"}>Back to the Past</a></div>
                 <ul className="pagination d-flex justify-content-end">
                   {parseInt(this.state.current_page) > 1 &&
                     <li className="page-item">
