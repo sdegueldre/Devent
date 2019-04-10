@@ -1,7 +1,7 @@
 <?php
 $host='http://localhost';
 if(env('APP_ENV', 'production')!='local'){
-  $host = 'https://jepsen-brite-jnsnc.herokuapp.com/');
+  $host = 'https://jepsen-brite-jnsnc.herokuapp.com/';
 }
 return [
 
