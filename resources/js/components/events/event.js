@@ -4,17 +4,12 @@ import api from '../../api';
 import {Link} from 'react-router-dom';
 import Card from '../layout/card';
 import '../../../sass/event.scss';
+import Moment from 'react-moment';
+
 /* Demo purpose only */
-import attendee01 from '../../assets/avatar07.png';
-import attendee02 from '../../assets/avatar08.png';
-import attendee03 from '../../assets/avatar09.png';
-import attendee04 from '../../assets/avatar10.png';
-import attendee05 from '../../assets/avatar11.png';
-import attendee06 from '../../assets/avatar12.png';
-import attendee07 from '../../assets/avatar13.png';
+import attendee from '../../assets/avatar10.png';
 import author from '../../assets/avatar03.png';
 import map from '../../assets/map.png';
-
 
 export default class Eventsolo extends Component {
 
@@ -24,6 +19,7 @@ export default class Eventsolo extends Component {
     this.state = {
       eventSolo: [],
       eventSoloAuthor: [],
+      eventSoloAttendees: [],
       events: [],
     };
 
@@ -49,7 +45,7 @@ export default class Eventsolo extends Component {
   }
 
     render() {
-      const { eventSolo, events, eventSoloAuthor } = this.state;
+      const { eventSolo, events, eventSoloAuthor, eventSoloAttendees } = this.state;
 
       return (
         <div className="container" key={this.key}>
@@ -65,6 +61,7 @@ export default class Eventsolo extends Component {
                 <label htmlFor="toggle-7" data-on="Going" data-off="Not going"></label>
               </div>
               <div className="eventBody mt-3 clearfix">
+                <h3><i className="far fa-clock"></i> <Moment format="DD MMMM Y - H:mm">{eventSolo.event_time}</Moment></h3>
                 <div className="col">
                   <h4>Description</h4>
                     <div className="map-placeholder">
@@ -74,18 +71,37 @@ export default class Eventsolo extends Component {
                 </div>
               </div>
               <div className="attendee">
-                <h3 className="mt-3">7 attendees</h3>
+                {(eventSoloAttendees.length<= 1) &&
+                <h3 className="mt-3">{eventSoloAttendees.length} attendee</h3>
+                }
+                {(eventSoloAttendees.length> 1) &&
+                <h3 className="mt-3">{eventSoloAttendees.length} attendees</h3>
+                }
                   <div className="attendee-list">
-                    <img src={attendee01}/><img src={attendee02}/><img src={attendee03}/><img src={attendee04}/><img src={attendee05}/><img src={attendee06}/><img src={attendee07}/>
+                    {eventSoloAttendees.map(eventSoloAttendees =>
+                      <div className="card bg-white text-center" key={eventSoloAttendees.id} style={{border: 'none'}}>
+                        <img className="card-img-top" src={eventSoloAttendees.avatar} alt="Attendee"/>
+                        <div className="card-body">
+                          <p className="card-text">{eventSoloAttendees.name}</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
               </div>
               <div className="buttons">
-                <div className="btn btn-dark"><a className="Delete" href={"/deleteanevent/"+eventSolo.id}>Delete</a></div>
-                <div className="btn btn-light"><a className="Edit" href={"/editanevent/"+eventSolo.id}>Edit</a></div>
+                <div className="btn btn-primary px-3 py-2 mr-4"><a className="Delete text-white" href={"/deleteanevent/"+eventSolo.id}>Delete</a></div>
+                <div className="btn btn-success px-4 py-2 ml-4"><a className="Edit text-white" href={"/editanevent/"+eventSolo.id}>Edit</a></div>
+                  {this.state.logged &&
+                    <div className="container my-4">
+                      <Link to="/addnewevent">
+                        <button type="button" className="btn-card btn-light btn-lg btn-block">Add a new event</button>
+                      </Link>
+                    </div>
+                  }
               </div>
               <div className="author">
-                <img src={author}/>
-                <p>This event was created by {eventSoloAuthor.name} on the {eventSolo.created_at}</p>
+                <img src={eventSoloAuthor.avatar}/>
+                <p>This event was created by {eventSoloAuthor.name} on the <Moment format="DD MMMM Y">{eventSolo.created_at}</Moment></p>
               </div>
             </div>
 
