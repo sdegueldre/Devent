@@ -44,6 +44,7 @@ h3{
 .attendee img{
   max-width: 65px;
   max-height: 65px;
+  border-radius: 200px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -121,13 +122,14 @@ h3{
 }
 
 .author>img {
-  max-height: 200px;
+  max-height: 100px;
   margin: -50px;
+  border-radius: 200px;
 }
 
 .author>p {
-  margin-top: 10px;
-  margin-left: 50px;
+  padding: 5px;
+  margin: auto;
 }
 
 /* Attending full width */

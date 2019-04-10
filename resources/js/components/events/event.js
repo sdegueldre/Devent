@@ -11,7 +11,6 @@ import attendee from '../../assets/avatar10.png';
 import author from '../../assets/avatar03.png';
 import map from '../../assets/map.png';
 
-
 export default class Eventsolo extends Component {
 
   constructor(props) {
@@ -62,7 +61,7 @@ export default class Eventsolo extends Component {
                 <label htmlFor="toggle-7" data-on="Going" data-off="Not going"></label>
               </div>
               <div className="eventBody mt-3 clearfix">
-                <h3><i class="far fa-clock"></i> <Moment format="DD MMMM Y - H:mm">{eventSolo.event_time}</Moment></h3>
+                <h3><i className="far fa-clock"></i> <Moment format="DD MMMM Y - H:mm">{eventSolo.event_time}</Moment></h3>
                 <div className="col">
                   <h4>Description</h4>
                     <div className="map-placeholder">
@@ -76,7 +75,7 @@ export default class Eventsolo extends Component {
                   <div className="attendee-list">
                     {eventSoloAttendees.map(eventSoloAttendees =>
                       <div className="card bg-white text-center" key={eventSoloAttendees.id} style={{border: 'none'}}>
-                        <img className="card-img-top" src={attendee} alt="Attendee"/>
+                        <img className="card-img-top" src={eventSoloAttendees.avatar} alt="Attendee"/>
                         <div className="card-body">
                           <p className="card-text">{eventSoloAttendees.name}</p>
                         </div>
@@ -96,7 +95,7 @@ export default class Eventsolo extends Component {
                   }
               </div>
               <div className="author">
-                <img src={author}/>
+                <img src={eventSoloAuthor.avatar}/>
                 <p>This event was created by {eventSoloAuthor.name} on the <Moment format="DD MMMM Y">{eventSolo.created_at}</Moment></p>
               </div>
             </div>
