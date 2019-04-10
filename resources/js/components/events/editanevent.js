@@ -61,7 +61,7 @@ export default class EditAnEvent extends Component {
 
           <div className="col-sm-8 col-md-10 col-lg-6 d-flex flex-wrap align-items-start mx-auto">
 
-              <div className="form-group form-group col-md-12 d-flex flex-wrap align-items-start pt-3">
+              <div className="form-group form-group col-md-12 d-flex flex-wrap align-items-start pt-4">
                 <label className="text-danger h4" htmlFor="title">Title</label>
                 <input type="text" className="form-control" name="event_title" value={this.state.event_title} onChange={this.handleChange} />
               </div>
