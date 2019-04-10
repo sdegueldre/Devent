@@ -71,7 +71,12 @@ export default class Eventsolo extends Component {
                 </div>
               </div>
               <div className="attendee">
+                {(eventSoloAttendees.length<= 1) &&
+                <h3 className="mt-3">{eventSoloAttendees.length} attendee</h3>
+                }
+                {(eventSoloAttendees.length> 1) &&
                 <h3 className="mt-3">{eventSoloAttendees.length} attendees</h3>
+                }
                   <div className="attendee-list">
                     {eventSoloAttendees.map(eventSoloAttendees =>
                       <div className="card bg-white text-center" key={eventSoloAttendees.id} style={{border: 'none'}}>
