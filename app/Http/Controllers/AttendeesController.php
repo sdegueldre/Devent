@@ -55,17 +55,14 @@ class AttendeesController extends Controller
     }
 
     public static function sendReminders() {
-        $todaysReminders = Event::where('reminder', '=', date('Y-m-d'));
+        $todaysReminders = Event::where('reminder', '=', date('Y-m-d'))->where('reminder_sent', false);
         $events = $todaysReminders->with('attendees')->get()->toArray();
-
+        $todaysReminders->update(['reminder_sent' => true]);
         foreach($events as $event){
-            if ($event['reminder_sent'] == false) {
-                foreach ($event['attendees'] as $attendee) {
-                    Mail::to($attendee['email'])->send(new Reminder($event, $attendee));
-                }
+            foreach ($event['attendees'] as $attendee) {
+                Mail::to($attendee['email'])->send(new Reminder($event, $attendee));
             }
         }
-        $todaysReminders->update(['reminder_sent' => true]);
         return $events;
     }
 
@@ -79,7 +76,7 @@ class AttendeesController extends Controller
     public function isAttending(Event $event)
     {
       $user_id = Auth::user()->id;
-      
+
 
 
     }
