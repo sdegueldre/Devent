@@ -59,7 +59,7 @@ export default class EditAnEvent extends Component {
 
         <form onSubmit={this.handleSubmit}>
 
-          <div className="col-6 d-flex flex-wrap align-items-start mx-auto">
+          <div className="col-sm-8 col-md-10 col-lg-6 d-flex flex-wrap align-items-start mx-auto">
 
               <div className="form-group form-group col-md-12 d-flex flex-wrap align-items-start pt-3">
                 <label className="text-danger h4" htmlFor="title">Title</label>

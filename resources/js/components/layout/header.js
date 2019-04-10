@@ -57,7 +57,7 @@ export default class Header extends Component {
               {(this.state.loggedIn== false) &&
                 <div className="navbar-nav ml-auto">
                   <div className="btn btn-primary px-4 py-2 mr-3"><a className="login text-white" href="/login">Login</a></div>
-                  <div className="btn btn-secondary ml-2 mr-4"><a className="register text-white" href="/register">Register</a></div>
+                  <div className="btn btn-success ml-2 mr-4"><a className="register text-white" href="/register">Register</a></div>
                 </div>
               }
               {this.state.loggedIn &&
