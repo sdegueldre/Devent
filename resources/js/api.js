@@ -18,7 +18,7 @@ class API {
       if(data != null){
         config.body = data;
       }
-      const response = await fetch('https://jepsen-brite-jnsnc.herokuapp.com/api/' + route, config);
+      const response = await fetch('/api/' + route, config);
       if (response.ok) {
         const json = await response.json();
         return json;
