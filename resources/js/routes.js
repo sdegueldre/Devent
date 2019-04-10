@@ -11,6 +11,8 @@ import PastEvents from './components/events/pastevents';
 import Register from './components/register';
 import Login from './components/login';
 import Logout from './components/logout';
+import Team from './components/pages/team';
+import Contact from './components/pages/contact';
 
 const Routes = () => (
   <Switch>
@@ -20,6 +22,8 @@ const Routes = () => (
     <Route exact path="/addnewevent" component={AddNewEvent} />
     <Route exact path="/editanevent/:id" component={EditAnEvent} />
     <Route exact path="/deleteanevent/:id" component={DeleteAnEvent} />
+    <Route exact path="/team" component={Team}  />
+    <Route exact path="/contact" component={Contact}  />
 
     <Route exact path="/pastevents/page=:page" component={PastEvents} />
 

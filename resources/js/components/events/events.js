@@ -24,7 +24,6 @@ export default class Events extends Component {
 
   async componentDidMount() {
     this.setState(await api.fetchEvents(this.props.match.params.page));
-    console.log(this.state);
   }
 
     render() {
@@ -51,26 +50,26 @@ export default class Events extends Component {
             {/* Start pagination */}
             <div className="container">
               <nav aria-label="Page navigation example">
-              <div className="btn btn-primary"><a className="past" href={"/pastevents/page=1"}>Back to the Past</a></div>
+              <div className="btn btn-danger px-3 py-2"><a className="past text-white" href={"/pastevents/page=1"}>Back to the Past</a></div>
                 <ul className="pagination d-flex justify-content-end">
-                  {this.state.current_page > 1 &&
+                  {parseInt(this.state.current_page) > 1 &&
                     <li className="page-item">
-                      <a className="page-link" href={"/events/page="+(this.state.current_page-1)} aria-label="Previous">
+                      <a className="page-link" href={"/events/page="+(parseInt(this.state.current_page)-1)} aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                         <span className="sr-only">Previous</span>
                       </a>
                     </li>
                   }
-                  {this.state.current_page > 1 &&
-                    <li className="page-item"><a className="page-link" href={"/events/page="+(this.state.current_page-1)}>{this.state.current_page-1}</a></li>
+                  {parseInt(this.state.current_page) > 1 &&
+                    <li className="page-item"><a className="page-link" href={"/events/page="+(parseInt(this.state.current_page)-1)}>{parseInt(this.state.current_page)-1}</a></li>
                   }
-                  <li className="page-item"><a className="page-link page-link-active" href={"/events/page="+(this.state.current_page)}>{this.state.current_page}</a></li>
-                  {this.state.current_page < this.state.last_page &&
-                    <li className="page-item"><a className="page-link"href={"/events/page="+(this.state.current_page+1)}>{this.state.current_page+1}</a></li>
+                  <li className="page-item"><a className="page-link page-link-active" href={"/events/page="+(parseInt(this.state.current_page))}>{parseInt(this.state.current_page)}</a></li>
+                  {parseInt(this.state.current_page) < this.state.last_page &&
+                    <li className="page-item"><a className="page-link"href={"/events/page="+(parseInt(this.state.current_page)+1)}>{parseInt(parseInt(this.state.current_page))+1}</a></li>
                   }
-                  {this.state.current_page < this.state.last_page &&
+                  {parseInt(this.state.current_page) < this.state.last_page &&
                     <li className="page-item">
-                      <a className="page-link" href={"/events/page="+(this.state.current_page+1)} aria-label="Next">
+                      <a className="page-link" href={"/events/page="+(parseInt(this.state.current_page)+1)} aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                         <span className="sr-only">Next</span>
                       </a>

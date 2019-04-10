@@ -25,12 +25,17 @@ class API {
     }
     catch (error) {
       console.log(error);
+      if (error.response.message == 'Unauthenticated'){
+        this.token = null ;
+        localStorage.removeItem('token');
+      }
     }
   }
 
 // get events
    async fetchEvents(page = 1) {
      const json = await this.callAPI('GET', 'events/?page='+page);
+     console.log(json);
      return({current_page: json.current_page, events: json.data, last_page: json.last_page });
    }
 
@@ -41,7 +46,8 @@ class API {
 
   async fetchEventSolo(id) {
     const json = await this.callAPI('GET', 'events/' + id);
-    return({ eventSolo: json});
+
+    return({ eventSolo: json, eventSoloAuthor: json.event_author, eventSoloAttendees: json.attendees});
   }
 
   async fetchPastEvents(page = 1) {
@@ -73,9 +79,8 @@ class API {
 
 //routes users
   islogged(){
-    console.log(this.token);
     this.token = localStorage.getItem('token');
-    if (this.token != 'null') {
+    if (this.token != null) {
       return({ loggedIn: true});
     } else {
       return({ loggedIn: false });
@@ -83,7 +88,6 @@ class API {
   }
   async register(data) {
     const json = await this.callAPI( 'POST', 'register', data);
-    console.log(json);
     if (json != undefined){
       return({ message: 'Successfully Registered!', redirect: 'true'});
     }
@@ -93,9 +97,9 @@ class API {
   }
   async login(data) {
     const json = await this.callAPI( 'POST', 'login', data);
-    this.token = json.access_token;
-    localStorage.setItem('token', this.token);
     if (json != undefined){
+      this.token = json.access_token;
+      localStorage.setItem('token', this.token);
       return({ message: 'Successfully logged in!', redirect: 'true'});
     }
     else {
@@ -105,13 +109,24 @@ class API {
    async logout() {
      const json = await this.callAPI( 'POST', 'logout');
      if (json != undefined){
-       this.token = 'null';
-       localStorage.setItem('token', this.token);
+       this.token = null;
+       localStorage.removeItem('token');
        return({ message: 'Successfully logged out!' });
      }
      else {
        return({ message: 'Something went wrong, try again' });
      }
+  }
+  async refresh() {
+    const json = await this.callAPI( 'POST', 'refresh');
+    this.token = json.access_token;
+    localStorage.setItem('token', this.token);
+  }
+  async me() {
+    const json = await this.callAPI( 'POST', 'me');
+    if (json != undefined){
+      return({ profile: json});
+    }
   }
 }
 export default (new API());

@@ -76,9 +76,12 @@ class AttendeesController extends Controller
      * @param  \App\Attendees  $attendees
      * @return \Illuminate\Http\Response
      */
-    public function show(Attendees $attendees)
+    public function isAttending(Event $event)
     {
-        //
+      $user_id = Auth::user()->id;
+      
+
+
     }
 
     /**
