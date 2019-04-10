@@ -5,13 +5,7 @@ import {Link} from 'react-router-dom';
 import Card from '../layout/card';
 import '../../../sass/event.scss';
 /* Demo purpose only */
-import attendee01 from '../../assets/avatar07.png';
-import attendee02 from '../../assets/avatar08.png';
-import attendee03 from '../../assets/avatar09.png';
-import attendee04 from '../../assets/avatar10.png';
-import attendee05 from '../../assets/avatar11.png';
-import attendee06 from '../../assets/avatar12.png';
-import attendee07 from '../../assets/avatar13.png';
+import attendee from '../../assets/avatar10.png';
 import author from '../../assets/avatar03.png';
 import map from '../../assets/map.png';
 
@@ -24,6 +18,7 @@ export default class Eventsolo extends Component {
     this.state = {
       eventSolo: [],
       eventSoloAuthor: [],
+      eventSoloAttendees: [],
       events: [],
     };
 
@@ -49,7 +44,7 @@ export default class Eventsolo extends Component {
   }
 
     render() {
-      const { eventSolo, events, eventSoloAuthor } = this.state;
+      const { eventSolo, events, eventSoloAuthor, eventSoloAttendees } = this.state;
 
       return (
         <div className="container" key={this.key}>
@@ -74,9 +69,16 @@ export default class Eventsolo extends Component {
                 </div>
               </div>
               <div className="attendee">
-                <h3 className="mt-3">7 attendees</h3>
+                <h3 className="mt-3">{eventSoloAttendees.length} attendees</h3>
                   <div className="attendee-list">
-                    <img src={attendee01}/><img src={attendee02}/><img src={attendee03}/><img src={attendee04}/><img src={attendee05}/><img src={attendee06}/><img src={attendee07}/>
+                    {eventSoloAttendees.map(eventSoloAttendees =>
+                      <div className="card bg-white text-center" key={eventSoloAttendees.id} style={{border: 'none'}}>
+                        <img className="card-img-top" src={attendee} alt="Attendee"/>
+                        <div className="card-body">
+                          <p className="card-text">{eventSoloAttendees.name}</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
               </div>
               <div className="buttons">
