@@ -53,24 +53,24 @@ export default class PastEvents extends Component {
               <nav aria-label="Page navigation example">
               <div className="btn btn-primary"><a className="past" href={"/events/page=1"}>Back to the Future</a></div>
                 <ul className="pagination d-flex justify-content-end">
-                  {this.state.current_page > 1 &&
+                  {parseInt(this.state.current_page) > 1 &&
                     <li className="page-item">
-                      <a className="page-link" href={"/pastevents/page="+(this.state.current_page-1)} aria-label="Previous">
+                      <a className="page-link" href={"/pastevents/page="+(parseInt(this.state.current_page)-1)} aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                         <span className="sr-only">Previous</span>
                       </a>
                     </li>
                   }
-                  {this.state.current_page > 1 &&
-                    <li className="page-item"><a className="page-link" href={"/pastevents/page="+(this.state.current_page-1)}>{this.state.current_page-1}</a></li>
+                  {parseInt(this.state.current_page) > 1 &&
+                    <li className="page-item"><a className="page-link" href={"/pastevents/page="+(parseInt(this.state.current_page)-1)}>{parseInt(this.state.current_page)-1}</a></li>
                   }
-                  <li className="page-item"><a className="page-link page-link-active" href={"/pastevents/page="+(this.state.current_page)}>{this.state.current_page}</a></li>
-                  {this.state.current_page < this.state.last_page &&
-                    <li className="page-item"><a className="page-link"href={"/pastevents/page="+(this.state.current_page+1)}>{this.state.current_page+1}</a></li>
+                  <li className="page-item"><a className="page-link page-link-active" href={"/pastevents/page="+(parseInt(this.state.current_page))}>{parseInt(this.state.current_page)}</a></li>
+                  {parseInt(this.state.current_page) < this.state.last_page &&
+                    <li className="page-item"><a className="page-link"href={"/pastevents/page="+(parseInt(this.state.current_page)+1)}>{parseInt(this.state.current_page)+1}</a></li>
                   }
-                  {this.state.current_page < this.state.last_page &&
+                  {parseInt(this.state.current_page) < this.state.last_page &&
                     <li className="page-item">
-                      <a className="page-link" href={"/pastevents/page="+(this.state.current_page+1)} aria-label="Next">
+                      <a className="page-link" href={"/pastevents/page="+(parseInt(this.state.current_page)+1)} aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                         <span className="sr-only">Next</span>
                       </a>
