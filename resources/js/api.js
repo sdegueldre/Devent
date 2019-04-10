@@ -5,8 +5,6 @@ class API {
   }
 //contact the API
   async callAPI(method, route, data = null){
-    console.log('called api', method, route, data);
-    console.log(this.token);
     try {
       let config = {
           method: method,
@@ -16,7 +14,6 @@ class API {
               'Authorization': 'Bearer '+ this.token
           },
       }
-      console.log(config);
       if(data != null){
         config.body = data;
       }
@@ -38,7 +35,6 @@ class API {
 // get events
    async fetchEvents(page = 1) {
      const json = await this.callAPI('GET', 'events?page='+page);
-     console.log(json);
      return({current_page: json.current_page, events: json.data, last_page: json.last_page });
    }
 

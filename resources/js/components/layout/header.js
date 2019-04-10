@@ -22,7 +22,7 @@ export default class Header extends Component {
       let logged = api.islogged();
       if (logged.loggedIn){
         let response = await api.me();
-        let refresh = await api.refresh();
+        //let refresh = await api.refresh();
         this.setState({loggedIn: logged.loggedIn, profile: response.profile});
       }
     }

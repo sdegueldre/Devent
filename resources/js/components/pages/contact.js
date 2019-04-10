@@ -29,12 +29,12 @@ export default class Contact extends Component {
 
                 <div className="col-sm-12 col-md-6 col-lg-4 d-flex flex-wrap align-items-start mb-3 py-4 px-5 ">
                   <h2 className = "mt-3 mb-2 text-white h3 " > < i className = "fab fa-linkedin-in" > < /i> LinkedIn</h2 >
-                  <a href="#"><p className="h4 pl-4 pb-3">linkedIn Div'Event</p></a>
+                  <a href="#"><p className="h4 pl-4 pb-3">linkedIn Dev'Event</p></a>
                 </div>
 
                 <div className="col-sm-12 col-md-6 col-lg-4 d-flex flex-wrap align-items-start mb-3 py-4 px-5 mx-auto">
                   <h2 className = "mt-3 mb-2 text-white h3" > < i className = "fab fa-facebook-messenger" > < /i> Messenger</h2 >
-                  <a href="#"><p className="h4 pl-4 pb-3">Messenger Div'Event</p></a>
+                  <a href="#"><p className="h4 pl-4 pb-3">Messenger Dev'Event</p></a>
                 </div>
 
               </div>
