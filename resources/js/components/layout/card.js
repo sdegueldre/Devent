@@ -16,7 +16,7 @@ export default class Card extends Component {
             <Link to={"/event/" + this.props.events.id} onClick={() => reload(this.props.events.id)}>
               <img src={this.props.events.event_image} alt=""/>
             </Link>
-              <span className="date"><h4><i className="fas fa-calendar"></i><Moment format="DD MMM - H:mm">{this.props.events.event_time}</Moment></h4></span>
+              <span className="date"><h4><i class="far fa-clock"></i> <Moment format="DD MMM - H:mm">{this.props.events.event_time}</Moment></h4></span>
               <span className="city"><h4><i className="fas fa-map-marker-alt"></i> {this.props.events.event_city}</h4></span>
             </div>
             <div className="card-desc">
