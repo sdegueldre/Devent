@@ -1,5 +1,8 @@
 <?php
-
+$host='http://localhost';
+if(env('APP_ENV', 'production')!='local'){
+  $host = 'https://jepsen-brite-jnsnc.herokuapp.com/';
+}
 return [
 
     /*
@@ -52,7 +55,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', $host),
 
     'asset_url' => env('ASSET_URL', null),
 
@@ -67,7 +70,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Brussels',
 
     /*
     |--------------------------------------------------------------------------
