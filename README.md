@@ -18,3 +18,7 @@
   * `php artisan serve`
   * `docker-compose up`
   * `npm run watch`
+
+## Launch on Heroku :
+  * `npm run prod`
+  * `git push heroku heroku:master`
