@@ -7,25 +7,54 @@
 /* DEMO PURPOSE */
 
 .map-placeholder{
-  max-width: 100%;
+  width: 50%;
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 20PX;
 }
 
+@include media-breakpoint-down(xs) {
+  .map-placeholder {
+    display: none;
+  }
+}
+
+.map-img{
+  width: 100%;
+}
 /* End Demo */
 
 h3{
   text-align: center;
 }
+
 .attendee{
+  background-color: white;
+  color: black;
+}
+
+.attendee-list{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .attendee img{
   max-width: 65px;
   max-height: 65px;
   object-fit: cover;
   object-position: center;
+}
+
+.buttons{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 // .eventCard{
@@ -86,6 +115,26 @@ h3{
 
 .eventFeed {
   width: 100%;
+}
+
+/* Author */
+.author {
+  // position:absolute;
+  background-color: $red;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.author>img {
+  max-height: 200px;
+  margin: -50px;
+}
+
+.author>p {
+  margin-top: 10px;
+  margin-left: 50px;
 }
 
 /* Attending full width */
