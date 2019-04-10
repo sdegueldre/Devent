@@ -21,7 +21,7 @@ class EventController extends Controller
      public function index(Request $request)
        {
          $parameter = $request->only('page');
-         $page = array_first($parameter);
+         $page = intval(array_first($parameter));
          $eventsAll = Event::where('event_time', '>', NOW())->get();
          $number = count($eventsAll);
          if ($number > 0){
