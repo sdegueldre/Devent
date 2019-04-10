@@ -16,9 +16,9 @@ export default class Events extends Component {
     super(props);
 
     this.state = {
-      current_page: '',
+      current_page: 1,
       events: [],
-      last_page: '',
+      last_page: 1,
     };
   }
 
@@ -64,10 +64,10 @@ export default class Events extends Component {
                     <li className="page-item"><a className="page-link" href={"/events/page="+(parseInt(this.state.current_page)-1)}>{parseInt(this.state.current_page)-1}</a></li>
                   }
                   <li className="page-item"><a className="page-link page-link-active" href={"/events/page="+(parseInt(this.state.current_page))}>{parseInt(this.state.current_page)}</a></li>
-                  {parseInt(this.state.current_page) < this.state.last_page &&
-                    <li className="page-item"><a className="page-link"href={"/events/page="+(parseInt(this.state.current_page)+1)}>{parseInt(parseInt(this.state.current_page))+1}</a></li>
+                  {parseInt(this.state.current_page) < parseInt(this.state.last_page) &&
+                    <li className="page-item"><a className="page-link"href={"/events/page="+(parseInt(this.state.current_page)+1)}>{parseInt(this.state.current_page)+1}</a></li>
                   }
-                  {parseInt(this.state.current_page) < this.state.last_page &&
+                  {parseInt(this.state.current_page) < parseInt(this.state.last_page) &&
                     <li className="page-item">
                       <a className="page-link" href={"/events/page="+(parseInt(this.state.current_page)+1)} aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
