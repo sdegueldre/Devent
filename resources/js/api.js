@@ -35,7 +35,7 @@ class API {
 
 // get events
    async fetchEvents(page = 1) {
-     const json = await this.callAPI('GET', 'events/page/'+page);
+     const json = await this.callAPI('GET', 'events/'+page);
      console.log(json);
      return({current_page: json.current_page, events: json.data, last_page: json.last_page });
    }
@@ -46,13 +46,13 @@ class API {
   }
 
   async fetchEventSolo(id) {
-    const json = await this.callAPI('GET', 'events/' + id);
+    const json = await this.callAPI('GET', 'event/' + id);
 
     return({ eventSolo: json, eventSoloAuthor: json.event_author, eventSoloAttendees: json.attendees});
   }
 
   async fetchPastEvents(page = 1) {
-    const json = await this.callAPI('GET', 'pastevents/page/'+page);
+    const json = await this.callAPI('GET', 'pastevents/'+page);
     return({current_page: json.current_page, events: json.data, last_page: json.last_page });
   }
 //add, update and delete event

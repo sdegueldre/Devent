@@ -18,14 +18,15 @@ class EventController extends Controller
        $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->limit(3)->get();
        return response()->json($events);
      }
-     public function index(Page $page)
+     public function index(Request $request)
        {
+         $parameter = $request->only('page');
+         $page = array_first($parameter);
          $eventsAll = Event::where('event_time', '>', NOW())->get();
          $number = count($eventsAll);
          if ($number > 0){
            if ($number%6 != 0){
              $last_page = intdiv($number, 6 ) + 1;
-
            }
            else {
              $last_page = intdiv($number, 6 );
@@ -34,14 +35,15 @@ class EventController extends Controller
          $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->skip(($page-1)*6)->take(6)->get();
          return response()->json(['data' => $events, 'current_page' => $page,'last_page' => $last_page ]);
        }
-    public function past(Page $page)
+    public function past(Request $request)
     {
+      $parameter = $request->only('page');
+      $page = array_first($parameter);
       $eventsAll = Event::where('event_time', '<', NOW())->get();
       $number = count($eventsAll);
       if ($number > 0){
         if ($number%6 != 0){
           $last_page = intdiv($number, 6 ) + 1;
-
         }
         else {
           $last_page = intdiv($number, 6 );
@@ -50,6 +52,7 @@ class EventController extends Controller
       $events = Event::where('event_time', '<', NOW())->orderBy('event_time', 'desc')->skip(($page-1)*6)->take(6)->get();
       return response()->json(['data' => $events, 'current_page' => $page,'last_page' => $last_page ]);
     }
+
 
     /**
      * Store a newly created resource in storage.
