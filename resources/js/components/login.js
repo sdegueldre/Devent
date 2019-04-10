@@ -42,18 +42,27 @@ export default class Login extends Component {
     return (
       <div className="container">
 
-        <h1>Log in</h1>
-        <form onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input type="email" className="form-control" id="email" placeholder="Enter email" value={this.state.email} onChange={this.handleChange} />
+        <h1 className="py-4" ><i className="fas fa-sign-in-alt"></i> Log in</h1>
+
+        <div className="row">
+          <div className="col-sm-8 col-md-10 col-lg-6 mx-auto">
+
+          <form onSubmit={this.handleSubmit}>
+            <div className="form-group">
+              <label className="text-danger h4" htmlFor="email">Email</label>
+              <input type="email" className="form-control" id="email" placeholder="Enter email" value={this.state.email} onChange={this.handleChange} />
+            </div>
+
+            <div className="form-group">
+              <label className="text-danger h4" htmlFor="password">Password</label>
+              <input type="password" className="form-control" id="password" placeholder="Enter password" value={this.state.password} onChange={this.handleChange} />
+            </div>
+            <input type="submit" className="btn btn-danger px-5 py-2 mb-5 mt-3" value="Submit" />
+
+          </form>
+
           </div>
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input type="password" className="form-control" id="password" placeholder="Enter password" value={this.state.password} onChange={this.handleChange} />
-          </div>
-          <input type="submit" className="btn btn-primary ml-3 mb-5" value="Submit" />
-        </form>
+        </div>
       </div>
     );
   }

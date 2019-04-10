@@ -48,7 +48,7 @@ export default class PastEvents extends Component {
             {/* Start pagination */}
             <div className="container">
               <nav aria-label="Page navigation example">
-              <div className="btn btn-primary"><a className="past" href={"/events/page=1"}>Back to the Future</a></div>
+              <div className="btn btn-danger px-3 py-2 mt-3"><a className="past text-white" href={"/events/page=1"}>Back to the Future</a></div>
                 <ul className="pagination d-flex justify-content-end">
                   {this.state.current_page > 1 &&
                     <li className="page-item">

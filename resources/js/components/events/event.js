@@ -84,8 +84,8 @@ export default class Eventsolo extends Component {
                   </div>
               </div>
               <div className="buttons">
-                <div className="btn btn-dark"><a className="Delete" href={"/deleteanevent/"+eventSolo.id}>Delete</a></div>
-                <div className="btn btn-light"><a className="Edit" href={"/editanevent/"+eventSolo.id}>Edit</a></div>
+                <div className="btn btn-primary px-3 py-2 mr-4"><a className="Delete text-white" href={"/deleteanevent/"+eventSolo.id}>Delete</a></div>
+                <div className="btn btn-success px-4 py-2 ml-4"><a className="Edit text-white" href={"/editanevent/"+eventSolo.id}>Edit</a></div>
                   {this.state.logged &&
                     <div className="container my-4">
                       <Link to="/addnewevent">
