@@ -6,6 +6,7 @@ class API {
 //contact the API
   async callAPI(method, route, data = null){
     console.log('called api', method, route, data);
+    console.log(this.token);
     try {
       let config = {
           method: method,
@@ -18,7 +19,7 @@ class API {
       if(data != null){
         config.body = data;
       }
-      const response = await fetch('https://jepsen-brite-jnsnc.herokuapp.com/api/' + route, config);
+      const response = await fetch('/api/' + route, config);
       if (response.ok) {
         const json = await response.json();
         return json;
@@ -35,7 +36,7 @@ class API {
 
 // get events
    async fetchEvents(page = 1) {
-     const json = await this.callAPI('GET', 'events/?page='+page);
+     const json = await this.callAPI('GET', 'events?page='+page);
      console.log(json);
      return({current_page: json.current_page, events: json.data, last_page: json.last_page });
    }
@@ -46,13 +47,13 @@ class API {
   }
 
   async fetchEventSolo(id) {
-    const json = await this.callAPI('GET', 'events/' + id);
+    const json = await this.callAPI('GET', 'event/' + id);
 
     return({ eventSolo: json, eventSoloAuthor: json.event_author, eventSoloAttendees: json.attendees});
   }
 
   async fetchPastEvents(page = 1) {
-    const json = await this.callAPI('GET', 'pastevents/?page='+page);
+    const json = await this.callAPI('GET', 'pastevents?page='+page);
     return({current_page: json.current_page, events: json.data, last_page: json.last_page });
   }
 //add, update and delete event
