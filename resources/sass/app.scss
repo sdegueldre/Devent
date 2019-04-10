@@ -61,3 +61,18 @@ a:hover{
   color: $orange;
   text-decoration: none;
 }
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.teamImg {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 200px;
+}
