@@ -62,8 +62,7 @@ export default class Header extends Component {
               }
               {this.state.loggedIn &&
               <div className="navbar-nav ml-auto">
-                  <img src={profile} width="30" height="30" className="d-inline-block align-top" />
-                  <div className="mx-2"><a className="profile" href="#">Hello {this.state.profile.name}</a></div>
+                  <div className="mx-2"><img src={this.state.profile.avatar} width="30" height="30" className="d-inline-block align-top rounded-circle" /> Hello {this.state.profile.name}</div>
                   <div className="btn btn-primary ml-2 px-4 py-2 mr-4"><a className="logout text-white" href="/logout">Logout</a></div>
                 </div>
               }
