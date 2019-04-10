@@ -36,6 +36,7 @@ class API {
 // get events
    async fetchEvents(page = 1) {
      const json = await this.callAPI('GET', 'events/?page='+page);
+     console.log(json);
      return({current_page: json.current_page, events: json.data, last_page: json.last_page });
    }
 

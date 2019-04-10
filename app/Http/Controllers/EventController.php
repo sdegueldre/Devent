@@ -18,15 +18,41 @@ class EventController extends Controller
        $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->limit(3)->get();
        return response()->json($events);
      }
-     public function index()
+     public function index(Request $request)
        {
-         $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->paginate(6);
-         return response()->json($events);
+         $parameter = $request->only('page');
+         $page = array_first($parameter);
+         $eventsAll = Event::where('event_time', '>', NOW())->get();
+         $number = count($eventsAll);
+         if ($number > 0){
+           if ($number%6 != 0){
+             $last_page = intdiv($number, 6 ) + 1;
+
+           }
+           else {
+             $last_page = intdiv($number, 6 );
+           }
+         }
+         $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->skip(($page-1)*6)->take(6)->get();
+         return response()->json(['data' => $events, 'current_page' => $page,'last_page' => $last_page ]);
        }
-    public function past()
+    public function past(Request $request)
     {
-      $events = Event::where('event_time', '<', NOW())->orderBy('event_time', 'desc')->paginate(6);
-      return response()->json($events);
+      $parameter = $request->only('page');
+      $page = array_first($parameter);
+      $eventsAll = Event::where('event_time', '<', NOW())->get();
+      $number = count($eventsAll);
+      if ($number > 0){
+        if ($number%6 != 0){
+          $last_page = intdiv($number, 6 ) + 1;
+
+        }
+        else {
+          $last_page = intdiv($number, 6 );
+        }
+      }
+      $events = Event::where('event_time', '<', NOW())->orderBy('event_time', 'desc')->skip(($page-1)*6)->take(6)->get();
+      return response()->json(['data' => $events, 'current_page' => $page,'last_page' => $last_page ]);
     }
 
     /**

@@ -66818,13 +66818,14 @@ function () {
 
               case 3:
                 json = _context2.sent;
+                console.log(json);
                 return _context2.abrupt("return", {
                   current_page: json.current_page,
                   events: json.data,
                   last_page: json.last_page
                 });
 
-              case 5:
+              case 6:
               case "end":
                 return _context2.stop();
             }
@@ -68640,36 +68641,36 @@ function (_Component) {
         href: "/pastevents/page=1"
       }, "Back to the Past")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
         className: "pagination d-flex justify-content-end"
-      }, this.state.current_page > 1 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+      }, parseInt(this.state.current_page) > 1 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "page-item"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         className: "page-link",
-        href: "/events/page=" + (this.state.current_page - 1),
+        href: "/events/page=" + (parseInt(this.state.current_page) - 1),
         "aria-label": "Previous"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         "aria-hidden": "true"
       }, "\xAB"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "sr-only"
-      }, "Previous"))), this.state.current_page > 1 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+      }, "Previous"))), parseInt(this.state.current_page) > 1 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "page-item"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         className: "page-link",
-        href: "/events/page=" + (this.state.current_page - 1)
-      }, this.state.current_page - 1)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        href: "/events/page=" + (parseInt(this.state.current_page) - 1)
+      }, parseInt(this.state.current_page) - 1)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "page-item"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         className: "page-link page-link-active",
-        href: "/events/page=" + this.state.current_page
-      }, this.state.current_page)), this.state.current_page < this.state.last_page && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        href: "/events/page=" + parseInt(this.state.current_page)
+      }, parseInt(this.state.current_page))), parseInt(this.state.current_page) < this.state.last_page && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "page-item"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         className: "page-link",
-        href: "/events/page=" + (this.state.current_page + 1)
-      }, this.state.current_page + 1)), this.state.current_page < this.state.last_page && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        href: "/events/page=" + (parseInt(this.state.current_page) + 1)
+      }, parseInt(parseInt(this.state.current_page)) + 1)), parseInt(this.state.current_page) < this.state.last_page && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "page-item"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         className: "page-link",
-        href: "/events/page=" + (this.state.current_page + 1),
+        href: "/events/page=" + (parseInt(this.state.current_page) + 1),
         "aria-label": "Next"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         "aria-hidden": "true"
@@ -68838,36 +68839,36 @@ function (_Component) {
         href: "/events/page=1"
       }, "Back to the Future")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
         className: "pagination d-flex justify-content-end"
-      }, this.state.current_page > 1 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+      }, parseInt(this.state.current_page) > 1 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "page-item"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         className: "page-link",
-        href: "/pastevents/page=" + (this.state.current_page - 1),
+        href: "/pastevents/page=" + (parseInt(this.state.current_page) - 1),
         "aria-label": "Previous"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         "aria-hidden": "true"
       }, "\xAB"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "sr-only"
-      }, "Previous"))), this.state.current_page > 1 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+      }, "Previous"))), parseInt(this.state.current_page) > 1 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "page-item"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         className: "page-link",
-        href: "/pastevents/page=" + (this.state.current_page - 1)
-      }, this.state.current_page - 1)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        href: "/pastevents/page=" + (parseInt(this.state.current_page) - 1)
+      }, parseInt(this.state.current_page) - 1)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "page-item"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         className: "page-link page-link-active",
-        href: "/pastevents/page=" + this.state.current_page
-      }, this.state.current_page)), this.state.current_page < this.state.last_page && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        href: "/pastevents/page=" + parseInt(this.state.current_page)
+      }, parseInt(this.state.current_page))), parseInt(this.state.current_page) < this.state.last_page && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "page-item"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         className: "page-link",
-        href: "/pastevents/page=" + (this.state.current_page + 1)
-      }, this.state.current_page + 1)), this.state.current_page < this.state.last_page && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        href: "/pastevents/page=" + (parseInt(this.state.current_page) + 1)
+      }, parseInt(this.state.current_page) + 1)), parseInt(this.state.current_page) < this.state.last_page && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "page-item"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         className: "page-link",
-        href: "/pastevents/page=" + (this.state.current_page + 1),
+        href: "/pastevents/page=" + (parseInt(this.state.current_page) + 1),
         "aria-label": "Next"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         "aria-hidden": "true"

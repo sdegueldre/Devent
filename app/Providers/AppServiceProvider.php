@@ -14,7 +14,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+      if (env('APP_ENV') === 'production') {
+        $this->app['request']->server->set('HTTPS', true);
+      }
+
     }
 
     /**
@@ -24,6 +27,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        URL::forceScheme("https");
+      if (env('APP_ENV') === 'production') {
+        URL::forceSchema("https");
+      }
     }
 }
