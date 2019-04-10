@@ -6,6 +6,7 @@ class API {
 //contact the API
   async callAPI(method, route, data = null){
     console.log('called api', method, route, data);
+    console.log(this.token);
     try {
       let config = {
           method: method,
