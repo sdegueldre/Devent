@@ -53,7 +53,7 @@ class API {
   }
 
   async fetchPastEvents(page = 1) {
-    const json = await this.callAPI('GET', 'pastevents/?page='+page);
+    const json = await this.callAPI('GET', 'pastevents?page='+page);
     return({current_page: json.current_page, events: json.data, last_page: json.last_page });
   }
 //add, update and delete event

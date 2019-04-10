@@ -14,9 +14,9 @@ export default class PastEvents extends Component {
     super(props);
 
     this.state = {
-      current_page: '',
+      current_page: 1,
       events: [],
-      last_page: '',
+      last_page: 1,
     };
   }
 
