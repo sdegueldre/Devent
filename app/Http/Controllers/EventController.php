@@ -38,6 +38,7 @@ class EventController extends Controller
      public function store(Request $request)
      {
         $request['event_author'] = auth()->user()->id;
+        // $request['reminder_sent'] = false;
 
          $request->validate([
              'event_title'      => 'required',
@@ -47,14 +48,15 @@ class EventController extends Controller
              'event_location'   => 'required',
              'event_image'      => 'required',
              'event_author'     => 'required',
-             'reminder'         => 'nullable'
+             'reminder'         => 'nullable',
+             'reminder_sent'    => 'nullable'
          ]);
 
          $event = Event::create($request->all());
 
          return response()->json([
              'message' => 'Great success! New event created',
-             'event' => $event
+             'event'   => $event
          ]);
      }
 
