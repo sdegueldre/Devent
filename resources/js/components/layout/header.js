@@ -21,8 +21,8 @@ export default class Header extends Component {
     async componentDidMount() {
       let logged = api.islogged();
       if (logged.loggedIn){
-        let response = await api.me();
         let refresh = await api.refresh();
+        let response = await api.me();
         this.setState({loggedIn: logged.loggedIn, profile: response.profile});
       }
     }
