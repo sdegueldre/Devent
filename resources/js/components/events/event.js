@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import Card from '../layout/card';
 import '../../../sass/event.scss';
 import Moment from 'react-moment';
+import EmbededVideo from '../layout/embededVideo';
 
 /* Demo purpose only */
 import attendee from '../../assets/avatar10.png';
@@ -22,7 +23,8 @@ export default class Eventsolo extends Component {
       eventSoloAttendees: [],
       events: [],
       attending: false,
-      isOwner: false
+      isOwner: false,
+      videoId: ''
     };
 
     this.reload = this.reload.bind(this);
@@ -34,6 +36,15 @@ export default class Eventsolo extends Component {
       window.scrollTo(0, 0)
     id = id == null ? this.props.match.params.id : id;
     let state = await api.fetchEventSolo(id);
+
+    let mediaUrl = state.eventSolo.event_image;
+    if(mediaUrl.match(/^(https:\/\/)(www.)?(youtube.com|youtu.be)/)){
+      const url = new URL(mediaUrl);
+      state.videoId = url.searchParams.get('v');
+    } else {
+      state.videoId = '';
+    }
+
     let user;
     if(api.islogged().loggedIn){
       user = await api.me();
@@ -62,6 +73,13 @@ export default class Eventsolo extends Component {
     this.reload();
   }
 
+  componentDidUpdate(){
+    const iframe = document.querySelector('iframe');
+    window.addEventListener('resize', () => iframe.height = iframe.clientWidth*9/16);
+    if(iframe != null)
+      iframe.height = iframe.clientWidth*9/16;
+  }
+
   async checkAttending(e){
     let response;
     if(e.nativeEvent.target.checked){
@@ -81,11 +99,16 @@ export default class Eventsolo extends Component {
         <h1 className="mt-3 mb-2"><i className="far fa-calendar-alt pr-3"></i> Event</h1>
           <div className="row">
             <div className="col-lg-8 col-xs-12 mb-3">
-              <div className="eventHeaderImg" style={{ backgroundImage: 'url('+eventSolo.event_image+')', marginBottom: '-72px'}}>
-                <div className="eventTitle"><p>{eventSolo.event_title}</p></div>
-              </div>
+              {(this.state.videoId == '') ?
+                <div className="eventHeaderImg" style={{ backgroundImage: 'url('+eventSolo.event_image+')'}}>
+                  <div className="eventTitle"><p>{eventSolo.event_title}</p></div>
+                </div>
+                :
+                <EmbededVideo videoId={this.state.videoId}/>
+              }
+
               <div className="eventAttending sticky-top" style={{ zIndex: '2' }}>
-                <div  style={{height: '72px'}}></div>
+                <div  style={{height: '80px', marginTop: '-87px', zIndex: -1}}></div>
                 <input id="toggle-7" className="toggle toggle-yes-no" type="checkbox" onChange={this.checkAttending} checked={this.state.attending ? "checked" : ""}/>
                 <label htmlFor="toggle-7" data-on="Going" data-off="Not going"></label>
               </div>

@@ -4,6 +4,18 @@ import TextTruncate from 'react-text-truncate';
 import Moment from 'react-moment';
 
 export default class Card extends Component {
+  constructor(props){
+    super(props);
+    console.log('building card');
+    this.state = {
+      videoId: ''
+    }
+    let mediaUrl = this.props.events.event_image;
+    if(mediaUrl.match(/^(https:\/\/)(www.)?(youtube.com|youtu.be)/)){
+      const url = new URL(mediaUrl);
+      this.state.videoId = url.searchParams.get('v');
+    }
+  }
 
   render() {
       let classes = this.props.classes ? this.props.classes : 'card';
@@ -14,7 +26,12 @@ export default class Card extends Component {
           <div className="card-content">
             <div className="card-img">
             <Link to={"/event/" + this.props.events.id} onClick={() => reload(this.props.events.id)}>
+            {(this.state.videoId == '') ?
               <img src={this.props.events.event_image} alt=""/>
+              :
+              <img src={`https://img.youtube.com/vi/${this.state.videoId}/hqdefault.jpg`} alt=""/>
+            }
+
             </Link>
               <span className="date"><h4><i className="far fa-clock"></i> <Moment format="DD MMM - H:mm">{this.props.events.event_time}</Moment></h4></span>
               <span className="city"><h4><i className="fas fa-map-marker-alt"></i> {this.props.events.event_city}</h4></span>
