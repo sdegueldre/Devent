@@ -1,4 +1,4 @@
-#Jepsen-Brite API
+# Jepsen-Brite API
 
 ## User
   * 'id',
