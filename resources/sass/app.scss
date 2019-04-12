@@ -55,8 +55,22 @@
   background-color: $orange;
 }
 
-.navbar-light .navbar-nav .nav-link:hover{
-  color: $orange;
+.navbar-light, .navbar-nav{
+  padding: 0.25rem;
+  font-size: 1.3rem;
+
+  & > li {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    &:hover {
+      color: orange;
+    }
+  }
+}
+
+.hello {
+  color: white;
+  font-size: 1rem;
 }
 
 a:hover{

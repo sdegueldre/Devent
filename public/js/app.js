@@ -6532,7 +6532,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "/* Styling for homepage & events */\n.details-card {\n  background: #ecf0f1;\n}\n\n.card-content {\n  background: #ffffff;\n  border: 4px;\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);\n  height: 100%;\n}\n\n.card-img {\n  position: relative;\n  overflow: hidden;\n  border-radius: 0;\n  z-index: 1;\n  height: 250px;\n}\n\n.card-img img {\n  width: 100%;\n  height: auto;\n  display: block;\n  min-height: 250px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center top;\n     object-position: center top;\n}\n\n/* styling box city and date */\nspan.date, span.city {\n  position: absolute;\n  color: white;\n  padding: 0px;\n  background-color: #E74C3C;\n}\n\n/* positionning box date */\nspan.date {\n  top: 0px;\n  left: 0px;\n}\n\n/* positionning box city */\nspan.city {\n  bottom: 0px;\n  right: 0px;\n}\n\n.card-img span h4 {\n  font-size: 14px;\n  margin: 0;\n  padding: 10px 5px;\n  font-weight: bold;\n}\n\n.card-desc {\n  padding: 1.25rem;\n  color: black;\n}\n\n.card-desc h3 {\n  color: #000000;\n  font-weight: 600;\n  font-size: 1.5em;\n  line-height: 1.3em;\n  margin-top: 0;\n  margin-bottom: 5px;\n  padding: 0;\n}\n\n.card-desc p {\n  color: #747373;\n  font-size: 14px;\n  font-weight: 400;\n  font-size: 1em;\n  line-height: 1.5;\n  margin: 0px;\n  padding: 0;\n  font-family: \"Nunito\", sans-serif;\n}\n\n.btn-card {\n  background-color: #E74C3C;\n  color: #fff;\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);\n  padding: 0.84rem 2.14rem;\n  font-size: 0.81rem;\n  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  margin: 0;\n  border: 0;\n  border-radius: 0.125rem;\n  cursor: pointer;\n  text-transform: uppercase;\n  white-space: normal;\n  word-wrap: break-word;\n  color: #fff;\n}\n\n.btn-card:hover {\n  background: #fd7e14;\n}\n\na.btn-card {\n  text-decoration: none;\n  color: #fff;\n}\n\n/* Styling for feed in Event Solo */\n.card-img-feed {\n  position: relative;\n  overflow: hidden;\n  border-radius: 0;\n  z-index: 1;\n  height: 150px;\n}\n\n.card-img-feed img {\n  width: 100%;\n  height: auto;\n  display: block;\n  min-height: 150px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center top;\n     object-position: center top;\n}", ""]);
+exports.push([module.i, "/* Styling for homepage & events */\n.details-card {\n  background: #ecf0f1;\n}\n\n.card-content {\n  background: #ffffff;\n  border: 4px;\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);\n  height: 100%;\n}\n\n.card-img {\n  position: relative;\n  overflow: hidden;\n  border-radius: 0;\n  z-index: 1;\n  height: 250px;\n}\n\n.card-img img {\n  width: 100%;\n  height: auto;\n  display: block;\n  min-height: 250px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center top;\n     object-position: center top;\n}\n\n/* styling box city and date */\nspan.date, span.city {\n  position: absolute;\n  color: white;\n  padding: 0px;\n  background-color: #E74C3C;\n}\n\n/* positionning box date */\nspan.date {\n  top: 0px;\n  left: 0px;\n}\n\n/* positionning box city */\nspan.city {\n  bottom: 0px;\n  right: 0px;\n}\n\n.card-img span h4 {\n  font-size: 14px;\n  margin: 0;\n  padding: 10px 5px;\n  font-weight: bold;\n}\n\n.card-desc {\n  padding: 1.25rem;\n  color: black;\n}\n\n.card-desc h3 {\n  color: #000000;\n  font-weight: 600;\n  font-size: 1.5em;\n  line-height: 1.3em;\n  margin-top: 0;\n  margin-bottom: 5px;\n  padding: 0;\n}\n\n.card-desc p {\n  color: #747373;\n  font-size: 14px;\n  font-weight: 400;\n  font-size: 1em;\n  line-height: 1.5;\n  margin: 0px;\n  padding: 0;\n  font-family: \"Nunito\", sans-serif;\n}\n\n/* Styling for feed in Event Solo */\n.card-img-feed {\n  position: relative;\n  overflow: hidden;\n  border-radius: 0;\n  z-index: 1;\n  height: 150px;\n}\n\n.card-img-feed img {\n  width: 100%;\n  height: auto;\n  display: block;\n  min-height: 150px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center top;\n     object-position: center top;\n}", ""]);
 
 // exports
 
@@ -6551,7 +6551,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "/* DEMO PURPOSE */\n.map-placeholder {\n  width: 50%;\n  float: right;\n  margin-left: 20px;\n  margin-bottom: 20PX;\n}\n\n@media (max-width: 575.98px) {\n  .map-placeholder {\n    display: none;\n  }\n}\n.map-img {\n  width: 100%;\n}\n\n/* End Demo */\nh3 {\n  text-align: center;\n}\n\n.attendee {\n  background-color: white;\n  color: black;\n}\n\n.attendee-list {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n\n.attendee img {\n  width: 65px;\n  height: 65px;\n  border-radius: 200px;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  overflow: hidden;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n.buttons {\n  background-color: white;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n\n.card-body {\n  padding: 0;\n  padding-left: 1rem;\n  padding-right: 1rem;\n}\n\n.eventHeaderImg {\n  height: 350px;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center top;\n}\n\n/* Position text in the middle of the page/image */\n.eventTitle {\n  background-color: black;\n  /* Fallback color */\n  background-color: rgba(0, 0, 0, 0.4);\n  /* Black w/opacity/see-through */\n  color: white;\n  font-weight: bold;\n  border: 3px solid #f1f1f1;\n  position: relative;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  z-index: 2;\n  width: 80%;\n  padding: 20px;\n  text-align: center;\n}\n\n.eventTitle > p {\n  margin: 0;\n  font-size: 20px;\n}\n\n@media (min-width: 576px) {\n  .eventTitle > p {\n    font-size: 40px;\n    text-transform: uppercase;\n  }\n}\n.eventBody {\n  background-color: white;\n  color: black;\n  padding: 20px;\n  margin-top: 0;\n}\n\n.eventFeed {\n  width: 100%;\n}\n\n/* Author */\n.author {\n  background-color: #E74C3C;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  display: flex;\n}\n\n.authorImg {\n  width: 100px;\n  height: 100px;\n}\n\n.author > img {\n  height: 100px;\n  width: 100px;\n  margin: -50px;\n  border-radius: 200px;\n  overflow: hidden;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n.author > p {\n  padding: 5px;\n  margin: auto;\n}\n\n/* Attending full width */\n.eventAttending {\n  width: 100%;\n  margin: 0;\n}\n\n/* Flip button */\n.toggle {\n  position: absolute;\n  margin-left: -9999px;\n  visibility: hidden;\n}\n\n.toggle + label {\n  display: block;\n  position: relative;\n  cursor: pointer;\n  outline: none;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n\ninput.toggle-yes-no + label {\n  padding: 2px;\n  width: 100%;\n  height: 60px;\n}\n\ninput.toggle-yes-no + label:before,\ninput.toggle-yes-no + label:after {\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  color: #fff;\n  font-family: \"Nunito\", sans-serif;\n  text-transform: uppercase;\n  font-size: 20px;\n  text-align: center;\n  line-height: 60px;\n}\n\ninput.toggle-yes-no + label:before {\n  background-color: #E74C3C;\n  content: attr(data-off);\n  transition: -webkit-transform 0.5s;\n  transition: transform 0.5s;\n  transition: transform 0.5s, -webkit-transform 0.5s;\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\ninput.toggle-yes-no + label:after {\n  background-color: #61d56f;\n  content: attr(data-on);\n  transition: -webkit-transform 0.5s;\n  transition: transform 0.5s;\n  transition: transform 0.5s, -webkit-transform 0.5s;\n  -webkit-transform: rotateY(180deg);\n          transform: rotateY(180deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\ninput.toggle-yes-no:checked + label:before {\n  -webkit-transform: rotateY(180deg);\n          transform: rotateY(180deg);\n}\n\ninput.toggle-yes-no:checked + label:after {\n  -webkit-transform: rotateY(0);\n          transform: rotateY(0);\n}\n\niframe {\n  position: relative;\n  z-index: 3;\n}", ""]);
+exports.push([module.i, "/* DEMO PURPOSE */\n.map-placeholder {\n  width: 50%;\n  float: right;\n  margin-left: 20px;\n  margin-bottom: 20PX;\n}\n\n@media (max-width: 575.98px) {\n  .map-placeholder {\n    display: none;\n  }\n}\n.map-img {\n  width: 100%;\n}\n\n/* End Demo */\nh3 {\n  text-align: center;\n}\n\n.attendee {\n  background-color: white;\n  color: black;\n}\n\n.attendee-list {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n\n.attendee img {\n  width: 65px;\n  height: 65px;\n  border-radius: 200px;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  overflow: hidden;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n.buttons {\n  background-color: white;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n\n.card-body {\n  padding: 0;\n  padding-left: 1rem;\n  padding-right: 1rem;\n}\n\n.eventHeaderImg {\n  height: 350px;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center top;\n}\n\n/* Position text in the middle of the page/image */\n.eventTitle {\n  background-color: black;\n  /* Fallback color */\n  background-color: rgba(0, 0, 0, 0.4);\n  /* Black w/opacity/see-through */\n  color: white;\n  font-weight: bold;\n  border: 3px solid #f1f1f1;\n  position: relative;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  z-index: 2;\n  width: 80%;\n  padding: 20px;\n  text-align: center;\n}\n\n.eventTitle > p {\n  margin: 0;\n  font-size: 20px;\n}\n\n@media (min-width: 576px) {\n  .eventTitle > p {\n    font-size: 40px;\n    text-transform: uppercase;\n  }\n}\n.eventBody {\n  background-color: white;\n  color: black;\n  padding: 20px;\n  margin-top: 0;\n}\n\n.eventFeed {\n  width: 100%;\n}\n\n/* Author */\n.author {\n  background-color: #E74C3C;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  display: flex;\n}\n\n.authorImg {\n  width: 100px;\n  height: 100px;\n}\n\n.author > img {\n  height: 100px;\n  width: 100px;\n  margin: -50px;\n  border-radius: 200px;\n  overflow: hidden;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n.author > p {\n  padding: 5px;\n  margin: auto;\n}\n\n/* Attending full width */\n.eventAttending {\n  width: 100%;\n  margin: 0;\n}\n\n/* Flip button */\n.toggle {\n  position: absolute;\n  margin-left: -9999px;\n  visibility: hidden;\n}\n\n.toggle + label {\n  display: block;\n  position: relative;\n  cursor: pointer;\n  outline: none;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n\ninput.toggle-yes-no + label {\n  padding: 2px;\n  width: 100%;\n  height: 60px;\n}\n\ninput.toggle-yes-no + label:before,\ninput.toggle-yes-no + label:after {\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  color: #fff;\n  font-family: \"Nunito\", sans-serif;\n  text-transform: uppercase;\n  font-size: 20px;\n  text-align: center;\n  line-height: 60px;\n}\n\ninput.toggle-yes-no + label:before {\n  background-color: #E74C3C;\n  content: attr(data-off);\n  transition: -webkit-transform 0.5s;\n  transition: transform 0.5s;\n  transition: transform 0.5s, -webkit-transform 0.5s;\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\ninput.toggle-yes-no + label:after {\n  background-color: #61d56f;\n  content: attr(data-on);\n  transition: -webkit-transform 0.5s;\n  transition: transform 0.5s;\n  transition: transform 0.5s, -webkit-transform 0.5s;\n  -webkit-transform: rotateY(180deg);\n          transform: rotateY(180deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\ninput.toggle-yes-no:checked + label:before {\n  -webkit-transform: rotateY(180deg);\n          transform: rotateY(180deg);\n}\n\ninput.toggle-yes-no:checked + label:after {\n  -webkit-transform: rotateY(0);\n          transform: rotateY(0);\n}\n\niframe {\n  position: relative;\n  margin-bottom: -7px;\n  z-index: 3;\n}\n\n.olControlAttribution {\n  bottom: 0 !important;\n  background-color: rgba(255, 255, 255, 0.5);\n}\n\n.btn-card {\n  background-color: #E74C3C;\n  color: #fff;\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);\n  padding: 0.84rem 2.14rem;\n  font-size: 0.81rem;\n  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  margin: 0;\n  border: 0;\n  border-radius: 0.125rem;\n  cursor: pointer;\n  text-transform: uppercase;\n  white-space: normal;\n  word-wrap: break-word;\n  color: #fff;\n}\n\n.btn-card:hover {\n  background: #fd7e14;\n}\n\na.btn-card {\n  text-decoration: none;\n  color: #fff;\n}", ""]);
 
 // exports
 
@@ -86059,7 +86059,6 @@ function (_Component) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                //  alert('An event was created: ' + this.state.event_title);
                 event.preventDefault();
                 this.state.event_time = this.state.date + ' ' + this.state.time;
                 delete this.state.date;
@@ -86221,12 +86220,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_moment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-moment */ "./node_modules/react-moment/dist/index.js");
 /* harmony import */ var react_moment__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_moment__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _layout_embededVideo__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../layout/embededVideo */ "./resources/js/components/layout/embededVideo.js");
-/* harmony import */ var _assets_avatar10_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../assets/avatar10.png */ "./resources/js/assets/avatar10.png");
-/* harmony import */ var _assets_avatar10_png__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_assets_avatar10_png__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _assets_avatar03_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../assets/avatar03.png */ "./resources/js/assets/avatar03.png");
-/* harmony import */ var _assets_avatar03_png__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_assets_avatar03_png__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _assets_map_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../assets/map.png */ "./resources/js/assets/map.png");
-/* harmony import */ var _assets_map_png__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_assets_map_png__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _layout_embededOpenStreetMap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../layout/embededOpenStreetMap */ "./resources/js/components/layout/embededOpenStreetMap.js");
+/* harmony import */ var _assets_avatar10_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../assets/avatar10.png */ "./resources/js/assets/avatar10.png");
+/* harmony import */ var _assets_avatar10_png__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_assets_avatar10_png__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _assets_avatar03_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../assets/avatar03.png */ "./resources/js/assets/avatar03.png");
+/* harmony import */ var _assets_avatar03_png__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_assets_avatar03_png__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _assets_map_png__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../assets/map.png */ "./resources/js/assets/map.png");
+/* harmony import */ var _assets_map_png__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_assets_map_png__WEBPACK_IMPORTED_MODULE_12__);
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -86250,6 +86250,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -86523,8 +86524,8 @@ function (_Component) {
         }
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         style: {
-          height: '80px',
-          marginTop: '-87px',
+          height: '63px',
+          marginTop: '-63px',
           zIndex: -1
         }
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -86545,12 +86546,11 @@ function (_Component) {
         format: "DD MMMM Y - H:mm"
       }, eventSolo.event_time)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Description"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "map-placeholder"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-        className: "map-img",
-        src: _assets_map_png__WEBPACK_IMPORTED_MODULE_11___default.a
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, eventSolo.event_description))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Description"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_layout_embededOpenStreetMap__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        className: "map-placeholder",
+        mapId: "event-".concat(this.state.eventSolo.id, "-map"),
+        address: "".concat(this.state.eventSolo.event_location, " ").concat(this.state.eventSolo.event_city)
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, eventSolo.event_description))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "attendee"
       }, eventSoloAttendees.length <= 1 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
         className: "mt-3"
@@ -86577,16 +86577,16 @@ function (_Component) {
       }))), this.state.isOwner && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "buttons"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "btn btn-primary px-3 py-2 mr-4"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "Delete text-white",
-        href: "/deleteanevent/" + eventSolo.id
-      }, "Delete")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "btn btn-success px-4 py-2 ml-4"
+        className: "btn btn-danger mr-3"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         className: "Edit text-white",
         href: "/editanevent/" + eventSolo.id
-      }, "Edit"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Edit")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "btn btn-danger"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+        className: "Delete text-white",
+        href: "/deleteanevent/" + eventSolo.id
+      }, "Delete"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "author"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
         src: eventSoloAuthor.avatar
@@ -87384,6 +87384,151 @@ function (_Component) {
 
 /***/ }),
 
+/***/ "./resources/js/components/layout/embededOpenStreetMap.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/layout/embededOpenStreetMap.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return EmbededOpenStreetMap; });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_moment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-moment */ "./node_modules/react-moment/dist/index.js");
+/* harmony import */ var react_moment__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_moment__WEBPACK_IMPORTED_MODULE_3__);
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var EmbededOpenStreetMap =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(EmbededOpenStreetMap, _Component);
+
+  function EmbededOpenStreetMap() {
+    _classCallCheck(this, EmbededOpenStreetMap);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(EmbededOpenStreetMap).apply(this, arguments));
+  }
+
+  _createClass(EmbededOpenStreetMap, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this = this;
+
+      console.log('componentDidMount');
+      var mapDiv = document.getElementById("".concat(this.props.mapId));
+      this.resize(mapDiv);
+      window.addEventListener('resize', function () {
+        return _this.resize(mapDiv);
+      });
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function () {
+      var _componentDidUpdate = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(prevProps) {
+        var map, response, json, lonLat, zoom, markers;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (!(this.props.address.match(/undefined/) || prevProps.address == this.props.address)) {
+                  _context.next = 2;
+                  break;
+                }
+
+                return _context.abrupt("return");
+
+              case 2:
+                document.getElementById("".concat(this.props.mapId)).innerHTML = '';
+                map = new OpenLayers.Map(this.props.mapId);
+                map.addLayer(new OpenLayers.Layer.OSM());
+                _context.next = 7;
+                return fetch('https://nominatim.openstreetmap.org/search?format=json&q=' + encodeURIComponent(this.props.address));
+
+              case 7:
+                response = _context.sent;
+                _context.next = 10;
+                return response.json();
+
+              case 10:
+                json = _context.sent;
+                lonLat = new OpenLayers.LonLat(json[0].lon, json[0].lat).transform(new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+                );
+                zoom = 16;
+                markers = new OpenLayers.Layer.Markers("Markers");
+                map.addLayer(markers);
+                markers.addMarker(new OpenLayers.Marker(lonLat));
+                map.setCenter(lonLat, zoom);
+
+              case 17:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function componentDidUpdate(_x) {
+        return _componentDidUpdate.apply(this, arguments);
+      }
+
+      return componentDidUpdate;
+    }()
+  }, {
+    key: "resize",
+    value: function resize(map) {
+      if (map) map.style.height = map.clientWidth * 0.71 + 'px';
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col-6 ".concat(this.props.className),
+        id: this.props.mapId
+      });
+    }
+  }]);
+
+  return EmbededOpenStreetMap;
+}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/layout/embededVideo.js":
 /*!********************************************************!*\
   !*** ./resources/js/components/layout/embededVideo.js ***!
@@ -87667,59 +87812,59 @@ function (_Component) {
         className: "collapse navbar-collapse",
         id: "navbarColor01"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
-        className: "navbar-nav ml-auto"
+        className: "navbar-nav mr-auto ml-auto"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
         to: "/",
-        className: "nav-link mx-4 h5 text-danger"
+        className: "nav-link text-danger"
       }, "Homepage")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
         to: "/events/page=1",
-        className: "nav-link mx-4 h5 text-danger"
+        className: "nav-link text-danger"
       }, "Events")), this.state.loggedIn && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
         to: "/addnewevent",
-        className: "nav-link mx-4 h5 text-danger"
+        className: "nav-link text-danger"
       }, "Add Event")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
         to: "/team",
-        className: "nav-link mx-4 h5 text-danger"
+        className: "nav-link text-danger"
       }, "Team")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
         to: "contact",
-        className: "nav-link mx-4 h5 text-danger"
-      }, "Contact"))), this.state.loggedIn == false && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "navbar-nav ml-auto"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "btn btn-primary px-4 py-2 mr-3"
+        className: "nav-link text-danger"
+      }, "Contact"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+        className: "navbar-nav"
+      }, this.state.loggedIn == false && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        className: "navbar-item ml-auto"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "login text-white",
+        className: "login text-white py-0",
         href: "/login"
-      }, "Login")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "btn btn-success ml-2 mr-4"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "register text-white",
-        href: "/register"
-      }, "Register"))), this.state.loggedIn && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "navbar-nav ml-auto"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "mx-2"
+        className: "btn btn-danger mr-3"
+      }, "Login")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+        className: "register text-white  py-0",
+        href: "/register"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "btn btn-danger mr-4"
+      }, "Register"))), this.state.loggedIn && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        className: "nav-item d-flex align-items-center hello"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
         src: this.state.profile.avatar,
         width: "30",
         height: "30",
-        className: "avatar d-inline-block align-top rounded-circle"
-      }), " Hello ", this.state.profile.name), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "btn btn-primary ml-2 px-4 py-2 mr-4"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "logout text-white",
+        className: "avatar d-inline-block rounded-circle mr-2"
+      }), "Hello ", this.state.profile.name), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+        className: "nav-link logout text-white py-0",
         href: "/logout"
-      }, "Logout")))));
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "btn btn-danger mr-4"
+      }, "Logout")))))));
     }
   }]);
 

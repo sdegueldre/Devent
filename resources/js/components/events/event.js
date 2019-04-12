@@ -6,6 +6,7 @@ import Card from '../layout/card';
 import '../../../sass/event.scss';
 import Moment from 'react-moment';
 import EmbededVideo from '../layout/embededVideo';
+import EmbededOpenStreetMap from '../layout/embededOpenStreetMap';
 
 /* Demo purpose only */
 import attendee from '../../assets/avatar10.png';
@@ -108,7 +109,7 @@ export default class Eventsolo extends Component {
               }
 
               <div className="eventAttending sticky-top" style={{ zIndex: '2' }}>
-                <div  style={{height: '80px', marginTop: '-87px', zIndex: -1}}></div>
+                <div  style={{height: '63px', marginTop: '-63px', zIndex: -1}}></div>
                 <input id="toggle-7" className="toggle toggle-yes-no" type="checkbox" onChange={this.checkAttending} checked={this.state.attending ? "checked" : ""}/>
                 <label htmlFor="toggle-7" data-on="Going" data-off="Not going"></label>
               </div>
@@ -116,9 +117,7 @@ export default class Eventsolo extends Component {
                 <h3><i className="far fa-clock"></i> <Moment format="DD MMMM Y - H:mm">{eventSolo.event_time}</Moment></h3>
                 <div className="col">
                   <h4>Description</h4>
-                    <div className="map-placeholder">
-                      <img className="map-img" src={map}/>
-                    </div>
+                    <EmbededOpenStreetMap className="map-placeholder" mapId={`event-${this.state.eventSolo.id}-map`} address={`${this.state.eventSolo.event_location} ${this.state.eventSolo.event_city}`}/>
                   <p>{eventSolo.event_description}</p>
                 </div>
               </div>
@@ -142,8 +141,8 @@ export default class Eventsolo extends Component {
               </div>
               {this.state.isOwner &&
               <div className="buttons">
-                <div className="btn btn-primary px-3 py-2 mr-4"><a className="Delete text-white" href={"/deleteanevent/"+eventSolo.id}>Delete</a></div>
-                <div className="btn btn-success px-4 py-2 ml-4"><a className="Edit text-white" href={"/editanevent/"+eventSolo.id}>Edit</a></div>
+                <div className="btn btn-danger mr-3"><a className="Edit text-white" href={"/editanevent/"+eventSolo.id}>Edit</a></div>
+                <div className="btn btn-danger"><a className="Delete text-white" href={"/deleteanevent/"+eventSolo.id}>Delete</a></div>
               </div>}
               <div className="author">
                 <img src={eventSoloAuthor.avatar}/>
