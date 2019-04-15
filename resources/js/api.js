@@ -5,6 +5,7 @@ class API {
   }
 //contact the API
   async callAPI(method, route, data = null){
+    console.log('API call', method, route, data);
     try {
       let config = {
           method: method,
@@ -18,10 +19,13 @@ class API {
         config.body = data;
       }
       const response = await fetch('/api/' + route, config);
-      if (response.ok) {
-        const json = await response.json();
-        return json;
+      const json = await response.json();
+      if(json.message && json.message == 'Unauthenticated'){
+        this.token = null ;
+        localStorage.removeItem('token');
+        return undefined;
       }
+      return json;
     }
     catch (error) {
       console.log(error);
@@ -78,11 +82,13 @@ class API {
 
 //routes users
   islogged(){
+    console.log('API call: islogged');
     this.token = localStorage.getItem('token');
+    console.log(this.token);
     if (this.token != null) {
-      return({ loggedIn: true});
+      return(true);
     } else {
-      return({ loggedIn: false });
+      return(false);
     }
   }
   async register(data) {
@@ -124,7 +130,8 @@ class API {
   async me() {
     const json = await this.callAPI( 'POST', 'me');
     if (json != undefined){
-      return({ profile: json});
+      console.log('me', json);
+      return(json);
     }
   }
 }

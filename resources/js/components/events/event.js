@@ -47,13 +47,16 @@ export default class Eventsolo extends Component {
     }
 
     let user;
-    if(api.islogged().loggedIn){
+    state.attending = false;
+    state.isOwner = false;
+    if(api.islogged()){
       user = await api.me();
-      state.attending = false;
-      for(let attendee of state.eventSolo.attendees){
-        state.attending = (attendee.id == user.profile.id) || state.attending;
+      if(user){
+        for(let attendee of state.eventSolo.attendees){
+          state.attending = (attendee.id == user.id) || state.attending;
+        }
+        state.isOwner = state.eventSolo.event_author.id == user.id;
       }
-      state.isOwner = state.eventSolo.event_author.id == user.profile.id;
     }
 
     console.log(state.eventSolo);
@@ -76,9 +79,10 @@ export default class Eventsolo extends Component {
 
   componentDidUpdate(){
     const iframe = document.querySelector('iframe');
+    if(iframe == null)
+      return;
     window.addEventListener('resize', () => iframe.height = iframe.clientWidth*9/16);
-    if(iframe != null)
-      iframe.height = iframe.clientWidth*9/16;
+    iframe.height = iframe.clientWidth*9/16;
   }
 
   async checkAttending(e){
@@ -109,7 +113,7 @@ export default class Eventsolo extends Component {
               }
 
               <div className="eventAttending sticky-top" style={{ zIndex: '2' }}>
-                <div  style={{height: '55px', marginTop: '-55px', zIndex: -1}}></div>
+                <div  style={{height: '63px', marginTop: '-63px', zIndex: -1}}></div>
                 <input id="toggle-7" className="toggle toggle-yes-no" type="checkbox" onChange={this.checkAttending} checked={this.state.attending ? "checked" : ""}/>
                 <label htmlFor="toggle-7" data-on="Going" data-off="Not going"></label>
               </div>

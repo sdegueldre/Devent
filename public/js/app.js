@@ -6551,7 +6551,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "/* DEMO PURPOSE */\n.map-placeholder {\n  width: 50%;\n  float: right;\n  margin-left: 20px;\n  margin-bottom: 20PX;\n}\n\n@media (max-width: 575.98px) {\n  .map-placeholder {\n    display: none;\n  }\n}\n.map-img {\n  width: 100%;\n}\n\n/* End Demo */\nh3 {\n  text-align: center;\n}\n\n.attendee {\n  background-color: white;\n  color: black;\n}\n\n.attendee-list {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n\n.attendee img {\n  width: 65px;\n  height: 65px;\n  border-radius: 200px;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  overflow: hidden;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n.buttons {\n  background-color: white;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n\n.card-body {\n  padding: 0;\n  padding-left: 1rem;\n  padding-right: 1rem;\n}\n\n.eventHeaderImg {\n  height: 350px;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center top;\n}\n\n/* Position text in the middle of the page/image */\n.eventTitle {\n  background-color: black;\n  /* Fallback color */\n  background-color: rgba(0, 0, 0, 0.4);\n  /* Black w/opacity/see-through */\n  color: white;\n  font-weight: bold;\n  border: 3px solid #f1f1f1;\n  position: relative;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  z-index: 2;\n  width: 80%;\n  padding: 20px;\n  text-align: center;\n}\n\n.eventTitle > p {\n  margin: 0;\n  font-size: 20px;\n}\n\n@media (min-width: 576px) {\n  .eventTitle > p {\n    font-size: 40px;\n    text-transform: uppercase;\n  }\n}\n.eventBody {\n  background-color: white;\n  color: black;\n  padding: 20px;\n  margin-top: 0;\n}\n\n.eventFeed {\n  width: 100%;\n}\n\n/* Author */\n.author {\n  background-color: #E74C3C;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  display: flex;\n}\n\n.authorImg {\n  width: 100px;\n  height: 100px;\n}\n\n.author > img {\n  height: 100px;\n  width: 100px;\n  margin: -50px;\n  border-radius: 200px;\n  overflow: hidden;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n.author > p {\n  padding: 5px;\n  margin: auto;\n}\n\n/* Attending full width */\n.eventAttending {\n  width: 100%;\n  margin: 0;\n}\n\n/* Flip button */\n.toggle {\n  position: absolute;\n  margin-left: -9999px;\n  visibility: hidden;\n}\n\n.toggle + label {\n  display: block;\n  position: relative;\n  cursor: pointer;\n  outline: none;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n\ninput.toggle-yes-no + label {\n  padding: 2px;\n  width: 100%;\n  height: 60px;\n}\n\ninput.toggle-yes-no + label:before,\ninput.toggle-yes-no + label:after {\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  color: #fff;\n  font-family: \"Nunito\", sans-serif;\n  text-transform: uppercase;\n  font-size: 20px;\n  text-align: center;\n  line-height: 60px;\n}\n\ninput.toggle-yes-no + label:before {\n  background-color: #E74C3C;\n  content: attr(data-off);\n  transition: -webkit-transform 0.5s;\n  transition: transform 0.5s;\n  transition: transform 0.5s, -webkit-transform 0.5s;\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\ninput.toggle-yes-no + label:after {\n  background-color: #61d56f;\n  content: attr(data-on);\n  transition: -webkit-transform 0.5s;\n  transition: transform 0.5s;\n  transition: transform 0.5s, -webkit-transform 0.5s;\n  -webkit-transform: rotateY(180deg);\n          transform: rotateY(180deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\ninput.toggle-yes-no:checked + label:before {\n  -webkit-transform: rotateY(180deg);\n          transform: rotateY(180deg);\n}\n\ninput.toggle-yes-no:checked + label:after {\n  -webkit-transform: rotateY(0);\n          transform: rotateY(0);\n}\n\niframe {\n  position: relative;\n  margin-bottom: -7px;\n  z-index: 3;\n}\n\n.olControlAttribution {\n  bottom: 0 !important;\n  background-color: rgba(255, 255, 255, 0.5);\n}\n\n.btn-card {\n  background-color: #E74C3C;\n  color: #fff;\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);\n  padding: 0.84rem 2.14rem;\n  font-size: 0.81rem;\n  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  margin: 0;\n  border: 0;\n  border-radius: 0.125rem;\n  cursor: pointer;\n  text-transform: uppercase;\n  white-space: normal;\n  word-wrap: break-word;\n  color: #fff;\n}\n\n.btn-card:hover {\n  background: #fd7e14;\n}\n\na.btn-card {\n  text-decoration: none;\n  color: #fff;\n}", ""]);
+exports.push([module.i, "/* DEMO PURPOSE */\n.map-placeholder {\n  width: 50%;\n  float: right;\n  margin-left: 20px;\n  margin-bottom: 20PX;\n}\n\n.navbar-brand {\n  margin: 10px 0 7px;\n  padding: 0;\n}\n\n@media (max-width: 575.98px) {\n  .map-placeholder {\n    display: none;\n  }\n}\n.map-img {\n  width: 100%;\n}\n\n/* End Demo */\nh3 {\n  text-align: center;\n}\n\n.attendee {\n  background-color: white;\n  color: black;\n}\n\n.attendee-list {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n\n.attendee img {\n  width: 65px;\n  height: 65px;\n  border-radius: 200px;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  overflow: hidden;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n.buttons {\n  background-color: white;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n\n.card-body {\n  padding: 0;\n  padding-left: 1rem;\n  padding-right: 1rem;\n}\n\n.eventHeaderImg {\n  height: 350px;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center top;\n}\n\n/* Position text in the middle of the page/image */\n.eventTitle {\n  background-color: black;\n  /* Fallback color */\n  background-color: rgba(0, 0, 0, 0.4);\n  /* Black w/opacity/see-through */\n  color: white;\n  font-weight: bold;\n  border: 3px solid #f1f1f1;\n  position: relative;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  z-index: 2;\n  width: 80%;\n  padding: 20px;\n  text-align: center;\n}\n\n.eventTitle > p {\n  margin: 0;\n  font-size: 20px;\n}\n\n@media (min-width: 576px) {\n  .eventTitle > p {\n    font-size: 40px;\n    text-transform: uppercase;\n  }\n}\n.eventBody {\n  background-color: white;\n  color: black;\n  padding: 20px;\n  margin-top: 0;\n}\n\n.eventFeed {\n  width: 100%;\n}\n\n/* Author */\n.author {\n  background-color: #E74C3C;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  display: flex;\n}\n\n.authorImg {\n  width: 100px;\n  height: 100px;\n}\n\n.author > img {\n  height: 100px;\n  width: 100px;\n  margin: -50px;\n  border-radius: 200px;\n  overflow: hidden;\n  -o-object-fit: cover;\n     object-fit: cover;\n  z-index: 4;\n  position: relative;\n}\n\n.author > p {\n  padding: 5px;\n  margin: auto;\n}\n\n/* Attending full width */\n.eventAttending {\n  width: 100%;\n  margin: 0;\n}\n\n/* Flip button */\n.toggle {\n  position: absolute;\n  margin-left: -9999px;\n  visibility: hidden;\n}\n\n.toggle + label {\n  display: block;\n  position: relative;\n  cursor: pointer;\n  outline: none;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n\ninput.toggle-yes-no + label {\n  padding: 2px;\n  width: 100%;\n  height: 60px;\n}\n\ninput.toggle-yes-no + label:before,\ninput.toggle-yes-no + label:after {\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  color: #fff;\n  font-family: \"Nunito\", sans-serif;\n  text-transform: uppercase;\n  font-size: 20px;\n  text-align: center;\n  line-height: 60px;\n}\n\ninput.toggle-yes-no + label:before {\n  background-color: #E74C3C;\n  content: attr(data-off);\n  transition: -webkit-transform 0.5s;\n  transition: transform 0.5s;\n  transition: transform 0.5s, -webkit-transform 0.5s;\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\ninput.toggle-yes-no + label:after {\n  background-color: #61d56f;\n  content: attr(data-on);\n  transition: -webkit-transform 0.5s;\n  transition: transform 0.5s;\n  transition: transform 0.5s, -webkit-transform 0.5s;\n  -webkit-transform: rotateY(180deg);\n          transform: rotateY(180deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\ninput.toggle-yes-no:checked + label:before {\n  -webkit-transform: rotateY(180deg);\n          transform: rotateY(180deg);\n}\n\ninput.toggle-yes-no:checked + label:after {\n  -webkit-transform: rotateY(0);\n          transform: rotateY(0);\n}\n\niframe {\n  position: relative;\n  margin-bottom: -7px;\n  z-index: 3;\n}\n\n.olControlAttribution {\n  bottom: 0 !important;\n  background-color: rgba(255, 255, 255, 0.5);\n}\n\n.btn-card {\n  background-color: #E74C3C;\n  color: #fff;\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);\n  padding: 0.84rem 2.14rem;\n  font-size: 0.81rem;\n  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  margin: 0;\n  border: 0;\n  border-radius: 0.125rem;\n  cursor: pointer;\n  text-transform: uppercase;\n  white-space: normal;\n  word-wrap: break-word;\n  color: #fff;\n}\n\n.btn-card:hover {\n  background: #fd7e14;\n}\n\na.btn-card {\n  text-decoration: none;\n  color: #fff;\n}", ""]);
 
 // exports
 
@@ -84725,7 +84725,8 @@ function () {
             switch (_context.prev = _context.next) {
               case 0:
                 data = _args.length > 2 && _args[2] !== undefined ? _args[2] : null;
-                _context.prev = 1;
+                console.log('API call', method, route, data);
+                _context.prev = 2;
                 config = {
                   method: method,
                   headers: {
@@ -84739,31 +84740,32 @@ function () {
                   config.body = data;
                 }
 
-                _context.next = 6;
+                _context.next = 7;
                 return fetch('/api/' + route, config);
 
-              case 6:
+              case 7:
                 response = _context.sent;
-
-                if (!response.ok) {
-                  _context.next = 12;
-                  break;
-                }
-
                 _context.next = 10;
                 return response.json();
 
               case 10:
                 json = _context.sent;
+
+                if (!(json.message && json.message == 'Unauthenticated')) {
+                  _context.next = 15;
+                  break;
+                }
+
+                this.token = null;
+                localStorage.removeItem('token');
+                return _context.abrupt("return", undefined);
+
+              case 15:
                 return _context.abrupt("return", json);
 
-              case 12:
-                _context.next = 18;
-                break;
-
-              case 14:
-                _context.prev = 14;
-                _context.t0 = _context["catch"](1);
+              case 18:
+                _context.prev = 18;
+                _context.t0 = _context["catch"](2);
                 console.log(_context.t0);
 
                 if (_context.t0.response.message == 'Unauthenticated') {
@@ -84771,12 +84773,12 @@ function () {
                   localStorage.removeItem('token');
                 }
 
-              case 18:
+              case 22:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, this, [[1, 14]]);
+        }, _callee, this, [[2, 18]]);
       }));
 
       function callAPI(_x, _x2) {
@@ -85111,16 +85113,14 @@ function () {
   }, {
     key: "islogged",
     value: function islogged() {
+      console.log('API call: islogged');
       this.token = localStorage.getItem('token');
+      console.log(this.token);
 
       if (this.token != null) {
-        return {
-          loggedIn: true
-        };
+        return true;
       } else {
-        return {
-          loggedIn: false
-        };
+        return false;
       }
     }
   }, {
@@ -85317,15 +85317,14 @@ function () {
                 json = _context15.sent;
 
                 if (!(json != undefined)) {
-                  _context15.next = 5;
+                  _context15.next = 6;
                   break;
                 }
 
-                return _context15.abrupt("return", {
-                  profile: json
-                });
+                console.log('me', json);
+                return _context15.abrupt("return", json);
 
-              case 5:
+              case 6:
               case "end":
                 return _context15.stop();
             }
@@ -86333,71 +86332,79 @@ function (_Component) {
                   state.videoId = '';
                 }
 
-                if (!_api__WEBPACK_IMPORTED_MODULE_3__["default"].islogged().loggedIn) {
-                  _context.next = 33;
+                state.attending = false;
+                state.isOwner = false;
+
+                if (!_api__WEBPACK_IMPORTED_MODULE_3__["default"].islogged()) {
+                  _context.next = 35;
                   break;
                 }
 
-                _context.next = 11;
+                _context.next = 13;
                 return _api__WEBPACK_IMPORTED_MODULE_3__["default"].me();
 
-              case 11:
+              case 13:
                 user = _context.sent;
-                state.attending = false;
+
+                if (!user) {
+                  _context.next = 35;
+                  break;
+                }
+
                 _iteratorNormalCompletion = true;
                 _didIteratorError = false;
                 _iteratorError = undefined;
-                _context.prev = 16;
+                _context.prev = 18;
 
                 for (_iterator = state.eventSolo.attendees[Symbol.iterator](); !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
                   _attendee = _step.value;
-                  state.attending = _attendee.id == user.profile.id || state.attending;
+                  state.attending = _attendee.id == user.id || state.attending;
                 }
 
-                _context.next = 24;
+                _context.next = 26;
                 break;
 
-              case 20:
-                _context.prev = 20;
-                _context.t0 = _context["catch"](16);
+              case 22:
+                _context.prev = 22;
+                _context.t0 = _context["catch"](18);
                 _didIteratorError = true;
                 _iteratorError = _context.t0;
 
-              case 24:
-                _context.prev = 24;
-                _context.prev = 25;
+              case 26:
+                _context.prev = 26;
+                _context.prev = 27;
 
                 if (!_iteratorNormalCompletion && _iterator.return != null) {
                   _iterator.return();
                 }
 
-              case 27:
-                _context.prev = 27;
+              case 29:
+                _context.prev = 29;
 
                 if (!_didIteratorError) {
-                  _context.next = 30;
+                  _context.next = 32;
                   break;
                 }
 
                 throw _iteratorError;
 
-              case 30:
-                return _context.finish(27);
-
-              case 31:
-                return _context.finish(24);
-
               case 32:
-                state.isOwner = state.eventSolo.event_author.id == user.profile.id;
+                return _context.finish(29);
 
               case 33:
+                return _context.finish(26);
+
+              case 34:
+                state.isOwner = state.eventSolo.event_author.id == user.id;
+
+              case 35:
                 console.log(state.eventSolo);
                 this.setState(state); // Fetch events and show 3 at random
 
-                _context.next = 37;
+                _context.next = 39;
                 return _api__WEBPACK_IMPORTED_MODULE_3__["default"].fetchEvents();
 
-              case 37:
+              case 39:
                 _ref = _context.sent;
                 events = _ref.events;
                 events = events.filter(function (e) {
@@ -86412,12 +86419,12 @@ function (_Component) {
                   events: events
                 });
 
-              case 42:
+              case 44:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, this, [[16, 20, 24, 32], [25,, 27, 31]]);
+        }, _callee, this, [[18, 22, 26, 34], [27,, 29, 33]]);
       }));
 
       function reload() {
@@ -86435,10 +86442,11 @@ function (_Component) {
     key: "componentDidUpdate",
     value: function componentDidUpdate() {
       var iframe = document.querySelector('iframe');
+      if (iframe == null) return;
       window.addEventListener('resize', function () {
         return iframe.height = iframe.clientWidth * 9 / 16;
       });
-      if (iframe != null) iframe.height = iframe.clientWidth * 9 / 16;
+      iframe.height = iframe.clientWidth * 9 / 16;
     }
   }, {
     key: "checkAttending",
@@ -86524,8 +86532,8 @@ function (_Component) {
         }
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         style: {
-          height: '55px',
-          marginTop: '-55px',
+          height: '63px',
+          marginTop: '-63px',
           zIndex: -1
         }
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -87748,14 +87756,15 @@ function (_Component) {
       var _componentDidMount = _asyncToGenerator(
       /*#__PURE__*/
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var logged, response;
+        var logged, _profile;
+
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 logged = _api__WEBPACK_IMPORTED_MODULE_5__["default"].islogged();
 
-                if (!logged.loggedIn) {
+                if (!logged) {
                   _context.next = 6;
                   break;
                 }
@@ -87764,11 +87773,13 @@ function (_Component) {
                 return _api__WEBPACK_IMPORTED_MODULE_5__["default"].me();
 
               case 4:
-                response = _context.sent;
-                //let refresh = await api.refresh();
-                this.setState({
-                  loggedIn: logged.loggedIn,
-                  profile: response.profile
+                _profile = _context.sent;
+                if (_profile) this.setState({
+                  loggedIn: logged,
+                  profile: _profile
+                });else this.setState({
+                  loggedIn: false,
+                  profile: null
                 });
 
               case 6:
@@ -87789,9 +87800,6 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
-        style: {
-          height: '55px'
-        },
         className: "navbar navbar-expand-lg navbar-light bg-light sticky-top"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
         to: "/",

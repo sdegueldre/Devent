@@ -20,15 +20,17 @@ export default class Header extends Component {
 
     async componentDidMount() {
       let logged = api.islogged();
-      if (logged.loggedIn){
-        let response = await api.me();
-        //let refresh = await api.refresh();
-        this.setState({loggedIn: logged.loggedIn, profile: response.profile});
+      if (logged){
+        let profile = await api.me();
+        if(profile)
+          this.setState({loggedIn: logged, profile: profile});
+        else
+          this.setState({loggedIn: false, profile: null});
       }
     }
     render() {
         return (
-          <nav style={{height: '55px'}} className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+          <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
             <Link to="/" className="navbar-brand"><img width="30" height="30" className="d-inline-block align-top mx-2" src={ logo }/>Dev'ent</Link>
             <button className="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
