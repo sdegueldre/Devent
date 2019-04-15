@@ -71,6 +71,7 @@ class EventController extends Controller
              'event_city'       => 'required',
              'event_location'   => 'required',
              'event_image'      => 'required',
+             'event_video'      => 'nullable',
              'event_author'     => 'required',
              'reminder'         => 'nullable'
          ]);
@@ -117,6 +118,7 @@ class EventController extends Controller
                 'event_city'        => 'nullable',
                 'event_location'    => 'nullable',
                 'event_image'       => 'nullable',
+                'event_video'       => 'nullable',
                 'event_author'      => 'nullable',
                 'reminder'          => 'nullable'
             ]);
