@@ -10879,6 +10879,8 @@ a.text-dark:focus {
 .navbar-brand {
   font-family: "Permanent Marker", cursive;
   font-size: 25px;
+  margin-top: -5px;
+  margin-bottom: -5px;
 }
 
 .container-fluid {
@@ -10918,8 +10920,26 @@ a.text-dark:focus {
   background-color: #fd7e14;
 }
 
-.navbar-light .navbar-nav .nav-link:hover {
-  color: #fd7e14;
+.navbar-light,
+.navbar-nav {
+  padding: 0.25rem;
+  font-size: 1.3rem;
+}
+
+.navbar-light > li,
+.navbar-nav > li {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.navbar-light > li:hover,
+.navbar-nav > li:hover {
+  color: orange;
+}
+
+.hello {
+  color: white;
+  font-size: 1rem;
 }
 
 a:hover {
