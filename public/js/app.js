@@ -88021,16 +88021,14 @@ function (_Component) {
         className: "nav-link mx-4 h5 text-danger"
       }, "Contact"))), this.state.loggedIn == false && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "navbar-nav ml-auto"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "btn btn-primary px-4 py-2 mr-3"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "login text-white",
-        href: "/login"
-      }, "Login")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "btn btn-success ml-2 mr-4"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "register text-white",
-        href: "/register"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+        to: "/login"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+        className: "login text-white btn btn-primary mr-4"
+      }, "Login")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+        to: "/register"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+        className: "register text-white btn btn-success mr-4"
       }, "Register"))), this.state.loggedIn && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "navbar-nav ml-auto"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
