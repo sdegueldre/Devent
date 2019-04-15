@@ -28,9 +28,9 @@ export default class Header extends Component {
     }
     render() {
         return (
-          <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+          <nav style={{height: '55px'}} className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
             <Link to="/" className="navbar-brand"><img width="30" height="30" className="d-inline-block align-top mx-2" src={ logo }/>Dev'ent</Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <button className="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
 
@@ -58,7 +58,7 @@ export default class Header extends Component {
               {(this.state.loggedIn== false) &&
                 <li className="navbar-item ml-auto">
                   <a className="login text-white py-0" href="/login"><div className="btn btn-danger mr-3">Login</div></a>
-                  <a className="register text-white  py-0" href="/register"><div className="btn btn-danger mr-4">Register</div></a>
+                  <a className="register text-white  py-0" href="/register"><div className="btn btn-danger">Register</div></a>
                 </li>
               }
               {this.state.loggedIn &&

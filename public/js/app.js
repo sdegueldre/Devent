@@ -86524,8 +86524,8 @@ function (_Component) {
         }
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         style: {
-          height: '63px',
-          marginTop: '-63px',
+          height: '55px',
+          marginTop: '-55px',
           zIndex: -1
         }
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
@@ -87789,6 +87789,9 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
+        style: {
+          height: '55px'
+        },
         className: "navbar navbar-expand-lg navbar-light bg-light sticky-top"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
         to: "/",
@@ -87799,7 +87802,7 @@ function (_Component) {
         className: "d-inline-block align-top mx-2",
         src: _assets_logo2_svg__WEBPACK_IMPORTED_MODULE_4___default.a
       }), "Dev'ent"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-        className: "navbar-toggler",
+        className: "navbar-toggler mr-2",
         type: "button",
         "data-toggle": "collapse",
         "data-target": "#navbarColor01",
@@ -87851,7 +87854,7 @@ function (_Component) {
         className: "register text-white  py-0",
         href: "/register"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "btn btn-danger mr-4"
+        className: "btn btn-danger"
       }, "Register"))), this.state.loggedIn && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "nav-item d-flex align-items-center hello"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
