@@ -1,5 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Permanent+Marker);@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic);@charset "UTF-8";
 
+/* DEMO PURPOSE */
+
+.card {
+  min-width: 250px !important;
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 30%;
+  }
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -7219,6 +7231,22 @@ button.bg-dark:focus {
   padding-top: 100%;
 }
 
+.embed-responsive-21by9::before {
+  padding-top: 42.8571428571%;
+}
+
+.embed-responsive-16by9::before {
+  padding-top: 56.25%;
+}
+
+.embed-responsive-4by3::before {
+  padding-top: 75%;
+}
+
+.embed-responsive-1by1::before {
+  padding-top: 100%;
+}
+
 .flex-row {
   flex-direction: row !important;
 }
@@ -10874,6 +10902,10 @@ a.text-dark:focus {
 
 .list-group-item-action .list-group-item-heading {
   color: #fff;
+}
+
+.card-deck {
+  justify-content: space-between;
 }
 
 .nav-link {

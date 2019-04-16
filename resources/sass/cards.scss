@@ -3,6 +3,10 @@
 
 /* Styling for homepage & events */
 
+.card {
+  flex: 0 1 auto !important;
+}
+
 .details-card {
 	background: #ecf0f1;
 }

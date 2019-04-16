@@ -46,10 +46,10 @@ export default class PastEvents extends Component {
               </div>
 
             {/* Start pagination */}
-            <div className="container">
+            <div className="container d-flex justify-content-between">
+              <a className="past text-white btn btn-danger" href={"/events/page=1"}>Back to the Future</a>
               <nav aria-label="Page navigation example">
-              <div className="btn btn-danger px-3 py-2 mt-3"><a className="past text-white" href={"/events/page=1"}>Back to the Future</a></div>
-                <ul className="pagination d-flex justify-content-end">
+                <ul className="pagination d-flex justify-content-end mb-0">
                   {parseInt(this.state.current_page) > 1 &&
                     <li className="page-item">
                       <a className="page-link" href={"/pastevents/page="+(parseInt(this.state.current_page)-1)} aria-label="Previous">

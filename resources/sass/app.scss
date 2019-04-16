@@ -5,6 +5,20 @@
 
 // Variables
 @import 'variables';
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+/* DEMO PURPOSE */
+.card {
+  min-width: 250px !important;
+}
+@include media-breakpoint-up(md) {
+  .card {
+    width: 30%;
+  }
+}
+
 
 // Bootstrap
 @import "node_modules/bootstrap/scss/bootstrap";
@@ -15,6 +29,10 @@
 // p {
 //   margin-bottom: 0;
 // }
+
+.card-deck {
+   justify-content: space-between;
+}
 
 .nav-link {
   padding: 0.2rem 0.5rem;

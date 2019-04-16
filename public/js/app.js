@@ -6532,7 +6532,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "/* Styling for homepage & events */\n.details-card {\n  background: #ecf0f1;\n}\n\n.card-content {\n  background: #ffffff;\n  border: 4px;\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);\n  height: 100%;\n}\n\n.card-img {\n  position: relative;\n  overflow: hidden;\n  border-radius: 0;\n  z-index: 1;\n  height: 250px;\n}\n\n.card-img img {\n  width: 100%;\n  height: auto;\n  display: block;\n  min-height: 250px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center top;\n     object-position: center top;\n}\n\n/* styling box city and date */\nspan.date, span.city {\n  position: absolute;\n  color: white;\n  padding: 0px;\n  background-color: #E74C3C;\n}\n\n/* positionning box date */\nspan.date {\n  top: 0px;\n  left: 0px;\n}\n\n/* positionning box city */\nspan.city {\n  bottom: 0px;\n  right: 0px;\n}\n\n.card-img span h4 {\n  font-size: 14px;\n  margin: 0;\n  padding: 10px 5px;\n  font-weight: bold;\n}\n\n.card-desc {\n  padding: 1.25rem;\n  color: black;\n}\n\n.card-desc h3 {\n  color: #000000;\n  font-weight: 600;\n  font-size: 1.5em;\n  line-height: 1.3em;\n  margin-top: 0;\n  margin-bottom: 5px;\n  padding: 0;\n}\n\n.card-desc p {\n  color: #747373;\n  font-size: 14px;\n  font-weight: 400;\n  font-size: 1em;\n  line-height: 1.5;\n  margin: 0px;\n  padding: 0;\n  font-family: \"Nunito\", sans-serif;\n}\n\n/* Styling for feed in Event Solo */\n.card-img-feed {\n  position: relative;\n  overflow: hidden;\n  border-radius: 0;\n  z-index: 1;\n  height: 150px;\n}\n\n.card-img-feed img {\n  width: 100%;\n  height: auto;\n  display: block;\n  min-height: 150px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center top;\n     object-position: center top;\n}", ""]);
+exports.push([module.i, "/* Styling for homepage & events */\n.card {\n  flex: 0 1 auto !important;\n}\n\n.details-card {\n  background: #ecf0f1;\n}\n\n.card-content {\n  background: #ffffff;\n  border: 4px;\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);\n  height: 100%;\n}\n\n.card-img {\n  position: relative;\n  overflow: hidden;\n  border-radius: 0;\n  z-index: 1;\n  height: 250px;\n}\n\n.card-img img {\n  width: 100%;\n  height: auto;\n  display: block;\n  min-height: 250px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center top;\n     object-position: center top;\n}\n\n/* styling box city and date */\nspan.date, span.city {\n  position: absolute;\n  color: white;\n  padding: 0px;\n  background-color: #E74C3C;\n}\n\n/* positionning box date */\nspan.date {\n  top: 0px;\n  left: 0px;\n}\n\n/* positionning box city */\nspan.city {\n  bottom: 0px;\n  right: 0px;\n}\n\n.card-img span h4 {\n  font-size: 14px;\n  margin: 0;\n  padding: 10px 5px;\n  font-weight: bold;\n}\n\n.card-desc {\n  padding: 1.25rem;\n  color: black;\n}\n\n.card-desc h3 {\n  color: #000000;\n  font-weight: 600;\n  font-size: 1.5em;\n  line-height: 1.3em;\n  margin-top: 0;\n  margin-bottom: 5px;\n  padding: 0;\n}\n\n.card-desc p {\n  color: #747373;\n  font-size: 14px;\n  font-weight: 400;\n  font-size: 1em;\n  line-height: 1.5;\n  margin: 0px;\n  padding: 0;\n  font-family: \"Nunito\", sans-serif;\n}\n\n/* Styling for feed in Event Solo */\n.card-img-feed {\n  position: relative;\n  overflow: hidden;\n  border-radius: 0;\n  z-index: 1;\n  height: 150px;\n}\n\n.card-img-feed img {\n  width: 100%;\n  height: auto;\n  display: block;\n  min-height: 150px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center top;\n     object-position: center top;\n}", ""]);
 
 // exports
 
@@ -6551,7 +6551,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "/* DEMO PURPOSE */\n.map-placeholder {\n  width: 50%;\n  float: right;\n  margin-left: 20px;\n  margin-bottom: 20PX;\n}\n\n.navbar-brand {\n  margin: 10px 0 7px;\n  padding: 0;\n}\n\n@media (max-width: 575.98px) {\n  .map-placeholder {\n    display: none;\n  }\n}\n.map-img {\n  width: 100%;\n}\n\n/* End Demo */\nh3 {\n  text-align: center;\n}\n\n.attendee {\n  background-color: white;\n  color: black;\n}\n\n.attendee-list {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n\n.attendee img {\n  width: 65px;\n  height: 65px;\n  border-radius: 200px;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  overflow: hidden;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n.buttons {\n  background-color: white;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n\n.card-body {\n  padding: 0;\n  padding-left: 1rem;\n  padding-right: 1rem;\n}\n\n.eventHeaderImg {\n  height: 350px;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center top;\n}\n\n/* Position text in the middle of the page/image */\n.eventTitle {\n  background-color: black;\n  /* Fallback color */\n  background-color: rgba(0, 0, 0, 0.4);\n  /* Black w/opacity/see-through */\n  color: white;\n  font-weight: bold;\n  border: 3px solid #f1f1f1;\n  position: relative;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  z-index: 2;\n  width: 80%;\n  padding: 20px;\n  text-align: center;\n}\n\n.eventTitle > p {\n  margin: 0;\n  font-size: 20px;\n}\n\n@media (min-width: 576px) {\n  .eventTitle > p {\n    font-size: 40px;\n    text-transform: uppercase;\n  }\n}\n.eventBody {\n  background-color: white;\n  color: black;\n  padding: 20px;\n  margin-top: 0;\n}\n\n.eventFeed {\n  width: 100%;\n}\n\n/* Author */\n.author {\n  background-color: #E74C3C;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  display: flex;\n}\n\n.authorImg {\n  width: 100px;\n  height: 100px;\n}\n\n.author > img {\n  height: 100px;\n  width: 100px;\n  margin: -50px;\n  border-radius: 200px;\n  overflow: hidden;\n  -o-object-fit: cover;\n     object-fit: cover;\n  z-index: 4;\n  position: relative;\n}\n\n.author > p {\n  padding: 5px;\n  margin: auto;\n}\n\n/* Attending full width */\n.eventAttending {\n  width: 100%;\n  margin: 0;\n}\n\n/* Flip button */\n.toggle {\n  position: absolute;\n  margin-left: -9999px;\n  visibility: hidden;\n}\n\n.toggle + label {\n  display: block;\n  position: relative;\n  cursor: pointer;\n  outline: none;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n\ninput.toggle-yes-no + label {\n  padding: 2px;\n  width: 100%;\n  height: 60px;\n}\n\ninput.toggle-yes-no + label:before,\ninput.toggle-yes-no + label:after {\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  color: #fff;\n  font-family: \"Nunito\", sans-serif;\n  text-transform: uppercase;\n  font-size: 20px;\n  text-align: center;\n  line-height: 60px;\n}\n\ninput.toggle-yes-no + label:before {\n  background-color: #E74C3C;\n  content: attr(data-off);\n  transition: -webkit-transform 0.5s;\n  transition: transform 0.5s;\n  transition: transform 0.5s, -webkit-transform 0.5s;\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\ninput.toggle-yes-no + label:after {\n  background-color: #61d56f;\n  content: attr(data-on);\n  transition: -webkit-transform 0.5s;\n  transition: transform 0.5s;\n  transition: transform 0.5s, -webkit-transform 0.5s;\n  -webkit-transform: rotateY(180deg);\n          transform: rotateY(180deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\ninput.toggle-yes-no:checked + label:before {\n  -webkit-transform: rotateY(180deg);\n          transform: rotateY(180deg);\n}\n\ninput.toggle-yes-no:checked + label:after {\n  -webkit-transform: rotateY(0);\n          transform: rotateY(0);\n}\n\niframe {\n  position: relative;\n  margin-bottom: -7px;\n  z-index: 3;\n}\n\n.olControlAttribution {\n  bottom: 0 !important;\n  background-color: rgba(255, 255, 255, 0.5);\n}\n\n.btn-card {\n  background-color: #E74C3C;\n  color: #fff;\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);\n  padding: 0.84rem 2.14rem;\n  font-size: 0.81rem;\n  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  margin: 0;\n  border: 0;\n  border-radius: 0.125rem;\n  cursor: pointer;\n  text-transform: uppercase;\n  white-space: normal;\n  word-wrap: break-word;\n  color: #fff;\n}\n\n.btn-card:hover {\n  background: #fd7e14;\n}\n\na.btn-card {\n  text-decoration: none;\n  color: #fff;\n}", ""]);
+exports.push([module.i, ".map-placeholder {\n  width: 50%;\n  float: right;\n  margin-left: 20px;\n  margin-bottom: 20PX;\n}\n\n.navbar-brand {\n  margin: 10px 0 7px;\n  padding: 0;\n}\n\n@media (max-width: 575.98px) {\n  .map-placeholder {\n    display: none;\n  }\n}\n.map-img {\n  width: 100%;\n}\n\n/* End Demo */\nh3 {\n  text-align: center;\n}\n\n.attendee {\n  background-color: white;\n  color: black;\n}\n\n.attendee-list {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  justify-content: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n\n.attendee img {\n  width: 65px;\n  height: 65px;\n  border-radius: 200px;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  overflow: hidden;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n.buttons {\n  background-color: white;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n\n.card-body {\n  padding: 0;\n  padding-left: 1rem;\n  padding-right: 1rem;\n}\n\n.eventHeaderImg {\n  height: 350px;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center top;\n}\n\n/* Position text in the middle of the page/image */\n.eventTitle {\n  background-color: black;\n  /* Fallback color */\n  background-color: rgba(0, 0, 0, 0.4);\n  /* Black w/opacity/see-through */\n  color: white;\n  font-weight: bold;\n  border: 3px solid #f1f1f1;\n  position: relative;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  z-index: 2;\n  width: 80%;\n  padding: 20px;\n  text-align: center;\n}\n\n.eventTitle > p {\n  margin: 0;\n  font-size: 20px;\n}\n\n@media (min-width: 576px) {\n  .eventTitle > p {\n    font-size: 40px;\n    text-transform: uppercase;\n  }\n}\n.eventBody {\n  background-color: white;\n  color: black;\n  padding: 20px;\n  margin-top: 0;\n}\n\n.eventFeed {\n  width: 100%;\n}\n\n/* Author */\n.author {\n  background-color: #E74C3C;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  display: flex;\n}\n\n.authorImg {\n  width: 100px;\n  height: 100px;\n}\n\n.author > img {\n  height: 100px;\n  width: 100px;\n  margin: -50px;\n  border-radius: 200px;\n  overflow: hidden;\n  -o-object-fit: cover;\n     object-fit: cover;\n  z-index: 4;\n  position: relative;\n}\n\n.author > p {\n  padding: 5px;\n  margin: auto;\n}\n\n/* Attending full width */\n.eventAttending {\n  width: 100%;\n  margin: 0;\n}\n\n/* Flip button */\n.toggle {\n  position: absolute;\n  margin-left: -9999px;\n  visibility: hidden;\n}\n\n.toggle + label {\n  display: block;\n  position: relative;\n  cursor: pointer;\n  outline: none;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n}\n\ninput.toggle-yes-no + label {\n  padding: 2px;\n  width: 100%;\n  height: 60px;\n}\n\ninput.toggle-yes-no + label:before,\ninput.toggle-yes-no + label:after {\n  display: block;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  color: #fff;\n  font-family: \"Nunito\", sans-serif;\n  text-transform: uppercase;\n  font-size: 20px;\n  text-align: center;\n  line-height: 60px;\n}\n\ninput.toggle-yes-no + label:before {\n  background-color: #E74C3C;\n  content: attr(data-off);\n  transition: -webkit-transform 0.5s;\n  transition: transform 0.5s;\n  transition: transform 0.5s, -webkit-transform 0.5s;\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\ninput.toggle-yes-no + label:after {\n  background-color: #61d56f;\n  content: attr(data-on);\n  transition: -webkit-transform 0.5s;\n  transition: transform 0.5s;\n  transition: transform 0.5s, -webkit-transform 0.5s;\n  -webkit-transform: rotateY(180deg);\n          transform: rotateY(180deg);\n  -webkit-backface-visibility: hidden;\n          backface-visibility: hidden;\n}\n\ninput.toggle-yes-no:checked + label:before {\n  -webkit-transform: rotateY(180deg);\n          transform: rotateY(180deg);\n}\n\ninput.toggle-yes-no:checked + label:after {\n  -webkit-transform: rotateY(0);\n          transform: rotateY(0);\n}\n\niframe {\n  position: relative;\n  margin-bottom: -7px;\n  z-index: 3;\n}\n\n.olControlAttribution {\n  bottom: 0 !important;\n  background-color: rgba(255, 255, 255, 0.5);\n}\n\n.btn-card {\n  background-color: #E74C3C;\n  color: #fff;\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);\n  padding: 0.84rem 2.14rem;\n  font-size: 0.81rem;\n  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  margin: 0;\n  border: 0;\n  border-radius: 0.125rem;\n  cursor: pointer;\n  text-transform: uppercase;\n  white-space: normal;\n  word-wrap: break-word;\n  color: #fff;\n}\n\n.btn-card:hover {\n  background: #fd7e14;\n}\n\na.btn-card {\n  text-decoration: none;\n  color: #fff;\n}", ""]);
 
 // exports
 
@@ -85589,15 +85589,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../api */ "./resources/js/api.js");
-/* harmony import */ var _assets_event05_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../assets/event05.png */ "./resources/js/assets/event05.png");
-/* harmony import */ var _assets_event05_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_event05_png__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _layout_eventForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../layout/eventForm */ "./resources/js/components/layout/eventForm.js");
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -85607,9 +85602,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
@@ -85621,8 +85616,6 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-
-/* Demo */
 
 
 
@@ -85695,246 +85688,17 @@ function (_Component) {
         name: ''
       }
     };
-    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(AddNewEvent, [{
-    key: "handleChange",
-    value: function handleChange(event) {
-      var obj = {};
-      if (event.target.files) obj.event_image = event.target.files[0];else obj[event.target.name] = event.target.value;
-      return this.setState(obj);
-    }
-  }, {
-    key: "getBase64",
-    value: function getBase64(file) {
-      return new Promise(function (resolve, reject) {
-        var reader = new FileReader();
-        reader.readAsDataURL(file);
-
-        reader.onload = function () {
-          return resolve(reader.result);
-        };
-
-        reader.onerror = function (error) {
-          return reject(error);
-        };
-      });
-    }
-  }, {
-    key: "handleSubmit",
-    value: function () {
-      var _handleSubmit = _asyncToGenerator(
-      /*#__PURE__*/
-      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(event) {
-        var files, img, data, response;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                event.preventDefault();
-                files = document.getElementById('image-input').files;
-                img = '';
-
-                if (!files.length) {
-                  _context2.next = 7;
-                  break;
-                }
-
-                _context2.next = 6;
-                return this.getBase64(files[0]);
-
-              case 6:
-                img = _context2.sent;
-
-              case 7:
-                this.state.event_time = this.state.date + ' ' + this.state.time;
-                delete this.state.date;
-                delete this.state.time;
-                data = JSON.stringify(_objectSpread({}, this.state, {
-                  event_image: img
-                }));
-                _context2.next = 13;
-                return _api__WEBPACK_IMPORTED_MODULE_3__["default"].addEvent(data);
-
-              case 13:
-                response = _context2.sent;
-                alert(response.message + ' : ' + this.state.event_title);
-                this.props.history.push("/event/" + response.id);
-
-              case 16:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2, this);
-      }));
-
-      function handleSubmit(_x) {
-        return _handleSubmit.apply(this, arguments);
-      }
-
-      return handleSubmit;
-    }()
-  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "container"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
-        className: "mt-3 mb-2"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-        className: "far fa-calendar-alt pr-3"
-      }), "Add a new event")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
-        onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col-sm-10 col-md-8 col-lg-6 d-flex flex-wrap align-items-start mx-auto"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "form-group col-md-12 d-flex flex-wrap align-items-start pt-3"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        className: "text-danger h4",
-        htmlFor: "title"
-      }, "Title"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        type: "text",
-        className: "form-control",
-        name: "event_title",
-        placeholder: "event title",
-        value: this.state.event_title,
-        onChange: this.handleChange
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "form-group col-md-12 d-flex flex-wrap align-items-start pt-3"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        className: "text-danger h4",
-        htmlFor: "description"
-      }, "Description"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
-        className: "form-control",
-        name: "event_description",
-        rows: "3",
-        value: this.state.event_description,
-        onChange: this.handleChange
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "form-group col-md-6 d-flex flex-wrap align-items-start"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        className: "text-danger h4",
-        htmlFor: "date"
-      }, "Date"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        type: "date",
-        className: "form-control",
-        name: "date",
-        value: this.state.date,
-        onChange: this.handleChange
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "form-group col-md-6 d-flex flex-wrap align-items-start"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        className: "text-danger h4",
-        htmlFor: "time"
-      }, "Hour"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        type: "time",
-        className: "form-control",
-        name: "time",
-        value: this.state.time,
-        onChange: this.handleChange
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "form-group col-md-6 d-flex flex-wrap align-items-start"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        className: "text-danger h4",
-        htmlFor: "city"
-      }, "City"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        type: "text",
-        className: "form-control",
-        name: "event_city",
-        placeholder: "City name",
-        value: this.state.event_city,
-        onChange: this.handleChange
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "form-group col-md-6 d-flex flex-wrap align-items-start"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        className: "text-danger h4",
-        htmlFor: "adress"
-      }, "Adress"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        type: "text",
-        className: "form-control",
-        name: "event_location",
-        placeholder: "Exact adress",
-        value: this.state.event_location,
-        onChange: this.handleChange
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "form-group col-md-12 d-flex flex-wrap align-items-start"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
-        className: "nav nav-tabs w-100",
-        id: "myTab",
-        role: "tablist"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-        className: "nav-item flex-grow-1"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "nav-link active text-center",
-        id: "youtube-tab",
-        "data-toggle": "tab",
-        href: "#youtube",
-        role: "tab",
-        "aria-controls": "youtube",
-        "aria-selected": "true"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        style: {
-          cursor: 'pointer'
-        },
-        className: "text-danger h4 my-1",
-        htmlFor: "image"
-      }, "Youtube URL"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-        className: "nav-item flex-grow-1"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "nav-link text-center",
-        id: "image-tab",
-        "data-toggle": "tab",
-        href: "#image",
-        role: "tab",
-        "aria-controls": "image",
-        "aria-selected": "false"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        style: {
-          cursor: 'pointer'
-        },
-        className: "text-danger h4 my-1",
-        htmlFor: "image"
-      }, "Upload image")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "tab-content w-100 pt-2",
-        id: "myTabContent"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "tab-pane fade show active",
-        id: "youtube",
-        role: "tabpanel"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        type: "text",
-        className: "form-control",
-        name: "event_video",
-        placeholder: "Enter URL here...",
-        value: this.state.event_video,
-        onChange: this.handleChange
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "tab-pane fade",
-        id: "image",
-        role: "tabpanel"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "custom-file"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        type: "file",
-        className: "custom-file-input",
-        id: "image-input",
-        name: "event_image",
-        files: this.state.image_file,
-        onChange: this.handleChange
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        className: "custom-file-label",
-        htmlFor: "customFile"
-      }, this.state.image_file.name))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col-12 d-flex flex-wrap align-items-start"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        type: "submit",
-        className: "btn btn-danger px-5 py-2 mb-5 mt-3",
-        value: "Submit"
-      })))));
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_layout_eventForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        package: this.state,
+        submitFunction: _api__WEBPACK_IMPORTED_MODULE_3__["default"].addEvent.bind(_api__WEBPACK_IMPORTED_MODULE_3__["default"]),
+        history: this.props.history
+      });
     }
   }]);
 
@@ -86079,15 +85843,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../api */ "./resources/js/api.js");
-/* harmony import */ var _assets_event05_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../assets/event05.png */ "./resources/js/assets/event05.png");
-/* harmony import */ var _assets_event05_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_event05_png__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _layout_eventForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../layout/eventForm */ "./resources/js/components/layout/eventForm.js");
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -86097,9 +85856,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
@@ -86111,8 +85870,6 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-
-/* Demo */
 
 
 
@@ -86194,247 +85951,18 @@ function (_Component) {
         name: ''
       }
     };
-    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(AddNewEvent, [{
-    key: "handleChange",
-    value: function handleChange(event) {
-      var obj = {};
-      if (event.target.files) obj.event_image = event.target.files[0];else obj[event.target.name] = event.target.value;
-      return this.setState(obj);
-    }
-  }, {
-    key: "getBase64",
-    value: function getBase64(file) {
-      return new Promise(function (resolve, reject) {
-        var reader = new FileReader();
-        reader.readAsDataURL(file);
-
-        reader.onload = function () {
-          return resolve(reader.result);
-        };
-
-        reader.onerror = function (error) {
-          return reject(error);
-        };
-      });
-    }
-  }, {
-    key: "handleSubmit",
-    value: function () {
-      var _handleSubmit = _asyncToGenerator(
-      /*#__PURE__*/
-      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(event) {
-        var files, img, data, response;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                event.preventDefault();
-                files = document.getElementById('image-input').files;
-                img = '';
-
-                if (!files.length) {
-                  _context2.next = 7;
-                  break;
-                }
-
-                _context2.next = 6;
-                return this.getBase64(files[0]);
-
-              case 6:
-                img = _context2.sent;
-
-              case 7:
-                this.state.event_time = this.state.date + ' ' + this.state.time;
-                delete this.state.date;
-                delete this.state.time;
-                delete this.state.event_image;
-                data = JSON.stringify(_objectSpread({}, this.state, {
-                  event_image: img
-                }));
-                _context2.next = 14;
-                return _api__WEBPACK_IMPORTED_MODULE_3__["default"].editEvents(data, this.props.match.params.id);
-
-              case 14:
-                response = _context2.sent;
-                alert(response.message + ' : ' + this.state.event_title);
-                this.props.history.push("/event/" + this.props.match.params.id);
-
-              case 17:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2, this);
-      }));
-
-      function handleSubmit(_x) {
-        return _handleSubmit.apply(this, arguments);
-      }
-
-      return handleSubmit;
-    }()
-  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "container"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
-        className: "mt-3 mb-2"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-        className: "far fa-calendar-alt pr-3"
-      }), "Add a new event")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
-        onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col-sm-10 col-md-8 col-lg-6 d-flex flex-wrap align-items-start mx-auto"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "form-group col-md-12 d-flex flex-wrap align-items-start pt-3"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        className: "text-danger h4",
-        htmlFor: "title"
-      }, "Title"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        type: "text",
-        className: "form-control",
-        name: "event_title",
-        placeholder: "event title",
-        value: this.state.event_title,
-        onChange: this.handleChange
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "form-group col-md-12 d-flex flex-wrap align-items-start pt-3"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        className: "text-danger h4",
-        htmlFor: "description"
-      }, "Description"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
-        className: "form-control",
-        name: "event_description",
-        rows: "3",
-        value: this.state.event_description,
-        onChange: this.handleChange
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "form-group col-md-6 d-flex flex-wrap align-items-start"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        className: "text-danger h4",
-        htmlFor: "date"
-      }, "Date"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        type: "date",
-        className: "form-control",
-        name: "date",
-        value: this.state.date,
-        onChange: this.handleChange
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "form-group col-md-6 d-flex flex-wrap align-items-start"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        className: "text-danger h4",
-        htmlFor: "time"
-      }, "Hour"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        type: "time",
-        className: "form-control",
-        name: "time",
-        value: this.state.time,
-        onChange: this.handleChange
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "form-group col-md-6 d-flex flex-wrap align-items-start"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        className: "text-danger h4",
-        htmlFor: "city"
-      }, "City"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        type: "text",
-        className: "form-control",
-        name: "event_city",
-        placeholder: "City name",
-        value: this.state.event_city,
-        onChange: this.handleChange
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "form-group col-md-6 d-flex flex-wrap align-items-start"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        className: "text-danger h4",
-        htmlFor: "adress"
-      }, "Adress"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        type: "text",
-        className: "form-control",
-        name: "event_location",
-        placeholder: "Exact adress",
-        value: this.state.event_location,
-        onChange: this.handleChange
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "form-group col-md-12 d-flex flex-wrap align-items-start"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
-        className: "nav nav-tabs w-100",
-        id: "myTab",
-        role: "tablist"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-        className: "nav-item flex-grow-1"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "nav-link active text-center",
-        id: "youtube-tab",
-        "data-toggle": "tab",
-        href: "#youtube",
-        role: "tab",
-        "aria-controls": "youtube",
-        "aria-selected": "true"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        style: {
-          cursor: 'pointer'
-        },
-        className: "text-danger h4 my-1",
-        htmlFor: "image"
-      }, "Youtube URL"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-        className: "nav-item flex-grow-1"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "nav-link text-center",
-        id: "image-tab",
-        "data-toggle": "tab",
-        href: "#image",
-        role: "tab",
-        "aria-controls": "image",
-        "aria-selected": "false"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        style: {
-          cursor: 'pointer'
-        },
-        className: "text-danger h4 my-1",
-        htmlFor: "image"
-      }, "Upload image")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "tab-content w-100 pt-2",
-        id: "myTabContent"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "tab-pane fade show active",
-        id: "youtube",
-        role: "tabpanel"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        type: "text",
-        className: "form-control",
-        name: "event_video",
-        placeholder: "Enter URL here...",
-        value: this.state.event_video,
-        onChange: this.handleChange
-      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "tab-pane fade",
-        id: "image",
-        role: "tabpanel"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "custom-file"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        type: "file",
-        className: "custom-file-input",
-        id: "image-input",
-        name: "event_image",
-        files: this.state.image_file,
-        onChange: this.handleChange
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        className: "custom-file-label",
-        htmlFor: "customFile"
-      }, this.state.image_file.name))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col-12 d-flex flex-wrap align-items-start"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        type: "submit",
-        className: "btn btn-danger px-5 py-2 mb-5 mt-3",
-        value: "Submit"
-      })))));
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_layout_eventForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        package: this.state,
+        submitFunction: _api__WEBPACK_IMPORTED_MODULE_3__["default"].editEvents.bind(_api__WEBPACK_IMPORTED_MODULE_3__["default"]),
+        history: this.props.history,
+        id: this.props.match.params.id
+      });
     }
   }]);
 
@@ -86766,7 +86294,7 @@ function (_Component) {
         className: "mt-3 mb-2"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
         className: "far fa-calendar-alt pr-3"
-      }), " Event"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }), this.state.videoId == '' ? 'Event' : eventSolo.event_title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col-lg-8 col-xs-12 mb-3"
@@ -87004,7 +86532,7 @@ function (_Component) {
       }), " Events"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row text-center"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-deck"
+        className: "card-deck w-100"
       }, events.map(function (events, index) {
         return index < 3 ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_layout_card__WEBPACK_IMPORTED_MODULE_5__["default"], {
           key: events.id,
@@ -87012,7 +86540,7 @@ function (_Component) {
           classes: "card mb-3"
         }) : '';
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-deck"
+        className: "card-deck w-100"
       }, events.map(function (events, index) {
         return index >= 3 ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_layout_card__WEBPACK_IMPORTED_MODULE_5__["default"], {
           key: events.id,
@@ -87020,11 +86548,14 @@ function (_Component) {
           classes: "card"
         }) : '';
       }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "container mt-3"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
+        className: "container mt-3 d-flex justify-content-between"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+        className: "btn btn-danger past text-white",
+        href: "/pastevents/page=1"
+      }, "Back to the Past"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
         "aria-label": "Page navigation example"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
-        className: "pagination d-flex justify-content-end"
+        className: "pagination d-flex justify-content-end mb-0"
       }, parseInt(this.state.current_page) > 1 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "page-item"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
@@ -87060,12 +86591,7 @@ function (_Component) {
         "aria-hidden": "true"
       }, "\xBB"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "sr-only"
-      }, "Next"))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "btn btn-danger px-3 py-2"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "past text-white",
-        href: "/pastevents/page=1"
-      }, "Back to the Past"))));
+      }, "Next")))))));
     }
   }]);
 
@@ -87214,16 +86740,14 @@ function (_Component) {
           classes: "card"
         }) : '';
       }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "container"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
-        "aria-label": "Page navigation example"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "btn btn-danger px-3 py-2 mt-3"
+        className: "container d-flex justify-content-between"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-        className: "past text-white",
+        className: "past text-white btn btn-danger",
         href: "/events/page=1"
-      }, "Back to the Future")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
-        className: "pagination d-flex justify-content-end"
+      }, "Back to the Future"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
+        "aria-label": "Page navigation example"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+        className: "pagination d-flex justify-content-end mb-0"
       }, parseInt(this.state.current_page) > 1 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         className: "page-item"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
@@ -87576,7 +87100,7 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var classes = this.props.classes ? this.props.classes : 'card';
+      var classes = (this.props.classes ? this.props.classes : 'card') + ' px-0';
       var reload = this.props.reload ? this.props.reload : function () {
         return 0;
       };
@@ -87854,6 +87378,410 @@ function (_Component) {
 
   return EmbededVideo;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/layout/eventForm.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/layout/eventForm.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return eventForm; });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../api */ "./resources/js/api.js");
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var eventForm =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(eventForm, _Component);
+
+  _createClass(eventForm, [{
+    key: "componentDidMount",
+    value: function () {
+      var _componentDidMount = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var _this2 = this;
+
+        var ytTab, imgTab;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                window.scrollTo(0, 0); // Go to the top of the page
+
+                ytTab = document.querySelector('#youtube-tab');
+                imgTab = document.querySelector('#image-tab');
+                ytTab.addEventListener('click', function () {
+                  return _this2.setState({
+                    media: 'video'
+                  });
+                });
+                imgTab.addEventListener('click', function () {
+                  return _this2.setState({
+                    media: 'image'
+                  });
+                });
+
+              case 5:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      function componentDidMount() {
+        return _componentDidMount.apply(this, arguments);
+      }
+
+      return componentDidMount;
+    }()
+  }]);
+
+  function eventForm(props) {
+    var _this;
+
+    _classCallCheck(this, eventForm);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(eventForm).call(this, props));
+    _this.state = _objectSpread({}, props.package, {
+      media: 'video',
+      media_modified: false,
+      image_file: null,
+      image_filename: 'Choose a file...'
+    });
+
+    for (var key in _this.state) {
+      _this.state[key] = _this.state[key] || '';
+    }
+
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(eventForm, [{
+    key: "handleChange",
+    value: function handleChange(event) {
+      var obj = {};
+      if (['event_video', 'event_image'].includes(event.target.name)) obj.media_modified = true;
+      if (event.target.files) obj.image_file = event.target.files[0];else obj[event.target.name] = event.target.value;
+      console.log('input changed:', obj);
+      return this.setState(obj);
+    }
+  }, {
+    key: "getBase64",
+    value: function getBase64(file) {
+      return new Promise(function (resolve, reject) {
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+
+        reader.onload = function () {
+          return resolve(reader.result);
+        };
+
+        reader.onerror = function (error) {
+          return reject(error);
+        };
+      });
+    }
+  }, {
+    key: "handleSubmit",
+    value: function () {
+      var _handleSubmit = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(event) {
+        var state, files, response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                event.preventDefault();
+                console.log('submitted with state', this.state);
+                state = _objectSpread({}, this.state);
+
+                if (!(this.state.media == 'image')) {
+                  _context2.next = 12;
+                  break;
+                }
+
+                state.event_video = '';
+                files = document.getElementById('image-input').files;
+
+                if (!files.length) {
+                  _context2.next = 10;
+                  break;
+                }
+
+                _context2.next = 9;
+                return this.getBase64(files[0]);
+
+              case 9:
+                state.event_image = _context2.sent;
+
+              case 10:
+                _context2.next = 13;
+                break;
+
+              case 12:
+                state.event_image = '';
+
+              case 13:
+                state.event_time = state.date + ' ' + state.time;
+                delete state.date;
+                delete state.time;
+
+                if (!this.state.media_modified) {
+                  delete state.event_image;
+                  delete state.event_video;
+                }
+
+                console.log('about to post', state);
+                _context2.next = 20;
+                return this.props.submitFunction(JSON.stringify(state), this.props.id);
+
+              case 20:
+                response = _context2.sent;
+                alert(response.message + ' : ' + this.state.event_title);
+                this.props.history.push("/event/" + (this.props.id || response.id));
+
+              case 23:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function handleSubmit(_x) {
+        return _handleSubmit.apply(this, arguments);
+      }
+
+      return handleSubmit;
+    }()
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      if (prevProps.package.event_title != this.props.package.event_title) {
+        var state = _objectSpread({}, this.props.package, {
+          media: 'video',
+          media_modified: false,
+          image_file: null,
+          image_filename: 'Choose a file...'
+        });
+
+        for (var key in state) {
+          state[key] = state[key] || '';
+        }
+
+        this.setState(state);
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "container"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
+        className: "mt-3 mb-2"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
+        className: "far fa-calendar-alt pr-3"
+      }), "Add a new event")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col-sm-10 col-md-8 col-lg-6 d-flex flex-wrap align-items-start mx-auto"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-group col-md-12 d-flex flex-wrap align-items-start pt-3"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+        className: "text-danger h4",
+        htmlFor: "title"
+      }, "Title"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        type: "text",
+        className: "form-control",
+        name: "event_title",
+        placeholder: "event title",
+        value: this.state.event_title,
+        onChange: this.handleChange
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-group col-md-12 d-flex flex-wrap align-items-start pt-3"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+        className: "text-danger h4",
+        htmlFor: "description"
+      }, "Description"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("textarea", {
+        className: "form-control",
+        name: "event_description",
+        rows: "3",
+        value: this.state.event_description,
+        onChange: this.handleChange
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-group col-md-6 d-flex flex-wrap align-items-start"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+        className: "text-danger h4",
+        htmlFor: "date"
+      }, "Date"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        type: "date",
+        className: "form-control",
+        name: "date",
+        value: this.state.date,
+        onChange: this.handleChange
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-group col-md-6 d-flex flex-wrap align-items-start"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+        className: "text-danger h4",
+        htmlFor: "time"
+      }, "Hour"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        type: "time",
+        className: "form-control",
+        name: "time",
+        value: this.state.time,
+        onChange: this.handleChange
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-group col-md-6 d-flex flex-wrap align-items-start"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+        className: "text-danger h4",
+        htmlFor: "city"
+      }, "City"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        type: "text",
+        className: "form-control",
+        name: "event_city",
+        placeholder: "City name",
+        value: this.state.event_city,
+        onChange: this.handleChange
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-group col-md-6 d-flex flex-wrap align-items-start"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+        className: "text-danger h4",
+        htmlFor: "adress"
+      }, "Adress"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        type: "text",
+        className: "form-control",
+        name: "event_location",
+        placeholder: "Exact adress",
+        value: this.state.event_location,
+        onChange: this.handleChange
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-group col-md-12 d-flex flex-wrap align-items-start"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+        className: "nav nav-tabs w-100",
+        id: "myTab",
+        role: "tablist"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        className: "nav-item flex-grow-1"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+        className: "nav-link active text-center",
+        id: "youtube-tab",
+        "data-toggle": "tab",
+        href: "#youtube",
+        role: "tab",
+        "aria-controls": "youtube",
+        "aria-selected": "true"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+        style: {
+          cursor: 'pointer'
+        },
+        className: "text-danger h4 my-1",
+        htmlFor: "image"
+      }, "Youtube URL"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        className: "nav-item flex-grow-1"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+        className: "nav-link text-center",
+        id: "image-tab",
+        "data-toggle": "tab",
+        href: "#image",
+        role: "tab",
+        "aria-controls": "image",
+        "aria-selected": "false"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+        style: {
+          cursor: 'pointer'
+        },
+        className: "text-danger h4 my-1",
+        htmlFor: "image"
+      }, "Upload image")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "tab-content w-100 pt-2",
+        id: "myTabContent"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "tab-pane fade show active",
+        id: "youtube",
+        role: "tabpanel"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        type: "text",
+        className: "form-control",
+        name: "event_video",
+        placeholder: "Enter URL here...",
+        value: this.state.event_video,
+        onChange: this.handleChange
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "tab-pane fade",
+        id: "image",
+        role: "tabpanel"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "custom-file"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        type: "file",
+        className: "custom-file-input",
+        id: "image-input",
+        name: "event_image",
+        files: this.state.image_file,
+        onChange: this.handleChange
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+        className: "custom-file-label",
+        htmlFor: "customFile"
+      }, this.state.image_filename))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col-12 d-flex flex-wrap align-items-start"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        type: "submit",
+        className: "btn btn-danger px-5 py-2 mb-5 mt-3",
+        value: "Submit"
+      })))));
+    }
+  }]);
+
+  return eventForm;
+}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
 
 
 
@@ -89121,8 +89049,8 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/sam/BeCode/Colline/Devent/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/sam/BeCode/Colline/Devent/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/sam/BeCode/Montagne/Devent/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/sam/BeCode/Montagne/Devent/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

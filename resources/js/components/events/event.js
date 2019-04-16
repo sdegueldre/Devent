@@ -104,7 +104,13 @@ export default class Eventsolo extends Component {
 
       return (
         <div className="container" key={this.key}>
-        <h1 className="mt-3 mb-2"><i className="far fa-calendar-alt pr-3"></i> Event</h1>
+          <h1 className="mt-3 mb-2"><i className="far fa-calendar-alt pr-3"></i>
+            {(this.state.videoId == '') ?
+              'Event'
+              :
+              eventSolo.event_title
+            }
+          </h1>
           <div className="row">
             <div className="col-lg-8 col-xs-12 mb-3">
               {(this.state.videoId == '') ?
