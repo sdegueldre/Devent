@@ -32,19 +32,10 @@ export default class Events extends Component {
         return (
           <div className="container">
             <h1 className="mt-3 mb-2"><i className="far fa-calendar-alt pr-3"></i> Events</h1>
-              <div className="row text-center">
-                <div className="card-deck w-100">
-                {events.map((events, index) =>
-                  index < 3 ?
-                    <Card key={events.id} events={events} classes="card mb-3"/> : ''
-                )}
-                </div>
-                <div className="card-deck w-100">
-                {events.map((events, index) =>
-                  index >= 3 ?
-                    <Card key={events.id} events={events} classes="card"/> : ''
-                )}
-                </div>
+              <div className="card-deck w-100 mx-auto">
+              {events.map((events, index) =>
+                  <Card key={events.id} events={events} classes="card mb-3"/>
+              )}
               </div>
 
             {/* Start pagination */}

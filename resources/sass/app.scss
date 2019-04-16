@@ -9,13 +9,17 @@
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins";
 
-/* DEMO PURPOSE */
 .card {
   min-width: 250px !important;
 }
 @include media-breakpoint-up(md) {
   .card {
-    width: 30%;
+    max-width: 45%;
+  }
+}
+@include media-breakpoint-up(lg) {
+  .card {
+    max-width: 30%;
   }
 }
 
@@ -31,7 +35,7 @@
 // }
 
 .card-deck {
-   justify-content: space-between;
+   justify-content: center;
 }
 
 .nav-link {

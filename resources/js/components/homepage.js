@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 import Card from './layout/card';
 import '../../sass/cards.scss';
 /* Demo */
-import event02 from '../assets/event02.jpg';
+import event02 from '../assets/event02.png';
 import event03 from '../assets/event03.jpg';
 import event05 from '../assets/event05.png';
 

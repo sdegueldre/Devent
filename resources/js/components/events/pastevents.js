@@ -6,6 +6,7 @@ import Card from '../layout/card';
 import '../../../sass/cards.scss';
 /* Demo */
 import event05 from '../../assets/event05.png';
+import backToTheFuture from '../../assets/backtothefuture.png';
 
 
 export default class PastEvents extends Component {
@@ -47,7 +48,7 @@ export default class PastEvents extends Component {
 
             {/* Start pagination */}
             <div className="container d-flex justify-content-between">
-              <a className="past text-white btn btn-danger" href={"/events/page=1"}>Back to the Future</a>
+              <a className="past text-white btn btn-danger" href={"/events/page=1"}><img style={{height: '3em'}} src={backToTheFuture}/></a>
               <nav aria-label="Page navigation example">
                 <ul className="pagination d-flex justify-content-end mb-0">
                   {parseInt(this.state.current_page) > 1 &&

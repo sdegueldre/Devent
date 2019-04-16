@@ -18,7 +18,7 @@ export default class Card extends Component {
   }
 
   render() {
-      let classes = (this.props.classes ? this.props.classes : 'card') + ' px-0';
+      let classes = (this.props.classes ? this.props.classes : 'card') + ' px-0 mb-3';
       let reload = this.props.reload ? this.props.reload : (() => 0);
       return (
         <div className={classes}>

@@ -6532,7 +6532,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "/* Styling for homepage & events */\n.card {\n  flex: 0 1 auto !important;\n}\n\n.details-card {\n  background: #ecf0f1;\n}\n\n.card-content {\n  background: #ffffff;\n  border: 4px;\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);\n  height: 100%;\n}\n\n.card-img {\n  position: relative;\n  overflow: hidden;\n  border-radius: 0;\n  z-index: 1;\n  height: 250px;\n}\n\n.card-img img {\n  width: 100%;\n  height: auto;\n  display: block;\n  min-height: 250px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center top;\n     object-position: center top;\n}\n\n/* styling box city and date */\nspan.date, span.city {\n  position: absolute;\n  color: white;\n  padding: 0px;\n  background-color: #E74C3C;\n}\n\n/* positionning box date */\nspan.date {\n  top: 0px;\n  left: 0px;\n}\n\n/* positionning box city */\nspan.city {\n  bottom: 0px;\n  right: 0px;\n}\n\n.card-img span h4 {\n  font-size: 14px;\n  margin: 0;\n  padding: 10px 5px;\n  font-weight: bold;\n}\n\n.card-desc {\n  padding: 1.25rem;\n  color: black;\n}\n\n.card-desc h3 {\n  color: #000000;\n  font-weight: 600;\n  font-size: 1.5em;\n  line-height: 1.3em;\n  margin-top: 0;\n  margin-bottom: 5px;\n  padding: 0;\n}\n\n.card-desc p {\n  color: #747373;\n  font-size: 14px;\n  font-weight: 400;\n  font-size: 1em;\n  line-height: 1.5;\n  margin: 0px;\n  padding: 0;\n  font-family: \"Nunito\", sans-serif;\n}\n\n/* Styling for feed in Event Solo */\n.card-img-feed {\n  position: relative;\n  overflow: hidden;\n  border-radius: 0;\n  z-index: 1;\n  height: 150px;\n}\n\n.card-img-feed img {\n  width: 100%;\n  height: auto;\n  display: block;\n  min-height: 150px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center top;\n     object-position: center top;\n}", ""]);
+exports.push([module.i, "/* Styling for homepage & events */\n.details-card {\n  background: #ecf0f1;\n}\n\n.card-content {\n  background: #ffffff;\n  border: 4px;\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);\n  height: 100%;\n}\n\n.card-img {\n  position: relative;\n  overflow: hidden;\n  border-radius: 0;\n  z-index: 1;\n  height: 250px;\n}\n\n.card-img img {\n  width: 100%;\n  height: auto;\n  display: block;\n  min-height: 250px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center top;\n     object-position: center top;\n}\n\n/* styling box city and date */\nspan.date, span.city {\n  position: absolute;\n  color: white;\n  padding: 0px;\n  background-color: #E74C3C;\n}\n\n/* positionning box date */\nspan.date {\n  top: 0px;\n  left: 0px;\n}\n\n/* positionning box city */\nspan.city {\n  bottom: 0px;\n  right: 0px;\n}\n\n.card-img span h4 {\n  font-size: 14px;\n  margin: 0;\n  padding: 10px 5px;\n  font-weight: bold;\n}\n\n.card-desc {\n  padding: 1.25rem;\n  color: black;\n}\n\n.card-desc h3 {\n  color: #000000;\n  font-weight: 600;\n  font-size: 1.5em;\n  line-height: 1.3em;\n  margin-top: 0;\n  margin-bottom: 5px;\n  padding: 0;\n}\n\n.card-desc p {\n  color: #747373;\n  font-size: 14px;\n  font-weight: 400;\n  font-size: 1em;\n  line-height: 1.5;\n  margin: 0px;\n  padding: 0;\n  font-family: \"Nunito\", sans-serif;\n}\n\n/* Styling for feed in Event Solo */\n.card-img-feed {\n  position: relative;\n  overflow: hidden;\n  border-radius: 0;\n  z-index: 1;\n  height: 150px;\n}\n\n.card-img-feed img {\n  width: 100%;\n  height: auto;\n  display: block;\n  min-height: 150px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center top;\n     object-position: center top;\n}", ""]);
 
 // exports
 
@@ -85404,6 +85404,17 @@ module.exports = "/images/avatar12.png?517037464f4f45c0dcd038d00b38bcec";
 
 /***/ }),
 
+/***/ "./resources/js/assets/backtothefuture.png":
+/*!*************************************************!*\
+  !*** ./resources/js/assets/backtothefuture.png ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/backtothefuture.png?057e7e16492199b57d70410939c81742";
+
+/***/ }),
+
 /***/ "./resources/js/assets/chris.jpeg":
 /*!****************************************!*\
   !*** ./resources/js/assets/chris.jpeg ***!
@@ -85415,14 +85426,14 @@ module.exports = "/images/chris.jpeg?d549587cac542a9ddbca50f057a3a908";
 
 /***/ }),
 
-/***/ "./resources/js/assets/event02.jpg":
+/***/ "./resources/js/assets/event02.png":
 /*!*****************************************!*\
-  !*** ./resources/js/assets/event02.jpg ***!
+  !*** ./resources/js/assets/event02.png ***!
   \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/event02.jpg?b681476ad5b3cc7093b9d00affba7824";
+module.exports = "/images/event02.png?3206db00b9d4b2f2a521823cb3a06949";
 
 /***/ }),
 
@@ -86530,24 +86541,14 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
         className: "far fa-calendar-alt pr-3"
       }), " Events"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "row text-center"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-deck w-100"
+        className: "card-deck w-100 mx-auto"
       }, events.map(function (events, index) {
-        return index < 3 ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_layout_card__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_layout_card__WEBPACK_IMPORTED_MODULE_5__["default"], {
           key: events.id,
           events: events,
           classes: "card mb-3"
-        }) : '';
+        });
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-deck w-100"
-      }, events.map(function (events, index) {
-        return index >= 3 ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_layout_card__WEBPACK_IMPORTED_MODULE_5__["default"], {
-          key: events.id,
-          events: events,
-          classes: "card"
-        }) : '';
-      }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container mt-3 d-flex justify-content-between"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         className: "btn btn-danger past text-white",
@@ -86625,6 +86626,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sass_cards_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_sass_cards_scss__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _assets_event05_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../assets/event05.png */ "./resources/js/assets/event05.png");
 /* harmony import */ var _assets_event05_png__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_assets_event05_png__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _assets_backtothefuture_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../assets/backtothefuture.png */ "./resources/js/assets/backtothefuture.png");
+/* harmony import */ var _assets_backtothefuture_png__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_assets_backtothefuture_png__WEBPACK_IMPORTED_MODULE_8__);
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -86656,6 +86659,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 /* Demo */
+
 
 
 
@@ -86744,7 +86748,12 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
         className: "past text-white btn btn-danger",
         href: "/events/page=1"
-      }, "Back to the Future"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+        style: {
+          height: '3em'
+        },
+        src: _assets_backtothefuture_png__WEBPACK_IMPORTED_MODULE_8___default.a
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
         "aria-label": "Page navigation example"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
         className: "pagination d-flex justify-content-end mb-0"
@@ -86817,8 +86826,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layout_card__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./layout/card */ "./resources/js/components/layout/card.js");
 /* harmony import */ var _sass_cards_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../sass/cards.scss */ "./resources/sass/cards.scss");
 /* harmony import */ var _sass_cards_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_sass_cards_scss__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _assets_event02_jpg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../assets/event02.jpg */ "./resources/js/assets/event02.jpg");
-/* harmony import */ var _assets_event02_jpg__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_assets_event02_jpg__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _assets_event02_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../assets/event02.png */ "./resources/js/assets/event02.png");
+/* harmony import */ var _assets_event02_png__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_assets_event02_png__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _assets_event03_jpg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../assets/event03.jpg */ "./resources/js/assets/event03.jpg");
 /* harmony import */ var _assets_event03_jpg__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_assets_event03_jpg__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _assets_event05_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../assets/event05.png */ "./resources/js/assets/event05.png");
@@ -86962,7 +86971,7 @@ function (_Component) {
         className: "carousel-item"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
         className: "d-block w-100 imageSlider",
-        src: _assets_event02_jpg__WEBPACK_IMPORTED_MODULE_8___default.a,
+        src: _assets_event02_png__WEBPACK_IMPORTED_MODULE_8___default.a,
         alt: "Second slide"
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "carousel-item"
@@ -87100,7 +87109,7 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var classes = (this.props.classes ? this.props.classes : 'card') + ' px-0';
+      var classes = (this.props.classes ? this.props.classes : 'card') + ' px-0 mb-3';
       var reload = this.props.reload ? this.props.reload : function () {
         return 0;
       };
@@ -87837,18 +87846,18 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container-fluid bg-secondary mt-5 pt-5 py-5 card-footer"
+        className: "container-fluid bg-secondary mt-2 py-3   card-footer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row"
+        className: "row justify-content-between"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-sm-12 col-md-6 col-lg-6 my-auto"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "far fa-copyright h5 pr-3 ml-5"
-      }), " 2019 - Dev'Event"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "text-danger h4 ml-5"
-      }, "Pour l'assurance d'\xE9v\xE8nements r\xE9ussis."))))));
+        className: "h5 my-2 d-flex align-items-center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "far fa-copyright mr-1"
+      }), "2019 - Dev'Event"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text-danger h4 my-2"
+      }, "Pour l'assurance d'\xE9v\xE8nements r\xE9ussis."))));
     }
   }]);
 

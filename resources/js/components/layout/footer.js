@@ -6,18 +6,12 @@ export default class Footer extends Component {
 
     render() {
         return (
-          <div className="container-fluid bg-secondary mt-5 pt-5 py-5 card-footer">
+          <div className="container-fluid bg-secondary mt-2 py-3   card-footer">
 
             <div className="container">
-              <div className="row">
-
-                  <div className="col-sm-12 col-md-6 col-lg-6 my-auto">
-                    <div>
-                      <p><i className="far fa-copyright h5 pr-3 ml-5"></i> 2019 - Dev'Event</p>
-                      <p className="text-danger h4 ml-5">Pour l'assurance d'évènements réussis.</p>
-                    </div>
-                  </div>
-
+              <div className="row justify-content-between">
+                  <div className="h5 my-2 d-flex align-items-center"><i className="far fa-copyright mr-1"></i>2019 - Dev'Event</div>
+                  <div className="text-danger h4 my-2">Pour l'assurance d'évènements réussis.</div>
               </div>
             </div>
 
