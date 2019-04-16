@@ -10,8 +10,8 @@ export default class Card extends Component {
     this.state = {
       videoId: ''
     }
-    let mediaUrl = this.props.events.event_image;
-    if(mediaUrl.match(/^(https:\/\/)(www.)?(youtube.com|youtu.be)/)){
+    let mediaUrl = this.props.events.event_video;
+    if(mediaUrl && mediaUrl.match(/^(https:\/\/)(www.)?(youtube.com|youtu.be)/)){
       const url = new URL(mediaUrl);
       this.state.videoId = url.searchParams.get('v');
     }

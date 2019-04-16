@@ -10876,6 +10876,14 @@ a.text-dark:focus {
   color: #fff;
 }
 
+.nav-link {
+  padding: 0.2rem 0.5rem;
+}
+
+.nav-link h4 {
+  margin: 0;
+}
+
 .navbar-brand {
   font-family: "Permanent Marker", cursive;
   font-size: 25px;

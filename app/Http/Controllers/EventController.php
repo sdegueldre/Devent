@@ -21,37 +21,13 @@ class EventController extends Controller
      }
      public function index(Request $request)
        {
-         $parameter = $request->only('page');
-         $page = array_first($parameter);
-         $eventsAll = Event::where('event_time', '>', NOW())->get();
-         $number = count($eventsAll);
-         if ($number > 0){
-           if ($number%6 != 0){
-             $last_page = intdiv($number, 6 ) + 1;
-           }
-           else {
-             $last_page = intdiv($number, 6 );
-           }
-         }
-         $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->skip(($page-1)*6)->take(6)->get();
-         return response()->json(['data' => $events, 'current_page' => $page,'last_page' => $last_page ]);
+           $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->paginate(6);
+             return response()->json($events);
        }
     public function past(Request $request)
     {
-      $parameter = $request->only('page');
-      $page = array_first($parameter);
-      $eventsAll = Event::where('event_time', '<', NOW())->get();
-      $number = count($eventsAll);
-      if ($number > 0){
-        if ($number%6 != 0){
-          $last_page = intdiv($number, 6 ) + 1;
-        }
-        else {
-          $last_page = intdiv($number, 6 );
-        }
-      }
-      $events = Event::where('event_time', '<', NOW())->orderBy('event_time', 'desc')->skip(($page-1)*6)->take(6)->get();
-      return response()->json(['data' => $events, 'current_page' => $page,'last_page' => $last_page ]);
+        $events = Event::where('event_time', '<', NOW())->orderBy('event_time', 'asc')->paginate(6);
+        return response()->json($events);
     }
 
 
@@ -71,7 +47,7 @@ class EventController extends Controller
              'event_description'=> 'required',
              'event_city'       => 'required',
              'event_location'   => 'required',
-             'event_image'      => 'required',
+             'event_image'      => 'nullable',
              'event_video'      => 'nullable',
              'event_author'     => 'required',
              'reminder'         => 'nullable'

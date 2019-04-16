@@ -37,10 +37,12 @@ export default class Eventsolo extends Component {
       window.scrollTo(0, 0)
     id = id == null ? this.props.match.params.id : id;
     let state = await api.fetchEventSolo(id);
+    console.log(state.eventSolo);
 
-    let mediaUrl = state.eventSolo.event_image;
-    if(mediaUrl.match(/^(https:\/\/)(www.)?(youtube.com|youtu.be)/)){
-      const url = new URL(mediaUrl);
+    let image = state.eventSolo.event_image;
+    let videoUrl = state.eventSolo.event_video;
+    if(videoUrl && videoUrl.match(/^(https:\/\/)(www.)?(youtube.com|youtu.be)/)){
+      const url = new URL(videoUrl);
       state.videoId = url.searchParams.get('v');
     } else {
       state.videoId = '';
@@ -74,6 +76,7 @@ export default class Eventsolo extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0,0);
     this.reload();
   }
 

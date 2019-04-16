@@ -78199,7 +78199,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -84938,9 +84938,9 @@ function () {
     }() //add, update and delete event
 
   }, {
-    key: "AddEvent",
+    key: "addEvent",
     value: function () {
-      var _AddEvent = _asyncToGenerator(
+      var _addEvent = _asyncToGenerator(
       /*#__PURE__*/
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6(data) {
         var json;
@@ -84966,11 +84966,11 @@ function () {
         }, _callee6, this);
       }));
 
-      function AddEvent(_x4) {
-        return _AddEvent.apply(this, arguments);
+      function addEvent(_x4) {
+        return _addEvent.apply(this, arguments);
       }
 
-      return AddEvent;
+      return addEvent;
     }()
   }, {
     key: "editEvents",
@@ -85595,6 +85595,10 @@ __webpack_require__.r(__webpack_exports__);
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -85629,9 +85633,46 @@ function (_Component) {
 
   _createClass(AddNewEvent, [{
     key: "componentDidMount",
-    value: function componentDidMount() {
-      window.scrollTo(0, 0); // Go to the top of the page
-    }
+    value: function () {
+      var _componentDidMount = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var _this2 = this;
+
+        var ytTab, imgTab;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                window.scrollTo(0, 0); // Go to the top of the page
+
+                ytTab = document.querySelector('#youtube-tab');
+                imgTab = document.querySelector('#image-tab');
+                ytTab.addEventListener('click', function () {
+                  return _this2.setState({
+                    event_image: ''
+                  });
+                });
+                imgTab.addEventListener('click', function () {
+                  return _this2.setState({
+                    event_video: ''
+                  });
+                });
+
+              case 5:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      function componentDidMount() {
+        return _componentDidMount.apply(this, arguments);
+      }
+
+      return componentDidMount;
+    }()
   }]);
 
   function AddNewEvent(props) {
@@ -85648,7 +85689,11 @@ function (_Component) {
       date: '',
       time: '',
       event_location: '',
-      event_image: ''
+      event_image: 'Choose file...',
+      event_video: '',
+      image_file: {
+        name: ''
+      }
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
@@ -85659,39 +85704,72 @@ function (_Component) {
     key: "handleChange",
     value: function handleChange(event) {
       var obj = {};
-      obj[event.target.name] = event.target.value;
-      return this.setState(obj); //return this.setState({event_title: event.target.value, event_time: event.target.value, event_description: event.target.value, event_city: event.target.value, event_location: event.target.value, event_image: event.target.value});
+      if (event.target.files) obj.event_image = event.target.files[0];else obj[event.target.name] = event.target.value;
+      return this.setState(obj);
+    }
+  }, {
+    key: "getBase64",
+    value: function getBase64(file) {
+      return new Promise(function (resolve, reject) {
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+
+        reader.onload = function () {
+          return resolve(reader.result);
+        };
+
+        reader.onerror = function (error) {
+          return reject(error);
+        };
+      });
     }
   }, {
     key: "handleSubmit",
     value: function () {
       var _handleSubmit = _asyncToGenerator(
       /*#__PURE__*/
-      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(event) {
-        var data, response;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(event) {
+        var files, img, data, response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
-            switch (_context.prev = _context.next) {
+            switch (_context2.prev = _context2.next) {
               case 0:
                 event.preventDefault();
+                files = document.getElementById('image-input').files;
+                img = '';
+
+                if (!files.length) {
+                  _context2.next = 7;
+                  break;
+                }
+
+                _context2.next = 6;
+                return this.getBase64(files[0]);
+
+              case 6:
+                img = _context2.sent;
+
+              case 7:
                 this.state.event_time = this.state.date + ' ' + this.state.time;
                 delete this.state.date;
                 delete this.state.time;
-                data = JSON.stringify(this.state);
-                _context.next = 7;
-                return _api__WEBPACK_IMPORTED_MODULE_3__["default"].AddEvent(data);
+                data = JSON.stringify(_objectSpread({}, this.state, {
+                  event_image: img
+                }));
+                _context2.next = 13;
+                return _api__WEBPACK_IMPORTED_MODULE_3__["default"].addEvent(data);
 
-              case 7:
-                response = _context.sent;
+              case 13:
+                response = _context2.sent;
                 alert(response.message + ' : ' + this.state.event_title);
                 this.props.history.push("/event/" + response.id);
 
-              case 10:
+              case 16:
               case "end":
-                return _context.stop();
+                return _context2.stop();
             }
           }
-        }, _callee, this);
+        }, _callee2, this);
       }));
 
       function handleSubmit(_x) {
@@ -85784,17 +85862,73 @@ function (_Component) {
         onChange: this.handleChange
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "form-group col-md-12 d-flex flex-wrap align-items-start"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+        className: "nav nav-tabs w-100",
+        id: "myTab",
+        role: "tablist"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        className: "nav-item flex-grow-1"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+        className: "nav-link active text-center",
+        id: "youtube-tab",
+        "data-toggle": "tab",
+        href: "#youtube",
+        role: "tab",
+        "aria-controls": "youtube",
+        "aria-selected": "true"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        className: "text-danger h4",
+        style: {
+          cursor: 'pointer'
+        },
+        className: "text-danger h4 my-1",
         htmlFor: "image"
-      }, "Image"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+      }, "Youtube URL"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        className: "nav-item flex-grow-1"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+        className: "nav-link text-center",
+        id: "image-tab",
+        "data-toggle": "tab",
+        href: "#image",
+        role: "tab",
+        "aria-controls": "image",
+        "aria-selected": "false"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+        style: {
+          cursor: 'pointer'
+        },
+        className: "text-danger h4 my-1",
+        htmlFor: "image"
+      }, "Upload image")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "tab-content w-100 pt-2",
+        id: "myTabContent"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "tab-pane fade show active",
+        id: "youtube",
+        role: "tabpanel"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
         type: "text",
         className: "form-control",
-        name: "event_image",
-        placeholder: "Image URL",
-        value: this.state.event_image,
+        name: "event_video",
+        placeholder: "Enter URL here...",
+        value: this.state.event_video,
         onChange: this.handleChange
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "tab-pane fade",
+        id: "image",
+        role: "tabpanel"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "custom-file"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        type: "file",
+        className: "custom-file-input",
+        id: "image-input",
+        name: "event_image",
+        files: this.state.image_file,
+        onChange: this.handleChange
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+        className: "custom-file-label",
+        htmlFor: "customFile"
+      }, this.state.image_file.name))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col-12 d-flex flex-wrap align-items-start"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
         type: "submit",
@@ -85937,7 +86071,7 @@ function (_Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return EditAnEvent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return AddNewEvent; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
@@ -85951,21 +86085,25 @@ __webpack_require__.r(__webpack_exports__);
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -85978,55 +86116,49 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var EditAnEvent =
+var AddNewEvent =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(EditAnEvent, _Component);
+  _inherits(AddNewEvent, _Component);
 
-  function EditAnEvent(props) {
-    var _this;
-
-    _classCallCheck(this, EditAnEvent);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(EditAnEvent).call(this, props));
-    _this.state = {
-      event_title: '',
-      event_time: '',
-      event_description: '',
-      event_city: '',
-      date: '',
-      time: '',
-      event_location: '',
-      event_image: ''
-    };
-    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(EditAnEvent, [{
+  _createClass(AddNewEvent, [{
     key: "componentDidMount",
     value: function () {
       var _componentDidMount = _asyncToGenerator(
       /*#__PURE__*/
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var event;
+        var _this2 = this;
+
+        var ytTab, imgTab, event;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                window.scrollTo(0, 0);
-                _context.next = 3;
+                window.scrollTo(0, 0); // Go to the top of the page
+
+                ytTab = document.querySelector('#youtube-tab');
+                imgTab = document.querySelector('#image-tab');
+                ytTab.addEventListener('click', function () {
+                  return _this2.setState({
+                    event_image: ''
+                  });
+                });
+                imgTab.addEventListener('click', function () {
+                  return _this2.setState({
+                    event_video: ''
+                  });
+                });
+                _context.next = 7;
                 return _api__WEBPACK_IMPORTED_MODULE_3__["default"].fetchEventSolo(this.props.match.params.id);
 
-              case 3:
+              case 7:
                 event = _context.sent.eventSolo;
                 event.date = event.event_time.substring(0, 10);
                 event.time = event.event_time.substring(11, 21);
                 delete this.state.event_time;
                 this.setState(event);
 
-              case 8:
+              case 12:
               case "end":
                 return _context.stop();
             }
@@ -86040,12 +86172,55 @@ function (_Component) {
 
       return componentDidMount;
     }()
-  }, {
+  }]);
+
+  function AddNewEvent(props) {
+    var _this;
+
+    _classCallCheck(this, AddNewEvent);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(AddNewEvent).call(this, props));
+    _this.state = {
+      event_title: '',
+      event_time: '',
+      event_description: '',
+      event_city: '',
+      date: '',
+      time: '',
+      event_location: '',
+      event_image: 'Choose file...',
+      event_video: '',
+      image_file: {
+        name: ''
+      }
+    };
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(AddNewEvent, [{
     key: "handleChange",
     value: function handleChange(event) {
       var obj = {};
-      obj[event.target.name] = event.target.value;
-      this.setState(obj);
+      if (event.target.files) obj.event_image = event.target.files[0];else obj[event.target.name] = event.target.value;
+      return this.setState(obj);
+    }
+  }, {
+    key: "getBase64",
+    value: function getBase64(file) {
+      return new Promise(function (resolve, reject) {
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+
+        reader.onload = function () {
+          return resolve(reader.result);
+        };
+
+        reader.onerror = function (error) {
+          return reject(error);
+        };
+      });
     }
   }, {
     key: "handleSubmit",
@@ -86053,25 +86228,43 @@ function (_Component) {
       var _handleSubmit = _asyncToGenerator(
       /*#__PURE__*/
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(event) {
-        var data, response;
+        var files, img, data, response;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 event.preventDefault();
+                files = document.getElementById('image-input').files;
+                img = '';
+
+                if (!files.length) {
+                  _context2.next = 7;
+                  break;
+                }
+
+                _context2.next = 6;
+                return this.getBase64(files[0]);
+
+              case 6:
+                img = _context2.sent;
+
+              case 7:
                 this.state.event_time = this.state.date + ' ' + this.state.time;
                 delete this.state.date;
                 delete this.state.time;
-                data = JSON.stringify(this.state);
-                _context2.next = 7;
+                delete this.state.event_image;
+                data = JSON.stringify(_objectSpread({}, this.state, {
+                  event_image: img
+                }));
+                _context2.next = 14;
                 return _api__WEBPACK_IMPORTED_MODULE_3__["default"].editEvents(data, this.props.match.params.id);
 
-              case 7:
+              case 14:
                 response = _context2.sent;
                 alert(response.message + ' : ' + this.state.event_title);
                 this.props.history.push("/event/" + this.props.match.params.id);
 
-              case 10:
+              case 17:
               case "end":
                 return _context2.stop();
             }
@@ -86090,16 +86283,16 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
         className: "mt-3 mb-2"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
         className: "far fa-calendar-alt pr-3"
-      }), "Edit your event"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
+      }), "Add a new event")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col-sm-8 col-md-10 col-lg-6 d-flex flex-wrap align-items-start mx-auto"
+        className: "col-sm-10 col-md-8 col-lg-6 d-flex flex-wrap align-items-start mx-auto"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "form-group form-group col-md-12 d-flex flex-wrap align-items-start pt-4"
+        className: "form-group col-md-12 d-flex flex-wrap align-items-start pt-3"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
         className: "text-danger h4",
         htmlFor: "title"
@@ -86107,10 +86300,11 @@ function (_Component) {
         type: "text",
         className: "form-control",
         name: "event_title",
+        placeholder: "event title",
         value: this.state.event_title,
         onChange: this.handleChange
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "form-group form-group col-md-12 d-flex flex-wrap align-items-start pt-3"
+        className: "form-group col-md-12 d-flex flex-wrap align-items-start pt-3"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
         className: "text-danger h4",
         htmlFor: "description"
@@ -86168,17 +86362,73 @@ function (_Component) {
         onChange: this.handleChange
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "form-group col-md-12 d-flex flex-wrap align-items-start"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+        className: "nav nav-tabs w-100",
+        id: "myTab",
+        role: "tablist"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        className: "nav-item flex-grow-1"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+        className: "nav-link active text-center",
+        id: "youtube-tab",
+        "data-toggle": "tab",
+        href: "#youtube",
+        role: "tab",
+        "aria-controls": "youtube",
+        "aria-selected": "true"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        className: "text-danger h4",
+        style: {
+          cursor: 'pointer'
+        },
+        className: "text-danger h4 my-1",
         htmlFor: "image"
-      }, "Image"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+      }, "Youtube URL"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+        className: "nav-item flex-grow-1"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+        className: "nav-link text-center",
+        id: "image-tab",
+        "data-toggle": "tab",
+        href: "#image",
+        role: "tab",
+        "aria-controls": "image",
+        "aria-selected": "false"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+        style: {
+          cursor: 'pointer'
+        },
+        className: "text-danger h4 my-1",
+        htmlFor: "image"
+      }, "Upload image")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "tab-content w-100 pt-2",
+        id: "myTabContent"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "tab-pane fade show active",
+        id: "youtube",
+        role: "tabpanel"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
         type: "text",
         className: "form-control",
-        name: "event_image",
-        placeholder: "Image URL",
-        value: this.state.event_image,
+        name: "event_video",
+        placeholder: "Enter URL here...",
+        value: this.state.event_video,
         onChange: this.handleChange
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "tab-pane fade",
+        id: "image",
+        role: "tabpanel"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "custom-file"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        type: "file",
+        className: "custom-file-input",
+        id: "image-input",
+        name: "event_image",
+        files: this.state.image_file,
+        onChange: this.handleChange
+      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+        className: "custom-file-label",
+        htmlFor: "customFile"
+      }, this.state.image_file.name))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col-12 d-flex flex-wrap align-items-start"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
         type: "submit",
@@ -86188,7 +86438,7 @@ function (_Component) {
     }
   }]);
 
-  return EditAnEvent;
+  return AddNewEvent;
 }(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
 
 
@@ -86298,7 +86548,8 @@ function (_Component) {
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         var id,
             state,
-            mediaUrl,
+            image,
+            videoUrl,
             url,
             user,
             _iteratorNormalCompletion,
@@ -86323,10 +86574,12 @@ function (_Component) {
 
               case 5:
                 state = _context.sent;
-                mediaUrl = state.eventSolo.event_image;
+                console.log(state.eventSolo);
+                image = state.eventSolo.event_image;
+                videoUrl = state.eventSolo.event_video;
 
-                if (mediaUrl.match(/^(https:\/\/)(www.)?(youtube.com|youtu.be)/)) {
-                  url = new URL(mediaUrl);
+                if (videoUrl && videoUrl.match(/^(https:\/\/)(www.)?(youtube.com|youtu.be)/)) {
+                  url = new URL(videoUrl);
                   state.videoId = url.searchParams.get('v');
                 } else {
                   state.videoId = '';
@@ -86336,75 +86589,75 @@ function (_Component) {
                 state.isOwner = false;
 
                 if (!_api__WEBPACK_IMPORTED_MODULE_3__["default"].islogged()) {
-                  _context.next = 35;
+                  _context.next = 37;
                   break;
                 }
 
-                _context.next = 13;
+                _context.next = 15;
                 return _api__WEBPACK_IMPORTED_MODULE_3__["default"].me();
 
-              case 13:
+              case 15:
                 user = _context.sent;
 
                 if (!user) {
-                  _context.next = 35;
+                  _context.next = 37;
                   break;
                 }
 
                 _iteratorNormalCompletion = true;
                 _didIteratorError = false;
                 _iteratorError = undefined;
-                _context.prev = 18;
+                _context.prev = 20;
 
                 for (_iterator = state.eventSolo.attendees[Symbol.iterator](); !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
                   _attendee = _step.value;
                   state.attending = _attendee.id == user.id || state.attending;
                 }
 
-                _context.next = 26;
+                _context.next = 28;
                 break;
 
-              case 22:
-                _context.prev = 22;
-                _context.t0 = _context["catch"](18);
+              case 24:
+                _context.prev = 24;
+                _context.t0 = _context["catch"](20);
                 _didIteratorError = true;
                 _iteratorError = _context.t0;
 
-              case 26:
-                _context.prev = 26;
-                _context.prev = 27;
+              case 28:
+                _context.prev = 28;
+                _context.prev = 29;
 
                 if (!_iteratorNormalCompletion && _iterator.return != null) {
                   _iterator.return();
                 }
 
-              case 29:
-                _context.prev = 29;
+              case 31:
+                _context.prev = 31;
 
                 if (!_didIteratorError) {
-                  _context.next = 32;
+                  _context.next = 34;
                   break;
                 }
 
                 throw _iteratorError;
 
-              case 32:
-                return _context.finish(29);
-
-              case 33:
-                return _context.finish(26);
-
               case 34:
-                state.isOwner = state.eventSolo.event_author.id == user.id;
+                return _context.finish(31);
 
               case 35:
+                return _context.finish(28);
+
+              case 36:
+                state.isOwner = state.eventSolo.event_author.id == user.id;
+
+              case 37:
                 console.log(state.eventSolo);
                 this.setState(state); // Fetch events and show 3 at random
 
-                _context.next = 39;
+                _context.next = 41;
                 return _api__WEBPACK_IMPORTED_MODULE_3__["default"].fetchEvents();
 
-              case 39:
+              case 41:
                 _ref = _context.sent;
                 events = _ref.events;
                 events = events.filter(function (e) {
@@ -86419,12 +86672,12 @@ function (_Component) {
                   events: events
                 });
 
-              case 44:
+              case 46:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, this, [[18, 22, 26, 34], [27,, 29, 33]]);
+        }, _callee, this, [[20, 24, 28, 36], [29,, 31, 35]]);
       }));
 
       function reload() {
@@ -86436,6 +86689,7 @@ function (_Component) {
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
+      window.scrollTo(0, 0);
       this.reload();
     }
   }, {
@@ -87113,7 +87367,7 @@ function (_Component) {
       var _componentDidMount = _asyncToGenerator(
       /*#__PURE__*/
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var response, data;
+        var logged, data;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -87122,7 +87376,7 @@ function (_Component) {
                 return _api__WEBPACK_IMPORTED_MODULE_4__["default"].islogged();
 
               case 2:
-                response = _context.sent;
+                logged = _context.sent;
                 _context.next = 5;
                 return _api__WEBPACK_IMPORTED_MODULE_4__["default"].fetchHome();
 
@@ -87130,7 +87384,7 @@ function (_Component) {
                 data = _context.sent;
                 this.setState({
                   events: data.events,
-                  logged: response.loggedIn
+                  logged: logged
                 });
 
               case 7:
@@ -87307,9 +87561,9 @@ function (_Component) {
     _this.state = {
       videoId: ''
     };
-    var mediaUrl = _this.props.events.event_image;
+    var mediaUrl = _this.props.events.event_video;
 
-    if (mediaUrl.match(/^(https:\/\/)(www.)?(youtube.com|youtu.be)/)) {
+    if (mediaUrl && mediaUrl.match(/^(https:\/\/)(www.)?(youtube.com|youtu.be)/)) {
       var url = new URL(mediaUrl);
       _this.state.videoId = url.searchParams.get('v');
     }

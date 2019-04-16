@@ -58,7 +58,7 @@ class API {
     return({current_page: json.current_page, events: json.data, last_page: json.last_page });
   }
 //add, update and delete event
-   async AddEvent(data) {
+   async addEvent(data) {
      const json = await this.callAPI( 'POST', 'events', data);
      return({ message: json.message, id: json.event.id});
   }
