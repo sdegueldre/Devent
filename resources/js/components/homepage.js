@@ -26,9 +26,9 @@ export default class Homepage extends Component {
   }
 
   async componentDidMount() {
-    let response = await api.islogged();
+    let logged = await api.islogged();
     let data = await api.fetchHome();
-    this.setState({events: data.events, logged: response.loggedIn});
+    this.setState({events: data.events, logged: logged});
   }
   componentDidUpdate(){
 

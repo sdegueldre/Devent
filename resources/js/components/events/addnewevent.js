@@ -7,21 +7,30 @@ import event05 from '../../assets/event05.png';
 
 export default class AddNewEvent extends Component {
 
-  componentDidMount() {
+  async componentDidMount() {
     window.scrollTo(0, 0) // Go to the top of the page
+    const ytTab = document.querySelector('#youtube-tab');
+    const imgTab = document.querySelector('#image-tab');
+    ytTab.addEventListener('click', () => this.setState({event_image: ''}));
+    imgTab.addEventListener('click', () => this.setState({event_video: ''}));
   }
 
   constructor(props) {
     super(props);
-    this.state = {  event_title:'',
-                    event_time:'',
-                    event_description:'',
-                    event_city:'',
-                    date:'',
-                    time:'',
-                    event_location:'',
-                    event_image:''
-                  };
+    this.state = {
+      event_title: '',
+      event_time: '',
+      event_description: '',
+      event_city: '',
+      date: '',
+      time: '',
+      event_location: '',
+      event_image: 'Choose file...',
+      event_video: '',
+      image_file: {
+        name: ''
+      }
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,21 +38,37 @@ export default class AddNewEvent extends Component {
 
   handleChange(event) {
     let obj = {};
-    obj[event.target.name] = event.target.value;
+    if(event.target.files)
+      obj.event_image = event.target.files[0];
+    else
+      obj[event.target.name] = event.target.value;
     return this.setState(obj);
-    //return this.setState({event_title: event.target.value, event_time: event.target.value, event_description: event.target.value, event_city: event.target.value, event_location: event.target.value, event_image: event.target.value});
+  }
+
+  getBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+    });
   }
 
   async handleSubmit(event) {
     event.preventDefault();
+
+    const files = document.getElementById('image-input').files;
+    let img = '';
+    if(files.length)
+      img = await this.getBase64(files[0]);
+
     this.state.event_time = this.state.date + ' '+ this.state.time;
     delete this.state.date;
     delete this.state.time;
-    const data = JSON.stringify(this.state);
-    const response = await (api.AddEvent(data));
+    const data = JSON.stringify({...this.state, event_image: img});
+    const response = await (api.addEvent(data));
     alert(response.message + ' : ' + this.state.event_title);
-     this.props.history.push("/event/"+ response.id);
-
+    this.props.history.push("/event/"+ response.id);
   }
 
   render() {
@@ -89,8 +114,29 @@ export default class AddNewEvent extends Component {
               </div>
 
               <div className="form-group col-md-12 d-flex flex-wrap align-items-start">
-                <label className="text-danger h4" htmlFor="image">Image</label>
-                <input type="text" className="form-control" name="event_image" placeholder="Image URL" value={this.state.event_image} onChange={this.handleChange} />
+                <ul className="nav nav-tabs w-100" id="myTab" role="tablist">
+                  <li className="nav-item flex-grow-1">
+                    <a className="nav-link active text-center" id="youtube-tab" data-toggle="tab" href="#youtube" role="tab" aria-controls="youtube" aria-selected="true">
+                      <label style={{cursor: 'pointer'}} className="text-danger h4 my-1" htmlFor="image">Youtube URL</label>
+                    </a>
+                  </li>
+                  <li className="nav-item flex-grow-1">
+                    <a className="nav-link text-center" id="image-tab" data-toggle="tab" href="#image" role="tab" aria-controls="image" aria-selected="false">
+                      <label style={{cursor: 'pointer'}} className="text-danger h4 my-1" htmlFor="image">Upload image</label>
+                    </a>
+                  </li>
+                </ul>
+                <div className="tab-content w-100 pt-2" id="myTabContent">
+                  <div className="tab-pane fade show active" id="youtube" role="tabpanel">
+                    <input type="text" className="form-control" name="event_video" placeholder="Enter URL here..." value={this.state.event_video} onChange={this.handleChange} />
+                  </div>
+                  <div className="tab-pane fade" id="image" role="tabpanel">
+                    <div className="custom-file">
+                      <input type="file" className="custom-file-input" id="image-input" name="event_image" files={this.state.image_file} onChange={this.handleChange}></input>
+                      <label className="custom-file-label" htmlFor="customFile">{this.state.image_file.name}</label>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div className="col-12 d-flex flex-wrap align-items-start">

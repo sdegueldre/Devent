@@ -5,6 +5,8 @@ import {Link} from 'react-router-dom';
 import Card from '../layout/card';
 import '../../../sass/event.scss';
 import Moment from 'react-moment';
+import EmbededVideo from '../layout/embededVideo';
+import EmbededOpenStreetMap from '../layout/embededOpenStreetMap';
 
 /* Demo purpose only */
 import attendee from '../../assets/avatar10.png';
@@ -22,7 +24,8 @@ export default class Eventsolo extends Component {
       eventSoloAttendees: [],
       events: [],
       attending: false,
-      isOwner: false
+      isOwner: false,
+      videoId: ''
     };
 
     this.reload = this.reload.bind(this);
@@ -34,14 +37,28 @@ export default class Eventsolo extends Component {
       window.scrollTo(0, 0)
     id = id == null ? this.props.match.params.id : id;
     let state = await api.fetchEventSolo(id);
+    console.log(state.eventSolo);
+
+    let image = state.eventSolo.event_image;
+    let videoUrl = state.eventSolo.event_video;
+    if(videoUrl && videoUrl.match(/^(https:\/\/)(www.)?(youtube.com|youtu.be)/)){
+      const url = new URL(videoUrl);
+      state.videoId = url.searchParams.get('v');
+    } else {
+      state.videoId = '';
+    }
+
     let user;
-    if(api.islogged().loggedIn){
+    state.attending = false;
+    state.isOwner = false;
+    if(api.islogged()){
       user = await api.me();
-      state.attending = false;
-      for(let attendee of state.eventSolo.attendees){
-        state.attending = (attendee.id == user.profile.id) || state.attending;
+      if(user){
+        for(let attendee of state.eventSolo.attendees){
+          state.attending = (attendee.id == user.id) || state.attending;
+        }
+        state.isOwner = state.eventSolo.event_author.id == user.id;
       }
-      state.isOwner = state.eventSolo.event_author.id == user.profile.id;
     }
 
     console.log(state.eventSolo);
@@ -59,7 +76,16 @@ export default class Eventsolo extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0,0);
     this.reload();
+  }
+
+  componentDidUpdate(){
+    const iframe = document.querySelector('iframe');
+    if(iframe == null)
+      return;
+    window.addEventListener('resize', () => iframe.height = iframe.clientWidth*9/16);
+    iframe.height = iframe.clientWidth*9/16;
   }
 
   async checkAttending(e){
@@ -81,11 +107,16 @@ export default class Eventsolo extends Component {
         <h1 className="mt-3 mb-2"><i className="far fa-calendar-alt pr-3"></i> Event</h1>
           <div className="row">
             <div className="col-lg-8 col-xs-12 mb-3">
-              <div className="eventHeaderImg" style={{ backgroundImage: 'url('+eventSolo.event_image+')', marginBottom: '-72px'}}>
-                <div className="eventTitle"><p>{eventSolo.event_title}</p></div>
-              </div>
+              {(this.state.videoId == '') ?
+                <div className="eventHeaderImg" style={{ backgroundImage: 'url('+eventSolo.event_image+')'}}>
+                  <div className="eventTitle"><p>{eventSolo.event_title}</p></div>
+                </div>
+                :
+                <EmbededVideo videoId={this.state.videoId}/>
+              }
+
               <div className="eventAttending sticky-top" style={{ zIndex: '2' }}>
-                <div  style={{height: '72px'}}></div>
+                <div  style={{height: '63px', marginTop: '-63px', zIndex: -1}}></div>
                 <input id="toggle-7" className="toggle toggle-yes-no" type="checkbox" onChange={this.checkAttending} checked={this.state.attending ? "checked" : ""}/>
                 <label htmlFor="toggle-7" data-on="Going" data-off="Not going"></label>
               </div>
@@ -93,9 +124,7 @@ export default class Eventsolo extends Component {
                 <h3><i className="far fa-clock"></i> <Moment format="DD MMMM Y - H:mm">{eventSolo.event_time}</Moment></h3>
                 <div className="col">
                   <h4>Description</h4>
-                    <div className="map-placeholder">
-                      <img className="map-img" src={map}/>
-                    </div>
+                    <EmbededOpenStreetMap className="map-placeholder" mapId={`event-${this.state.eventSolo.id}-map`} address={`${this.state.eventSolo.event_location} ${this.state.eventSolo.event_city}`}/>
                   <p>{eventSolo.event_description}</p>
                 </div>
               </div>
@@ -119,8 +148,8 @@ export default class Eventsolo extends Component {
               </div>
               {this.state.isOwner &&
               <div className="buttons">
-                <div className="btn btn-primary px-3 py-2 mr-4"><a className="Delete text-white" href={"/deleteanevent/"+eventSolo.id}>Delete</a></div>
-                <div className="btn btn-success px-4 py-2 ml-4"><a className="Edit text-white" href={"/editanevent/"+eventSolo.id}>Edit</a></div>
+                <div className="btn btn-danger mr-3"><a className="Edit text-white" href={"/editanevent/"+eventSolo.id}>Edit</a></div>
+                <div className="btn btn-danger"><a className="Delete text-white" href={"/deleteanevent/"+eventSolo.id}>Delete</a></div>
               </div>}
               <div className="author">
                 <img src={eventSoloAuthor.avatar}/>
