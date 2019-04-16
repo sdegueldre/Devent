@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\mail\Invitation;
+use App\Mail\Invitation;
 
 class EventController extends Controller
 {
@@ -153,15 +153,22 @@ class EventController extends Controller
           }
         }
 
-    public static function sendInvitations(Event $event) {
-      $todaysReminders = Event::where('reminder', '=', date('Y-m-d'))->where('reminder_sent', false);
-      $events = $todaysReminders->with('attendees')->get()->toArray();
-      $todaysReminders->update(['reminder_sent' => true]);
-      foreach($events as $event){
-          foreach ($event['attendees'] as $attendee) {
-              Mail::to($attendee['email'])->send(new Reminder($event, $attendee));
-          }
+    public static function sendInvitations(Event $event, Request $request) {
+      $user= auth()->user();
+      foreach($request['invited'] as $invited){
+        Mail::to($invited)->send(new Invitation($event, $user));
       }
-      return $events;
+      return response()->json([
+        'message' => 'Successfully invited people to your event!'
+      ]);
+      // $todaysReminders = Event::where('reminder', '=', date('Y-m-d'))->where('reminder_sent', false);
+      // $events = $todaysReminders->with('attendees')->get()->toArray();
+      // $todaysReminders->update(['reminder_sent' => true]);
+      // foreach($events as $event){
+      //     foreach ($event['attendees'] as $attendee) {
+      //       Mail::to($attendee['email'])->send(new Invitation($event, $attendee));
+      //     }
+      // }
+      // return $events;
     }
 }

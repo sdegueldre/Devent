@@ -33,6 +33,7 @@ Route::middleware('auth:api')->group(function () {
     Route::post('me', 'AuthController@me');
     // routes related to events
     Route::post('/events', 'EventController@store')->name('events.store');
+    Route::post('/events/{event}/invitations', 'EventController@sendInvitations')->name('events.invite');
     Route::put('/events/{event}', 'EventController@update')->name('events.update');
     Route::delete('/events/{event}', 'EventController@destroy')->name('events.destroy');
     // route that deal with attending or not
