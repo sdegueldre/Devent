@@ -15,7 +15,7 @@ export default class EmbededOpenStreetMap extends Component {
       return;
     document.getElementById(`${this.props.mapId}`).innerHTML = '';
     const map = new OpenLayers.Map(this.props.mapId);
-    map.addLayer(new OpenLayers.Layer.OSM());
+    map.addLayer(new OpenLayers.Layer.OSM({url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'}));
 
     const response = await fetch('https://nominatim.openstreetmap.org/search?format=json&q='+encodeURIComponent(this.props.address));
     const json = await response.json();
