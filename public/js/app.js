@@ -87268,9 +87268,7 @@ function (_Component) {
               case 2:
                 document.getElementById("".concat(this.props.mapId)).innerHTML = '';
                 map = new OpenLayers.Map(this.props.mapId);
-                map.addLayer(new OpenLayers.Layer.OSM({
-                  url: 'https://otile2-s.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png'
-                }));
+                map.addLayer(new OpenLayers.Layer.OSM('osmLayer', ['https://a.tile.openstreetmap.org/${z}/${x}/${y}.png', 'https://b.tile.openstreetmap.org/${z}/${x}/${y}.png', 'https://c.tile.openstreetmap.org/${z}/${x}/${y}.png']));
                 _context.next = 7;
                 return fetch('https://nominatim.openstreetmap.org/search?format=json&q=' + encodeURIComponent(this.props.address));
 
