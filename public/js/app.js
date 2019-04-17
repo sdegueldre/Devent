@@ -87269,7 +87269,7 @@ function (_Component) {
                 document.getElementById("".concat(this.props.mapId)).innerHTML = '';
                 map = new OpenLayers.Map(this.props.mapId);
                 map.addLayer(new OpenLayers.Layer.OSM({
-                  url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+                  url: 'https://otile2-s.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png'
                 }));
                 _context.next = 7;
                 return fetch('https://nominatim.openstreetmap.org/search?format=json&q=' + encodeURIComponent(this.props.address));
