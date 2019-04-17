@@ -23,6 +23,14 @@
   }
 }
 
+.card-deck{
+  width: 100%;
+}
+
+.participation-label {
+  position: relative;
+  z-index: 4;
+}
 
 // Bootstrap
 @import "node_modules/bootstrap/scss/bootstrap";
