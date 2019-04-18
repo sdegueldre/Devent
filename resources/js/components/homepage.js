@@ -71,12 +71,10 @@ export default class Homepage extends Component {
           /* Start show next events */}
           <div className="container">
             <h1 className="mt-3 mb-2"><i className="far fa-calendar-alt pr-3"></i> Next events</h1>
-            <div className="row text-center">
-              <div className="card-deck">
-              {events.map(events =>
-                  <Card key={events.id} events={events} />
-                )}
-              </div>
+            <div className="card-deck mx-auto">
+            {events.map(events =>
+                <Card key={events.id} events={events} />
+              )}
             </div>
           </div>
           {/* End show next events */}

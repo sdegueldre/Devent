@@ -31,22 +31,13 @@ export default class PastEvents extends Component {
         return (
           <div className="container">
             <h1 className="mt-3 mb-2"><i className="far fa-calendar-alt pr-3"></i> Events</h1>
-              <div className="row text-center">
-                <div className="card-deck">
-                  {events.map((events, index) =>
-                    index < 3 ?
-                      <Card key={events.id} events={events} classes="card mb-3"/> : ''
-                  )}
-                  </div>
-                  <div className="card-deck">
-                  {events.map((events, index) =>
-                    index >= 3 ?
-                      <Card key={events.id} events={events} classes="card"/> : ''
-                  )}
-                </div>
+            <div className="row text-center">
+              <div className="card-deck w-100 mx-auto">
+                {events.map((events, index) => (
+                  <Card key={events.id} events={events} classes="card mb-3"/>
+                ))}
               </div>
-
-            {/* Start pagination */}
+            </div>
             <div className="container d-flex justify-content-between">
               <a className="past text-white btn btn-danger" href={"/events/page=1"}><img style={{height: '3em'}} src={backToTheFuture}/></a>
               <nav aria-label="Page navigation example">
