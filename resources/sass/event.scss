@@ -5,6 +5,8 @@
 @import "../../node_modules/bootstrap/scss/mixins";
 
 .map-placeholder{
+  position: relative;
+  z-index: 0;
   width: 50%;
   float: right;
   margin-left: 20px;
