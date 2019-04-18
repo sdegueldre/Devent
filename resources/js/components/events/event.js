@@ -122,7 +122,7 @@ export default class Eventsolo extends Component {
               }
 
               <div className="eventAttending sticky-top" style={{ zIndex: '2' }}>
-                <div  style={{height: '63px', marginTop: '-63px', zIndex: -1}}></div>
+                <div  style={{height: '62px', marginTop: '-62px', zIndex: -1}}></div>
                 <input id="toggle-7" className="toggle toggle-yes-no" type="checkbox" onChange={this.checkAttending} checked={this.state.attending ? "checked" : ""}/>
                 <label class="participation-label" htmlFor="toggle-7" data-on="Going" data-off="Not going"></label>
               </div>
