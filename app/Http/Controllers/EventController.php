@@ -6,6 +6,7 @@ use App\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Mail\Invitation;
+use Illuminate\Support\Facades\Mail;
 
 class EventController extends Controller
 {
@@ -14,16 +15,16 @@ class EventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-     public function homepage()
-     {
-       $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->limit(3)->get();
-       return response()->json($events);
-     }
-     public function index(Request $request)
-       {
-           $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->paginate(6);
-             return response()->json($events);
-       }
+    public function homepage()
+    {
+      $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->limit(3)->get();
+      return response()->json($events);
+    }
+    public function index(Request $request)
+    {
+      $events = Event::where('event_time', '>', NOW())->orderBy('event_time', 'asc')->paginate(6);
+      return response()->json($events);
+    }
     public function past(Request $request)
     {
         $events = Event::where('event_time', '<', NOW())->orderBy('event_time', 'asc')->paginate(6);
@@ -132,6 +133,8 @@ class EventController extends Controller
     public static function sendInvitations(Event $event, Request $request) {
       $user= auth()->user();
       foreach($request['invited'] as $invited){
+        \Log::info('Sending invitation to ' . $invited);
+        \Log::info($event);
         Mail::to($invited)->send(new Invitation($event, $user));
       }
       return response()->json([

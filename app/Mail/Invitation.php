@@ -31,8 +31,7 @@ class Invitation extends Mailable
      */
     public function build()
     {
-        return $this->from('Hello@Devent.com')
-                    ->subject($this->user['name'] . ' wants to invite you to ' . $this->event['event_title'])
+        return $this->subject($this->user['name'] . ' wants to invite you to ' . $this->event['event_title'])
                     ->markdown('emails.invitation');
     }
 }
