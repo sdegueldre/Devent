@@ -20,52 +20,60 @@ export default class Header extends Component {
 
     async componentDidMount() {
       let logged = api.islogged();
-      if (logged.loggedIn){
-        let response = await api.me();
-        //let refresh = await api.refresh();
-        this.setState({loggedIn: logged.loggedIn, profile: response.profile});
+      if (logged){
+        let profile = await api.me();
+        if(profile)
+          this.setState({loggedIn: logged, profile: profile});
+        else
+          this.setState({loggedIn: false, profile: null});
       }
     }
     render() {
         return (
           <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
             <Link to="/" className="navbar-brand"><img width="30" height="30" className="d-inline-block align-top mx-2" src={ logo }/>Dev'ent</Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <button className="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
 
             <div className="collapse navbar-collapse" id="navbarColor01">
-              <ul className="navbar-nav ml-auto">
+              <ul className="navbar-nav mr-auto ml-auto">
                 <li className="nav-item">
-                  <Link to="/" className="nav-link mx-4 h5 text-danger">Homepage</Link>
+                  <Link to="/" className="nav-link text-danger">Homepage</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/events/page=1" className="nav-link mx-4 h5 text-danger">Events</Link>
+                  <Link to="/events/page=1" className="nav-link text-danger">Events</Link>
                 </li>
                 {this.state.loggedIn &&
                   <li className="nav-item">
-                    <Link to="/addnewevent" className="nav-link mx-4 h5 text-danger">Add Event</Link>
+                    <Link to="/addnewevent" className="nav-link text-danger">Add Event</Link>
                   </li>
                 }
                 <li className="nav-item">
-                  <Link to ="/team" className="nav-link mx-4 h5 text-danger">Team</Link>
+                  <Link to ="/team" className="nav-link text-danger">Team</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="contact" className="nav-link mx-4 h5 text-danger">Contact</Link>
+                  <Link to="contact" className="nav-link text-danger">Contact</Link>
                 </li>
               </ul>
+              <ul className="navbar-nav">
               {(this.state.loggedIn== false) &&
-                <div className="navbar-nav ml-auto">
-                  <div className="btn btn-primary px-4 py-2 mr-3"><a className="login text-white" href="/login">Login</a></div>
-                  <div className="btn btn-success ml-2 mr-4"><a className="register text-white" href="/register">Register</a></div>
-                </div>
+                <li className="navbar-item ml-auto">
+                  <a className="login text-white py-0" href="/login"><div className="btn btn-danger mr-3">Login</div></a>
+                  <a className="register text-white  py-0" href="/register"><div className="btn btn-danger">Register</div></a>
+                </li>
               }
               {this.state.loggedIn &&
-              <div className="navbar-nav ml-auto">
-                  <div className="mx-2"><img src={this.state.profile.avatar} width="30" height="30" className="avatar d-inline-block align-top rounded-circle" /> Hello {this.state.profile.name}</div>
-                  <div className="btn btn-primary ml-2 px-4 py-2 mr-4"><a className="logout text-white" href="/logout">Logout</a></div>
-                </div>
+                <>
+                  <li className="nav-item d-flex align-items-center hello">
+                    <img src={this.state.profile.avatar} width="30" height="30" className="avatar d-inline-block rounded-circle mr-2" />Hello {this.state.profile.name}
+                  </li>
+                  <li>
+                    <a className="nav-link logout text-white py-0" href="/logout"><div className="btn btn-danger mr-4">Logout</div></a>
+                  </li>
+                </>
               }
+              </ul>
             </div>
           </nav>
 

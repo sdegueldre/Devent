@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 import Card from './layout/card';
 import '../../sass/cards.scss';
 /* Demo */
-import event02 from '../assets/event02.jpg';
+import event02 from '../assets/event02.png';
 import event03 from '../assets/event03.jpg';
 import event05 from '../assets/event05.png';
 
@@ -26,9 +26,9 @@ export default class Homepage extends Component {
   }
 
   async componentDidMount() {
-    let response = await api.islogged();
+    let logged = await api.islogged();
     let data = await api.fetchHome();
-    this.setState({events: data.events, logged: response.loggedIn});
+    this.setState({events: data.events, logged: logged});
   }
   componentDidUpdate(){
 
@@ -71,12 +71,10 @@ export default class Homepage extends Component {
           /* Start show next events */}
           <div className="container">
             <h1 className="mt-3 mb-2"><i className="far fa-calendar-alt pr-3"></i> Next events</h1>
-            <div className="row text-center">
-              <div className="card-deck">
-              {events.map(events =>
-                  <Card key={events.id} events={events} />
-                )}
-              </div>
+            <div className="card-deck mx-auto">
+            {events.map(events =>
+                <Card key={events.id} events={events} />
+              )}
             </div>
           </div>
           {/* End show next events */}

@@ -32,25 +32,17 @@ export default class Events extends Component {
         return (
           <div className="container">
             <h1 className="mt-3 mb-2"><i className="far fa-calendar-alt pr-3"></i> Events</h1>
-              <div className="row text-center">
-                <div className="card-deck">
-                {events.map((events, index) =>
-                  index < 3 ?
-                    <Card key={events.id} events={events} classes="card mb-3"/> : ''
-                )}
-                </div>
-                <div className="card-deck">
-                {events.map((events, index) =>
-                  index >= 3 ?
-                    <Card key={events.id} events={events} classes="card"/> : ''
-                )}
-                </div>
+              <div className="card-deck w-100 mx-auto">
+              {events.map((events, index) =>
+                  <Card key={events.id} events={events} classes="card mb-3"/>
+              )}
               </div>
 
             {/* Start pagination */}
-            <div className="container mt-3">
+            <div className="container mt-3 d-flex justify-content-between">
+              <a className="btn btn-danger past text-white" href={"/pastevents/page=1"}>Back to the Past</a>
               <nav aria-label="Page navigation example">
-                <ul className="pagination d-flex justify-content-end">
+                <ul className="pagination d-flex justify-content-end mb-0">
                   {parseInt(this.state.current_page) > 1 &&
                     <li className="page-item">
                       <a className="page-link" href={"/events/page="+(parseInt(this.state.current_page)-1)} aria-label="Previous">
@@ -76,8 +68,6 @@ export default class Events extends Component {
                   }
                 </ul>
               </nav>
-              <div className="btn btn-danger px-3 py-2"><a className="past text-white" href={"/pastevents/page=1"}>Back to the Past</a></div>
-
             </div>
             {/* End pagination */}
         </div>

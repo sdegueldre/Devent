@@ -5,6 +5,38 @@
 
 // Variables
 @import 'variables';
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  min-width: 250px !important;
+}
+@include media-breakpoint-up(md) {
+  .card {
+    max-width: 45%;
+  }
+}
+@include media-breakpoint-up(lg) {
+  .card {
+    max-width: 30%;
+  }
+}
+
+.card-deck{
+  width: 100%;
+}
+
+.participation-label {
+  position: relative;
+  z-index: 4;
+}
 
 // Bootstrap
 @import "node_modules/bootstrap/scss/bootstrap";
@@ -15,9 +47,24 @@
 // p {
 //   margin-bottom: 0;
 // }
+
+.card-deck {
+   justify-content: center;
+}
+
+.nav-link {
+  padding: 0.2rem 0.5rem;
+
+  h4 {
+    margin: 0;
+  }
+}
+
 .navbar-brand{
   font-family: 'Permanent Marker', cursive;
   font-size: 25px;
+  margin-top: -5px;
+  margin-bottom: -5px;
 }
 
 .container-fluid{
@@ -53,8 +100,22 @@
   background-color: $orange;
 }
 
-.navbar-light .navbar-nav .nav-link:hover{
-  color: $orange;
+.navbar-light, .navbar-nav{
+  padding: 0.25rem;
+  font-size: 1.3rem;
+
+  & > li {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    &:hover {
+      color: orange;
+    }
+  }
+}
+
+.hello {
+  color: white;
+  font-size: 1rem;
 }
 
 a:hover{
