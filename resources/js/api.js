@@ -36,6 +36,11 @@ class API {
     }
   }
 
+  async sendInvites(eventId, emails){
+    const json = await this.callAPI('POST', `events/${eventId}/invitations`, JSON.stringify({invited: emails}));
+    return json;
+  }
+
 // get events
    async fetchEvents(page = 1) {
      const json = await this.callAPI('GET', 'events?page='+page);

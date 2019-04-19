@@ -5,7 +5,7 @@ It will take place in *{{$event['event_location']}}* on {{substr($event['event_t
 And {{$user['name']}} would like to invite you.
 We hope to see you there!
 
-@component('mail::button', ['url' =>'https://jepsen-brite-jnsnc.herokuapp.com/' . $event['id'], 'color' => 'success'])
+@component('mail::button', ['url' =>'https://becode-devent.herokuapp.com/event/' . $event['id'], 'color' => 'success'])
 Get back to Dev'ent!
 @endcomponent
 

@@ -25,11 +25,15 @@ export default class Eventsolo extends Component {
       events: [],
       attending: false,
       isOwner: false,
-      videoId: ''
+      videoId: '',
+      invite: false,
     };
+    this.lineBreaks = 0;
 
     this.reload = this.reload.bind(this);
     this.checkAttending = this.checkAttending.bind(this);
+    this.checkEmails = this.checkEmails.bind(this);
+    this.sendInvites = this.sendInvites.bind(this);
   }
 
   async reload(id = null){
@@ -75,9 +79,12 @@ export default class Eventsolo extends Component {
     this.setState({events: events});
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     window.scrollTo(0,0);
-    this.reload();
+    await this.reload();
+    if(this.props.location.search.slice(1) == 'invite'){
+      $('#invitationModal').modal('show');
+    }
   }
 
   componentDidUpdate(){
@@ -96,6 +103,36 @@ export default class Eventsolo extends Component {
     } else {
       response = await api.unparticipate(this.state.eventSolo.id);
       this.reload();
+    }
+  }
+
+  checkEmails(container, force = false){
+    const newLineBreaks = (container.value.match(/\n/g)||[]).length;
+    if(newLineBreaks != this.lineBreaks || force){
+      this.lineBreaks = newLineBreaks;
+      const lines = container.value.split('\n').filter(v => v != '');
+      if(lines.length == 0){
+        container.classList.add("is-invalid");
+        return false;
+      }
+      for(let line of lines){
+        if(!line.match(/^.*@.*\.[A-Za-z]{2,3}/)){
+          container.classList.add("is-invalid");
+          return false;
+        }
+      }
+      container.classList.remove("is-invalid");
+      return lines;
+    }
+  }
+
+  async sendInvites(e){
+    e.preventDefault();
+    e.stopPropagation();
+    let emails;
+    if(emails = this.checkEmails(e.target.querySelector('textarea'), true)){
+      $('#invitationModal').modal('hide');
+      console.log(await api.sendInvites(this.state.eventSolo.id, emails));
     }
   }
 
@@ -124,7 +161,7 @@ export default class Eventsolo extends Component {
               <div className="eventAttending sticky-top" style={{ zIndex: '2' }}>
                 <div  style={{height: '62px', marginTop: '-62px', zIndex: -1}}></div>
                 <input id="toggle-7" className="toggle toggle-yes-no" type="checkbox" onChange={this.checkAttending} checked={this.state.attending ? "checked" : ""}/>
-                <label class="participation-label" htmlFor="toggle-7" data-on="Going" data-off="Not going"></label>
+                <label className="participation-label" htmlFor="toggle-7" data-on="Going" data-off="Not going"></label>
               </div>
               <div className="eventBody mt-3 clearfix">
                 <h3><i className="far fa-clock"></i> <Moment format="DD MMMM Y - H:mm">{eventSolo.event_time}</Moment></h3>
@@ -171,6 +208,33 @@ export default class Eventsolo extends Component {
               )}
             </div>
 
+          </div>
+
+          <div className="modal fade" id="invitationModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal-dialog" role="document">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="exampleModalLabel">Invite your friends!</h5>
+                  <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                <form onSubmit={this.sendInvites}>
+                  <div className="modal-body">
+                    <div className="form-group col-md-12 d-flex flex-wrap align-items-start pt-3">
+                      <label className="text-danger h5" htmlFor="description">Type their emails below (one per line) and we'll send them an invitation!</label>
+                      <textarea className="form-control" name="event_description" rows="5" onChange={(e) => this.checkEmails(e.target)}></textarea>
+                    </div>
+                  </div>
+                  <div className="modal-footer">
+                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Not this time</button>
+                    <button type="submit" className="btn btn-danger">Send invitations</button>
+                  </div>
+                </form>
+
+              </div>
+            </div>
           </div>
         </div>
     )};

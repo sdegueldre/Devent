@@ -73,7 +73,7 @@ export default class eventForm extends Component {
     console.log('about to post', state);
     const response = await (this.props.submitFunction(JSON.stringify(state), this.props.id));
     alert(response.message + ' : ' + this.state.event_title);
-    this.props.history.push("/event/"+ (this.props.id || response.id));
+    this.props.history.push("/event/"+ (this.props.id || response.id) + '?invite');
   }
 
   componentDidUpdate(prevProps){
