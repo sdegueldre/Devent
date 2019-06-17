@@ -1,9 +1,11 @@
 # Jepsen-Brite API
 
+> All routes that take data as parameter expect JSON
+
 ## User
   * 'id',
   * 'name',
-  *  'email',
+  * 'email',
   * 'email_verified_at',
   * 'password',
   * 'avatar',
@@ -17,7 +19,7 @@
 
 #### POST `/login`
 
-  log the user in and returns a JSON Web Token (JWT)
+  Logs the user in and returns a JSON Web Token (JWT)
 
 #### POST `/logout`
 
@@ -25,7 +27,7 @@
 
 #### POST `/me`
 
-  returns information about the connected user (id, name and email)
+  Returns information about the connected user (id, name and email)
 
 #### POST `/refresh`
 
