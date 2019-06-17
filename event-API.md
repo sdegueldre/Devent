@@ -9,33 +9,31 @@
   * 'avatar',
   * 'remember_token'
 
-### Router
+### Routes
 
 #### POST `/register`
 
-  *Only takes JSON as input.*
-    Creates a new user.
+  Creates a new user. Requires a name, email, password, and password_confirmation
 
 #### POST `/login`
 
-  *Only takes JSON as input.*
-  log the user and return a token,
+  log the user in and returns a JSON Web Token (JWT)
 
 #### POST `/logout`
 
-  *Only takes JSON as input.*
+  Invalidates the JWT
 
 #### POST `/me`
 
-  return the informations of the connected user (id, name and email)
+  returns information about the connected user (id, name and email)
 
 #### POST `/refresh`
 
-    refresh the token.
+  Invalidates the previous JWT and returns a new one that's valid for the next 60 minutes
 
 ## Event object
 
-A dictionary containing the following keys:
+A json object containing the following keys:
 
   * 'id',
   * 'event_title',
@@ -44,18 +42,18 @@ A dictionary containing the following keys:
   * 'event_city',
   * 'event_location',
   * 'event_image',
-  * 'event_author',  -> point to the users table
+  * 'event_author',  -> id of the author
   * 'reminder'
 
-  ### Router
+  ### Routes
 
   #### GET `/events?page=:page`
 
-  Returns the 6 future events of this page by chronological order, the current page and the last page.
+  Returns the first 6 events that haven yet to take place by chronological order, as well as pagination information
 
 #### GET `/pastevents?page=:page`
 
-  Returns the 6 past events of this page by antechronological order, the current page and the last page.
+  Returns the 6 most recent past events by reverse chronological order, as well as pagination information
 
   #### GET `/event/:id`
 
@@ -63,33 +61,33 @@ A dictionary containing the following keys:
 
   #### POST `/event`
 
-  *Only takes JSON as input.*
-  Creates a new event.
-  Returns the newly created event object, including its id.
+  Creates a new event
+  Returns the newly created event object, including its id
 
   #### PUT `/event/:id`
 
-  *Only possible if you are the author of this event, and takes JSON as input.*
-  Updates one, all or several fields of a specified event.
+  *Only allowed if you are the author of the event*
+  Updates one, all or several fields of a specified event
 
   #### DELETE `/event/:id`
 
-  *Only possible if you are the author of this event*
-  Deletes the specified event.
+  *Only possible if you are the author of the event*
+  Deletes the specified event
 
-## Attendees liaison table
+## Attendees junction table
 
-   * 'event_id',  -> point to the events table
-   * 'user_id'    -> point to the users table
+   * 'event_id',  -> id of the event
+   * 'user_id'    -> id of the attendee
 
 
-## Router
+### Routes
 
 #### POST `/attend/:event`
-*Only takes JSON as input.*
-Creates a new line with the connected user id and the event id.
+
+Creates a new entry with the connected user id and the event id
 
 #### DELETE `/attend/:event`
-Deletes the users participation of the specified event.
+
+Deletes the user's registration to the specified event
 
 ------------------------------------------------------------------------
