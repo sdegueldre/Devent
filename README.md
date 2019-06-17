@@ -1,6 +1,6 @@
 # Devent
 
-> Devent is an Eventbrite-like website for creating and managing local events, letting people participate and be reminded by email a few days before the event.
+> Devent is an Eventbrite-like website for creating and managing local events, letting people register to them and be reminded of them by email a few days before it takes place.
 
 You can access the website [on heroku](https://becode-devent.herokuapp.com/)  
 
